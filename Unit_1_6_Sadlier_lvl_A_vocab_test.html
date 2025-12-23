@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary Workshop Level A: Units 1-6 Quiz</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 750px; margin: 30px auto; padding: 20px; background-color: #f4f7f9; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        .card, .quiz-box { border: 2px solid #e1e8ed; padding: 25px; border-radius: 12px; margin-top: 20px; background: #fff; }
+        h1 { color: #2c3e50; text-align: center; }
+        button { padding: 12px 24px; margin: 8px; cursor: pointer; border-radius: 8px; border: none; font-weight: 600; transition: all 0.2s ease; font-size: 15px; }
+        .btn-start { background: #3498db; color: white; width: 100%; display: block; }
+        .btn-start:hover { background: #2980b9; }
+        .btn-option { background: #f8f9fa; color: #333; border: 1px solid #dee2e6; width: 100%; text-align: left; margin: 5px 0; }
+        .btn-option:hover { background: #e9ecef; }
+        .btn-reveal { background: #2ecc71; color: white; }
+        .btn-correct { background: #27ae60; color: white; }
+        .btn-wrong { background: #e74c3c; color: white; }
+        .score-display { font-size: 1.1em; color: #7f8c8d; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+        #test-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feedback { margin-top: 15px; font-weight: bold; }
+        .text-correct { color: #27ae60; }
+        .text-wrong { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Vocabulary Mastery: Units 1–6</h1>
+        <div id="test-menu"></div>
+
+        <div id="quiz-area" class="hidden">
+            <div class="score-display">
+                Question <span id="q-count">1</span> | Score: <span id="live-score">0</span>
+            </div>
+            
+            <div id="flashcard-ui" class="hidden">
+                <p><strong>Flashcard:</strong> Define the following word:</p>
+                <h2 id="fc-word" style="color: #3498db; font-size: 2.2em;"></h2>
+                <input type="text" id="fc-input" style="width:100%; padding:10px; margin-bottom:10px;" placeholder="Type meaning here...">
+                <button class="btn-reveal" onclick="revealFC()">Check Answer</button>
+                <div id="fc-answer-box" class="hidden">
+                    <p><strong>Textbook Definition:</strong> <span id="fc-answer-text"></span></p>
+                    <p>How did you do?</p>
+                    <button class="btn-correct" onclick="recordResult(true)">Correct (+1)</button>
+                    <button class="btn-wrong" onclick="recordResult(false)">Incorrect (0)</button>
+                </div>
+            </div>
+
+            <div id="mc-ui" class="hidden">
+                <p id="mc-question" style="font-weight: bold; font-size: 1.2em;"></p>
+                <div id="mc-options"></div>
+                <div id="mc-feedback" class="hidden">
+                    <p id="mc-feedback-text" class="feedback"></p>
+                    <button class="btn-start" onclick="nextQuestion()" style="width: auto;">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-area" class="hidden" style="text-align: center;">
+            <h2>Quiz Complete!</h2>
+            <p style="font-size: 3em; margin: 15px 0;"><span id="final-pts"></span> / <span id="final-total"></span></p>
+            <p id="commentary" style="font-style: italic; color: #7f8c8d;"></p>
+            <button class="btn-start" onclick="location.reload()">Return to Main Menu</button>
+        </div>
+    </div>
+
+    <script>
+        const tests = [
+            [ // Test 1: Units 1-2
+                { type: 'fc', word: 'apparel', ans: 'clothing, attire; to dress up' },
+                { type: 'mc', q: 'Definition of "stamina":', opts: ['Endurance; staying power', 'To confuse', 'A wide view', 'To save'], correct: 0 },
+                { type: 'fib', q: 'The jogger was injured by an unknown _______.', opts: ['apparel', 'assailant', 'oaf', 'mimic'], correct: 1 },
+                { type: 'syn', q: 'Synonym of "inept":', opts: ['skillful', 'clumsy', 'immense', 'serene'], correct: 1 }
+            ],
+            [ // Test 2: Units 3-4
+                { type: 'fc', word: 'bigot', ans: 'an intolerant, prejudiced person' },
+                { type: 'ant', q: 'Antonym of "wither":', opts: ['flourish', 'sag', 'shame', 'slake'], correct: 0 },
+                { type: 'mc', q: 'What is an "enigma"?', opts: ['A wise person', 'Something extremely puzzling', 'A sacred promise', 'A wide view'], correct: 1 },
+                { type: 'fib', q: 'The lawyer attempted to _______ them of all charges.', opts: ['idolize', 'acquit', 'scurry', 'topple'], correct: 1 }
+            ],
+            [ // Test 3: Units 5-6
+                { type: 'fc', word: 'synopsis', ans: 'a brief statement giving a general view; a summary' },
+                { type: 'mc', q: 'Definition of "fidelity":', opts: ['Laziness', 'The state of being faithful; accuracy', 'A sudden rush', 'To prove incorrect'], correct: 1 },
+                { type: 'fib', q: 'Responsible citizens try to _______ our natural resources.', opts: ['induce', 'conserve', 'vacate', 'blight'], correct: 1 },
+                { type: 'syn', q: 'Synonym of "bungle":', opts: ['mess up', 'fix', 'clean', 'save'], correct: 0 }
+            ],
+            [ // Test 4: Mixed Units 1-3
+                { type: 'fc', word: 'vocation', ans: 'any trade, profession, or occupation' },
+                { type: 'mc', q: 'What is a "panorama"?', opts: ['A small amount', 'A wide, unobstructed view', 'A trick', 'A result'], correct: 1 },
+                { type: 'ant', q: 'Antonym of "amiable":', opts: ['friendly', 'hostile', 'flexible', 'clever'], correct: 1 },
+                { type: 'fib', q: 'The magician used optical _______ to amaze the audience.', opts: ['agendas', 'clarities', 'illusions', 'vows'], correct: 2 }
+            ],
+            [ // Test 5: Mixed Units 4-6
+                { type: 'fc', word: 'repast', ans: 'a meal, food' },
+                { type: 'mc', q: 'Definition of "recede":', opts: ['To move forward', 'To go or move backward', 'To attack', 'To stay'], correct: 1 },
+                { type: 'syn', q: 'Synonym of "agenda":', opts: ['schedule', 'clumsiness', 'error', 'mystery'], correct: 0 },
+                { type: 'fib', q: 'A _______ guide will know how to handle any questions.', opts: ['smug', 'resourceful', 'bumbling', 'numb'], correct: 1 }
+            ]
+        ];
+
+        let activeQuestions = [];
+        let currentIdx = 0;
+        let score = 0;
+
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+         function init() {
+            const menu = document.getElementById('test-menu');
+            let indices = [0, 1, 2, 3, 4]; // Fixed: was [1-4] which evaluates to [-3]
+            shuffle(indices).forEach((idx, i) => {
+                let btn = document.createElement('button');
+                btn.className = 'btn-start';
+                btn.innerText = `Quiz ${i+1}: Mixed Vocabulary Units 1-6`;
+                btn.onclick = () => startTest(idx);
+                menu.appendChild(btn);
+            });
+        }
+
+
+        function startTest(n) {
+            activeQuestions = shuffle([...tests[n]]); 
+            currentIdx = 0;
+            score = 0;
+            document.getElementById('test-menu').classList.add('hidden');
+            document.getElementById('title').classList.add('hidden');
+            document.getElementById('quiz-area').classList.remove('hidden');
+            updateUI();
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = activeQuestions[currentIdx];
+            document.getElementById('q-count').innerText = currentIdx + 1;
+            document.getElementById('mc-feedback').classList.add('hidden');
+            document.getElementById('fc-answer-box').classList.add('hidden');
+            document.getElementById('fc-input').value = '';
+
+            if (q.type === 'fc') {
+                document.getElementById('mc-ui').classList.add('hidden');
+                document.getElementById('flashcard-ui').classList.remove('hidden');
+                document.getElementById('fc-word').innerText = q.word;
+                document.getElementById('fc-answer-text').innerText = q.ans;
+            } else {
+                document.getElementById('flashcard-ui').classList.add('hidden');
+                document.getElementById('mc-ui').classList.remove('hidden');
+                document.getElementById('mc-question').innerText = q.q;
+                const optsDiv = document.getElementById('mc-options');
+                optsDiv.innerHTML = '';
+                q.opts.forEach((opt, i) => {
+                    let b = document.createElement('button');
+                    b.className = 'btn-option';
+                    b.innerText = opt;
+                    b.onclick = () => checkMC(i);
+                    optsDiv.appendChild(b);
+                });
+            }
+        }
+
+        function revealFC() { document.getElementById('fc-answer-box').classList.remove('hidden'); }
+
+        function recordResult(isCorrect) {
+            if (isCorrect) score++;
+            updateUI();
+            nextQuestion();
+        }
+
+        function checkMC(idx) {
+            const q = activeQuestions[currentIdx];
+            const feedText = document.getElementById('mc-feedback-text');
+            document.getElementById('mc-feedback').classList.remove('hidden');
+            document.querySelectorAll('#mc-options button').forEach(b => b.disabled = true);
+
+            if (idx === q.correct) {
+                feedText.innerHTML = '<span class="text-correct">Correct!</span> Well done.';
+                score++;
+            } else {
+                feedText.innerHTML = `<span class="text-wrong">Incorrect.</span> The right answer was: ${q.opts[q.correct]}`;
+            }
+            updateUI();
+        }
+
+        function updateUI() { document.getElementById('live-score').innerText = score; }
+
+        function nextQuestion() {
+            currentIdx++;
+            if (currentIdx < activeQuestions.length) showQuestion();
+            else finish();
+        }
+
+        function finish() {
+            document.getElementById('quiz-area').classList.add('hidden');
+            document.getElementById('results-area').classList.remove('hidden');
+            document.getElementById('final-pts').innerText = score;
+            document.getElementById('final-total').innerText = activeQuestions.length;
+            const comm = document.getElementById('commentary');
+            if (score === activeQuestions.length) comm.innerText = "Immense achievement! You are an ingenious student.";
+            else comm.innerText = "Good effort! Keep utilizing your stamina to master more words.";
+        }
+
+        init();
+    </script>
+</body>
+</html>
