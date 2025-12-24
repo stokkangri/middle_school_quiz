@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRE Vocabulary Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <h1>GRE Vocabulary Quiz</h1>
+        <div id="setup-container">
+            <label for="num-questions">Number of Questions:</label>
+            <input type="number" id="num-questions" value="10" min="1" max="100">
+            <div id="loading-message">Loading Vocabulary...</div>
+            <button id="start-quiz-btn" disabled>Start Quiz</button>
+        </div>
+        <div id="quiz-container" class="hidden">
+            <div id="dynamic-content">
+                <!-- Question, options, and feedback will be rendered here -->
+            </div>
+            <div id="navigation-area" class="hidden">
+                <button id="back-btn">Back</button>
+                <button id="reveal-btn">Reveal</button>
+                <button id="next-question-btn">Next</button>
+            </div>
+        </div>
+        <div id="score-container" class="hidden">
+            <h2>Quiz Complete!</h2>
+            <p>Your final score is: <span id="final-score"></span></p>
+            <button id="restart-quiz-btn">Try Again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

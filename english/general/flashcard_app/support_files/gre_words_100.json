@@ -1,0 +1,802 @@
+[
+  {
+    "Index": 1,
+    "Word": "abase",
+    "Meaning (Full)": "Degrade or humble; to lower in rank, status, or esteem",
+    "Meaning (Short)": "Degrade or humble; to lower in rank, status, or esteem",
+    "PronunciationIPA": "/\u0259\u02c8be\u026as/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abase"
+  },
+  {
+    "Index": 2,
+    "Word": "abate",
+    "Meaning (Full)": "Reduce, diminish",
+    "Meaning (Short)": "Reduce, diminish",
+    "PronunciationIPA": "/\u0259\u02c8be\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abate"
+  },
+  {
+    "Index": 3,
+    "Word": "abdicate",
+    "Meaning (Full)": "Formally give up the throne (or some other power or responsibility)",
+    "Meaning (Short)": "Formally give up the throne (or some other power or responsibility)",
+    "PronunciationIPA": "/\u02c8\u00e6b.d\u026a\u02ccke\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abdicate"
+  },
+  {
+    "Index": 4,
+    "Word": "aberrant",
+    "Meaning (Full)": "Abnormal, deviant",
+    "Meaning (Short)": "Abnormal, deviant",
+    "PronunciationIPA": "/\u0259\u02c8b\u025b\u0279.n\u0329t/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aberrant"
+  },
+  {
+    "Index": 5,
+    "Word": "abeyance",
+    "Meaning (Full)": "Temporary suspension, inactivity",
+    "Meaning (Short)": "Temporary suspension, inactivity",
+    "PronunciationIPA": "/\u0259\u02c8be\u026a.\u0259ns/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abeyance"
+  },
+  {
+    "Index": 6,
+    "Word": "abhor",
+    "Meaning (Full)": "Detest, regard with disgust",
+    "Meaning (Short)": "Detest, regard with disgust",
+    "PronunciationIPA": "/\u0259b\u02c8h\u0254\u02d0(\u0279)/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abhor"
+  },
+  {
+    "Index": 7,
+    "Word": "abjure",
+    "Meaning (Full)": "Give up, renounce; repudiate, recant, or shun (especially formally or under oath)",
+    "Meaning (Short)": "Give up, renounce; repudiate, recant, or shun (especially formally or under oath)",
+    "PronunciationIPA": "/\u00e6b\u02c8d\u0292\u028a\u0279/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abjure"
+  },
+  {
+    "Index": 8,
+    "Word": "abrasive",
+    "Meaning (Full)": "Rough, suitable for grinding or polishing (such as sandpaper); causing irritation or annoyance",
+    "Meaning (Short)": "Rough, suitable for grinding or polishing (such as sandpaper); causing irritation or\u2026",
+    "PronunciationIPA": "/\u0259\u02c8b\u0279e\u026a.s\u026av/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abrasive"
+  },
+  {
+    "Index": 9,
+    "Word": "abreast",
+    "Meaning (Full)": "Side-by-side. The more common \"abreast of\" means keeping up with, staying aware of, or remaining equal in progress with.",
+    "Meaning (Short)": "Side-by-side. The more common \"abreast of\" means keeping up with, staying aware\u2026",
+    "PronunciationIPA": "/\u0259\u02c8b\u0279\u025bst/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abreast"
+  },
+  {
+    "Index": 10,
+    "Word": "abridge",
+    "Meaning (Full)": "Reduce or lessen; shorten by omitting parts throughout while retaining the main idea",
+    "Meaning (Short)": "Reduce or lessen; shorten by omitting parts throughout while retaining the main\u2026",
+    "PronunciationIPA": "/\u0259\u02c8b\u0279\u026ad\u0361\u0292/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abridge"
+  },
+  {
+    "Index": 11,
+    "Word": "abscission",
+    "Meaning (Full)": "Cutting off; sudden termination; the separation of leaves, petals, or other parts from a plant or animal",
+    "Meaning (Short)": "Cutting off; sudden termination; the separation of leaves, petals, or other parts\u2026",
+    "PronunciationIPA": "/\u00e6b\u02c8s\u026a.\u0283n\u0329/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abscission"
+  },
+  {
+    "Index": 12,
+    "Word": "abscond",
+    "Meaning (Full)": "Depart suddenly and secretively",
+    "Meaning (Short)": "Depart suddenly and secretively",
+    "PronunciationIPA": "/\u0259b\u02c8sk\u0252nd/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abscond"
+  },
+  {
+    "Index": 13,
+    "Word": "abstain",
+    "Meaning (Full)": "Hold back, refrain (especially from something bad or unhealthy); decline to vote",
+    "Meaning (Short)": "Hold back, refrain (especially from something bad or unhealthy); decline to vote",
+    "PronunciationIPA": "/\u0259b\u02c8ste\u026an/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abstain"
+  },
+  {
+    "Index": 14,
+    "Word": "abyss",
+    "Meaning (Full)": "A deep and vast space or cavity; anything profound or infinite",
+    "Meaning (Short)": "A deep and vast space or cavity; anything profound or infinite",
+    "PronunciationIPA": "/\u0259\u02c8b\u026as/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/abyss"
+  },
+  {
+    "Index": 15,
+    "Word": "accede",
+    "Meaning (Full)": "Agree, give consent; assume power (usually as \"accede to\")",
+    "Meaning (Short)": "Agree, give consent; assume power (usually as \"accede to\")",
+    "PronunciationIPA": "/\u0259k\u02c8si\u02d0d/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/accede"
+  },
+  {
+    "Index": 16,
+    "Word": "accretion",
+    "Meaning (Full)": "Gradual increase; an added part or addition",
+    "Meaning (Short)": "Gradual increase; an added part or addition",
+    "PronunciationIPA": "/\u0259.\u02c8k\u0279i.\u0283\u0259n/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/accretion"
+  },
+  {
+    "Index": 17,
+    "Word": "acerbic",
+    "Meaning (Full)": "Sour; harsh or severe",
+    "Meaning (Short)": "Sour; harsh or severe",
+    "PronunciationIPA": "/\u0259\u02c8s\u025c\u02d0(\u0279)b\u026ak/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/acerbic"
+  },
+  {
+    "Index": 18,
+    "Word": "acidulous",
+    "Meaning (Full)": "Slightly acid or sour; sharp or caustic",
+    "Meaning (Short)": "Slightly acid or sour; sharp or caustic",
+    "PronunciationIPA": "/\u0259\u02c8s\u026adj\u028al\u0259s/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/acidulous"
+  },
+  {
+    "Index": 19,
+    "Word": "acme",
+    "Meaning (Full)": "Summit, peak, highest point",
+    "Meaning (Short)": "Summit, peak, highest point",
+    "PronunciationIPA": "/\u02c8\u00e6k.mi/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/acme"
+  },
+  {
+    "Index": 20,
+    "Word": "activism",
+    "Meaning (Full)": "The practice of pursuing political or other goals through vigorous action, often including protests and demonstrations",
+    "Meaning (Short)": "The practice of pursuing political or other goals through vigorous action, often\u2026",
+    "PronunciationIPA": "/\u02c8\u00e6k.t\u026a.v\u026a.z\u0259m\u0329/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/activism"
+  },
+  {
+    "Index": 21,
+    "Word": "acumen",
+    "Meaning (Full)": "Keen, quick, accurate insight or judgment",
+    "Meaning (Short)": "Keen, quick, accurate insight or judgment",
+    "PronunciationIPA": "/\u0259\u02c8kju\u02d0m\u0259n/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/acumen"
+  },
+  {
+    "Index": 22,
+    "Word": "adhere",
+    "Meaning (Full)": "Stick (to), such as with glue, or to a plan or belief",
+    "Meaning (Short)": "Stick (to), such as with glue, or to a plan or belief",
+    "PronunciationIPA": "/\u00e6d\u02c8hi\u0279/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/adhere"
+  },
+  {
+    "Index": 23,
+    "Word": "admonish",
+    "Meaning (Full)": "Mildly scold; caution, advise, or remind to do something",
+    "Meaning (Short)": "Mildly scold; caution, advise, or remind to do something",
+    "PronunciationIPA": "/\u0259d\u02c8m\u0252n.\u026a\u0283/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/admonish"
+  },
+  {
+    "Index": 24,
+    "Word": "adulterate",
+    "Meaning (Full)": "Make impure by adding inappropriate or inferior ingredients",
+    "Meaning (Short)": "Make impure by adding inappropriate or inferior ingredients",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/adulterate"
+  },
+  {
+    "Index": 25,
+    "Word": "adumbrate",
+    "Meaning (Full)": "Give a rough outline of; foreshadow; reveal only partially; obscure",
+    "Meaning (Short)": "Give a rough outline of; foreshadow; reveal only partially; obscure",
+    "PronunciationIPA": "/\u02c8\u00e6d\u028cm\u02ccb\u0279e\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/adumbrate"
+  },
+  {
+    "Index": 26,
+    "Word": "adverse",
+    "Meaning (Full)": "Opposing, harmful",
+    "Meaning (Short)": "Opposing, harmful",
+    "PronunciationIPA": "/\u0259d\u02c8v\u025c(\u0279)s/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/adverse"
+  },
+  {
+    "Index": 27,
+    "Word": "advocate",
+    "Meaning (Full)": "Speak or argue in favor of (verb); a person who pleads for a cause or on behalf of another person (noun)",
+    "Meaning (Short)": "Speak or argue in favor of (verb); a person who pleads for\u2026",
+    "PronunciationIPA": "/\u02c8\u00e6d.v\u0259.ke\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/advocate"
+  },
+  {
+    "Index": 28,
+    "Word": "aerie",
+    "Meaning (Full)": "Dwelling or fortress built on a high place; the nest of a bird of prey, such as an eagle or hawk, built on a mountain or cliff",
+    "Meaning (Short)": "Dwelling or fortress built on a high place; the nest of a\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aerie"
+  },
+  {
+    "Index": 29,
+    "Word": "aesthetic",
+    "Meaning (Full)": "Concerning the appreciation of beauty or good taste, pertaining to the science of what is beautiful (adj); a sense of beauty and taste of a particular time and place (noun)",
+    "Meaning (Short)": "Concerning the appreciation of beauty or good taste, pertaining to the science\u2026",
+    "PronunciationIPA": "/i\u02d0s.\u02c8\u03b8e.t\u026ak/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aesthetic"
+  },
+  {
+    "Index": 30,
+    "Word": "affable",
+    "Meaning (Full)": "Warm and friendly, pleasant, approachable",
+    "Meaning (Short)": "Warm and friendly, pleasant, approachable",
+    "PronunciationIPA": "/\u02c8\u00e6f.\u0259.b\u0259l/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/affable"
+  },
+  {
+    "Index": 31,
+    "Word": "affectation",
+    "Meaning (Full)": "Fake behavior (such as in speech or dress) adopted to give a certain impression",
+    "Meaning (Short)": "Fake behavior (such as in speech or dress) adopted to give a\u2026",
+    "PronunciationIPA": "/\u02cc\u00e6f.\u025bk\u02c8te\u026a.\u0283\u0259n/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/affectation"
+  },
+  {
+    "Index": 32,
+    "Word": "aggrandize",
+    "Meaning (Full)": "Make greater; exaggerate",
+    "Meaning (Short)": "Make greater; exaggerate",
+    "PronunciationIPA": "/\u0259\u02c8\u0261\u0279\u00e6nda\u026a\u032fz/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aggrandize"
+  },
+  {
+    "Index": 33,
+    "Word": "aggregate",
+    "Meaning (Full)": "Gather together, amount to (verb); constituting a whole made up of constituent parts (adj)",
+    "Meaning (Short)": "Gather together, amount to (verb); constituting a whole made up of constituent\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aggregate"
+  },
+  {
+    "Index": 34,
+    "Word": "alacrity",
+    "Meaning (Full)": "Cheerful or speedy willingness",
+    "Meaning (Short)": "Cheerful or speedy willingness",
+    "PronunciationIPA": "[\u0259\u02c8l\u00e6k\u0279\u0268ti]",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/alacrity"
+  },
+  {
+    "Index": 35,
+    "Word": "albeit",
+    "Meaning (Full)": "Although, even though",
+    "Meaning (Short)": "Although, even though",
+    "PronunciationIPA": "/\u0254\u02d0l\u02c8bi\u02d0.\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/albeit"
+  },
+  {
+    "Index": 36,
+    "Word": "alienate",
+    "Meaning (Full)": "Cause to become unfriendly, hostile, or distant",
+    "Meaning (Short)": "Cause to become unfriendly, hostile, or distant",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/alienate"
+  },
+  {
+    "Index": 37,
+    "Word": "alleviate",
+    "Meaning (Full)": "Lessen, make easier to endure",
+    "Meaning (Short)": "Lessen, make easier to endure",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/alleviate"
+  },
+  {
+    "Index": 38,
+    "Word": "aloof",
+    "Meaning (Full)": "Distant physically or emotionally; reserved; indifferent",
+    "Meaning (Short)": "Distant physically or emotionally; reserved; indifferent",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aloof"
+  },
+  {
+    "Index": 39,
+    "Word": "amalgamate",
+    "Meaning (Full)": "Blend, merge, or unite",
+    "Meaning (Short)": "Blend, merge, or unite",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/amalgamate"
+  },
+  {
+    "Index": 40,
+    "Word": "ambiguous",
+    "Meaning (Full)": "Not clear, hard to understand, open to having several meanings or interpretations",
+    "Meaning (Short)": "Not clear, hard to understand, open to having several meanings or interpretations",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ambiguous"
+  },
+  {
+    "Index": 41,
+    "Word": "ambivalent",
+    "Meaning (Full)": "Uncertain; unable to decide, or wanting to do two contradictory things at once",
+    "Meaning (Short)": "Uncertain; unable to decide, or wanting to do two contradictory things at\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ambivalent"
+  },
+  {
+    "Index": 42,
+    "Word": "ameliorate",
+    "Meaning (Full)": "Improve; make better or more bearable",
+    "Meaning (Short)": "Improve; make better or more bearable",
+    "PronunciationIPA": "/\u0259\u02c8mi\u02d0li.\u0259\u0279e\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ameliorate"
+  },
+  {
+    "Index": 43,
+    "Word": "amortize",
+    "Meaning (Full)": "Gradually pay off a debt, or gradually write off an asset",
+    "Meaning (Short)": "Gradually pay off a debt, or gradually write off an asset",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/amortize"
+  },
+  {
+    "Index": 44,
+    "Word": "anachronism",
+    "Meaning (Full)": "Something that is not in its correct historical time; a mistake in chronology, such as by assigning a person or event to the wrong time period",
+    "Meaning (Short)": "Something that is not in its correct historical time; a mistake in\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/anachronism"
+  },
+  {
+    "Index": 45,
+    "Word": "analgesia",
+    "Meaning (Full)": "Pain relief; inability to feel pain",
+    "Meaning (Short)": "Pain relief; inability to feel pain",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/analgesia"
+  },
+  {
+    "Index": 46,
+    "Word": "analogous",
+    "Meaning (Full)": "Comparable, corresponding in some particular way (making a good analogy)",
+    "Meaning (Short)": "Comparable, corresponding in some particular way (making a good analogy)",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/analogous"
+  },
+  {
+    "Index": 47,
+    "Word": "anarchy",
+    "Meaning (Full)": "Absence of law or government; chaos, disorder",
+    "Meaning (Short)": "Absence of law or government; chaos, disorder",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/anarchy"
+  },
+  {
+    "Index": 48,
+    "Word": "annul",
+    "Meaning (Full)": "Make void or null, cancel, abolish (usually of laws or other established rules)",
+    "Meaning (Short)": "Make void or null, cancel, abolish (usually of laws or other established\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/annul"
+  },
+  {
+    "Index": 49,
+    "Word": "anodyne",
+    "Meaning (Full)": "Medicine that relieves pain (noun); soothing, relieving pain (adj)",
+    "Meaning (Short)": "Medicine that relieves pain (noun); soothing, relieving pain (adj)",
+    "PronunciationIPA": "/\u02c8\u00e6n.\u0259.da\u026an/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/anodyne"
+  },
+  {
+    "Index": 50,
+    "Word": "anoint",
+    "Meaning (Full)": "Rub or sprinkle oil on; make sacred, such as by a ceremony that includes applying oil to someone",
+    "Meaning (Short)": "Rub or sprinkle oil on; make sacred, such as by a ceremony\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/anoint"
+  },
+  {
+    "Index": 51,
+    "Word": "anomaly",
+    "Meaning (Full)": "Deviation from what is common; inconsistency",
+    "Meaning (Short)": "Deviation from what is common; inconsistency",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/anomaly"
+  },
+  {
+    "Index": 52,
+    "Word": "antagonize",
+    "Meaning (Full)": "Make hostile or unfriendly",
+    "Meaning (Short)": "Make hostile or unfriendly",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/antagonize"
+  },
+  {
+    "Index": 53,
+    "Word": "antedate",
+    "Meaning (Full)": "Be older than, precede in time; assign to an earlier date",
+    "Meaning (Short)": "Be older than, precede in time; assign to an earlier date",
+    "PronunciationIPA": "/\u02c8\u00e6nti\u02ccde\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/antedate"
+  },
+  {
+    "Index": 54,
+    "Word": "antithetical",
+    "Meaning (Full)": "Directly opposed, opposite; involving antithesis (the rhetorical act of placing two phrases opposite one another for contrast, as in love me or hate me)",
+    "Meaning (Short)": "Directly opposed, opposite; involving antithesis (the rhetorical act of placing two phrases\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/antithetical"
+  },
+  {
+    "Index": 55,
+    "Word": "apathy",
+    "Meaning (Full)": "Not caring; absence of feeling; lack of interest or concern",
+    "Meaning (Short)": "Not caring; absence of feeling; lack of interest or concern",
+    "PronunciationIPA": "/\u02c8\u00e6.p\u0259.\u03b8i/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apathy"
+  },
+  {
+    "Index": 56,
+    "Word": "apocryphal",
+    "Meaning (Full)": "Of questionable authenticity; false",
+    "Meaning (Short)": "Of questionable authenticity; false",
+    "PronunciationIPA": "/\u0259\u02c8p\u0252k\u0279\u0259f\u0259l/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apocryphal"
+  },
+  {
+    "Index": 57,
+    "Word": "apostate",
+    "Meaning (Full)": "Person who deserts a party, cause, religion, etc.",
+    "Meaning (Short)": "Person who deserts a party, cause, religion, etc.",
+    "PronunciationIPA": "/\u0259\u02c8p\u0252s.te\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apostate"
+  },
+  {
+    "Index": 58,
+    "Word": "apostle",
+    "Meaning (Full)": "Pioneer of a reform movement (originally, an early follower of Jesus)",
+    "Meaning (Short)": "Pioneer of a reform movement (originally, an early follower of Jesus)",
+    "PronunciationIPA": "/\u0259\u02c8p\u0252s(\u0259)l/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apostle"
+  },
+  {
+    "Index": 59,
+    "Word": "apposite",
+    "Meaning (Full)": "Highly appropriate, suitable, or relevant",
+    "Meaning (Short)": "Highly appropriate, suitable, or relevant",
+    "PronunciationIPA": "/\u02c8a.p\u0259.z\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apposite"
+  },
+  {
+    "Index": 60,
+    "Word": "apprise",
+    "Meaning (Full)": "Inform, give notice to",
+    "Meaning (Short)": "Inform, give notice to",
+    "PronunciationIPA": "/\u0259\u02c8p\u0279a\u026a\u032fz/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/apprise"
+  },
+  {
+    "Index": 61,
+    "Word": "approbation",
+    "Meaning (Full)": "Praise or approval, especially formal approval",
+    "Meaning (Short)": "Praise or approval, especially formal approval",
+    "PronunciationIPA": "/\u02cc\u00e6p.\u0279\u0259\u028a\u02c8be\u026a.\u0283\u0259n/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/approbation"
+  },
+  {
+    "Index": 62,
+    "Word": "appropriate",
+    "Meaning (Full)": "Set aside or authorize (such as money) for a particular purpose; take for one's own use",
+    "Meaning (Short)": "Set aside or authorize (such as money) for a particular purpose; take\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/appropriate"
+  },
+  {
+    "Index": 63,
+    "Word": "arbiter",
+    "Meaning (Full)": "Judge, umpire, person empowered to decide matters at hand",
+    "Meaning (Short)": "Judge, umpire, person empowered to decide matters at hand",
+    "PronunciationIPA": "/\u02c8\u0251\u02d0b\u026at\u0259(\u0279)/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/arbiter"
+  },
+  {
+    "Index": 64,
+    "Word": "arcane",
+    "Meaning (Full)": "Known or understood by only a few; obscure, secret",
+    "Meaning (Short)": "Known or understood by only a few; obscure, secret",
+    "PronunciationIPA": "/\u0251\u0279\u02c8ke\u026an/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/arcane"
+  },
+  {
+    "Index": 65,
+    "Word": "archaic",
+    "Meaning (Full)": "Characteristic of an earlier period, ancient, primitive",
+    "Meaning (Short)": "Characteristic of an earlier period, ancient, primitive",
+    "PronunciationIPA": "/\u0251\u02d0.\u02c8ke\u026a.\u026ak/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/archaic"
+  },
+  {
+    "Index": 66,
+    "Word": "ardent",
+    "Meaning (Full)": "Very passionate, devoted, or enthusiastic",
+    "Meaning (Short)": "Very passionate, devoted, or enthusiastic",
+    "PronunciationIPA": "/\u02c8\u0251\u02d0d\u0259nt/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ardent"
+  },
+  {
+    "Index": 67,
+    "Word": "arduous",
+    "Meaning (Full)": "Very difficult, strenuous; severe, hard to endure",
+    "Meaning (Short)": "Very difficult, strenuous; severe, hard to endure",
+    "PronunciationIPA": "/\u02c8\u0251\u02d0dju\u02d0\u0259s/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/arduous"
+  },
+  {
+    "Index": 68,
+    "Word": "arrogate",
+    "Meaning (Full)": "Claim or take presumptuously or without the right to do so",
+    "Meaning (Short)": "Claim or take presumptuously or without the right to do so",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/arrogate"
+  },
+  {
+    "Index": 69,
+    "Word": "articulate",
+    "Meaning (Full)": "Using language in a clear, fluent way (adj); speak distinctly or give clarity to an idea (verb)",
+    "Meaning (Short)": "Using language in a clear, fluent way (adj); speak distinctly or give\u2026",
+    "PronunciationIPA": "/\u0251\u02d0(\u0279)\u02c8t\u026ak.j\u028a.l\u0259t/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/articulate"
+  },
+  {
+    "Index": 70,
+    "Word": "artifact",
+    "Meaning (Full)": "Any object made by humans, especially those from an earlier time, such as those excavated by archaeologists",
+    "Meaning (Short)": "Any object made by humans, especially those from an earlier time, such\u2026",
+    "PronunciationIPA": "/\u02c8\u0251\u02d0t\u026af\u00e6kt/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/artifact"
+  },
+  {
+    "Index": 71,
+    "Word": "artless",
+    "Meaning (Full)": "Free of deceit or craftiness, natural, genuine; lacking skill or knowledge, crude, uncultured",
+    "Meaning (Short)": "Free of deceit or craftiness, natural, genuine; lacking skill or knowledge, crude,\u2026",
+    "PronunciationIPA": "/\u02c8\u0251\u0279t.l\u026as/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/artless"
+  },
+  {
+    "Index": 72,
+    "Word": "ascertain",
+    "Meaning (Full)": "Find out with certainty",
+    "Meaning (Short)": "Find out with certainty",
+    "PronunciationIPA": "/\u02cc\u00e6s\u0259\u02c8te\u026an/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ascertain"
+  },
+  {
+    "Index": 73,
+    "Word": "ascetic",
+    "Meaning (Full)": "abstinent or austere in lifestyle (adj); a person who leads an austere and simple life without material pleasures, esp. someone who does this for religious reasons",
+    "Meaning (Short)": "abstinent or austere in lifestyle (adj); a person who leads an austere\u2026",
+    "PronunciationIPA": "/\u0259\u02c8s\u025b.t\u026ak/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ascetic"
+  },
+  {
+    "Index": 74,
+    "Word": "ascribe",
+    "Meaning (Full)": "Assign or credit to a certain cause or source",
+    "Meaning (Short)": "Assign or credit to a certain cause or source",
+    "PronunciationIPA": "/\u0259\u02c8sk\u0279a\u026ab/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/ascribe"
+  },
+  {
+    "Index": 75,
+    "Word": "aseptic",
+    "Meaning (Full)": "Free from germs",
+    "Meaning (Short)": "Free from germs",
+    "PronunciationIPA": "/\u0259\u02c8s\u025bpt\u026ak/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aseptic"
+  },
+  {
+    "Index": 76,
+    "Word": "asperity",
+    "Meaning (Full)": "Rigor, severity; harshness or sharpness of tone; roughness of surface",
+    "Meaning (Short)": "Rigor, severity; harshness or sharpness of tone; roughness of surface",
+    "PronunciationIPA": "/\u0259\u02c8sp\u025b\u0279\u026ati/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/asperity"
+  },
+  {
+    "Index": 77,
+    "Word": "aspersions",
+    "Meaning (Full)": "Damaging remarks, defamation, slander",
+    "Meaning (Short)": "Damaging remarks, defamation, slander",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aspersions"
+  },
+  {
+    "Index": 78,
+    "Word": "assail",
+    "Meaning (Full)": "Attack violently, assault",
+    "Meaning (Short)": "Attack violently, assault",
+    "PronunciationIPA": "/\u0259\u02c8se\u026al/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/assail"
+  },
+  {
+    "Index": 79,
+    "Word": "assiduous",
+    "Meaning (Full)": "Persevering, diligent, constant",
+    "Meaning (Short)": "Persevering, diligent, constant",
+    "PronunciationIPA": "/\u0259\u02c8s\u026adju\u02d0\u0259s/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/assiduous"
+  },
+  {
+    "Index": 80,
+    "Word": "assuage",
+    "Meaning (Full)": "Make milder, relieve; soothe, pacify, or calm",
+    "Meaning (Short)": "Make milder, relieve; soothe, pacify, or calm",
+    "PronunciationIPA": "/\u0259\u02c8swe\u026ad\u0292/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/assuage"
+  },
+  {
+    "Index": 81,
+    "Word": "attenuate",
+    "Meaning (Full)": "Weaken or thin out",
+    "Meaning (Short)": "Weaken or thin out",
+    "PronunciationIPA": "/\u0259\u02c8t\u025bn.ju\u02d0.e\u026at/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/attenuate"
+  },
+  {
+    "Index": 82,
+    "Word": "attuned",
+    "Meaning (Full)": "In harmony; in sympathetic relationship",
+    "Meaning (Short)": "In harmony; in sympathetic relationship",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/attuned"
+  },
+  {
+    "Index": 83,
+    "Word": "audacious",
+    "Meaning (Full)": "Very bold or brave, often in a rude or reckless way; extremely original",
+    "Meaning (Short)": "Very bold or brave, often in a rude or reckless way; extremely\u2026",
+    "PronunciationIPA": "/\u0254\u02d0\u02c8de\u026a\u0283\u0259s/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/audacious"
+  },
+  {
+    "Index": 84,
+    "Word": "augment",
+    "Meaning (Full)": "Make larger",
+    "Meaning (Short)": "Make larger",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/augment"
+  },
+  {
+    "Index": 85,
+    "Word": "augury",
+    "Meaning (Full)": "Telling the future, such as through supernatural means",
+    "Meaning (Short)": "Telling the future, such as through supernatural means",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/augury"
+  },
+  {
+    "Index": 86,
+    "Word": "august",
+    "Meaning (Full)": "Venerable, majestic; inspiring admiration",
+    "Meaning (Short)": "Venerable, majestic; inspiring admiration",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/august"
+  },
+  {
+    "Index": 87,
+    "Word": "austere",
+    "Meaning (Full)": "Severe in manner or appearance; very self disciplined, ascetic; without luxury or ease; sober or serious",
+    "Meaning (Short)": "Severe in manner or appearance; very self disciplined, ascetic; without luxury or\u2026",
+    "PronunciationIPA": "/\u0252st\u026a\u0259(\u0279)/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/austere"
+  },
+  {
+    "Index": 88,
+    "Word": "autonomous",
+    "Meaning (Full)": "Self-governing, independent",
+    "Meaning (Short)": "Self-governing, independent",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/autonomous"
+  },
+  {
+    "Index": 89,
+    "Word": "avarice",
+    "Meaning (Full)": "Insatiable greed; a miserly desire to hoard wealth",
+    "Meaning (Short)": "Insatiable greed; a miserly desire to hoard wealth",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/avarice"
+  },
+  {
+    "Index": 90,
+    "Word": "aver",
+    "Meaning (Full)": "Declare or affirm with confidence",
+    "Meaning (Short)": "Declare or affirm with confidence",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/aver"
+  },
+  {
+    "Index": 91,
+    "Word": "avid",
+    "Meaning (Full)": "Enthusiastic, dedicated, passionate; excessively desirous",
+    "Meaning (Short)": "Enthusiastic, dedicated, passionate; excessively desirous",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/avid"
+  },
+  {
+    "Index": 92,
+    "Word": "axiom",
+    "Meaning (Full)": "Self-evident truth requiring no proof; universally or generally accepted principle",
+    "Meaning (Short)": "Self-evident truth requiring no proof; universally or generally accepted principle",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/axiom"
+  },
+  {
+    "Index": 93,
+    "Word": "balk",
+    "Meaning (Full)": "Refuse to proceed or to do something",
+    "Meaning (Short)": "Refuse to proceed or to do something",
+    "PronunciationIPA": "/b\u0254\u02d0k/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/balk"
+  },
+  {
+    "Index": 94,
+    "Word": "balloon",
+    "Meaning (Full)": "Swell or puff out; increase rapidly",
+    "Meaning (Short)": "Swell or puff out; increase rapidly",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/balloon"
+  },
+  {
+    "Index": 95,
+    "Word": "banal",
+    "Meaning (Full)": "Lacking freshness and originality; clich\u00e9",
+    "Meaning (Short)": "Lacking freshness and originality; clich\u00e9",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/banal"
+  },
+  {
+    "Index": 96,
+    "Word": "bane",
+    "Meaning (Full)": "Something that ruins or spoils",
+    "Meaning (Short)": "Something that ruins or spoils",
+    "PronunciationIPA": "/be\u026an/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/bane"
+  },
+  {
+    "Index": 97,
+    "Word": "base",
+    "Meaning (Full)": "Morally low, mean, dishonorable; of little or no value; crude and unrefined; counterfeit",
+    "Meaning (Short)": "Morally low, mean, dishonorable; of little or no value; crude and unrefined;\u2026",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/base"
+  },
+  {
+    "Index": 98,
+    "Word": "baying",
+    "Meaning (Full)": "Howling in a deep way, like a dog or wolf",
+    "Meaning (Short)": "Howling in a deep way, like a dog or wolf",
+    "PronunciationIPA": "",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/baying"
+  },
+  {
+    "Index": 99,
+    "Word": "belie",
+    "Meaning (Full)": "Contradict or misrepresent",
+    "Meaning (Short)": "Contradict or misrepresent",
+    "PronunciationIPA": "/b\u026a\u02c8l\u028c\u026a/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/belie"
+  },
+  {
+    "Index": 100,
+    "Word": "beneficent",
+    "Meaning (Full)": "Doing good",
+    "Meaning (Short)": "Doing good",
+    "PronunciationIPA": "/b\u0259\u02c8n\u025bf.\u0259.s\u0259nt/",
+    "PronunciationURL": "https://dictionary.cambridge.org/dictionary/english/beneficent"
+  }
+]
