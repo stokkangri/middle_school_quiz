@@ -1,359 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Arithmetic Progression (AP) Practice</title>
+  <title>Arithmetic Progression (AP) Interactive Practice</title>
   <style>
-    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    body { margin: 0; background: #0b1220; color: #e8eefc; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 20px; }
-    .card { background: #111b2e; border: 1px solid #223355; border-radius: 12px; padding: 16px; margin: 14px 0; }
-    h1, h2 { margin: 8px 0 12px; }
-    .muted { color: #a9b7d6; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
-    @media (min-width: 860px) {
-      .grid { grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
-    }
-    .pill { display:inline-block; padding: 6px 10px; border-radius: 999px; background: #1a2a47; border: 1px solid #2a3e69; font-size: 12px; margin-right: 8px;}
-    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    input[type="text"]{
-      width: 320px; max-width: 100%;
-      padding: 10px 12px; border-radius: 10px;
-      border: 1px solid #2a3e69; background: #0b1220; color: #e8eefc;
-      outline: none;
-    }
-    button{
-      padding: 10px 12px; border-radius: 10px;
-      border: 1px solid #2a3e69; background: #182946; color: #e8eefc;
-      cursor: pointer;
-    }
-    button:hover{ background:#1d3357; }
-    button:disabled{ opacity:.55; cursor:not-allowed; }
-    .ok { color: #7dffb2; font-weight: 600; }
-    .bad { color: #ff8f8f; font-weight: 600; }
-    .box { padding: 10px 12px; border-radius: 10px; border: 1px dashed #2a3e69; background: #0b1220; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-    .small { font-size: 13px; }
-    .hr { height:1px; background:#223355; margin: 12px 0; }
-    .right { text-align:right; }
+    body { font-family: Arial, sans-serif; background:#0b1020; color:#e8ecff; margin:0; padding:20px; }
+    h1 { margin-top:0; }
+    .card { background:#121a33; border-radius:10px; padding:16px; margin-bottom:16px; }
+    .btn { padding:8px 12px; margin:4px; cursor:pointer; border-radius:6px; border:none; }
+    .btn-primary { background:#7aa2ff; }
+    .btn-good { background:#2dd4bf; }
+    .btn-bad { background:#fb7185; }
+    input { padding:6px; width:200px; }
+    .question { font-size:18px; }
+    .small { font-size:12px; opacity:0.8; }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <h1>Arithmetic Progression (AP) Practice</h1>
-    <p class="muted">Fundamentals + interactive questions (Prev / Next / Reveal) with scoring.</p>
 
-    <!-- Fundamentals -->
-    <div class="card">
-      <h2>Fundamentals (Quick Reference)</h2>
-      <div class="row">
-        <span class="pill">AP: constant difference</span>
-        <span class="pill">Term formula</span>
-        <span class="pill">Sum formula</span>
-        <span class="pill">Find n / find d</span>
-      </div>
-      <div class="hr"></div>
-      <div class="grid">
-        <div class="box">
-          <div><b>Definition:</b> A sequence is an <b>Arithmetic Progression</b> if the difference between consecutive terms is constant.</div>
-          <div class="mono small" style="margin-top:8px;">
-            d = a₂ − a₁ = a₃ − a₂ = ...
-          </div>
+<h1>Arithmetic Progression (AP) – Practice Quiz</h1>
 
-          <div style="margin-top:10px;"><b>n-th term:</b></div>
-          <div class="mono small">
-            aₙ = a + (n − 1)d
-          </div>
+<div class="card">
+  <h3>AP Fundamentals</h3>
+  <ul>
+    <li>n-th term: aₙ = a + (n − 1)d</li>
+    <li>Sum of n terms: Sₙ = n/2 · (2a + (n − 1)d)</li>
+    <li>Arithmetic Mean of x and y = (x + y)/2</li>
+  </ul>
+</div>
 
-          <div style="margin-top:10px;"><b>Sum of first n terms:</b></div>
-          <div class="mono small">
-            Sₙ = n/2 · (2a + (n − 1)d)  &nbsp;&nbsp;or&nbsp;&nbsp;  Sₙ = n/2 · (a₁ + aₙ)
-          </div>
+<div class="card">
+  <div id="qno"></div>
+  <div id="qtext" class="question"></div>
+  <input id="answer" placeholder="Enter your answer" />
+  <br><br>
+  <button class="btn btn-good" onclick="check()">Check</button>
+  <button class="btn" onclick="reveal()">Reveal</button>
+  <button class="btn btn-primary" onclick="next()">Next</button>
+  <div id="feedback" class="small"></div>
+  <div id="explanation" class="small"></div>
+</div>
 
-          <div style="margin-top:10px;"><b>Common tricks:</b></div>
-          <ul class="small">
-            <li>To find <b>d</b>, subtract any two consecutive terms.</li>
-            <li>To find <b>a</b> (first term), plug one known term into <span class="mono">aₙ = a + (n−1)d</span>.</li>
-            <li>If asked “which term is X?”, set <span class="mono">aₙ = X</span> and solve for <span class="mono">n</span>.</li>
-          </ul>
-        </div>
+<script>
+const questions = [
+  { q:"Find the 10th term of the AP: 2, 5, 8, …", a:"29", e:"a=2, d=3 → a₁₀ = 2 + 9×3 = 29" },
+  { q:"Find the common difference: 15, 12, 9, …", a:"-3", e:"12−15 = −3" },
+  { q:"Find the sum of first 10 terms of AP: 1, 4, 7, …", a:"145", e:"S₁₀ = 10/2(2 + 9×3) = 5×29 = 145" }
+];
 
-        <div class="box">
-          <div><b>How scoring works:</b></div>
-          <ul class="small">
-            <li>Type your answer and click <b>Check</b>.</li>
-            <li>If correct, you get 1 point (only once per question).</li>
-            <li><b>Reveal</b> shows the full explanation.</li>
-          </ul>
-          <div class="hr"></div>
-          <div class="small muted">
-            Tip: Use plain numbers. Fractions like 1/2 are okay. For algebra, type like <span class="mono">3n+1</span>.
-          </div>
-        </div>
-      </div>
-    </div>
+let i = 0;
 
-    <!-- Quiz -->
-    <div class="card">
-      <div class="row" style="justify-content:space-between;">
-        <div>
-          <span class="pill" id="qIndexPill">Question 1/1</span>
-          <span class="pill">Score: <span id="score">0</span></span>
-          <span class="pill">Attempted: <span id="attempted">0</span></span>
-        </div>
-        <div class="right small muted">Arithmetic Progression Practice</div>
-      </div>
+function render(){
+  document.getElementById("qno").innerText = "Question " + (i+1) + " of " + questions.length;
+  document.getElementById("qtext").innerText = questions[i].q;
+  document.getElementById("answer").value = "";
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("explanation").innerText = "";
+}
 
-      <div class="hr"></div>
+function check(){
+  const ans = document.getElementById("answer").value.trim();
+  if(ans === questions[i].a){
+    document.getElementById("feedback").innerText = "Correct ✅";
+  } else {
+    document.getElementById("feedback").innerText = "Incorrect ❌";
+  }
+}
 
-      <h2 id="qTitle">Question</h2>
-      <div class="box" id="qPrompt"></div>
+function reveal(){
+  document.getElementById("explanation").innerText = "Explanation: " + questions[i].e;
+}
 
-      <div class="row" style="margin-top:12px;">
-        <input id="answerInput" type="text" placeholder="Type your answer (e.g., 5 or 3n+1 or 400)" />
-        <button id="checkBtn">Check</button>
-        <button id="revealBtn">Reveal</button>
-      </div>
+function next(){
+  i = (i + 1) % questions.length;
+  render();
+}
 
-      <div class="row" style="margin-top:10px;">
-        <div id="feedback" class="small"></div>
-      </div>
+render();
+</script>
 
-      <div id="revealBox" class="box" style="margin-top:12px; display:none;">
-        <div><b>Explanation</b></div>
-        <div class="hr"></div>
-        <div id="explanation" class="small"></div>
-        <div class="hr"></div>
-        <div class="small"><b>Expected answer:</b> <span class="mono" id="expectedAnswer"></span></div>
-      </div>
-
-      <div class="row" style="justify-content:space-between; margin-top:14px;">
-        <button id="prevBtn">⬅ Prev</button>
-        <div class="small muted">Use Prev/Next to navigate. Your score is saved in this page until refresh.</div>
-        <button id="nextBtn">Next ➡</button>
-      </div>
-    </div>
-
-    <div class="card small muted">
-      Source inspiration: GeeksforGeeks AP practice questions page. (Questions here are paraphrased and explanations are re-written.)
-    </div>
-  </div>
-
-  <script>
-    // --- Question bank (paraphrased) ---
-    const QUESTIONS = [
-      {
-        title: "Find the common difference",
-        prompt: "Find the common difference (d) of the AP: 1, 6, 11, 16, 21",
-        answer: "5",
-        explain:
-          "In an AP, the common difference d is the difference between consecutive terms. " +
-          "Compute 6 − 1 = 5 (and you can verify 11 − 6 = 5). So d = 5."
-      },
-      {
-        title: "Reconstruct the AP from a term and d",
-        prompt: "The 4th term is 8 and the common difference is 2. Write the first 8 terms of the AP.",
-        answer: "2,4,6,8,10,12,14,16",
-        explain:
-          "Use aₙ = a + (n−1)d. For n=4: a₄ = a + 3d = 8. With d=2: a + 3×2 = 8 ⇒ a = 2. " +
-          "Now add 2 repeatedly: 2,4,6,8,10,12,14,16."
-      },
-      {
-        title: "Find a later term",
-        prompt: "Find the 50th term of the sequence: 293, 290, 287, 284, 281, ...",
-        answer: "146",
-        explain:
-          "Here a = 293. The difference is d = 290 − 293 = −3. " +
-          "a₅₀ = a + (50−1)d = 293 + 49×(−3) = 293 − 147 = 146."
-      },
-      {
-        title: "General term (nth term) formula",
-        prompt: "Find the general term aₙ for: 4, 7, 10, 13, ...",
-        answer: "3n+1",
-        explain:
-          "First term a = 4 and common difference d = 3. " +
-          "aₙ = a + (n−1)d = 4 + (n−1)3 = 4 + 3n − 3 = 3n + 1."
-      },
-      {
-        title: "Sum of first n odd numbers",
-        prompt: "What is the sum of the first 20 odd natural numbers?",
-        answer: "400",
-        explain:
-          "Odd numbers form an AP: 1,3,5,... with a=1 and d=2. " +
-          "20th term: a₂₀ = 1 + (20−1)×2 = 39. " +
-          "Sum: S₂₀ = 20/2 × (a₁ + a₂₀) = 10 × (1+39) = 400."
-      },
-      {
-        title: "Which term equals a value?",
-        prompt: "Which term of the AP 30, 27, 24, ... equals 0?",
-        answer: "11",
-        explain:
-          "a = 30, d = −3. Set aₙ = 0: 0 = 30 + (n−1)(−3). " +
-          "So 0 = 30 − 3n + 3 = 33 − 3n ⇒ 3n = 33 ⇒ n = 11."
-      },
-      {
-        title: "First negative term index",
-        prompt: "For the AP 36, 30, 24, ... find which term is the first negative term.",
-        answer: "8",
-        explain:
-          "a=36, d=−6. We want the first n such that aₙ < 0. " +
-          "aₙ = 36 + (n−1)(−6) = 36 − 6n + 6 = 42 − 6n. " +
-          "42 − 6n < 0 ⇒ n > 7, so the first integer n is 8."
-      },
-      {
-        title: "Difference between terms",
-        prompt: "If the common difference is 4, find a₂₀ − a₁₅.",
-        answer: "20",
-        explain:
-          "Write a₂₀ = a + 19d and a₁₅ = a + 14d. " +
-          "Subtract: a₂₀ − a₁₅ = (a+19d) − (a+14d) = 5d = 5×4 = 20."
-      },
-      {
-        title: "Term offset comparison",
-        prompt: "In the AP 3, 8, 13, ... which term is 55 more than the 20th term?",
-        answer: "31",
-        explain:
-          "Here a=3, d=5. a₂₀ = a + 19d. We need aₙ = a₂₀ + 55. " +
-          "So a + (n−1)d = a + 19d + 55 ⇒ (n−1)d = 19d + 55. " +
-          "With d=5: 5(n−1) = 95 + 55 = 150 ⇒ n−1=30 ⇒ n=31."
-      },
-      {
-        title: "Solve for a from two terms",
-        prompt: "If the 3rd term is 12 and the 7th term is 24, find the first term.",
-        answer: "6",
-        explain:
-          "Use a₃ = a + 2d = 12 and a₇ = a + 6d = 24. " +
-          "Subtract: (a+6d) − (a+2d) = 24−12 ⇒ 4d=12 ⇒ d=3. " +
-          "Then a + 2×3 = 12 ⇒ a = 6."
-      }
-    ];
-
-    // --- State ---
-    let idx = 0;
-    let score = 0;
-    let attempted = 0;
-
-    // Track per-question: attempted, correct
-    const perQ = QUESTIONS.map(() => ({ attempted: false, correct: false }));
-
-    // --- Helpers ---
-    function normalize(s) {
-      return (s || "")
-        .toString()
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, "")      // remove spaces
-        .replace(/×/g, "*")
-        .replace(/−/g, "-");
-    }
-
-    function isCorrect(user, expected) {
-      const u = normalize(user);
-      const e = normalize(expected);
-
-      // Allow small formatting differences for lists (commas)
-      // Example: "2,4,6,8" vs "2, 4, 6, 8"
-      if (e.includes(",")) return u === e;
-
-      // Allow equivalent simple forms like "3n+1" vs "1+3n"
-      // Very lightweight: accept if exactly matches, or matches after reordering common pattern.
-      // (For robust algebra equivalence you'd need a parser—overkill for this.)
-      if (e === "3n+1") {
-        return u === "3n+1" || u === "1+3n";
-      }
-
-      return u === e;
-    }
-
-    // --- UI refs ---
-    const qIndexPill = document.getElementById("qIndexPill");
-    const scoreEl = document.getElementById("score");
-    const attemptedEl = document.getElementById("attempted");
-    const qTitle = document.getElementById("qTitle");
-    const qPrompt = document.getElementById("qPrompt");
-    const answerInput = document.getElementById("answerInput");
-    const feedback = document.getElementById("feedback");
-    const revealBox = document.getElementById("revealBox");
-    const explanation = document.getElementById("explanation");
-    const expectedAnswer = document.getElementById("expectedAnswer");
-
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const checkBtn = document.getElementById("checkBtn");
-    const revealBtn = document.getElementById("revealBtn");
-
-    // --- Render ---
-    function render() {
-      const q = QUESTIONS[idx];
-      qIndexPill.textContent = `Question ${idx + 1}/${QUESTIONS.length}`;
-      scoreEl.textContent = score;
-      attemptedEl.textContent = attempted;
-
-      qTitle.textContent = q.title;
-      qPrompt.textContent = q.prompt;
-
-      answerInput.value = "";
-      feedback.textContent = "";
-      revealBox.style.display = "none";
-
-      prevBtn.disabled = idx === 0;
-      nextBtn.disabled = idx === QUESTIONS.length - 1;
-    }
-
-    function showReveal() {
-      const q = QUESTIONS[idx];
-      explanation.textContent = q.explain;
-      expectedAnswer.textContent = q.answer;
-      revealBox.style.display = "block";
-    }
-
-    // --- Events ---
-    checkBtn.addEventListener("click", () => {
-      const q = QUESTIONS[idx];
-      const userAns = answerInput.value;
-
-      // Count attempt once per question (first time they click Check)
-      if (!perQ[idx].attempted) {
-        perQ[idx].attempted = true;
-        attempted += 1;
-      }
-
-      if (isCorrect(userAns, q.answer)) {
-        // Score once per question
-        if (!perQ[idx].correct) {
-          perQ[idx].correct = true;
-          score += 1;
-        }
-        feedback.innerHTML = `<span class="ok">Correct ✅</span>`;
-      } else {
-        feedback.innerHTML = `<span class="bad">Not correct ❌</span> <span class="muted">(Try again or hit Reveal)</span>`;
-      }
-
-      scoreEl.textContent = score;
-      attemptedEl.textContent = attempted;
-    });
-
-    revealBtn.addEventListener("click", showReveal);
-
-    prevBtn.addEventListener("click", () => {
-      idx = Math.max(0, idx - 1);
-      render();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      idx = Math.min(QUESTIONS.length - 1, idx + 1);
-      render();
-    });
-
-    // Enter key triggers Check
-    answerInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") checkBtn.click();
-    });
-
-    // Init
-    render();
-  </script>
 </body>
 </html>
