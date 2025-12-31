@@ -43,10 +43,141 @@
 </div>
 
 <script>
+//const questions = [
+//  { q:"Find the 10th term of the AP: 2, 5, 8, …", a:"29", e:"a=2, d=3 → a₁₀ = 2 + 9×3 = 29" },
+//  { q:"Find the common difference: 15, 12, 9, …", a:"-3", e:"12−15 = −3" },
+//  { q:"Find the sum of first 10 terms of AP: 1, 4, 7, …", a:"145", e:"S₁₀ = 10/2(2 + 9×3) = 5×29 = 145" }
+//];
+
 const questions = [
-  { q:"Find the 10th term of the AP: 2, 5, 8, …", a:"29", e:"a=2, d=3 → a₁₀ = 2 + 9×3 = 29" },
-  { q:"Find the common difference: 15, 12, 9, …", a:"-3", e:"12−15 = −3" },
-  { q:"Find the sum of first 10 terms of AP: 1, 4, 7, …", a:"145", e:"S₁₀ = 10/2(2 + 9×3) = 5×29 = 145" }
+  // Solved Questions (with answers and explanations)
+  {
+    q: "Find the common difference from the given AP: 1, 6, 11, 16, 21.",
+    a: "5",
+    e: "Subtract consecutive terms: d = 6 − 1 = 5." 
+  },
+  {
+    q: "If the 4th term of an AP is 8 with a common difference of 2, find the progression up to 8 terms.",
+    a: "2, 4, 6, 8, 10, 12, 14, 16",
+    e: "a4 = 8 with d = 2 → first term a = 2 → list up to 8 terms." 
+  },
+  {
+    q: "Find the 40th term in the sequence 2, 5, 8, 11, 14, ...",
+    a: "119",
+    e: "a = 2, d = 3 → a40 = 2 + 39×3 = 119." 
+  },
+  {
+    q: "Find the 9th term in the sequence 1/3, 2/3, 1, 4/3, ...",
+    a: "3",
+    e: "a = 1/3, d = 1/3 → a9 = 1/3 + 8×(1/3) = 9/3 = 3." 
+  },
+  {
+    q: "Find the 15th term of the sequence 9, 7, 5, 3, 1, ...",
+    a: "-19",
+    e: "a=9, d=−2 → a15=9+(14×−2) = −19." 
+  },
+  {
+    q: "Find the general term of the series 4, 7, 10, 13, ...",
+    a: "3n + 1",
+    e: "a=4, d=3 → an = 4 + (n−1)×3 = 3n + 1." 
+  },
+  {
+    q: "Find the 50th term of the sequence 293, 290, 287, 284, 281, ...",
+    a: "146",
+    e: "a=293, d=−3 → a50=293+49×(−3) = 146." 
+  },
+  {
+    q: "Find the 100th term of the sequence 100, 50, 0, −50, −100, ...",
+    a: "-4850",
+    e: "a=100, d=−50 → a100=100+99×(−50)=−4850." 
+  },
+  {
+    q: "What is the sum of the first 20 odd natural numbers?",
+    a: "400",
+    e: "Sum of first 20 odd numbers = 20/2(1+39) = 10×40 = 400." 
+  },
+  {
+    q: "Which term of the AP 30, 27, 24, ... is 0?",
+    a: "11",
+    e: "a=30, d=−3 → solve 30+(n−1)(−3)=0 → n=11." 
+  },
+  {
+    q: "Find the first negative term of the AP 36, 30, 24, ...",
+    a: "8",
+    e: "a=36, d=−6 → first negative when n>7 → term 8 is negative." 
+  },
+  {
+    q: "If the common difference of an AP is 4, then a20 − a15 is?",
+    a: "20",
+    e: "a20−a15 = (a+19d) − (a+14d) = 5d = 20." 
+  },
+  {
+    q: "Which term of the AP 3, 8, 13, ... is 55 more than its 20th term?",
+    a: "31",
+    e: "a=3, d=5 → solve a31 = a20 + 55 → n=31." 
+  },
+  {
+    q: "Determine the sum of the first 18 terms of the AP 12b, 8b, 4b, ...",
+    a: "-396b",
+    e: "a=12b, d=−4b → Sum = (18/2)[2×12b+(17×−4b)] = −396b." 
+  },
+  {
+    q: "If the 3rd term is 12 and the 7th term is 24, what is the first term?",
+    a: "6",
+    e: "Solve a+2d=12 and a+6d=24 → d=3, a=6." 
+  },
+
+  // Unsolved Questions (with answer key)
+  {
+    q: "In an AP, if d=8, n=10, and an=80, find the value of a.",
+    a: "8",
+    e: "Answer key: a = 8." 
+  },
+  {
+    q: "Find the 19th term of the AP: 5, 11, 17, 23, ... ?",
+    a: "113",
+    e: "Answer key: 19th term = 113." 
+  },
+  {
+    q: "What is the sum of the first 30 even natural numbers?",
+    a: "930",
+    e: "Answer key: Sum = 930." 
+  },
+  {
+    q: "Which term of the AP 13, 18, 23, ... is 80 more than its 20th term?",
+    a: "36",
+    e: "Answer key: 36th term is 80 more than the 20th." 
+  },
+  {
+    q: "If the sum of first p terms of an AP is ap^2 + bp, find its common difference.",
+    a: "2a",
+    e: "Answer key: common difference d = 2a." 
+  },
+  {
+    q: "The first term of an AP is p and its common difference is q. Find its 10th term.",
+    a: "p + 9q",
+    e: "Answer key: 10th term = p + 9q." 
+  },
+  {
+    q: "If 7 times the 7th term equals 11 times the 11th term, what is the 18th term?",
+    a: "34d",
+    e: "Answer key: 18th term = 34d." 
+  },
+  {
+    q: "How many terms of the AP 18, 16, 14, ... must be taken so that their sum is zero?",
+    a: "19",
+    e: "Answer key: 19 terms." 
+  },
+  {
+    q: "4th term of an AP is zero. Prove that the 25th term is three times its 11th term.",
+    a: "True",
+    e: "Answer key: 25th = 3×11th term." 
+  },
+  {
+    q: "Find the first term given: the 8th term is zero and the 12th term is 20, and if the 5th term is 15 and the sum of the first 10 terms is 120.",
+    a: "Multiple conditions",
+    e: "Answer key provided on page." 
+  }
 ];
 
 let i = 0;
