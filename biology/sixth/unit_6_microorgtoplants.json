@@ -1,0 +1,173 @@
+{
+  "Unit_6_Microorganisms_to_Plants_Quiz": [
+    {
+      "subject": "Viruses and Prokaryotes",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the name of the protein coat that surrounds a virus particle?",
+          "options": [
+            "Capsid",
+            "Envelope",
+            "Prophage",
+            "Membrane"
+          ],
+          "answer": "Capsid",
+          "citation": "[20.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "By what process do most prokaryotes replicate their DNA and divide in half to produce two identical daughter cells?",
+          "answer": "Binary fission",
+          "citation": "[20.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which group of prokaryotes are often found in extreme environments and have cell walls that lack peptidoglycan?",
+          "options": [
+            "Bacteria",
+            "Archaea",
+            "Eukarya",
+            "Viruses"
+          ],
+          "answer": "Archaea",
+          "citation": "[20.2]"
+        }
+      ]
+    },
+    {
+      "subject": "Protists and Fungi",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which specialized structure do amoebas use for movement and capturing food?",
+          "options": [
+            "Cilia",
+            "Flagella",
+            "Pseudopods",
+            "Spores"
+          ],
+          "answer": "Pseudopods",
+          "citation": "[21.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the densely branched network of hyphae that makes up the body of a fungus?",
+          "answer": "Mycelium",
+          "citation": "[21.4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which complex carbohydrate is found in the cell walls of fungi and the exoskeletons of insects?",
+          "options": [
+            "Cellulose",
+            "Chitin",
+            "Glucose",
+            "Lignin"
+          ],
+          "answer": "Chitin",
+          "citation": "[21.4]"
+        }
+      ]
+    },
+    {
+      "subject": "Introduction to Plants",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which group of plants lacks specialized water-conducting vascular tissue and must stay small and close to the ground?",
+          "options": [
+            "Green algae",
+            "Bryophytes",
+            "Ferns",
+            "Gymnosperms"
+          ],
+          "answer": "Bryophytes",
+          "citation": "[22.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the plant life cycle that alternates between a diploid sporophyte phase and a haploid gametophyte phase?",
+          "answer": "Alternation of generations",
+          "citation": "[22.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which structure in seed plants contains the entire male gametophyte?",
+          "options": [
+            "Ovary",
+            "Ovule",
+            "Pollen grain",
+            "Seed coat"
+          ],
+          "answer": "Pollen grain",
+          "citation": "[22.3]"
+        }
+      ]
+    },
+    {
+      "subject": "Plant Structure and Function",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "Which type of vascular tissue carries water upward from the roots to every part of the plant?",
+          "answer": "Xylem",
+          "citation": "[23.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the areas of unspecialized cells responsible for continuing growth throughout a plant's lifetime called?",
+          "options": [
+            "Dermal tissue",
+            "Ground tissue",
+            "Meristems",
+            "Vascular bundles"
+          ],
+          "answer": "Meristems",
+          "citation": "[23.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the waterproof zone in root endodermis that forces water and nutrients into the vascular cylinder?",
+          "answer": "Casparian strip",
+          "citation": "[23.2]"
+        }
+      ]
+    },
+    {
+      "subject": "Plant Reproduction and Response",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which plant hormone is a gas that stimulates fruits to ripen?",
+          "options": [
+            "Auxin",
+            "Cytokinin",
+            "Ethylene",
+            "Gibberellin"
+          ],
+          "answer": "Ethylene",
+          "citation": "[24.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the food-rich tissue that nourishes a seedling as it grows inside an angiosperm seed?",
+          "answer": "Endosperm",
+          "citation": "[24.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The tendency of a plant to grow toward a light source is known as what?",
+          "options": [
+            "Gravitropism",
+            "Phototropism",
+            "Thigmotropism",
+            "Photoperiod"
+          ],
+          "answer": "Phototropism",
+          "citation": "[24.3]"
+        }
+      ]
+    }
+  ]
+}

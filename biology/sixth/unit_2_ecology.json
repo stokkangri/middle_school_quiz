@@ -1,0 +1,150 @@
+{
+  "Unit_2_Ecology_Quiz": [
+    {
+      "subject": "The Biosphere and Energy Flow",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the name for a group of individuals that belong to the same species and live in the same area?",
+          "options": [
+            "Community",
+            "Ecosystem",
+            "Population",
+            "Biome"
+          ],
+          "answer": "Population",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes the biological, or living, influences on organisms within an ecosystem?",
+          "answer": "Biotic factors",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "On average, what percentage of the energy available within one trophic level is transferred to the next level?",
+          "options": [
+            "1 percent",
+            "10 percent",
+            "50 percent",
+            "90 percent"
+          ],
+          "answer": "10 percent",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the total amount of living tissue within a given trophic level called?",
+          "answer": "Biomass",
+          "citation": "[4]"
+        }
+      ]
+    },
+    {
+      "subject": "Cycles of Matter",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which process involves bacteria converting nitrogen gas into nitrogen compounds that plants can absorb and use?",
+          "options": [
+            "Denitrification",
+            "Photosynthesis",
+            "Nitrogen fixation",
+            "Transpiration"
+          ],
+          "answer": "Nitrogen fixation",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a nutrient whose supply limits the primary productivity of an ecosystem?",
+          "answer": "Limiting nutrient",
+          "citation": "[6]"
+        }
+      ]
+    },
+    {
+      "subject": "Ecosystems and Communities",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the process called when certain gases trap sunlight energy in Earth's atmosphere as heat?",
+          "options": [
+            "Global warming",
+            "Greenhouse effect",
+            "Climate change",
+            "Ozone depletion"
+          ],
+          "answer": "Greenhouse effect",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a symbiotic relationship in which one organism benefits and the other is neither helped nor harmed?",
+          "answer": "Commensalism",
+          "citation": "[8]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of succession occurs in an area that was only partially destroyed by a disturbance and still has soil present?",
+          "options": [
+            "Primary succession",
+            "Secondary succession",
+            "Climax community",
+            "Pioneer succession"
+          ],
+          "answer": "Secondary succession",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do scientists call the first species to populate an area during ecological succession?",
+          "answer": "Pioneer species",
+          "citation": "[9]"
+        }
+      ]
+    },
+    {
+      "subject": "Populations and Human Impact",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is a density-independent limiting factor?",
+          "options": [
+            "Competition",
+            "Predation",
+            "Parasitism",
+            "Unusual weather"
+          ],
+          "answer": "Unusual weather",
+          "citation": "[10]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the largest number of individuals of a particular species that a particular environment can support?",
+          "answer": "Carrying capacity",
+          "citation": "[11]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the process called where the concentration of a harmful substance increases in organisms at higher trophic levels?",
+          "options": [
+            "Eutrophication",
+            "Biological magnification",
+            "Desertification",
+            "Deforestation"
+          ],
+          "answer": "Biological magnification",
+          "citation": "[12]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes the splitting of ecosystems into smaller pieces, which is a major threat to biodiversity?",
+          "answer": "Habitat fragmentation",
+          "citation": "[13]"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "Unit_8_Human_Body_Quiz": [
+    {
+      "subject": "Organization and Homeostasis",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of tissue provides support for the body and connects its parts?",
+          "options": [
+            "Epithelial tissue",
+            "Connective tissue",
+            "Nervous tissue",
+            "Muscle tissue"
+          ],
+          "answer": "Connective tissue",
+          "citation": "[1, 2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a system in which the result of a process helps to limit the process itself, such as the body's method of regulating temperature?",
+          "answer": "Feedback inhibition",
+          "citation": "[3, 4]"
+        }
+      ]
+    },
+    {
+      "subject": "Digestive and Excretory Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "In which organ does most of the chemical digestion and absorption of food occur?",
+          "answer": "Small intestine",
+          "options": [
+            "Stomach",
+            "Small intestine",
+            "Large intestine",
+            "Esophagus"
+          ],
+          "citation": "[5-7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the individual units in the kidney that filter out impurities and collect wastes from the blood?",
+          "answer": "Nephrons",
+          "citation": "[8, 9]"
+        }
+      ]
+    },
+    {
+      "subject": "Nervous System",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the neuron carries impulses away from the cell body?",
+          "options": [
+            "Dendrite",
+            "Axon",
+            "Myelin sheath",
+            "Nodes"
+          ],
+          "answer": "Axon",
+          "citation": "[10, 11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the minimum level of a stimulus required to cause a nerve impulse called?",
+          "answer": "Threshold",
+          "citation": "[12, 13]"
+        }
+      ]
+    },
+    {
+      "subject": "Skeletal, Muscular, and Integumentary Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What type of joint allows for the most free movement, such as those found in the shoulders and hips?",
+          "options": [
+            "Hinge joint",
+            "Pivot joint",
+            "Ball-and-socket joint",
+            "Saddle joint"
+          ],
+          "answer": "Ball-and-socket joint",
+          "citation": "[14]"
+        },
+        {
+          "type": "short_answer",
+          "question": "According to the sliding-filament model, which two protein filaments interact to cause muscle contraction?",
+          "answer": "Actin and Myosin",
+          "citation": "[15-17]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which layer of the skin contains blood vessels, nerve endings, and glands?",
+          "options": [
+            "Epidermis",
+            "Dermis",
+            "Hypodermis",
+            "Keratin"
+          ],
+          "answer": "Dermis",
+          "citation": "[18, 19]"
+        }
+      ]
+    },
+    {
+      "subject": "Circulatory and Respiratory Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which chamber of the heart pumps oxygen-rich blood out to the rest of the body?",
+          "options": [
+            "Right atrium",
+            "Right ventricle",
+            "Left atrium",
+            "Left ventricle"
+          ],
+          "answer": "Left ventricle",
+          "citation": "[20-22]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What tiny air sacs in the lungs provide the surface area necessary for gas exchange?",
+          "answer": "Alveoli",
+          "citation": "[23-25]"
+        }
+      ]
+    },
+    {
+      "subject": "Endocrine and Reproductive Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of hormone can cross the cell membrane and bind to a receptor inside the cell to regulate gene expression?",
+          "options": [
+            "Steroid hormone",
+            "Nonsteroid hormone",
+            "Prostaglandin",
+            "Thyroxine"
+          ],
+          "answer": "Steroid hormone",
+          "citation": "[26, 27]"
+        },
+        {
+          "type": "short_answer",
+          "question": "During which phase of the menstrual cycle is a mature egg released from the ovary into the Fallopian tube?",
+          "answer": "Ovulation",
+          "citation": "[28, 29]"
+        }
+      ]
+    },
+    {
+      "subject": "Immune System and Disease",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of immunity is temporary and develops from being exposed to antibodies produced by other individuals or animals?",
+          "options": [
+            "Active immunity",
+            "Passive immunity",
+            "Humoral immunity",
+            "Cell-mediated immunity"
+          ],
+          "answer": "Passive immunity",
+          "citation": "[30, 31]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What virus is responsible for attacking and destroying helper T cells, eventually leading to AIDS?",
+          "answer": "HIV",
+          "citation": "[32]"
+        }
+      ]
+    }
+  ]
+}

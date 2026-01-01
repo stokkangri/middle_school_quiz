@@ -1,0 +1,132 @@
+{
+  "Unit_7_Animals_Quiz": [
+    {
+      "subject": "Introduction to Animals",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What is the name of the long supporting rod that runs through a chordate's body just below the nerve cord?",
+          "answer": "Notochord",
+          "citation": "[1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which middle germ layer develops into muscles and much of the circulatory, reproductive, and excretory systems?",
+          "options": [
+            "Endoderm",
+            "Ectoderm",
+            "Mesoderm",
+            "Blastula"
+          ],
+          "answer": "Mesoderm",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What term describes an animal whose mouth is formed from the blastopore?",
+          "options": [
+            "Deuterostome",
+            "Protostome",
+            "Acoelomate",
+            "Radiata"
+          ],
+          "answer": "Protostome",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of body plan is characterized by body parts that repeat around the center of the body?",
+          "answer": "Radial symmetry",
+          "citation": "[4]"
+        }
+      ]
+    },
+    {
+      "subject": "Animal Evolution and Diversity",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What is the term for a vertebrate that possesses four limbs?",
+          "answer": "Tetrapod",
+          "citation": "[5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which structure enabled certain primates to grasp objects and use tools effectively?",
+          "options": [
+            "Prehensile tail",
+            "Opposable thumb",
+            "Binocular vision",
+            "Cerebral cortex"
+          ],
+          "answer": "Opposable thumb",
+          "citation": "[6]"
+        }
+      ]
+    },
+    {
+      "subject": "Animal Systems",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What is the name of the process by which a larva changes shape and form to become an adult?",
+          "answer": "Metamorphosis",
+          "citation": "[7]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which excretory structure is used by annelids to filter body fluid?",
+          "options": [
+            "Malpighian tubule",
+            "Nephridium",
+            "Flame cell",
+            "Urethra"
+          ],
+          "answer": "Nephridium",
+          "citation": "[8]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the process of shedding an exoskeleton and growing a new one?",
+          "answer": "Molting",
+          "citation": "[9]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which reproductive strategy describes animals that bear live young nourished directly by the mother's body during development?",
+          "options": [
+            "Oviparous",
+            "Ovoviviparous",
+            "Viviparous",
+            "Parthenogenesis"
+          ],
+          "answer": "Viviparous",
+          "citation": "[10]"
+        }
+      ]
+    },
+    {
+      "subject": "Animal Behavior",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of learning involves an animal making a mental connection between a stimulus and a reward or punishment?",
+          "options": [
+            "Habituation",
+            "Classical conditioning",
+            "Operant conditioning",
+            "Insight learning"
+          ],
+          "answer": "Operant conditioning",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a specific area that is occupied and protected by an animal or group of animals?",
+          "answer": "Territory",
+          "citation": "[5]"
+        }
+      ]
+    }
+  ]
+}

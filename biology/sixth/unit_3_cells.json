@@ -1,0 +1,156 @@
+{
+  "Unit_3_Cells_Quiz": [
+    {
+      "subject": "Cell Structure and Function",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What are the three components of the cell theory?",
+          "options": [
+            "All living things are made of cells; cells come from non-living matter; cells are the basic unit of life",
+            "All living things are made of cells; cells are the basic units of structure and function; new cells come from existing cells",
+            "Cells contain a nucleus; all cells have cell walls; cells are the basic unit of life",
+            "All organisms are multicellular; cells are the basic unit of life; cells come from pre-existing cells"
+          ],
+          "answer": "All living things are made of cells; cells are the basic units of structure and function; new cells come from existing cells",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which organelle is known as the 'control center' because it contains nearly all of the cell's DNA?",
+          "answer": "Nucleus",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of cell lacks a nucleus to enclose its genetic material?",
+          "options": [
+            "Eukaryote",
+            "Animal cell",
+            "Prokaryote",
+            "Plant cell"
+          ],
+          "answer": "Prokaryote",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the flexible double-layered sheet that makes up the cell membrane?",
+          "answer": "Lipid bilayer",
+          "citation": "[4]"
+        }
+      ]
+    },
+    {
+      "subject": "Photosynthesis",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "In which part of the chloroplast do the light-dependent reactions take place?",
+          "options": [
+            "Stroma",
+            "Thylakoids",
+            "Mitochondria",
+            "Vacuole"
+          ],
+          "answer": "Thylakoids",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the principal pigment used by plants to gather the sun's energy?",
+          "answer": "Chlorophyll",
+          "citation": "[6]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the primary products of photosynthesis?",
+          "options": [
+            "Carbon dioxide and water",
+            "High-energy sugars and oxygen",
+            "ATP and NADPH",
+            "Nitrogen and minerals"
+          ],
+          "answer": "High-energy sugars and oxygen",
+          "citation": "[7]"
+        }
+      ]
+    },
+    {
+      "subject": "Cellular Respiration and Fermentation",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which stage of cellular respiration takes place in the cytoplasm and is anaerobic?",
+          "options": [
+            "Krebs cycle",
+            "Electron transport chain",
+            "Glycolysis",
+            "Photosynthesis"
+          ],
+          "answer": "Glycolysis",
+          "citation": "[8]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Approximately how many molecules of ATP are generated from one molecule of glucose during cellular respiration?",
+          "answer": "36",
+          "citation": "[9]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process do cells use to release energy from food when oxygen is NOT available?",
+          "options": [
+            "Cellular respiration",
+            "Active transport",
+            "Fermentation",
+            "The Calvin cycle"
+          ],
+          "answer": "Fermentation",
+          "citation": "[10]"
+        }
+      ]
+    },
+    {
+      "subject": "Cell Growth and Division",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "During which phase of the cell cycle is the DNA replicated?",
+          "options": [
+            "G1 phase",
+            "S phase",
+            "G2 phase",
+            "M phase"
+          ],
+          "answer": "S phase",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the four phases of mitosis in the correct order?",
+          "answer": "Prophase, Metaphase, Anaphase, Telophase",
+          "citation": "[12, 13]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for the process of programmed cell death?",
+          "options": [
+            "Mitosis",
+            "Differentiation",
+            "Apoptosis",
+            "Cytokinesis"
+          ],
+          "answer": "Apoptosis",
+          "citation": "[14]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do scientists call unspecialized cells from which differentiated cells develop?",
+          "answer": "Stem cells",
+          "citation": "[15]"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "Unit_4_Genetics_Quiz": [
+    {
+      "subject": "Introduction to Genetics",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for the different forms of a single gene?",
+          "options": [
+            "Genotypes",
+            "Phenotypes",
+            "Alleles",
+            "Hybrids"
+          ],
+          "answer": "Alleles",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What kind of diagram can be used to predict the genotype and phenotype combinations of a genetic cross?",
+          "answer": "Punnett square",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In what process is the number of chromosomes per cell cut in half through the separation of homologous chromosomes in a diploid cell?",
+          "options": [
+            "Mitosis",
+            "Meiosis",
+            "Fertilization",
+            "Replication"
+          ],
+          "answer": "Meiosis",
+          "citation": "[3]"
+        }
+      ]
+    },
+    {
+      "subject": "DNA Structure and Replication",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following are the building blocks of nucleic acids like DNA?",
+          "options": [
+            "Amino acids",
+            "Lipids",
+            "Nucleotides",
+            "Proteins"
+          ],
+          "answer": "Nucleotides",
+          "citation": "[4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "According to the rules of base pairing, which nitrogenous base always pairs with Cytosine in a DNA molecule?",
+          "answer": "Guanine",
+          "citation": "[5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which enzyme joins individual nucleotides to produce a new strand of DNA during replication?",
+          "options": [
+            "RNA polymerase",
+            "DNA polymerase",
+            "Lignin",
+            "Amylase"
+          ],
+          "answer": "DNA polymerase",
+          "citation": "[6]"
+        }
+      ]
+    },
+    {
+      "subject": "RNA and Protein Synthesis",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "Which type of RNA carries copies of instructions for the assembly of amino acids into proteins from the nucleus to the ribosomes?",
+          "answer": "Messenger RNA",
+          "citation": "[7]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the name for the process in which the sequence of bases of an mRNA is converted into the sequence of amino acids of a protein?",
+          "options": [
+            "Transcription",
+            "Transformation",
+            "Translation",
+            "Replication"
+          ],
+          "answer": "Translation",
+          "citation": "[8]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a group of three nucleotide bases in mRNA that specify a particular amino acid?",
+          "answer": "Codon",
+          "citation": "[9]"
+        }
+      ]
+    },
+    {
+      "subject": "Mutations and Gene Expression",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for a mutation that shifts the 'reading frame' of the genetic message by inserting or deleting a nucleotide?",
+          "options": [
+            "Point mutation",
+            "Substitution",
+            "Frameshift mutation",
+            "Inversion"
+          ],
+          "answer": "Frameshift mutation",
+          "citation": "[10]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are chemical or physical agents in the environment, such as X-rays or tobacco smoke, that may cause a mutation?",
+          "answer": "Mutagens",
+          "citation": "[11]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In prokaryotes, what is a group of adjacent genes that share a common operator and promoter and are transcribed into a single mRNA?",
+          "options": [
+            "Exon",
+            "Intron",
+            "Operon",
+            "Hox gene"
+          ],
+          "answer": "Operon",
+          "citation": "[12]"
+        }
+      ]
+    },
+    {
+      "subject": "Human Heredity and Genetic Engineering",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What chart shows the presence or absence of a trait according to the relationships within a family across several generations?",
+          "answer": "Pedigree",
+          "citation": "[13]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which technique allows biologists to make many copies of a particular gene?",
+          "options": [
+            "Gel electrophoresis",
+            "Polymerase chain reaction",
+            "Hybridization",
+            "Inbreeding"
+          ],
+          "answer": "Polymerase chain reaction",
+          "citation": "[14]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a member of a population of genetically identical cells produced from a single cell?",
+          "answer": "Clone",
+          "citation": "[15]"
+        }
+      ]
+    }
+  ]
+}

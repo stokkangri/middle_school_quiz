@@ -1,0 +1,150 @@
+{
+  "Unit_5_Evolution_Quiz": [
+    {
+      "subject": "Darwin's Theory of Evolution",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for the process by which modern organisms have descended from ancient organisms over time?",
+          "options": [
+            "Homeostasis",
+            "Evolution",
+            "Metabolism",
+            "Transcription"
+          ],
+          "answer": "Evolution",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes how well an organism can survive and reproduce in its environment?",
+          "answer": "Fitness",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process is also referred to as 'survival of the fittest'?",
+          "options": [
+            "Artificial selection",
+            "Coevolution",
+            "Natural selection",
+            "Genetic drift"
+          ],
+          "answer": "Natural selection",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a heritable characteristic that increases an organism's ability to survive and reproduce in its environment called?",
+          "answer": "Adaptation",
+          "citation": "[1]"
+        }
+      ]
+    },
+    {
+      "subject": "Evidence of Evolution",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the study of where organisms live now and where they and their ancestors lived in the past?",
+          "options": [
+            "Biogeography",
+            "Systematics",
+            "Ecology",
+            "Genomics"
+          ],
+          "answer": "Biogeography",
+          "citation": "[4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the preserved remains or traces of ancient organisms called?",
+          "answer": "Fossils",
+          "citation": "[2, 5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Structures that are shared by related species and inherited from a common ancestor are called what?",
+          "options": [
+            "Analogous structures",
+            "Homologous structures",
+            "Vestigial structures",
+            "Adaptive structures"
+          ],
+          "answer": "Homologous structures",
+          "citation": "[6, 7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for an inherited structure that has lost much or all of its original function, such as the hipbones of a dolphin?",
+          "answer": "Vestigial structure",
+          "citation": "[8]"
+        }
+      ]
+    },
+    {
+      "subject": "The Process of Speciation",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What occurs when two populations can no longer interbreed and produce fertile offspring?",
+          "options": [
+            "Behavioral isolation",
+            "Reproductive isolation",
+            "Geographic isolation",
+            "Temporal isolation"
+          ],
+          "answer": "Reproductive isolation",
+          "citation": "[9, 10]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the formation of a new species?",
+          "answer": "Speciation",
+          "citation": "[11]"
+        }
+      ]
+    },
+    {
+      "subject": "Macroevolution and the History of Life",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which pattern of evolution involves a single species or a small group of species evolving into several different forms that live in different ways?",
+          "options": [
+            "Convergent evolution",
+            "Coevolution",
+            "Adaptive radiation",
+            "Punctuated equilibrium"
+          ],
+          "answer": "Adaptive radiation",
+          "citation": "[12]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the process in which two species evolve in response to changes in each other over time?",
+          "answer": "Coevolution",
+          "citation": "[13]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which evolutionary pattern is characterized by long stable periods interrupted by brief periods of more rapid change?",
+          "options": [
+            "Gradualism",
+            "Mass extinction",
+            "Punctuated equilibrium",
+            "Adaptive radiation"
+          ],
+          "answer": "Punctuated equilibrium",
+          "citation": "[14]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the idea that Earth's history is so long that it is difficult to imagine?",
+          "answer": "Deep time",
+          "citation": "[15]"
+        }
+      ]
+    }
+  ]
+}
