@@ -20,10 +20,23 @@
 
 <div class="container">
     <h1>Biology Bowl Study Tool</h1>
-    <div id="setup">
-        <p>Enter the HTTP link to your JSON question bank:</p>
-        <input type="text" id="json-url" style="width: 80%; padding: 10px;" placeholder="https://example.com/unit_1_natureoflife.json">
-        <button class="btn" onclick="startQuiz()">Load Quiz</button>
+    <!-- Step 1: Add a Selection Menu to the 'setup' div -->
+<div id="setup" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center text-blue-600">Biology Bowl Practice</h1>
+    <label for="unit-select" class="block mb-2 font-medium text-gray-700">Choose a Study Unit:</label>
+    <select id="unit-select" class="w-full p-2 mb-4 border rounded">
+        <option value="unit_1_natureoflife.json">Unit 1: Nature of Life</option>
+        <option value="unit_2_ecology.json">Unit 2: Ecology</option>
+        <option value="unit_3_cells.json">Unit 3: Cells</option>
+        <option value="unit_4_genetics.json">Unit 4: Genetics</option>
+        <option value="unit_5_evolution.json">Unit 5: Evolution</option>
+        <option value="unit_6_microorgtoplants.json">Unit 6: Microorganisms to Plants</option>
+        <option value="unit_7_animals.json">Unit 7: Animals</option>
+        <option value="unit_8_humanbody.json">Unit 8: Human Body</option>
+    </select>
+    <button onclick="startQuiz()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        Start Quiz
+    </button>
     </div>
 
     <div id="quiz-area" class="hidden">
@@ -56,13 +69,22 @@
     let userAnswers = [];
 
     async function startQuiz() {
-        const url = document.getElementById('json-url').value;
+        // Determine the user's choice (The Stimulus)
+        const selectedFile = document.getElementById('unit-select').value;
+        
+        // Construct the Raw URL (Information from conversation history)
+        const rawBaseUrl = "https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/biology/sixth/";
+        const finalUrl = rawBaseUrl + selectedFile;
+
         try {
-            const response = await fetch(url);
+            // Step 2: "Transcription" - Copying the master plan into a working blueprint
+            const response = await fetch(finalUrl);
+            if (!response.ok) throw new Error("Network error");
             const data = await response.json();
-            // Assuming JSON structure: { "Unit_1_Nature_of_Life_Quiz": [ { "subject": "...", "questions": [...] } ] }
-            // Flattening for ease of use
+
+            // Standardize the data format
             const unitKey = Object.keys(data);
+            quizData = [];
             data[unitKey].forEach(section => {
                 section.questions.forEach(q => {
                     q.subject = section.subject;
@@ -70,11 +92,16 @@
                 });
             });
 
+            // Randomize the "Gene Pool"
+            quizData.sort(() => Math.random() - 0.5);
+
+            // Step 3: Transition the UI (The Response)
             document.getElementById('setup').classList.add('hidden');
             document.getElementById('quiz-area').classList.remove('hidden');
             renderQuestion();
+            
         } catch (err) {
-            alert("Error loading JSON. Ensure the link is correct and permits CORS.");
+            alert("Error loading the unit: " + err.message);
         }
     }
 
