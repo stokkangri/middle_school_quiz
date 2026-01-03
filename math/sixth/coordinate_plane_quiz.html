@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coordinate Planes Quiz (Grade 6)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; line-height: 1.35; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; }
+    .topbar { display:flex; flex-wrap:wrap; gap: 10px; align-items:end; margin: 12px 0 16px; padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
+    label { font-size: 14px; display:block; }
+    input[type="text"], input[type="number"], select { padding: 8px; border: 1px solid #ccc; border-radius: 8px; min-width: 220px; }
+    button { padding: 10px 12px; border: 1px solid #ccc; border-radius: 10px; background: #f7f7f7; cursor:pointer; }
+    button:hover { background:#efefef; }
+    .row { display:flex; gap: 16px; flex-wrap:wrap; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; }
+    .left { flex: 1 1 420px; }
+    .right { flex: 1 1 420px; }
+    #canvas { width: 100%; max-width: 520px; height: auto; border: 1px solid #ddd; border-radius: 10px; touch-action: none; background: #fff; }
+    .muted { color:#555; font-size: 13px; }
+    .badge { display:inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ddd; font-size: 12px; }
+    .ok { color: #0a7a0a; }
+    .bad { color: #b00020; }
+    .options { display:grid; gap: 8px; margin: 12px 0; }
+    .optbtn { text-align:left; }
+    .answerbox { display:flex; gap: 10px; flex-wrap:wrap; align-items:center; }
+    .answerbox input { min-width: 180px; }
+    .footer { margin-top: 14px; display:flex; flex-wrap:wrap; gap: 10px; align-items:center; }
+    .small { font-size: 12px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; border:1px solid #ddd; border-bottom-width:2px; padding: 1px 6px; border-radius: 6px; background:#fafafa; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Coordinate Planes Quiz (Grade 6)</h1>
+  <div class="muted">
+    Load a local JSON file or a hosted JSON URL (e.g., GitHub raw). Diagrams are rendered using a canvas grid.
+  </div>
+
+  <div class="topbar">
+    <div>
+      <label>Questions JSON URL (optional)</label>
+      <input id="jsonUrl" type="text" placeholder="Leave blank to use local coordinate_plane_questions.json" />
+      <div class="muted small">Tip: Host the JSON on GitHub and paste the raw URL here.</div>
+    </div>
+    <div>
+      <label>Topic</label>
+      <select id="topicSelect"></select>
+    </div>
+    <div>
+      <label># Questions</label>
+      <input id="numQ" type="number" min="5" max="200" value="20" />
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button id="startBtn">Start / Restart</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card left">
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center;">
+        <div>
+          <span class="badge" id="qMeta">Loading…</span>
+          <span class="badge" id="scoreMeta">Score: 0 / 0</span>
+        </div>
+        <div class="small muted">Shortcuts: <span class="kbd">Enter</span> to check, <span class="kbd">N</span>/<span class="kbd">P</span> next/prev.</div>
+      </div>
+
+      <h2 id="qText" style="margin-top:10px;">Loading…</h2>
+
+      <div id="mcqBox" class="options" style="display:none;"></div>
+
+      <div id="shortBox" class="answerbox" style="display:none;">
+        <input id="shortInput" type="text" placeholder="Type your answer (e.g., (-3, 5) or 7)" />
+        <button id="checkShortBtn">Check</button>
+      </div>
+
+      <div id="plotHint" class="muted" style="display:none; margin-top:8px;">
+        Click on the grid intersection. Your click will snap to the nearest integer coordinate.
+      </div>
+
+      <div id="feedback" style="margin-top:12px;"></div>
+
+      <div class="footer">
+        <button id="prevBtn">Prev</button>
+        <button id="nextBtn">Next</button>
+        <button id="revealBtn">Reveal Explanation</button>
+      </div>
+
+      <div id="explain" class="muted" style="margin-top:12px; display:none;"></div>
+    </div>
+
+    <div class="card right">
+      <canvas id="canvas" width="520" height="520"></canvas>
+      <div class="muted small" style="margin-top:8px;">
+        Grid range: <b>-10</b> to <b>10</b> on both axes.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const LOCAL_JSON = "coordinate_plane_questions.json"; // keep next to this HTML (or change)
+  const GRID_MIN = -10, GRID_MAX = 10;
+  const CANVAS = document.getElementById("canvas");
+  const CTX = CANVAS.getContext("2d");
+  const jsonUrlEl = document.getElementById("jsonUrl");
+  const topicSelect = document.getElementById("topicSelect");
+  const numQEl = document.getElementById("numQ");
+  const startBtn = document.getElementById("startBtn");
+
+  const qMeta = document.getElementById("qMeta");
+  const scoreMeta = document.getElementById("scoreMeta");
+  const qText = document.getElementById("qText");
+  const mcqBox = document.getElementById("mcqBox");
+  const shortBox = document.getElementById("shortBox");
+  const shortInput = document.getElementById("shortInput");
+  const checkShortBtn = document.getElementById("checkShortBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const revealBtn = document.getElementById("revealBtn");
+  const explain = document.getElementById("explain");
+  const feedback = document.getElementById("feedback");
+  const plotHint = document.getElementById("plotHint");
+
+  let bank = [];
+  let quiz = [];
+  let idx = 0;
+  let score = 0;
+  let attempted = 0;
+  let answered = new Map(); // id -> {correct:boolean, userAnswer:string}
+
+  function clearCanvas() {
+    CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
+  }
+
+  function toCanvas(x, y) {
+    const pad = 30;
+    const w = CANVAS.width - pad*2;
+    const h = CANVAS.height - pad*2;
+    const sx = (x - GRID_MIN) / (GRID_MAX - GRID_MIN);
+    const sy = (y - GRID_MIN) / (GRID_MAX - GRID_MIN);
+    const cx = pad + sx * w;
+    const cy = pad + (1 - sy) * h;
+    return [cx, cy];
+  }
+
+  function fromCanvas(px, py) {
+    const pad = 30;
+    const w = CANVAS.width - pad*2;
+    const h = CANVAS.height - pad*2;
+    const sx = (px - pad) / w;
+    const sy = 1 - ((py - pad) / h);
+    const x = GRID_MIN + sx * (GRID_MAX - GRID_MIN);
+    const y = GRID_MIN + sy * (GRID_MAX - GRID_MIN);
+    return [x, y];
+  }
+
+  function drawGrid() {
+    clearCanvas();
+    CTX.lineWidth = 1;
+    CTX.strokeStyle = "#eee";
+    for (let v = GRID_MIN; v <= GRID_MAX; v++) {
+      const [x1,y1] = toCanvas(v, GRID_MIN);
+      const [x2,y2] = toCanvas(v, GRID_MAX);
+      CTX.beginPath(); CTX.moveTo(x1,y1); CTX.lineTo(x2,y2); CTX.stroke();
+
+      const [xx1,yy1] = toCanvas(GRID_MIN, v);
+      const [xx2,yy2] = toCanvas(GRID_MAX, v);
+      CTX.beginPath(); CTX.moveTo(xx1,yy1); CTX.lineTo(xx2,yy2); CTX.stroke();
+    }
+
+    // axes
+    CTX.strokeStyle = "#444";
+    CTX.lineWidth = 2;
+    let [ax1, ay1] = toCanvas(0, GRID_MIN);
+    let [ax2, ay2] = toCanvas(0, GRID_MAX);
+    CTX.beginPath(); CTX.moveTo(ax1, ay1); CTX.lineTo(ax2, ay2); CTX.stroke();
+
+    let [bx1, by1] = toCanvas(GRID_MIN, 0);
+    let [bx2, by2] = toCanvas(GRID_MAX, 0);
+    CTX.beginPath(); CTX.moveTo(bx1, by1); CTX.lineTo(bx2, by2); CTX.stroke();
+
+    // ticks & labels
+    CTX.fillStyle = "#222";
+    CTX.font = "12px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+    for (let v = GRID_MIN; v <= GRID_MAX; v++) {
+      if (v === 0) continue;
+      let [tx, ty] = toCanvas(v, 0);
+      CTX.beginPath(); CTX.moveTo(tx, ty-4); CTX.lineTo(tx, ty+4); CTX.stroke();
+      CTX.fillText(String(v), tx-4, ty+16);
+
+      let [ux, uy] = toCanvas(0, v);
+      CTX.beginPath(); CTX.moveTo(ux-4, uy); CTX.lineTo(ux+4, uy); CTX.stroke();
+      CTX.fillText(String(v), ux+8, uy+4);
+    }
+    let [ox, oy] = toCanvas(0,0);
+    CTX.fillText("0", ox+6, oy+14);
+  }
+
+  function drawPoint(x, y, label=null, color="#b00020") {
+    const [cx, cy] = toCanvas(x,y);
+    CTX.fillStyle = color;
+    CTX.beginPath();
+    CTX.arc(cx, cy, 6, 0, Math.PI*2);
+    CTX.fill();
+    CTX.strokeStyle = "#222";
+    CTX.lineWidth = 1;
+    CTX.stroke();
+    if (label) {
+      CTX.fillStyle = "#111";
+      CTX.font = "14px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+      CTX.fillText(label, cx+10, cy-8);
+    }
+  }
+
+  function uniq(arr) {
+    return Array.from(new Set(arr));
+  }
+
+  function normalizeAnswer(s) {
+    if (!s) return "";
+    return s.trim().replace(/\s+/g, "");
+  }
+
+  function isCorrectShort(user, answer) {
+    const u = normalizeAnswer(user);
+    const a = normalizeAnswer(answer);
+    if (a.startsWith("(") && a.endsWith(")")) {
+      const alt = a.slice(1,-1);
+      return u === a || u === alt;
+    }
+    return u === a;
+  }
+
+  function setFeedback(ok, msg) {
+    feedback.innerHTML = ok
+      ? `<div class="ok"><b>✅ Correct.</b> ${msg||""}</div>`
+      : `<div class="bad"><b>❌ Not quite.</b> ${msg||""}</div>`;
+  }
+
+  function updateMeta() {
+    const q = quiz[idx];
+    qMeta.textContent = `Q ${idx+1} / ${quiz.length} • ${q.topic} • ${q.type.toUpperCase()}`;
+    scoreMeta.textContent = `Score: ${score} / ${attempted}`;
+  }
+
+  function renderMCQ(q, selected=null) {
+    mcqBox.innerHTML = "";
+    mcqBox.style.display = "grid";
+    q.options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.className = "optbtn";
+      btn.textContent = opt;
+      btn.onclick = () => checkMCQ(opt);
+      if (selected && selected === opt) btn.style.borderColor = "#888";
+      mcqBox.appendChild(btn);
+    });
+  }
+
+  function markAnswered(q, userAnswer, correct) {
+    if (!answered.has(q.id)) {
+      attempted += 1;
+      if (correct) score += 1;
+    } else {
+      const prev = answered.get(q.id);
+      if (prev.correct !== correct) score += correct ? 1 : -1;
+    }
+    answered.set(q.id, { userAnswer, correct });
+    updateMeta();
+  }
+
+  function checkMCQ(opt) {
+    const q = quiz[idx];
+    const correct = (opt === q.answer);
+    markAnswered(q, opt, correct);
+    setFeedback(correct, correct ? "" : `Correct answer: <b>${q.answer}</b>`);
+    explain.textContent = q.explanation || "";
+    explain.style.display = "block";
+    renderMCQ(q, opt);
+  }
+
+  function checkShort() {
+    const q = quiz[idx];
+    const ua = shortInput.value.trim();
+    if (!ua) return;
+    const correct = isCorrectShort(ua, q.answer);
+    markAnswered(q, ua, correct);
+    setFeedback(correct, correct ? "" : `Correct answer: <b>${q.answer}</b>`);
+    explain.textContent = q.explanation || "";
+    explain.style.display = "block";
+  }
+
+  function checkPlotAt(x, y) {
+    const q = quiz[idx];
+    if (q.type !== "plot") return;
+    const [tx, ty] = q.target_point;
+    const ok = (x === tx && y === ty);
+    drawGrid();
+    drawPoint(x, y, "You", ok ? "#0a7a0a" : "#b00020");
+    drawPoint(tx, ty, "Target", "#222");
+    markAnswered(q, `(${x}, ${y})`, ok);
+    setFeedback(ok, ok ? "" : `Correct answer: <b>${q.answer}</b>`);
+    explain.textContent = q.explanation || "";
+    explain.style.display = "block";
+  }
+
+  function snapToInt(x) {
+    return Math.max(GRID_MIN, Math.min(GRID_MAX, Math.round(x)));
+  }
+
+  CANVAS.addEventListener("click", (e) => {
+    const q = quiz[idx];
+    if (!q || q.type !== "plot") return;
+    const rect = CANVAS.getBoundingClientRect();
+    const px = (e.clientX - rect.left) * (CANVAS.width / rect.width);
+    const py = (e.clientY - rect.top) * (CANVAS.height / rect.height);
+    const [gx, gy] = fromCanvas(px, py);
+    checkPlotAt(snapToInt(gx), snapToInt(gy));
+  });
+
+  function renderQuestion() {
+    if (!quiz.length) return;
+    const q = quiz[idx];
+    updateMeta();
+    qText.textContent = q.prompt;
+    feedback.innerHTML = "";
+    explain.style.display = "none";
+
+    mcqBox.style.display = "none";
+    shortBox.style.display = "none";
+    plotHint.style.display = "none";
+    shortInput.value = "";
+
+    drawGrid();
+
+    if (q.type === "read" && q.diagram && q.diagram.kind === "single_point") {
+      const p = q.diagram.point;
+      drawPoint(p[0], p[1], q.diagram.label || "A");
+      shortBox.style.display = "flex";
+    } else if (q.type === "mcq") {
+      renderMCQ(q);
+    } else if (q.type === "short") {
+      shortBox.style.display = "flex";
+    } else if (q.type === "plot") {
+      plotHint.style.display = "block";
+    }
+
+    const prev = answered.get(q.id);
+    if (prev) {
+      if (q.type === "mcq") renderMCQ(q, prev.userAnswer);
+      if (q.type === "short" || q.type === "read") shortInput.value = prev.userAnswer || "";
+      if (q.type === "plot") {
+        const m = prev.userAnswer.match(/-?\d+/g);
+        if (m && m.length >= 2) checkPlotAt(parseInt(m[0],10), parseInt(m[1],10));
+      } else {
+        setFeedback(prev.correct, prev.correct ? "" : `Correct answer: <b>${q.answer}</b>`);
+        explain.textContent = q.explanation || "";
+        explain.style.display = "block";
+      }
+    }
+  }
+
+  function next() { idx = Math.min(idx+1, quiz.length-1); renderQuestion(); }
+  function prev() { idx = Math.max(idx-1, 0); renderQuestion(); }
+
+  nextBtn.onclick = next;
+  prevBtn.onclick = prev;
+  revealBtn.onclick = () => {
+    const q = quiz[idx];
+    explain.textContent = q.explanation || "";
+    explain.style.display = (explain.style.display === "none") ? "block" : "none";
+  };
+  checkShortBtn.onclick = checkShort;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const q = quiz[idx];
+      if (q && (q.type === "short" || q.type === "read")) checkShort();
+    }
+    if (e.key.toLowerCase() === "n") next();
+    if (e.key.toLowerCase() === "p") prev();
+  });
+
+  async function loadBank() {
+    const url = (jsonUrlEl.value || "").trim();
+    const src = url || LOCAL_JSON;
+    const res = await fetch(src);
+    if (!res.ok) throw new Error("Could not load JSON from: " + src);
+    const data = await res.json();
+    bank = data.questions || [];
+    const topics = ["All Topics"].concat(uniq(bank.map(q => q.topic)).sort());
+    topicSelect.innerHTML = "";
+    topics.forEach(t => {
+      const opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t;
+      topicSelect.appendChild(opt);
+    });
+  }
+
+  function buildQuiz() {
+    const topic = topicSelect.value || "All Topics";
+    const n = Math.max(1, parseInt(numQEl.value || "20", 10));
+    const pool = (topic === "All Topics") ? bank : bank.filter(q => q.topic === topic);
+    const shuffled = pool.slice().sort(() => Math.random() - 0.5);
+    quiz = shuffled.slice(0, Math.min(n, shuffled.length));
+    idx = 0;
+    score = 0;
+    attempted = 0;
+    answered = new Map();
+    renderQuestion();
+  }
+
+  startBtn.onclick = async () => {
+    try { await loadBank(); buildQuiz(); }
+    catch (err) { alert(err.message); console.error(err); }
+  };
+
+  (async () => {
+    try { await loadBank(); buildQuiz(); }
+    catch (err) { qText.textContent = "Could not load question bank."; console.error(err); }
+  })();
+})();
+</script>
+</body>
+</html>

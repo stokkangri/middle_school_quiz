@@ -1,0 +1,242 @@
+{
+  "grade": 6,
+  "chapters": [
+    {
+      "chapter_id": "adding_decimals",
+      "title": "Adding Decimals",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "What is 2.4 + 1.6?",
+          "options": ["3.0", "3.8", "4.0", "4.2"],
+          "answer": "4.0",
+          "explanation": "Align decimal points: 2.4 + 1.6 = 4.0"
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Add: 3.75 + 1.25",
+          "answer": "5.0",
+          "explanation": "3.75 + 1.25 = 5.00"
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "Which is correct?",
+          "options": ["4.2 + 0.8 = 4.10", "4.2 + 0.8 = 5.0", "4.2 + 0.8 = 4.8", "4.2 + 0.8 = 5.2"],
+          "answer": "5.0",
+          "explanation": "4.2 + 0.8 = 5.0"
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Add: 0.45 + 0.55",
+          "answer": "1.0",
+          "explanation": "0.45 + 0.55 = 1.00"
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "What is 6.08 + 2.92?",
+          "options": ["8.90", "9.00", "9.10", "10.00"],
+          "answer": "9.00",
+          "explanation": "6.08 + 2.92 = 9.00"
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "Add: 12.5 + 7.35",
+          "answer": "19.85",
+          "explanation": "Align decimals and add"
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "Which sum equals 3.6?",
+          "options": ["1.2 + 2.4", "1.5 + 1.9", "2.1 + 1.3", "1.8 + 1.7"],
+          "answer": "1.2 + 2.4",
+          "explanation": "1.2 + 2.4 = 3.6"
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Add: 0.7 + 0.03",
+          "answer": "0.73",
+          "explanation": "0.70 + 0.03 = 0.73"
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What is 9.5 + 0.25?",
+          "options": ["9.75", "9.65", "9.80", "9.55"],
+          "answer": "9.75",
+          "explanation": "Add decimal values carefully"
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Add: 4.006 + 2.4",
+          "answer": "6.406",
+          "explanation": "4.006 + 2.400 = 6.406"
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which is the correct way to add decimals?",
+          "options": ["Align left", "Align decimal points", "Ignore decimals", "Round first"],
+          "answer": "Align decimal points",
+          "explanation": "Decimals must be aligned vertically"
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Add: 15.09 + 4.91",
+          "answer": "20.00",
+          "explanation": "15.09 + 4.91 = 20.00"
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "What is 0.125 + 0.375?",
+          "options": ["0.4", "0.5", "0.6", "0.75"],
+          "answer": "0.5",
+          "explanation": "0.125 + 0.375 = 0.500"
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Add: 7.8 + 2.02",
+          "answer": "9.82",
+          "explanation": "7.80 + 2.02 = 9.82"
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Add: 0.99 + 0.01",
+          "answer": "1.0",
+          "explanation": "Completes to one whole"
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "dividing_fractions",
+      "title": "Dividing Fractions",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "What is 1/2 ÷ 1/4?",
+          "options": ["1/8", "2", "4", "1/4"],
+          "answer": "2",
+          "explanation": "Multiply by reciprocal: 1/2 × 4 = 2"
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Solve: 3/5 ÷ 6/7",
+          "answer": "7/10",
+          "explanation": "3/5 × 7/6 = 21/30 = 7/10"
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "Dividing by a fraction means:",
+          "options": ["Multiply numerator", "Add denominator", "Multiply by reciprocal", "Subtract fractions"],
+          "answer": "Multiply by reciprocal",
+          "explanation": "Standard rule for fraction division"
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Solve: 4 ÷ 2/3",
+          "answer": "6",
+          "explanation": "4 × 3/2 = 6"
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "What is 5/6 ÷ 1/2?",
+          "options": ["5/12", "5/3", "10/6", "6/5"],
+          "answer": "5/3",
+          "explanation": "Multiply by reciprocal"
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "Solve: 7/8 ÷ 7/4",
+          "answer": "1/2",
+          "explanation": "7/8 × 4/7 = 4/8"
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "What is 9 ÷ 3/4?",
+          "options": ["3", "6", "12", "27"],
+          "answer": "12",
+          "explanation": "9 × 4/3 = 12"
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Solve: 2/3 ÷ 4",
+          "answer": "1/6",
+          "explanation": "2/3 × 1/4 = 1/6"
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What is 8/9 ÷ 4/9?",
+          "options": ["1/2", "2", "4", "8"],
+          "answer": "2",
+          "explanation": "8/9 × 9/4 = 2"
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Solve: 10 ÷ 5/2",
+          "answer": "4",
+          "explanation": "10 × 2/5 = 4"
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which is correct?",
+          "options": ["3/4 ÷ 2 = 3/8", "3/4 ÷ 2 = 6/4", "3/4 ÷ 2 = 3/2", "3/4 ÷ 2 = 1/2"],
+          "answer": "3/8",
+          "explanation": "Multiply by reciprocal"
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Solve: 6 ÷ 1/3",
+          "answer": "18",
+          "explanation": "6 × 3 = 18"
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "What is 4/5 ÷ 8/5?",
+          "options": ["1/2", "4/8", "1/10", "2"],
+          "answer": "1/2",
+          "explanation": "4/5 × 5/8 = 1/2"
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Solve: 1 ÷ 2/5",
+          "answer": "5/2",
+          "explanation": "1 × 5/2 = 5/2"
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Solve: 12 ÷ 3/4",
+          "answer": "16",
+          "explanation": "12 × 4/3 = 16"
+        }
+      ]
+    }
+  ]
+}

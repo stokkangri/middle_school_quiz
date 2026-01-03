@@ -1,0 +1,840 @@
+{
+  "title": "Coordinate Planes (Grade 6)",
+  "version": "1.0",
+  "questions": [
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (3, 4)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant I",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 1
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-5, 2)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant II",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 2
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-2, -7)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant III",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 3
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (6, -1)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant IV",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 4
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (1, 9)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant I",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 5
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-8, 1)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant II",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 6
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-4, -3)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant III",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 7
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (7, -6)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant IV",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 8
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (9, 2)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant I",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 9
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-1, 6)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant II",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 10
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (-6, -9)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant III",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 11
+    },
+    {
+      "type": "mcq",
+      "topic": "Quadrants",
+      "prompt": "In which quadrant is the point (2, -8)?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "answer": "Quadrant IV",
+      "explanation": "Quadrants are determined by the signs: (+,+)=I, (-,+)=II, (-,-)=III, (+,-)=IV.",
+      "id": 12
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (0, 5) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "y-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 13
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (7, 0) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "x-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 14
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (0, -3) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "y-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 15
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (-9, 0) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "x-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 16
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (0, 0) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "origin",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 17
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (0, 12) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "y-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 18
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (-4, 0) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "x-axis",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 19
+    },
+    {
+      "type": "mcq",
+      "topic": "Axes & Origin",
+      "prompt": "Where is the point (0, 0) located?",
+      "options": [
+        "x-axis",
+        "y-axis",
+        "origin",
+        "none of these"
+      ],
+      "answer": "origin",
+      "explanation": "If x=0 and y\u22600 it's on the y-axis. If y=0 and x\u22600 it's on the x-axis. If both are 0, it's the origin.",
+      "id": 20
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (2, -3).",
+      "target_point": [
+        2,
+        -3
+      ],
+      "tolerance": 0,
+      "answer": "(2, -3)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 21
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-4, 5).",
+      "target_point": [
+        -4,
+        5
+      ],
+      "tolerance": 0,
+      "answer": "(-4, 5)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 22
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (6, 1).",
+      "target_point": [
+        6,
+        1
+      ],
+      "tolerance": 0,
+      "answer": "(6, 1)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 23
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-7, -2).",
+      "target_point": [
+        -7,
+        -2
+      ],
+      "tolerance": 0,
+      "answer": "(-7, -2)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 24
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (0, 6).",
+      "target_point": [
+        0,
+        6
+      ],
+      "tolerance": 0,
+      "answer": "(0, 6)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 25
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (5, 0).",
+      "target_point": [
+        5,
+        0
+      ],
+      "tolerance": 0,
+      "answer": "(5, 0)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 26
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-3, 0).",
+      "target_point": [
+        -3,
+        0
+      ],
+      "tolerance": 0,
+      "answer": "(-3, 0)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 27
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (0, -5).",
+      "target_point": [
+        0,
+        -5
+      ],
+      "tolerance": 0,
+      "answer": "(0, -5)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 28
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (8, -6).",
+      "target_point": [
+        8,
+        -6
+      ],
+      "tolerance": 0,
+      "answer": "(8, -6)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 29
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-6, 8).",
+      "target_point": [
+        -6,
+        8
+      ],
+      "tolerance": 0,
+      "answer": "(-6, 8)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 30
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (1, -9).",
+      "target_point": [
+        1,
+        -9
+      ],
+      "tolerance": 0,
+      "answer": "(1, -9)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 31
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-9, 1).",
+      "target_point": [
+        -9,
+        1
+      ],
+      "tolerance": 0,
+      "answer": "(-9, 1)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 32
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (4, 4).",
+      "target_point": [
+        4,
+        4
+      ],
+      "tolerance": 0,
+      "answer": "(4, 4)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 33
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-5, -5).",
+      "target_point": [
+        -5,
+        -5
+      ],
+      "tolerance": 0,
+      "answer": "(-5, -5)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 34
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (7, 3).",
+      "target_point": [
+        7,
+        3
+      ],
+      "tolerance": 0,
+      "answer": "(7, 3)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 35
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-2, 7).",
+      "target_point": [
+        -2,
+        7
+      ],
+      "tolerance": 0,
+      "answer": "(-2, 7)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 36
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (3, -7).",
+      "target_point": [
+        3,
+        -7
+      ],
+      "tolerance": 0,
+      "answer": "(3, -7)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 37
+    },
+    {
+      "type": "plot",
+      "topic": "Plotting Points",
+      "prompt": "Click on the coordinate plane to plot the point (-8, -4).",
+      "target_point": [
+        -8,
+        -4
+      ],
+      "tolerance": 0,
+      "answer": "(-8, -4)",
+      "explanation": "To plot (x, y): move x units left/right from the origin, then y units up/down.",
+      "id": 38
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          4,
+          -2
+        ]
+      },
+      "answer": "(4, -2)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 39
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -1,
+          3
+        ]
+      },
+      "answer": "(-1, 3)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 40
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -6,
+          -1
+        ]
+      },
+      "answer": "(-6, -1)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 41
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          2,
+          7
+        ]
+      },
+      "answer": "(2, 7)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 42
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -8,
+          4
+        ]
+      },
+      "answer": "(-8, 4)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 43
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          7,
+          -5
+        ]
+      },
+      "answer": "(7, -5)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 44
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -3,
+          6
+        ]
+      },
+      "answer": "(-3, 6)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 45
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          5,
+          5
+        ]
+      },
+      "answer": "(5, 5)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 46
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -7,
+          -7
+        ]
+      },
+      "answer": "(-7, -7)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 47
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          9,
+          1
+        ]
+      },
+      "answer": "(9, 1)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 48
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          1,
+          -4
+        ]
+      },
+      "answer": "(1, -4)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 49
+    },
+    {
+      "type": "read",
+      "topic": "Reading Coordinates",
+      "prompt": "A point A is shown on the graph. What are the coordinates of A?",
+      "diagram": {
+        "kind": "single_point",
+        "label": "A",
+        "point": [
+          -4,
+          0
+        ]
+      },
+      "answer": "(-4, 0)",
+      "explanation": "Read x first (left/right), then y (down/up). Write as (x, y).",
+      "id": 50
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (1, 2). It moves 3 units right and 4 units down. Where does it stop?",
+      "answer": "(4, -2)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 51
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (-2, 5). It moves 4 units right and 1 units up. Where does it stop?",
+      "answer": "(2, 6)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 52
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (6, -1). It moves 5 units left and 3 units up. Where does it stop?",
+      "answer": "(1, 2)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 53
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (-7, -3). It moves 2 units right and 6 units down. Where does it stop?",
+      "answer": "(-5, -9)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 54
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (0, 0). It moves 8 units right and 2 units down. Where does it stop?",
+      "answer": "(8, -2)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 55
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (-4, 0). It moves 1 units right and 7 units up. Where does it stop?",
+      "answer": "(-3, 7)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 56
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (0, -6). It moves 3 units left and 4 units up. Where does it stop?",
+      "answer": "(-3, -2)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 57
+    },
+    {
+      "type": "short",
+      "topic": "Moves on the Plane",
+      "prompt": "A robot starts at (5, 5). It moves 2 units left and 3 units down. Where does it stop?",
+      "answer": "(3, 2)",
+      "explanation": "Right increases x, left decreases x. Up increases y, down decreases y. Add the changes to the start point.",
+      "id": 58
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the vertical distance between (2, 3) and (2, -5)?",
+      "answer": "8",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 59
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the horizontal distance between (-4, 1) and (6, 1)?",
+      "answer": "10",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 60
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the vertical distance between (-7, -2) and (-7, 6)?",
+      "answer": "8",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 61
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the horizontal distance between (3, -4) and (-5, -4)?",
+      "answer": "8",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 62
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the vertical distance between (0, 8) and (0, -1)?",
+      "answer": "9",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 63
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the horizontal distance between (-9, 0) and (4, 0)?",
+      "answer": "13",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 64
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the vertical distance between (5, 5) and (5, 12)?",
+      "answer": "7",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 65
+    },
+    {
+      "type": "short",
+      "topic": "Distance (Horizontal/Vertical)",
+      "prompt": "What is the horizontal distance between (-2, -7) and (-10, -7)?",
+      "answer": "8",
+      "explanation": "For vertical distance, subtract y-values (or x-values) and take the absolute value.",
+      "id": 66
+    }
+  ]
+}

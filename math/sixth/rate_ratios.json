@@ -1,0 +1,414 @@
+{
+  "grade": 6,
+  "chapter": "Ratios, Rates, Unit Rates, and Equivalent Rates",
+  "questions": [
+    {
+      "id": 1,
+      "type": "mcq",
+      "question": "What is the ratio of 3 apples to 5 apples?",
+      "options": ["3:5", "5:3", "8:1", "15:1"],
+      "answer": "3:5",
+      "explanation": "Ratios compare quantities using the same unit."
+    },
+    {
+      "id": 2,
+      "type": "short",
+      "question": "Write the ratio of 10 boys to 15 girls in simplest form.",
+      "answer": "2:3",
+      "explanation": "Divide both numbers by 5."
+    },
+    {
+      "id": 3,
+      "type": "mcq",
+      "question": "Which ratio is equivalent to 4:6?",
+      "options": ["2:3", "6:4", "8:10", "12:20"],
+      "answer": "2:3",
+      "explanation": "Divide both terms by 2."
+    },
+    {
+      "id": 4,
+      "type": "short",
+      "question": "Express 7 red balls and 21 blue balls as a ratio (red:blue).",
+      "answer": "1:3",
+      "explanation": "7:21 simplifies to 1:3."
+    },
+
+    {
+      "id": 5,
+      "type": "mcq",
+      "question": "Which of the following is a rate?",
+      "options": ["3 apples", "5:2", "60 miles per hour", "8 marbles"],
+      "answer": "60 miles per hour",
+      "explanation": "A rate compares two quantities with different units."
+    },
+    {
+      "id": 6,
+      "type": "short",
+      "question": "Is $5 for 2 pencils a rate? Why?",
+      "answer": "Yes",
+      "explanation": "It compares money and items, which are different units."
+    },
+
+    {
+      "id": 7,
+      "type": "mcq",
+      "question": "What is the unit rate if 12 cookies cost $6?",
+      "options": ["$0.50 per cookie", "$2 per cookie", "$6 per cookie", "$12 per cookie"],
+      "answer": "$0.50 per cookie",
+      "explanation": "Divide cost by number of items: 6 ÷ 12 = 0.50."
+    },
+    {
+      "id": 8,
+      "type": "short",
+      "question": "Find the unit rate: 180 miles in 3 hours.",
+      "answer": "60 miles per hour",
+      "explanation": "180 ÷ 3 = 60."
+    },
+    {
+      "id": 9,
+      "type": "mcq",
+      "question": "Which unit rate is correct for 15 pages in 5 minutes?",
+      "options": ["3 pages/min", "5 pages/min", "10 pages/min", "75 pages/min"],
+      "answer": "3 pages/min",
+      "explanation": "15 ÷ 5 = 3."
+    },
+    {
+      "id": 10,
+      "type": "short",
+      "question": "Find the unit rate: $24 for 6 notebooks.",
+      "answer": "$4 per notebook",
+      "explanation": "24 ÷ 6 = 4."
+    },
+
+    {
+      "id": 11,
+      "type": "mcq",
+      "question": "A car travels 240 miles in 4 hours. What is the unit rate?",
+      "options": ["40 mph", "50 mph", "60 mph", "80 mph"],
+      "answer": "60 mph",
+      "explanation": "240 ÷ 4 = 60."
+    },
+    {
+      "id": 12,
+      "type": "short",
+      "question": "Find the unit rate: 9 liters in 3 minutes.",
+      "answer": "3 liters per minute",
+      "explanation": "9 ÷ 3 = 3."
+    },
+    {
+      "id": 13,
+      "type": "mcq",
+      "question": "Which is the better buy: $8 for 4 kg or $15 for 10 kg?",
+      "options": ["$8 for 4 kg", "$15 for 10 kg", "Both same", "Cannot tell"],
+      "answer": "$15 for 10 kg",
+      "explanation": "Unit rates: $2/kg vs $1.50/kg."
+    },
+    {
+      "id": 14,
+      "type": "short",
+      "question": "Find the unit rate: 500 words in 10 minutes.",
+      "answer": "50 words per minute",
+      "explanation": "500 ÷ 10 = 50."
+    },
+
+    {
+      "id": 15,
+      "type": "mcq",
+      "question": "Which unit rate is higher?",
+      "options": ["120 miles in 2 hours", "150 miles in 3 hours"],
+      "answer": "120 miles in 2 hours",
+      "explanation": "60 mph vs 50 mph."
+    },
+    {
+      "id": 16,
+      "type": "short",
+      "question": "Find the unit rate: 18 apples for $9.",
+      "answer": "$0.50 per apple",
+      "explanation": "9 ÷ 18 = 0.5."
+    },
+
+    {
+      "id": 17,
+      "type": "mcq",
+      "question": "Which ratio is equivalent to 5:7?",
+      "options": ["10:14", "15:20", "25:30", "20:35"],
+      "answer": "10:14",
+      "explanation": "Multiply both numbers by 2."
+    },
+    {
+      "id": 18,
+      "type": "short",
+      "question": "Write an equivalent ratio for 6:9.",
+      "answer": "2:3",
+      "explanation": "Divide both terms by 3."
+    },
+
+    {
+      "id": 19,
+      "type": "mcq",
+      "question": "A runner runs 6 km in 30 minutes. What is the unit rate?",
+      "options": ["0.2 km/min", "5 km/min", "0.5 km/min", "1 km/min"],
+      "answer": "0.2 km/min",
+      "explanation": "6 ÷ 30 = 0.2."
+    },
+    {
+      "id": 20,
+      "type": "short",
+      "question": "Find the unit rate: 45 questions in 15 minutes.",
+      "answer": "3 questions per minute",
+      "explanation": "45 ÷ 15 = 3."
+    },
+
+    {
+      "id": 21,
+      "type": "mcq",
+      "question": "What is the unit rate for 90 km in 1.5 hours?",
+      "options": ["45 km/h", "60 km/h", "90 km/h", "135 km/h"],
+      "answer": "60 km/h",
+      "explanation": "90 ÷ 1.5 = 60."
+    },
+    {
+      "id": 22,
+      "type": "short",
+      "question": "Find the unit rate: $36 for 9 movie tickets.",
+      "answer": "$4 per ticket",
+      "explanation": "36 ÷ 9 = 4."
+    },
+
+    {
+      "id": 23,
+      "type": "mcq",
+      "question": "Which situation best represents a unit rate?",
+      "options": ["5 pens", "$3 per pen", "4:6", "10 students"],
+      "answer": "$3 per pen",
+      "explanation": "A unit rate is per one unit."
+    },
+    {
+      "id": 24,
+      "type": "short",
+      "question": "Convert the rate 300 miles in 5 hours to a unit rate.",
+      "answer": "60 miles per hour",
+      "explanation": "300 ÷ 5 = 60."
+    },
+
+    {
+      "id": 25,
+      "type": "mcq",
+      "question": "Which is an equivalent rate to 20 miles in 1 hour?",
+      "options": ["40 miles in 2 hours", "30 miles in 1 hour", "10 miles in 2 hours", "20 miles in 30 minutes"],
+      "answer": "40 miles in 2 hours",
+      "explanation": "Both have the same unit rate."
+    },
+
+    {
+      "id": 26,
+      "type": "short",
+      "question": "Find the unit rate: 72 km in 8 hours.",
+      "answer": "9 km per hour",
+      "explanation": "72 ÷ 8 = 9."
+    },
+
+    {
+      "id": 27,
+      "type": "mcq",
+      "question": "Which unit rate is the smallest?",
+      "options": ["10 pages in 2 min", "20 pages in 5 min", "30 pages in 10 min", "40 pages in 4 min"],
+      "answer": "30 pages in 10 min",
+      "explanation": "Unit rates: 5, 4, 3, 10 pages/min."
+    },
+
+    {
+      "id": 28,
+      "type": "short",
+      "question": "Find the unit rate: 5 gallons in 20 minutes.",
+      "answer": "0.25 gallons per minute",
+      "explanation": "5 ÷ 20 = 0.25."
+    },
+
+    {
+      "id": 29,
+      "type": "mcq",
+      "question": "Which is NOT a unit rate?",
+      "options": ["$2 per book", "60 mph", "5 apples", "4 liters/min"],
+      "answer": "5 apples",
+      "explanation": "No comparison of two quantities."
+    },
+
+    {
+      "id": 30,
+      "type": "short",
+      "question": "Write a unit rate for 16 toys costing $32.",
+      "answer": "$2 per toy",
+      "explanation": "32 ÷ 16 = 2."
+    },
+
+    {
+      "id": 31,
+      "type": "short",
+      "question": "Which is better: $12 for 3 kg or $20 for 5 kg?",
+      "answer": "$20 for 5 kg",
+      "explanation": "Unit rates: $4/kg vs $4/kg (same value)."
+    },
+
+    {
+      "id": 32,
+      "type": "mcq",
+      "question": "A printer prints 120 pages in 4 minutes. What is the unit rate?",
+      "options": ["20", "25", "30", "40"],
+      "answer": "30",
+      "explanation": "120 ÷ 4 = 30 pages/min."
+    },
+
+    {
+      "id": 33,
+      "type": "short",
+      "question": "Find the unit rate: 2.5 liters in 5 minutes.",
+      "answer": "0.5 liters per minute",
+      "explanation": "2.5 ÷ 5 = 0.5."
+    },
+
+    {
+      "id": 34,
+      "type": "mcq",
+      "question": "Which rate is equivalent to 6 candies for $3?",
+      "options": ["2 candies per dollar", "3 candies per dollar", "6 candies per dollar", "1 candy per dollar"],
+      "answer": "2 candies per dollar",
+      "explanation": "6 ÷ 3 = 2."
+    },
+
+    {
+      "id": 35,
+      "type": "short",
+      "question": "Find the unit rate: 84 miles in 7 hours.",
+      "answer": "12 miles per hour",
+      "explanation": "84 ÷ 7 = 12."
+    },
+
+    {
+      "id": 36,
+      "type": "mcq",
+      "question": "Which ratio compares quantities with different units?",
+      "options": ["Rate", "Ratio", "Fraction", "Equivalent ratio"],
+      "answer": "Rate",
+      "explanation": "Rates compare different units."
+    },
+
+    {
+      "id": 37,
+      "type": "short",
+      "question": "Convert 450 words in 15 minutes to a unit rate.",
+      "answer": "30 words per minute",
+      "explanation": "450 ÷ 15 = 30."
+    },
+
+    {
+      "id": 38,
+      "type": "mcq",
+      "question": "Which is the unit rate for $18 for 6 hours?",
+      "options": ["$2/hr", "$3/hr", "$6/hr", "$12/hr"],
+      "answer": "$3/hr",
+      "explanation": "18 ÷ 6 = 3."
+    },
+
+    {
+      "id": 39,
+      "type": "short",
+      "question": "Find the unit rate: 9 km in 0.5 hours.",
+      "answer": "18 km per hour",
+      "explanation": "9 ÷ 0.5 = 18."
+    },
+
+    {
+      "id": 40,
+      "type": "mcq",
+      "question": "Which unit rate is fastest?",
+      "options": ["50 km in 1 hr", "120 km in 3 hr", "90 km in 2 hr", "30 km in 1 hr"],
+      "answer": "50 km in 1 hr",
+      "explanation": "50, 40, 45, 30 km/hr."
+    },
+
+    {
+      "id": 41,
+      "type": "short",
+      "question": "Find the unit rate: 15 liters in 3 hours.",
+      "answer": "5 liters per hour",
+      "explanation": "15 ÷ 3 = 5."
+    },
+
+    {
+      "id": 42,
+      "type": "mcq",
+      "question": "A store sells 8 kg of rice for $16. What is the unit rate?",
+      "options": ["$1/kg", "$2/kg", "$4/kg", "$8/kg"],
+      "answer": "$2/kg",
+      "explanation": "16 ÷ 8 = 2."
+    },
+
+    {
+      "id": 43,
+      "type": "short",
+      "question": "Find the unit rate: 360 seconds in 6 minutes.",
+      "answer": "60 seconds per minute",
+      "explanation": "360 ÷ 6 = 60."
+    },
+
+    {
+      "id": 44,
+      "type": "mcq",
+      "question": "Which unit rate represents speed?",
+      "options": ["$ per item", "miles per hour", "items per box", "grams per packet"],
+      "answer": "miles per hour",
+      "explanation": "Speed is distance per time."
+    },
+
+    {
+      "id": 45,
+      "type": "short",
+      "question": "Find the unit rate: 14 notebooks for $28.",
+      "answer": "$2 per notebook",
+      "explanation": "28 ÷ 14 = 2."
+    },
+
+    {
+      "id": 46,
+      "type": "mcq",
+      "question": "Which situation uses equivalent rates?",
+      "options": ["Comparing speeds", "Counting objects", "Adding numbers", "Subtracting decimals"],
+      "answer": "Comparing speeds",
+      "explanation": "Equivalent rates help compare speeds."
+    },
+
+    {
+      "id": 47,
+      "type": "short",
+      "question": "Write an equivalent rate for 10 km in 30 minutes.",
+      "answer": "20 km per hour",
+      "explanation": "Double both distance and time."
+    },
+
+    {
+      "id": 48,
+      "type": "mcq",
+      "question": "Which unit rate is best value?",
+      "options": ["$6 for 2 kg", "$10 for 4 kg", "$15 for 5 kg", "$8 for 3 kg"],
+      "answer": "$10 for 4 kg",
+      "explanation": "$2.50/kg is the lowest."
+    },
+
+    {
+      "id": 49,
+      "type": "short",
+      "question": "Find the unit rate: 27 pencils in 9 boxes.",
+      "answer": "3 pencils per box",
+      "explanation": "27 ÷ 9 = 3."
+    },
+
+    {
+      "id": 50,
+      "type": "short",
+      "question": "Find the unit rate: 1.5 km in 0.25 hours.",
+      "answer": "6 km per hour",
+      "explanation": "1.5 ÷ 0.25 = 6."
+    }
+  ]
+}

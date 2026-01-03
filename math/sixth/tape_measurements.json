@@ -1,0 +1,364 @@
+{
+  "grade": 6,
+  "chapters": [
+    {
+      "chapter_id": "tape_diagrams",
+      "title": "Tape Diagrams",
+      "description": "Use visual bar models to represent and solve problems.",
+      "questions": [
+        {
+          "id": 1,
+          "type": "short",
+          "question": "A tape diagram shows 4 equal parts totaling 20. What is the value of each part?",
+          "answer": "5",
+          "explanation": "20 ÷ 4 = 5"
+        },
+        {
+          "id": 2,
+          "type": "mcq",
+          "question": "A tape diagram has 5 equal sections. The total is 25. What does one section represent?",
+          "options": ["4", "5", "6", "10"],
+          "answer": "5",
+          "explanation": "25 ÷ 5 = 5"
+        },
+        {
+          "id": 3,
+          "type": "short",
+          "question": "A tape diagram shows 3 parts for Anna and 2 parts for Ben. If the total is 50, how much does Anna get?",
+          "answer": "30",
+          "explanation": "Total parts = 5; each part = 10; Anna gets 3 × 10"
+        },
+        {
+          "id": 4,
+          "type": "mcq",
+          "question": "If a tape diagram shows 6 equal units totaling 48, how many units equal 16?",
+          "options": ["1", "2", "3", "4"],
+          "answer": "2",
+          "explanation": "Each unit = 8; 16 ÷ 8 = 2"
+        },
+        {
+          "id": 5,
+          "type": "short",
+          "question": "A tape diagram shows 4 equal parts. Three parts equal 18. What is the total?",
+          "answer": "24",
+          "explanation": "Each part = 6; total = 4 × 6"
+        },
+        {
+          "id": 6,
+          "type": "mcq",
+          "question": "What operation is MOST useful when using tape diagrams?",
+          "options": ["Guessing", "Division", "Rounding", "Estimation"],
+          "answer": "Division",
+          "explanation": "Division helps find unit value"
+        },
+        {
+          "id": 7,
+          "type": "short",
+          "question": "A tape diagram shows 8 equal parts totaling 64. What is the value of 5 parts?",
+          "answer": "40",
+          "explanation": "Each part = 8; 5 × 8 = 40"
+        },
+        {
+          "id": 8,
+          "type": "mcq",
+          "question": "A tape diagram represents 3 equal groups. Which expression matches it?",
+          "options": ["3 + x", "x ÷ 3", "3x", "x - 3"],
+          "answer": "3x",
+          "explanation": "Each group is x"
+        },
+        {
+          "id": 9,
+          "type": "short",
+          "question": "A tape diagram shows total 36 with 9 equal parts. What is one part?",
+          "answer": "4",
+          "explanation": "36 ÷ 9 = 4"
+        },
+        {
+          "id": 10,
+          "type": "mcq",
+          "question": "Tape diagrams are MOST helpful for:",
+          "options": ["Algebra proofs", "Visualizing word problems", "Graphing lines", "Angles"],
+          "answer": "Visualizing word problems",
+          "explanation": "They show relationships visually"
+        },
+        {
+          "id": 11,
+          "type": "short",
+          "question": "A tape diagram shows 7 equal parts. Total is 49. How much is 1 part?",
+          "answer": "7",
+          "explanation": "49 ÷ 7 = 7"
+        },
+        {
+          "id": 12,
+          "type": "mcq",
+          "question": "If half the tape diagram equals 20, what is the full amount?",
+          "options": ["10", "20", "30", "40"],
+          "answer": "40",
+          "explanation": "Half × 2 = whole"
+        },
+        {
+          "id": 13,
+          "type": "short",
+          "question": "A tape diagram has 10 equal parts totaling 100. What is 7 parts?",
+          "answer": "70",
+          "explanation": "Each part = 10"
+        },
+        {
+          "id": 14,
+          "type": "mcq",
+          "question": "Which fraction matches 3 shaded parts out of 8?",
+          "options": ["3/5", "5/8", "3/8", "8/3"],
+          "answer": "3/8",
+          "explanation": "Shaded over total"
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "A tape diagram shows 2 parts equal to 12. What is 1 part?",
+          "answer": "6",
+          "explanation": "12 ÷ 2 = 6"
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "measurements",
+      "title": "Measurements (with Guides)",
+      "description": "Understand units, tools, and conversions.",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "Which unit is best for measuring the length of a pencil?",
+          "options": ["Kilometers", "Meters", "Centimeters", "Liters"],
+          "answer": "Centimeters",
+          "explanation": "Small objects use cm"
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Convert 2 meters to centimeters.",
+          "answer": "200",
+          "explanation": "1 m = 100 cm"
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "Which tool measures liquid volume?",
+          "options": ["Ruler", "Scale", "Measuring cup", "Thermometer"],
+          "answer": "Measuring cup",
+          "explanation": "Used for liquids"
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Convert 500 grams to kilograms.",
+          "answer": "0.5",
+          "explanation": "1000 g = 1 kg"
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "Which unit is used for temperature?",
+          "options": ["Meters", "Liters", "Degrees", "Grams"],
+          "answer": "Degrees",
+          "explanation": "Temperature is measured in degrees"
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "How many minutes are in 2 hours?",
+          "answer": "120",
+          "explanation": "1 hour = 60 minutes"
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "Which is heavier?",
+          "options": ["1 kg", "500 g", "200 g", "100 g"],
+          "answer": "1 kg",
+          "explanation": "1 kg = 1000 g"
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Convert 3.5 liters to milliliters.",
+          "answer": "3500",
+          "explanation": "1 L = 1000 mL"
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What unit measures distance between cities?",
+          "options": ["cm", "mm", "km", "mL"],
+          "answer": "km",
+          "explanation": "Kilometers measure long distances"
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Convert 750 mL to liters.",
+          "answer": "0.75",
+          "explanation": "Divide by 1000"
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which unit measures weight?",
+          "options": ["Liter", "Second", "Gram", "Meter"],
+          "answer": "Gram",
+          "explanation": "Gram measures mass"
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Convert 90 minutes to hours.",
+          "answer": "1.5",
+          "explanation": "90 ÷ 60 = 1.5"
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "Which is the smallest unit?",
+          "options": ["cm", "mm", "m", "km"],
+          "answer": "mm",
+          "explanation": "Millimeter is smallest"
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Convert 4 kg to grams.",
+          "answer": "4000",
+          "explanation": "Multiply by 1000"
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Convert 1.25 hours to minutes.",
+          "answer": "75",
+          "explanation": "1.25 × 60"
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "fraction_decimal_percent",
+      "title": "Converting Fractions, Decimals, and Percentages",
+      "description": "Convert between fractions, decimals, and percents.",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "What is 1/2 as a decimal?",
+          "options": ["0.2", "0.25", "0.5", "1.5"],
+          "answer": "0.5",
+          "explanation": "Divide 1 ÷ 2"
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Convert 0.75 to a fraction.",
+          "answer": "3/4",
+          "explanation": "75/100 simplifies to 3/4"
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "What is 25% as a fraction?",
+          "options": ["1/2", "1/4", "3/4", "2/5"],
+          "answer": "1/4",
+          "explanation": "25/100 simplifies"
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Convert 3/5 to a decimal.",
+          "answer": "0.6",
+          "explanation": "3 ÷ 5"
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "What is 0.2 as a percent?",
+          "options": ["2%", "20%", "0.2%", "200%"],
+          "answer": "20%",
+          "explanation": "Multiply by 100"
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "Convert 60% to a fraction.",
+          "answer": "3/5",
+          "explanation": "60/100 simplifies"
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "What is 0.125 as a fraction?",
+          "options": ["1/8", "1/4", "1/2", "3/8"],
+          "answer": "1/8",
+          "explanation": "125/1000 simplifies"
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Convert 7/10 to a percent.",
+          "answer": "70%",
+          "explanation": "7/10 = 0.7"
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What decimal equals 45%?",
+          "options": ["0.45", "4.5", "0.045", "45"],
+          "answer": "0.45",
+          "explanation": "Divide by 100"
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Convert 0.4 to a fraction.",
+          "answer": "2/5",
+          "explanation": "4/10 simplifies"
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which is the same as 0.6?",
+          "options": ["6%", "3/5", "1/6", "60/1000"],
+          "answer": "3/5",
+          "explanation": "3 ÷ 5 = 0.6"
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Convert 90% to decimal.",
+          "answer": "0.9",
+          "explanation": "Divide by 100"
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "What is 5/8 as a decimal?",
+          "options": ["0.5", "0.625", "0.75", "0.8"],
+          "answer": "0.625",
+          "explanation": "5 ÷ 8"
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Convert 0.9 to percent.",
+          "answer": "90%",
+          "explanation": "Multiply by 100"
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Convert 40% to a decimal.",
+          "answer": "0.4",
+          "explanation": "40 ÷ 100"
+        }
+      ]
+    }
+  ]
+}
