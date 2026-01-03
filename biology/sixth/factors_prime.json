@@ -1,0 +1,116 @@
+{
+  "chapter": "Factors, Prime Numbers & Prime Factorization",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "Which of the following is a factor of 18?",
+      "options": ["5", "6", "7", "11"],
+      "answer": "6"
+    },
+    {
+      "type": "short",
+      "question": "List one factor of 24.",
+      "answer": "6"
+    },
+    {
+      "type": "mcq",
+      "question": "Which number has exactly two factors?",
+      "options": ["4", "6", "9", "11"],
+      "answer": "11"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of these numbers is composite?",
+      "options": ["2", "3", "5", "9"],
+      "answer": "9"
+    },
+    {
+      "type": "short",
+      "question": "Is 17 a prime or composite number?",
+      "answer": "prime"
+    },
+    {
+      "type": "mcq",
+      "question": "Which pair shows factor pairs of 20?",
+      "options": ["(1,20)", "(3,7)", "(5,3)", "(6,4)"],
+      "answer": "(1,20)"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the smallest prime number?",
+      "options": ["1", "2", "3", "5"],
+      "answer": "2"
+    },
+    {
+      "type": "short",
+      "question": "Write the prime factorization of 12.",
+      "answer": "2×2×3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of the following is NOT a prime number?",
+      "options": ["13", "19", "21", "23"],
+      "answer": "21"
+    },
+    {
+      "type": "short",
+      "question": "How many factors does 15 have?",
+      "answer": "4"
+    },
+    {
+      "type": "mcq",
+      "question": "Which number has factors 1, 2, 4, and 8?",
+      "options": ["6", "8", "12", "16"],
+      "answer": "8"
+    },
+    {
+      "type": "short",
+      "question": "Write the prime factorization of 18.",
+      "answer": "2×3×3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which number is a factor of both 12 and 18?",
+      "options": ["4", "6", "9", "12"],
+      "answer": "6"
+    },
+    {
+      "type": "short",
+      "question": "Is 1 a prime number?",
+      "answer": "no"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of the following numbers is prime?",
+      "options": ["15", "27", "29", "39"],
+      "answer": "29"
+    },
+    {
+      "type": "short",
+      "question": "Write the prime factorization of 20.",
+      "answer": "2×2×5"
+    },
+    {
+      "type": "mcq",
+      "question": "Which number has exactly three factors?",
+      "options": ["4", "6", "8", "9"],
+      "answer": "4"
+    },
+    {
+      "type": "short",
+      "question": "What are the two prime factors of 10?",
+      "answer": "2 and 5"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of the following is a factor of 36?",
+      "options": ["5", "7", "9", "11"],
+      "answer": "9"
+    },
+    {
+      "type": "short",
+      "question": "Write the prime factorization of 30.",
+      "answer": "2×3×5"
+    }
+  ]
+}
