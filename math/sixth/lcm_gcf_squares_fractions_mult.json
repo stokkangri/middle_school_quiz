@@ -1,0 +1,479 @@
+{
+  "grade": 6,
+  "chapters": [
+    {
+      "chapter_id": "lcm_gcf",
+      "title": "LCM and GCF",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "What is the LCM of 6 and 8?",
+          "options": ["12", "16", "24", "48"],
+          "answer": "24",
+          "explanation": "Multiples of 6: 6,12,18,24. Multiples of 8: 8,16,24. LCM is 24."
+        },
+        {
+          "id": 2,
+          "type": "mcq",
+          "question": "Find the GCF of 18 and 24.",
+          "options": ["6", "12", "18", "24"],
+          "answer": "6",
+          "explanation": "Common factors are 1,2,3,6. Greatest is 6."
+        },
+        {
+          "id": 3,
+          "type": "short",
+          "question": "What is the LCM of 4 and 10?",
+          "answer": "20",
+          "explanation": "LCM of 4 and 10 is 20."
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Find the GCF of 36 and 54.",
+          "answer": "18",
+          "explanation": "36 = 2²×3², 54 = 2×3³ → GCF = 18."
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "Which pair has GCF = 1?",
+          "options": ["6,9", "8,12", "7,15", "10,20"],
+          "answer": "7,15",
+          "explanation": "7 and 15 have no common factors except 1."
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "What is the LCM of 5 and 7?",
+          "answer": "35",
+          "explanation": "5 and 7 are prime → LCM = 5×7."
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "LCM of two prime numbers is always:",
+          "options": ["Their sum", "Their difference", "Their product", "Their GCF"],
+          "answer": "Their product",
+          "explanation": "Prime numbers have no common factors."
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Find the GCF of 45 and 60.",
+          "answer": "15",
+          "explanation": "Common factors include 1,3,5,15."
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "Which number is a multiple of both 4 and 6?",
+          "options": ["12", "16", "18", "20"],
+          "answer": "12",
+          "explanation": "12 is divisible by both 4 and 6."
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "What is the LCM of 9 and 12?",
+          "answer": "36",
+          "explanation": "LCM of 9 and 12 is 36."
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "GCF of two consecutive numbers is always:",
+          "options": ["0", "1", "2", "The smaller number"],
+          "answer": "1",
+          "explanation": "Consecutive numbers share no common factors."
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Find the GCF of 16 and 24.",
+          "answer": "8",
+          "explanation": "16 = 2⁴, 24 = 2³×3 → GCF = 2³ = 8."
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "If GCF of two numbers is 12, which could be the numbers?",
+          "options": ["12 and 24", "12 and 18", "12 and 25", "12 and 13"],
+          "answer": "12 and 24",
+          "explanation": "Both divisible by 12."
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "What is the LCM of 2, 3, and 4?",
+          "answer": "12",
+          "explanation": "LCM of 2,3,4 = 12."
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "What is the GCF of 81 and 27?",
+          "answer": "27",
+          "explanation": "27 divides both numbers."
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "perfect_squares",
+      "title": "Perfect Squares",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "Which of the following is a perfect square?",
+          "options": ["18", "25", "32", "45"],
+          "answer": "25",
+          "explanation": "25 = 5×5."
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Is 49 a perfect square?",
+          "answer": "Yes",
+          "explanation": "7×7 = 49."
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "What is the square of 12?",
+          "options": ["124", "132", "144", "156"],
+          "answer": "144",
+          "explanation": "12² = 144."
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Find the square root of 81.",
+          "answer": "9",
+          "explanation": "9×9 = 81."
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "Which number is NOT a perfect square?",
+          "options": ["36", "49", "64", "72"],
+          "answer": "72",
+          "explanation": "72 cannot be written as n×n."
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "What is the smallest perfect square greater than 50?",
+          "answer": "64",
+          "explanation": "8² = 64."
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "Square of 15 is:",
+          "options": ["225", "215", "230", "240"],
+          "answer": "225",
+          "explanation": "15×15 = 225."
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Is 100 a perfect square?",
+          "answer": "Yes",
+          "explanation": "10×10 = 100."
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "Which number has square root 11?",
+          "options": ["111", "121", "131", "144"],
+          "answer": "121",
+          "explanation": "11² = 121."
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Find the square of 9.",
+          "answer": "81",
+          "explanation": "9×9 = 81."
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which is the largest perfect square less than 80?",
+          "options": ["64", "72", "75", "81"],
+          "answer": "64",
+          "explanation": "8² = 64."
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Is 1 a perfect square?",
+          "answer": "Yes",
+          "explanation": "1×1 = 1."
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "Square of 20 is:",
+          "options": ["200", "300", "400", "500"],
+          "answer": "400",
+          "explanation": "20² = 400."
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "What number squared equals 144?",
+          "answer": "12",
+          "explanation": "12×12 = 144."
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Is 169 a perfect square?",
+          "answer": "Yes",
+          "explanation": "13×13 = 169."
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "dividing_fractions",
+      "title": "Dividing Fractions",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "What is 1/2 ÷ 1/4?",
+          "options": ["1/8", "2", "4", "1/4"],
+          "answer": "2",
+          "explanation": "Multiply by reciprocal: 1/2 × 4 = 2."
+        },
+        {
+          "id": 2,
+          "type": "short",
+          "question": "Solve: 3/5 ÷ 6/7",
+          "answer": "7/10",
+          "explanation": "3/5 × 7/6 = 21/30 = 7/10."
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "Which operation is used to divide fractions?",
+          "options": ["Add", "Subtract", "Multiply by reciprocal", "Divide numerators"],
+          "answer": "Multiply by reciprocal",
+          "explanation": "Division of fractions uses reciprocals."
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Solve: 4 ÷ 2/3",
+          "answer": "6",
+          "explanation": "4 × 3/2 = 6."
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "What is 5/6 ÷ 1/2?",
+          "options": ["5/12", "5/3", "10/6", "6/5"],
+          "answer": "5/3",
+          "explanation": "5/6 × 2 = 10/6 = 5/3."
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "Solve: 7/8 ÷ 7/4",
+          "answer": "1/2",
+          "explanation": "7/8 × 4/7 = 4/8 = 1/2."
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "Dividing by a fraction is the same as:",
+          "options": ["Adding it", "Multiplying it", "Multiplying by reciprocal", "Subtracting it"],
+          "answer": "Multiplying by reciprocal",
+          "explanation": "Standard rule for fraction division."
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Solve: 2/3 ÷ 4",
+          "answer": "1/6",
+          "explanation": "2/3 × 1/4 = 2/12 = 1/6."
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What is 9 ÷ 3/4?",
+          "options": ["3", "6", "12", "27"],
+          "answer": "12",
+          "explanation": "9 × 4/3 = 12."
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Solve: 10 ÷ 5/2",
+          "answer": "4",
+          "explanation": "10 × 2/5 = 4."
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "Which is correct?",
+          "options": ["3/4 ÷ 2 = 3/8", "3/4 ÷ 2 = 6/4", "3/4 ÷ 2 = 3/2", "3/4 ÷ 2 = 1/2"],
+          "answer": "3/8",
+          "explanation": "3/4 × 1/2 = 3/8."
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Solve: 6 ÷ 1/3",
+          "answer": "18",
+          "explanation": "6 × 3 = 18."
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "What is 4/5 ÷ 8/5?",
+          "options": ["1/2", "4/8", "1/10", "2"],
+          "answer": "1/2",
+          "explanation": "4/5 × 5/8 = 20/40 = 1/2."
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Solve: 1 ÷ 2/5",
+          "answer": "5/2",
+          "explanation": "1 × 5/2 = 5/2."
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Solve: 8/9 ÷ 4/9",
+          "answer": "2",
+          "explanation": "8/9 × 9/4 = 2."
+        }
+      ]
+    },
+
+    {
+      "chapter_id": "multiplication",
+      "title": "Multi-digit Multiplication",
+      "questions": [
+        {
+          "id": 1,
+          "type": "short",
+          "question": "Multiply: 34 × 7",
+          "answer": "238",
+          "explanation": "34 × 7 = 238."
+        },
+        {
+          "id": 2,
+          "type": "mcq",
+          "question": "What is 125 × 4?",
+          "options": ["400", "450", "500", "525"],
+          "answer": "500",
+          "explanation": "125 × 4 = 500."
+        },
+        {
+          "id": 3,
+          "type": "short",
+          "question": "Multiply: 246 × 3",
+          "answer": "738",
+          "explanation": "246 × 3 = 738."
+        },
+        {
+          "id": 4,
+          "type": "short",
+          "question": "Multiply: 1024 × 2",
+          "answer": "2048",
+          "explanation": "Doubling gives 2048."
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "What is 56 × 8?",
+          "options": ["448", "456", "464", "472"],
+          "answer": "448",
+          "explanation": "56 × 8 = 448."
+        },
+        {
+          "id": 6,
+          "type": "short",
+          "question": "Multiply: 312 × 4",
+          "answer": "1248",
+          "explanation": "312 × 4 = 1248."
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "What is 75 × 12?",
+          "options": ["800", "850", "900", "950"],
+          "answer": "900",
+          "explanation": "75 × 12 = 900."
+        },
+        {
+          "id": 8,
+          "type": "short",
+          "question": "Multiply: 403 × 5",
+          "answer": "2015",
+          "explanation": "403 × 5 = 2015."
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "What is 600 × 7?",
+          "options": ["4200", "4800", "3600", "3900"],
+          "answer": "4200",
+          "explanation": "600 × 7 = 4200."
+        },
+        {
+          "id": 10,
+          "type": "short",
+          "question": "Multiply: 908 × 3",
+          "answer": "2724",
+          "explanation": "908 × 3 = 2724."
+        },
+        {
+          "id": 11,
+          "type": "mcq",
+          "question": "What is 84 × 9?",
+          "options": ["756", "764", "774", "784"],
+          "answer": "756",
+          "explanation": "84 × 9 = 756."
+        },
+        {
+          "id": 12,
+          "type": "short",
+          "question": "Multiply: 1005 × 6",
+          "answer": "6030",
+          "explanation": "1005 × 6 = 6030."
+        },
+        {
+          "id": 13,
+          "type": "mcq",
+          "question": "What is 250 × 16?",
+          "options": ["4000", "3500", "4500", "3000"],
+          "answer": "4000",
+          "explanation": "250 × 16 = 4000."
+        },
+        {
+          "id": 14,
+          "type": "short",
+          "question": "Multiply: 999 × 2",
+          "answer": "1998",
+          "explanation": "999 × 2 = 1998."
+        },
+        {
+          "id": 15,
+          "type": "short",
+          "question": "Multiply: 712 × 5",
+          "answer": "3560",
+          "explanation": "712 × 5 = 3560."
+        }
+      ]
+    }
+  ]
+}

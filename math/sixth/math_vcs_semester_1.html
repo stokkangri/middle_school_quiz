@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade 6 Math Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .question-box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .options button {
+      display: block;
+      margin: 5px 0;
+      padding: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+    .nav-buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+    .wrong {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Grade 6 Math Practice</h1>
+
+<div id="chapter-select">
+  <h2>Select a Chapter</h2>
+  <select id="chapterDropdown">
+    <option value="">-- Choose --</option>
+    <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/factors_prime.json">
+    Factors, Prime Numbers & Factorization
+  </option>
+
+  <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/lcm_gcf_squares_fractions_mult.json">
+    LCM , GCD/GCF, Squares, Multiplication
+  </option>
+  </select>
+  <br><br>
+  <button onclick="loadChapter()">Start Practice</button>
+</div>
+
+<div id="quiz" class="hidden">
+  <h2 id="chapterTitle"></h2>
+
+  <div class="question-box">
+    <p id="questionText"></p>
+
+    <div id="options" class="options"></div>
+
+    <div id="shortAnswerBox" class="hidden">
+      <input type="text" id="shortAnswerInput" placeholder="Type your answer">
+      <button onclick="submitShortAnswer()">Submit</button>
+    </div>
+
+    <p id="feedback"></p>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevQuestion()">Prev</button>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+
+  <p>Score: <span id="score">0</span> / <span id="total">0</span></p>
+</div>
+
+<script>
+let questions = [];
+let currentIndex = 0;
+let score = 0;
+let answered = [];
+
+async function loadChapter() {
+  const file = document.getElementById("chapterDropdown").value;
+  if (!file) return;
+
+  const response = await fetch(file);
+  const data = await response.json();
+
+  questions = data.questions;
+  answered = new Array(questions.length).fill(false);
+  currentIndex = 0;
+  score = 0;
+
+  document.getElementById("chapterTitle").innerText = data.chapter;
+  document.getElementById("total").innerText = questions.length;
+  document.getElementById("score").innerText = score;
+
+  document.getElementById("chapter-select").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = questions[currentIndex];
+  document.getElementById("questionText").innerText = q.question;
+  document.getElementById("feedback").innerText = "";
+
+  const optionsDiv = document.getElementById("options");
+  const shortBox = document.getElementById("shortAnswerBox");
+  optionsDiv.innerHTML = "";
+  shortBox.classList.add("hidden");
+
+  if (q.type === "mcq") {
+    q.options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.innerText = opt;
+      btn.onclick = () => checkMCQ(opt);
+      optionsDiv.appendChild(btn);
+    });
+  } else {
+    shortBox.classList.remove("hidden");
+    document.getElementById("shortAnswerInput").value = "";
+  }
+}
+
+function checkMCQ(choice) {
+  const q = questions[currentIndex];
+  if (answered[currentIndex]) return;
+
+  if (choice === q.answer) {
+    score++;
+    document.getElementById("feedback").innerHTML = "<span class='correct'>Correct!</span>";
+  } else {
+    document.getElementById("feedback").innerHTML =
+      `<span class='wrong'>Wrong.</span> Correct answer: ${q.answer}`;
+  }
+  answered[currentIndex] = true;
+  document.getElementById("score").innerText = score;
+}
+
+function submitShortAnswer() {
+  const q = questions[currentIndex];
+  if (answered[currentIndex]) return;
+
+  const input = document.getElementById("shortAnswerInput").value.trim();
+  if (input === q.answer.toString()) {
+    score++;
+    document.getElementById("feedback").innerHTML = "<span class='correct'>Correct!</span>";
+  } else {
+    document.getElementById("feedback").innerHTML =
+      `<span class='wrong'>Wrong.</span> Correct answer: ${q.answer}`;
+  }
+  answered[currentIndex] = true;
+  document.getElementById("score").innerText = score;
+}
+
+function nextQuestion() {
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    showQuestion();
+  }
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showQuestion();
+  }
+}
+</script>
+
+</body>
+</html>
