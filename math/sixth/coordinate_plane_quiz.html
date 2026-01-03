@@ -41,7 +41,7 @@
   <div class="topbar">
     <div>
       <label>Questions JSON URL (optional)</label>
-      <input id="jsonUrl" type="text" placeholder="Leave blank to use local coordinate_plane_questions.json" />
+      <input id="jsonUrl" type="text" placeholder="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/coordinate_plane_questions.json" />
       <div class="muted small">Tip: Host the JSON on GitHub and paste the raw URL here.</div>
     </div>
     <div>
@@ -108,6 +108,9 @@
   const CANVAS = document.getElementById("canvas");
   const CTX = CANVAS.getContext("2d");
   const jsonUrlEl = document.getElementById("jsonUrl");
+  if (!jsonUrlEl.value) {
+    jsonUrlEl.value = jsonUrlEl.placeholder;
+  }
   const topicSelect = document.getElementById("topicSelect");
   const numQEl = document.getElementById("numQ");
   const startBtn = document.getElementById("startBtn");
