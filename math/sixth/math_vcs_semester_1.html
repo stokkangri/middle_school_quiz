@@ -6,31 +6,37 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 20px;
+      font-size: 20px;
     }
     h1, h2 {
       text-align: center;
+    }
+    select, button, input {
+      font-size: 20px;
+      padding: 10px;
+      margin: 5px;
     }
     .hidden {
       display: none;
     }
     .question-box {
       margin-top: 20px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 20px;
+      border: 2px solid #444;
+      border-radius: 10px;
     }
     .options button {
       display: block;
-      margin: 5px 0;
-      padding: 8px;
+      margin: 8px 0;
+      padding: 12px;
       width: 100%;
       cursor: pointer;
     }
     .nav-buttons {
-      margin-top: 15px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
     }
@@ -41,6 +47,10 @@
     .wrong {
       color: red;
       font-weight: bold;
+    }
+    .reveal {
+      margin-top: 10px;
+      font-style: italic;
     }
   </style>
 </head>
@@ -71,18 +81,17 @@
     <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/decimals.json">
     Decimals
   </option>
-
   </select>
-  <br><br>
+  <br>
   <button onclick="loadChapter()">Start Practice</button>
 </div>
 
 <div id="quiz" class="hidden">
   <h2 id="chapterTitle"></h2>
+  <p id="progress"></p>
 
   <div class="question-box">
     <p id="questionText"></p>
-
     <div id="options" class="options"></div>
 
     <div id="shortAnswerBox" class="hidden">
@@ -90,7 +99,9 @@
       <button onclick="submitShortAnswer()">Submit</button>
     </div>
 
+    <button onclick="revealAnswer()">Reveal Answer</button>
     <p id="feedback"></p>
+    <p id="explanation" class="reveal"></p>
   </div>
 
   <div class="nav-buttons">
@@ -107,6 +118,22 @@ let currentIndex = 0;
 let score = 0;
 let answered = [];
 
+function flattenQuestions(data) {
+  if (data.questions) {
+    return data.questions;
+  }
+  if (data.chapters) {
+    let all = [];
+    data.chapters.forEach(ch => {
+      if (ch.questions) {
+        all = all.concat(ch.questions);
+      }
+    });
+    return all;
+  }
+  return [];
+}
+
 async function loadChapter() {
   const file = document.getElementById("chapterDropdown").value;
   if (!file) return;
@@ -114,12 +141,12 @@ async function loadChapter() {
   const response = await fetch(file);
   const data = await response.json();
 
-  questions = data.questions;
+  questions = flattenQuestions(data);
   answered = new Array(questions.length).fill(false);
   currentIndex = 0;
   score = 0;
 
-  document.getElementById("chapterTitle").innerText = data.chapter;
+  document.getElementById("chapterTitle").innerText = data.title || data.chapter || "Math Practice";
   document.getElementById("total").innerText = questions.length;
   document.getElementById("score").innerText = score;
 
@@ -133,6 +160,9 @@ function showQuestion() {
   const q = questions[currentIndex];
   document.getElementById("questionText").innerText = q.question;
   document.getElementById("feedback").innerText = "";
+  document.getElementById("explanation").innerText = "";
+  document.getElementById("progress").innerText =
+    `Question ${currentIndex + 1} of ${questions.length}`;
 
   const optionsDiv = document.getElementById("options");
   const shortBox = document.getElementById("shortAnswerBox");
@@ -181,6 +211,11 @@ function submitShortAnswer() {
   }
   answered[currentIndex] = true;
   document.getElementById("score").innerText = score;
+}
+
+function revealAnswer() {
+  const q = questions[currentIndex];
+  document.getElementById("explanation").innerText = q.explanation || "";
 }
 
 function nextQuestion() {
