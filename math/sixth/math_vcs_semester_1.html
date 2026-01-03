@@ -62,25 +62,31 @@
   <h2>Select a Chapter</h2>
   <select id="chapterDropdown">
     <option value="">-- Choose --</option>
+
     <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/factors_prime.json">
-    Factors, Prime Numbers & Factorization
-  </option>
+      Factors, Prime Numbers & Factorization
+    </option>
 
-  <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/lcm_gcf_squares_fractions_mult.json">
-    LCM , GCD/GCF, Squares, Multiplication
-  </option>
+    <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/lcm_gcf_squares_fractions_mult.json">
+      LCM , GCD/GCF, Squares, Multiplication
+    </option>
 
-  <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/rate_ratios.json">
-    Rates and Ratios
-  </option>
+    <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/rate_ratios.json">
+      Rates and Ratios
+    </option>
 
-   <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/tape_measurements.json">
-    Tape and Measurements
-  </option>
+    <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/tape_measurements.json">
+      Tape and Measurements
+    </option>
 
     <option value="https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/math/sixth/decimals.json">
-    Decimals
-  </option>
+      Decimals
+    </option>
+
+    <!-- NEW REDIRECT OPTION -->
+    <option value="REDIRECT:https://stokkangri.github.io/middle_school_quiz/math/sixth/coordinate_plane_quiz.html">
+      Coordinate Plane (Interactive)
+    </option>
   </select>
   <br>
   <button onclick="loadChapter()">Start Practice</button>
@@ -119,15 +125,11 @@ let score = 0;
 let answered = [];
 
 function flattenQuestions(data) {
-  if (data.questions) {
-    return data.questions;
-  }
+  if (data.questions) return data.questions;
   if (data.chapters) {
     let all = [];
     data.chapters.forEach(ch => {
-      if (ch.questions) {
-        all = all.concat(ch.questions);
-      }
+      if (ch.questions) all = all.concat(ch.questions);
     });
     return all;
   }
@@ -135,10 +137,17 @@ function flattenQuestions(data) {
 }
 
 async function loadChapter() {
-  const file = document.getElementById("chapterDropdown").value;
-  if (!file) return;
+  const value = document.getElementById("chapterDropdown").value;
+  if (!value) return;
 
-  const response = await fetch(file);
+  // 🔁 HANDLE REDIRECT OPTION
+  if (value.startsWith("REDIRECT:")) {
+    const url = value.replace("REDIRECT:", "");
+    window.location.href = url;
+    return;
+  }
+
+  const response = await fetch(value);
   const data = await response.json();
 
   questions = flattenQuestions(data);
@@ -146,7 +155,8 @@ async function loadChapter() {
   currentIndex = 0;
   score = 0;
 
-  document.getElementById("chapterTitle").innerText = data.title || data.chapter || "Math Practice";
+  document.getElementById("chapterTitle").innerText =
+    data.title || data.chapter || "Math Practice";
   document.getElementById("total").innerText = questions.length;
   document.getElementById("score").innerText = score;
 
@@ -188,7 +198,8 @@ function checkMCQ(choice) {
 
   if (choice === q.answer) {
     score++;
-    document.getElementById("feedback").innerHTML = "<span class='correct'>Correct!</span>";
+    document.getElementById("feedback").innerHTML =
+      "<span class='correct'>Correct!</span>";
   } else {
     document.getElementById("feedback").innerHTML =
       `<span class='wrong'>Wrong.</span> Correct answer: ${q.answer}`;
@@ -204,7 +215,8 @@ function submitShortAnswer() {
   const input = document.getElementById("shortAnswerInput").value.trim();
   if (input === q.answer.toString()) {
     score++;
-    document.getElementById("feedback").innerHTML = "<span class='correct'>Correct!</span>";
+    document.getElementById("feedback").innerHTML =
+      "<span class='correct'>Correct!</span>";
   } else {
     document.getElementById("feedback").innerHTML =
       `<span class='wrong'>Wrong.</span> Correct answer: ${q.answer}`;
@@ -215,7 +227,8 @@ function submitShortAnswer() {
 
 function revealAnswer() {
   const q = questions[currentIndex];
-  document.getElementById("explanation").innerText = q.explanation || "";
+  document.getElementById("explanation").innerText =
+    q.explanation || "";
 }
 
 function nextQuestion() {
