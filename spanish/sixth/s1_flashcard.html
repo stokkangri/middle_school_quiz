@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spanish Flashcards: Capítulos 1 & 2</title>
+    <style>
+        /* Updated CSS to prevent hidden buttons */
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .card-container { perspective: 1000px; width: 450px; height: 300px; margin: 20px 0; }
+        .card { width: 100%; height: 100%; position: relative; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; }
+        .card.is-flipped { transform: rotateY(180deg); }
+        .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; border: 3px solid #2c3e50; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .front { background-color: #ffffff; color: #2c3e50; }
+        .back { background-color: #3498db; color: white; transform: rotateY(180deg); }
+        .label { font-size: 0.8em; text-transform: uppercase; color: #7f8c8d; margin-bottom: 10px; }
+        .back .label { color: #ecf0f1; }
+        .content { font-size: 1.8em; font-weight: bold; }
+        
+        /* Persistent visible controls */
+        .controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+        .btn { padding: 12px 24px; cursor: pointer; border: none; border-radius: 8px; font-weight: bold; background: #2c3e50; color: white; transition: 0.3s; }
+        .btn:hover { background: #34495e; transform: translateY(-2px); }
+        .btn-reveal { background: #e67e22; }
+        .info { margin-bottom: 10px; font-size: 1.1em; color: #34495e; }
+    </style>
+</head>
+<body>
+
+    <h1><b>Examen de Práctica: Capítulos 1 y 2</b></h1>
+    <div class="info" id="progress">Card 1 of ...</div>
+    
+    <div class="card-container" onclick="flipCard()">
+        <div class="card" id="mainCard">
+            <div class="face front">
+                <div class="label">English / Numerical Prompt</div>
+                <div class="content" id="frontText">Cargando...</div>
+            </div>
+            <div class="face back">
+                <div class="label">Spanish Translation</div>
+                <div class="content" id="backText">...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls are specifically NOT hidden -->
+    <div class="controls">
+        <button class="btn" onclick="changeCard(-1)">Previous</button>
+        <button class="btn btn-reveal" onclick="flipCard()">Reveal Answer</button>
+        <button class="btn" onclick="changeCard(1)">Next</button>
+        <button class="btn" onclick="shuffleDeck()">Shuffle/Randomize</button>
+    </div>
+
+    <script>
+        // Data strictly from the textbook and workbook sources
+        const questionBank = [
+            // Capítulo 1 Concepts
+            { q: "Good morning", a: "Buenos días", cat: "Greetings [8]" },
+            { q: "Glad to meet you!", a: "Mucho gusto", cat: "Introductions [9]" },
+            { q: "How are you? (informal)", a: "¿Cómo estás?", cat: "Conversation [9]" },
+            { q: "Number: 15", a: "quince", cat: "Numbers [2]" },
+            { q: "Number: 20", a: "veinte", cat: "Numbers [2]" },
+            { q: "Number: 100", a: "cien", cat: "Numbers [3]" },
+            { q: "How do you spell 'Hugo'?", a: "hache, u, ge, o", cat: "Alphabet [10]" },
+            { q: "It is one o'clock", a: "Es la una", cat: "Time [11]" },
+            { q: "It is noon", a: "Es mediodía", cat: "Time [12]" },
+            { q: "You (formal singular)", a: "usted (Ud.)", cat: "Pronouns [6]" },
+            
+            // Capítulo 2 Concepts
+            { q: "The backpack", a: "la mochila", cat: "Classroom [4]" },
+            { q: "The blackboard", a: "la pizarra", cat: "Classroom [4]" },
+            { q: "The chalk", a: "la tiza", cat: "Classroom [4]" },
+            { q: "The student desk", a: "el pupitre", cat: "Classroom [4]" },
+            { q: "Red T-shirt", a: "la camiseta roja", cat: "Clothing/Adjectives [13, 14]" },
+            { q: "Blue jeans", a: "los jeans azules", cat: "Clothing [13, 15]" },
+            { q: "We speak (Hablar)", a: "hablamos", cat: "Verbs [16]" },
+            { q: "They study (Estudiar)", a: "estudian", cat: "Verbs [16]" },
+            { q: "The @ symbol", a: "arroba", cat: "Technology [17]" },
+            { q: "The computer mouse", a: "el ratón", cat: "Technology [18]" }
+        ];
+
+        let activeDeck = [];
+        let currentIndex = 0;
+
+        function shuffleDeck() {
+            activeDeck = [...questionBank].sort(() => Math.random() - 0.5);
+            currentIndex = 0;
+            updateDisplay();
+        }
+
+        function flipCard() {
+            document.getElementById('mainCard').classList.toggle('is-flipped');
+        }
+
+        function changeCard(dir) {
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = activeDeck.length - 1;
+            if (currentIndex >= activeDeck.length) currentIndex = 0;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const card = activeDeck[currentIndex];
+            const cardEl = document.getElementById('mainCard');
+            cardEl.classList.remove('is-flipped');
+            
+            setTimeout(() => {
+                document.getElementById('frontText').innerText = card.q;
+                document.getElementById('backText').innerText = card.a;
+                document.getElementById('progress').innerText = `Card ${currentIndex + 1} of ${activeDeck.length} - ${card.cat}`;
+            }, 150);
+        }
+
+        // Initialize randomized deck on startup
+        shuffleDeck();
+    </script>
+</body>
+</html>
