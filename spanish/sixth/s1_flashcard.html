@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spanish Flashcards: Capítulos 1 & 2</title>
+    <title>Compact Spanish Flashcards: Capítulos 1 & 2</title>
     <style>
-        /* Updated CSS to prevent hidden buttons */
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-        .card-container { perspective: 1000px; width: 450px; height: 300px; margin: 20px 0; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f9; display: flex; flex-direction: column; align-items: center; padding: 15px; color: #2c3e50; }
+        
+        /* Smaller card dimensions to prevent button overlap */
+        .card-container { perspective: 1000px; width: 380px; height: 200px; margin: 15px 0; }
+        
         .card { width: 100%; height: 100%; position: relative; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; }
         .card.is-flipped { transform: rotateY(180deg); }
-        .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; border: 3px solid #2c3e50; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .front { background-color: #ffffff; color: #2c3e50; }
-        .back { background-color: #3498db; color: white; transform: rotateY(180deg); }
-        .label { font-size: 0.8em; text-transform: uppercase; color: #7f8c8d; margin-bottom: 10px; }
-        .back .label { color: #ecf0f1; }
-        .content { font-size: 1.8em; font-weight: bold; }
+        .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 12px; border: 2px solid #34495e; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; }
         
-        /* Persistent visible controls */
-        .controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
-        .btn { padding: 12px 24px; cursor: pointer; border: none; border-radius: 8px; font-weight: bold; background: #2c3e50; color: white; transition: 0.3s; }
-        .btn:hover { background: #34495e; transform: translateY(-2px); }
+        .front { background-color: #ffffff; }
+        .back { background-color: #34495e; color: #ecf0f1; transform: rotateY(180deg); }
+        
+        .label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #7f8c8d; }
+        .back .label { color: #bdc3c7; }
+        
+        /* Adjusted font size for smaller card */
+        .content { font-size: 1.3em; font-weight: bold; line-height: 1.2; }
+        
+        .controls { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 10px; width: 100%; max-width: 400px; }
+        .btn { padding: 10px 18px; cursor: pointer; border: none; border-radius: 6px; font-weight: bold; background: #34495e; color: white; transition: 0.2s; font-size: 0.9em; }
+        .btn:hover { background: #2c3e50; }
         .btn-reveal { background: #e67e22; }
-        .info { margin-bottom: 10px; font-size: 1.1em; color: #34495e; }
+        
+        .info { margin-bottom: 5px; font-size: 1em; font-weight: 600; }
+        .category { font-style: italic; color: #16a085; font-size: 0.9em; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-    <h1><b>Examen de Práctica: Capítulos 1 y 2</b></h1>
+    <h1><b>Repaso: Capítulos 1 y 2</b></h1>
     <div class="info" id="progress">Card 1 of ...</div>
+    <div class="category" id="catDisplay">Category</div>
     
     <div class="card-container" onclick="flipCard()">
         <div class="card" id="mainCard">
@@ -36,81 +44,120 @@
                 <div class="content" id="frontText">Cargando...</div>
             </div>
             <div class="face back">
-                <div class="label">Spanish Translation</div>
+                <div class="label">Spanish Answer</div>
                 <div class="content" id="backText">...</div>
             </div>
         </div>
     </div>
 
-    <!-- Controls are specifically NOT hidden -->
     <div class="controls">
         <button class="btn" onclick="changeCard(-1)">Previous</button>
         <button class="btn btn-reveal" onclick="flipCard()">Reveal Answer</button>
         <button class="btn" onclick="changeCard(1)">Next</button>
-        <button class="btn" onclick="shuffleDeck()">Shuffle/Randomize</button>
+        <button class="btn" onclick="shuffleDeck()">Shuffle Deck</button>
     </div>
 
     <script>
-        // Data strictly from the textbook and workbook sources
         const questionBank = [
-            // Capítulo 1 Concepts
-            { q: "Good morning", a: "Buenos días", cat: "Greetings [8]" },
-            { q: "Glad to meet you!", a: "Mucho gusto", cat: "Introductions [9]" },
-            { q: "How are you? (informal)", a: "¿Cómo estás?", cat: "Conversation [9]" },
-            { q: "Number: 15", a: "quince", cat: "Numbers [2]" },
-            { q: "Number: 20", a: "veinte", cat: "Numbers [2]" },
-            { q: "Number: 100", a: "cien", cat: "Numbers [3]" },
-            { q: "How do you spell 'Hugo'?", a: "hache, u, ge, o", cat: "Alphabet [10]" },
-            { q: "It is one o'clock", a: "Es la una", cat: "Time [11]" },
-            { q: "It is noon", a: "Es mediodía", cat: "Time [12]" },
-            { q: "You (formal singular)", a: "usted (Ud.)", cat: "Pronouns [6]" },
-            
-            // Capítulo 2 Concepts
-            { q: "The backpack", a: "la mochila", cat: "Classroom [4]" },
-            { q: "The blackboard", a: "la pizarra", cat: "Classroom [4]" },
-            { q: "The chalk", a: "la tiza", cat: "Classroom [4]" },
-            { q: "The student desk", a: "el pupitre", cat: "Classroom [4]" },
-            { q: "Red T-shirt", a: "la camiseta roja", cat: "Clothing/Adjectives [13, 14]" },
-            { q: "Blue jeans", a: "los jeans azules", cat: "Clothing [13, 15]" },
-            { q: "We speak (Hablar)", a: "hablamos", cat: "Verbs [16]" },
-            { q: "They study (Estudiar)", a: "estudian", cat: "Verbs [16]" },
-            { q: "The @ symbol", a: "arroba", cat: "Technology [17]" },
-            { q: "The computer mouse", a: "el ratón", cat: "Technology [18]" }
+            // UNIT 1: GREETINGS, NUMBERS, TIME
+            { q: "Good morning", a: "Buenos días", cat: "Saludos" },
+            { q: "Glad to meet you!", a: "Mucho gusto", cat: "Cortesía" },
+            { q: "See you later", a: "Hasta luego", cat: "Despedidas" },
+            { q: "16 (Number)", a: "dieciséis", cat: "Números" },
+            { q: "20 (Number)", a: "veinte", cat: "Números" },
+            { q: "100 (Number)", a: "cien", cat: "Números" },
+            { q: "How are you? (informal)", a: "¿Cómo estás?", cat: "Conversación" },
+            { q: "It is one o'clock", a: "Es la una", cat: "La Hora" },
+            { q: "It is 4:15", a: "Son las cuatro y cuarto", cat: "La Hora" },
+            { q: "It is midnight", a: "Es medianoche", cat: "La Hora" },
+            { q: "@ symbol", a: "arroba", cat: "Tecnología" },
+
+            // UNIT 2: SUBJECT PRONOUNS & VERB SER
+            { q: "I (Subject Pronoun)", a: "yo", cat: "Pronombres" },
+            { q: "You (Informal/Singular)", a: "tú", cat: "Pronombres" },
+            { q: "You (Formal/Singular)", a: "usted (Ud.)", cat: "Pronombres" },
+            { q: "He / She", a: "él / ella", cat: "Pronombres" },
+            { q: "We (Mixed group)", a: "nosotros", cat: "Pronombres" },
+            { q: "They (Females only)", a: "ellas", cat: "Pronombres" },
+            { q: "I am (Ser)", a: "soy", cat: "Verbo Ser" },
+            { q: "You are (Informal/Singular - Ser)", a: "eres", cat: "Verbo Ser" },
+            { q: "We are (Ser)", a: "somos", cat: "Verbo Ser" },
+            { q: "They are (Ser)", a: "son", cat: "Verbo Ser" },
+            { q: "He is from California.", a: "Él es de California.", cat: "Estructura" },
+            { q: "Negative: I am not from Arizona.", a: "Yo no soy de Arizona.", cat: "Negación" },
+
+            // UNIT 2: CLASSROOM VOCABULARY
+            { q: "The chalk", a: "la tiza", cat: "Salón de Clase" },
+            { q: "The girl / The boy", a: "la chica / el chico", cat: "Personas" },
+            { q: "The newspaper", a: "el periódico", cat: "Salón de Clase" },
+            { q: "The backpack", a: "la mochila", cat: "Salón de Clase" },
+            { q: "The notebook", a: "el cuaderno", cat: "Salón de Clase" },
+            { q: "The student desk", a: "el pupitre", cat: "Salón de Clase" },
+            { q: "The teacher desk", a: "el escritorio", cat: "Salón de Clase" },
+            { q: "The wastebasket", a: "el cesto de papeles", cat: "Salón de Clase" },
+            { q: "The clock / watch", a: "el reloj", cat: "Salón de Clase" },
+            { q: "The board", a: "la pizarra", cat: "Salón de Clase" },
+            { q: "How do you say 'chair'?", a: "Se dice silla.", cat: "Conversación" },
+            { q: "What does 'mochila' mean?", a: "Quiere decir backpack.", cat: "Conversación" },
+
+            // UNIT 2: CLOTHING, COLORS, AND SUBJECTS
+            { q: "The red t-shirt", a: "la camiseta roja", cat: "Ropa/Colores" },
+            { q: "The blue jeans", a: "los jeans azules", cat: "Ropa/Colores" },
+            { q: "The yellow skirt", a: "la falda amarilla", cat: "Ropa/Colores" },
+            { q: "White socks", a: "calcetines blancos", cat: "Ropa/Colores" },
+            { q: "Biology", a: "la biología", cat: "Materias" },
+            { q: "Computer Science", a: "la computación", cat: "Materias" },
+            { q: "Mathematics", a: "las matemáticas", cat: "Materias" },
+            { q: "At what time is the class?", a: "¿A qué hora es la clase?", cat: "La Hora" },
+            { q: "The classes end at 3:00.", a: "Las clases terminan a las tres.", cat: "Estructura" },
+
+            // UNIT 2: ADJECTIVES, VERBS, AND ESTAR
+            { q: "The new students (plural)", a: "los estudiantes nuevos", cat: "Adjetivos" },
+            { q: "I speak Spanish.", a: "Hablo español.", cat: "Verbos -AR" },
+            { q: "We study (Estudiar)", a: "estudiamos", cat: "Verbos -AR" },
+            { q: "They wear / carry", a: "llevan", cat: "Verbos -AR" },
+            { q: "The computer mouse", a: "el ratón", cat: "Tecnología" },
+            { q: "The laser printer", a: "la impresora láser", cat: "Tecnología" },
+            { q: "The keyboard", a: "el teclado", cat: "Tecnología" },
+            { q: "I am well. (State of being)", a: "Estoy bien.", cat: "Verbo Estar" },
+            { q: "Where is the teacher?", a: "¿Dónde está el profesor?", cat: "Verbo Estar" },
+            { q: "We are in class.", a: "Estamos en clase.", cat: "Verbo Estar" },
+            { q: "Dot (in a web address)", a: "punto", cat: "Tecnología" }
         ];
 
-        let activeDeck = [];
-        let currentIndex = 0;
+        let activeDeck = [...questionBank];
+        let currentIdx = 0;
 
         function shuffleDeck() {
-            activeDeck = [...questionBank].sort(() => Math.random() - 0.5);
-            currentIndex = 0;
-            updateDisplay();
+            activeDeck.sort(() => Math.random() - 0.5);
+            currentIdx = 0;
+            updateUI();
         }
 
         function flipCard() {
             document.getElementById('mainCard').classList.toggle('is-flipped');
         }
 
-        function changeCard(dir) {
-            currentIndex += dir;
-            if (currentIndex < 0) currentIndex = activeDeck.length - 1;
-            if (currentIndex >= activeDeck.length) currentIndex = 0;
-            updateDisplay();
+        function changeCard(step) {
+            currentIdx += step;
+            if (currentIdx < 0) currentIdx = activeDeck.length - 1;
+            if (currentIdx >= activeDeck.length) currentIdx = 0;
+            updateUI();
         }
 
-        function updateDisplay() {
-            const card = activeDeck[currentIndex];
+        function updateUI() {
+            const card = activeDeck[currentIdx];
             const cardEl = document.getElementById('mainCard');
             cardEl.classList.remove('is-flipped');
             
             setTimeout(() => {
                 document.getElementById('frontText').innerText = card.q;
                 document.getElementById('backText').innerText = card.a;
-                document.getElementById('progress').innerText = `Card ${currentIndex + 1} of ${activeDeck.length} - ${card.cat}`;
+                document.getElementById('catDisplay').innerText = card.cat;
+                document.getElementById('progress').innerText = `Card ${currentIdx + 1} of ${activeDeck.length}`;
             }, 150);
         }
 
-        // Initialize randomized deck on startup
         shuffleDeck();
     </script>
 </body>
