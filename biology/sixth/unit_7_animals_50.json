@@ -1,0 +1,354 @@
+{
+  "Unit_7_Animals_50": [
+    {
+      "subject": "Introduction to Animals",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is NOT a characteristic shared by all members of the animal kingdom?",
+          "options": ["Heterotrophic", "Multicellular", "Eukaryotic", "Cell walls made of chitin"],
+          "answer": "Cell walls made of chitin",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term is used to describe animals that lack a backbone?",
+          "answer": "Invertebrates",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which characteristic is present in all chordates during at least one stage of life?",
+          "options": ["A backbone", "A hollow nerve cord", "Lungs", "Bilateral symmetry"],
+          "answer": "A hollow nerve cord",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the long supporting rod that runs through a chordate's body just below the nerve cord?",
+          "answer": "Notochord",
+          "citation": "[3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What structures in the throat region of a chordate may develop into gills in fishes?",
+          "options": ["Notochords", "Neural tubes", "Pharyngeal pouches", "Vertebral columns"],
+          "answer": "Pharyngeal pouches",
+          "citation": "[4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the most important function of all animal body systems?",
+          "answer": "Maintaining homeostasis",
+          "citation": "[5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process involves a stimulus producing a response that opposes the original stimulus?",
+          "options": ["Positive feedback", "Cephalization", "Feedback inhibition", "Segmentation"],
+          "answer": "Feedback inhibition",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of specialized cells are responsible for sensing light, sound, heat, and touch?",
+          "answer": "Receptors",
+          "citation": "[6]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which waste product, often containing nitrogen, is produced when animal cells break down proteins?",
+          "options": ["Carbon dioxide", "Ammonia", "Oxygen", "Glucose"],
+          "answer": "Ammonia",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which type of reproduction helps create and maintain genetic diversity in a population?",
+          "answer": "Sexual reproduction",
+          "citation": "[8]"
+        }
+      ]
+    },
+    {
+      "subject": "Animal Body Plans",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of symmetry is characterized by body parts that extend outward from a central point?",
+          "options": ["Bilateral symmetry", "Radial symmetry", "Asymmetry", "Segmentation"],
+          "answer": "Radial symmetry",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes the concentration of sense organs and nerve cells at the front end of an animal?",
+          "answer": "Cephalization",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which middle germ layer develops into muscles and much of the circulatory, reproductive, and excretory systems?",
+          "options": ["Endoderm", "Mesoderm", "Ectoderm", "Epidermis"],
+          "answer": "Mesoderm",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a body cavity that is completely lined with tissue that develops from the mesoderm called?",
+          "answer": "Coelom",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which type of animal does the mouth form from the blastopore?",
+          "options": ["Deuterostome", "Protostome", "Acoelomate", "Chordate"],
+          "answer": "Protostome",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the hollow ball of cells that forms during early embryo development?",
+          "answer": "Blastula",
+          "citation": "[14]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which germ layer develops into the linings of the digestive tract and much of the respiratory system?",
+          "options": ["Mesoderm", "Ectoderm", "Endoderm", "Coelom"],
+          "answer": "Endoderm",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a fertilized egg?",
+          "answer": "Zygote",
+          "citation": "[14]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of symmetry allows an animal to have distinct front, back, upper, and lower sides?",
+          "options": ["Radial symmetry", "Bilateral symmetry", "Spherical symmetry", "Asymmetry"],
+          "answer": "Bilateral symmetry",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are structures like legs, wings, or flippers that extend from the body wall called?",
+          "answer": "Appendages",
+          "citation": "[16]"
+        }
+      ]
+    },
+    {
+      "subject": "Evolution and Diversity",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "The 'Cambrian Explosion' refers to a period roughly 530 million years ago when what happened?",
+          "options": ["A mass extinction occurred", "The first single-celled life appeared", "A huge number of animal groups first appeared", "The first dinosaurs evolved"],
+          "answer": "A huge number of animal groups first appeared",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the oldest known fossil chordate?",
+          "answer": "Pikaia",
+          "citation": "[18]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following are the only living chordates that lack a backbone?",
+          "options": ["Lampreys and hagfishes", "Tunicates and lancelets", "Sharks and rays", "Frogs and toads"],
+          "answer": "Tunicates and lancelets",
+          "citation": "[19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What adaptation in early fishes allowed them to bite and chew their food?",
+          "answer": "Jaws",
+          "citation": "[20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which group of fishes has skeletons made of cartilage rather than bone?",
+          "options": ["Ray-finned fishes", "Lobe-finned fishes", "Chondrichthyes", "Amphibians"],
+          "answer": "Chondrichthyes",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the nickname of the 375-million-year-old fossil that shows a transition between fish and tetrapods?",
+          "answer": "Tiktaalik",
+          "citation": "[22]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which adaptation was most important for allowing vertebrate embryos to develop on land without drying out?",
+          "options": ["Lungs", "Scaly skin", "The amniotic egg", "Endothermy"],
+          "answer": "The amniotic egg",
+          "citation": "[23]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What glands in female mammals produce milk to nourish their young?",
+          "answer": "Mammary glands",
+          "citation": "[24]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which characteristic is shared by all primates?",
+          "options": ["A prehensile tail", "Binocular vision", "External ears", "A four-chambered heart"],
+          "answer": "Binocular vision",
+          "citation": "[25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes the hominine ability to walk on two feet?",
+          "answer": "Bipedal",
+          "citation": "[26]"
+        }
+      ]
+    },
+    {
+      "subject": "Animal Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of feeder strains algae and tiny animals from the water?",
+          "options": ["Detritivore", "Filter feeder", "Carnivore", "Parasite"],
+          "answer": "Filter feeder",
+          "citation": "[27]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the stomach chamber in cows where bacteria digest cellulose?",
+          "answer": "Rumen",
+          "citation": "[28]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which type of digestion is food broken down inside specialized cells that pass nutrients by diffusion?",
+          "options": ["Extracellular digestion", "Intracellular digestion", "Gastrovascular digestion", "Bacterial digestion"],
+          "answer": "Intracellular digestion",
+          "citation": "[29]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What feathery structures are specialized for the exchange of gases with water?",
+          "answer": "Gills",
+          "citation": "[30]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which circulatory system keeps blood entirely within blood vessels?",
+          "options": ["Open circulatory system", "Closed circulatory system", "Single-loop system", "Sinusoidal system"],
+          "answer": "Closed circulatory system",
+          "citation": "[31]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which heart chamber receives blood that is about to enter a ventricle?",
+          "answer": "Atrium",
+          "citation": "[32]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which organs in vertebrates are used to separate wastes and extra water from the blood?",
+          "options": ["Nephridia", "Malpighian tubules", "Kidneys", "Gills"],
+          "answer": "Kidneys",
+          "citation": "[33]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a nerve cell specialized for carrying messages?",
+          "answer": "Neuron",
+          "citation": "[34]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the vertebrate brain is the 'thinking' region?",
+          "options": ["Cerebellum", "Medulla oblongata", "Cerebrum", "Optic lobe"],
+          "answer": "Cerebrum",
+          "citation": "[35]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What process involves shedding an exoskeleton and growing a new one?",
+          "answer": "Molting",
+          "citation": "[36]"
+        }
+      ]
+    },
+    {
+      "subject": "Reproduction and Behavior",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which type of animal bears live young nourished directly by the mother's body during development?",
+          "options": ["Oviparous", "Ovoviviparous", "Viviparous", "Parthenogenetic"],
+          "answer": "Viviparous",
+          "citation": "[37]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the immature stage of an organism that looks nothing like the adult?",
+          "answer": "Larva",
+          "citation": "[38]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which stage of complete metamorphosis involves the larva developing into an adult?",
+          "options": ["Nymph", "Polyp", "Pupa", "Medusa"],
+          "answer": "Pupa",
+          "citation": "[39]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of animal regulates its body temperature using heat created within its own body?",
+          "answer": "Endotherm",
+          "citation": "[40]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is an animal called if its body temperature is determined mainly by the temperature of its environment?",
+          "options": ["Endotherm", "Ectotherm", "Homoeotherm", "Mesotherm"],
+          "answer": "Ectotherm",
+          "citation": "[41]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the simplest type of learning, where an animal stops responding to a repetitive, harmless stimulus?",
+          "answer": "Habituation",
+          "citation": "[42]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of learning occurs when an animal applies something it has already learned to a new situation without trial and error?",
+          "options": ["Classical conditioning", "Operant conditioning", "Insight learning", "Imprinting"],
+          "answer": "Insight learning",
+          "citation": "[43]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are behavioral cycles that occur daily called?",
+          "answer": "Circadian rhythms",
+          "citation": "[44]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which social behavior is a threatening action used to show dominance over another individual?",
+          "options": ["Courtship", "Aggression", "Communication", "Kin selection"],
+          "answer": "Aggression",
+          "citation": "[45]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a specific area occupied and protected by an animal?",
+          "answer": "Territory",
+          "citation": "[45]"
+        }
+      ]
+    }
+  ]
+}
