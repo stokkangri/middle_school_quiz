@@ -1,0 +1,379 @@
+{
+  "Unit_5_Evolution_50": [
+    {
+      "subject": "Darwin's Theory and the Evidence of Evolution",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for the process of change over time by which modern organisms have descended from ancient organisms?",
+          "options": ["Metabolism", "Homeostasis", "Evolution", "Transcription"],
+          "answer": "Evolution",
+          "citation": "[4, 16.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Darwin noted that different, yet ecologically similar, animal species inhabited separated, but ecologically similar, habitats around the globe. This is an example of species varying ________.",
+          "answer": "Globally",
+          "citation": "[16.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What did Charles Lyell argue regarding the laws of nature?",
+          "options": [
+            "They change every few thousand years.",
+            "They do not change over time.",
+            "They only apply to living organisms.",
+            "They were different during the Cambrian Explosion."
+          ],
+          "answer": "They do not change over time.",
+          "citation": "[16.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the concept introduced by James Hutton to explain that Earth's history is so long it is difficult to imagine?",
+          "answer": "Deep time",
+          "citation": "[16.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Lamarck's incorrect hypothesis suggested that organisms could pass on traits changed during their lifetime. What is the term for these traits?",
+          "options": ["Innate behaviors", "Genetic mutations", "Acquired characteristics", "Homologous structures"],
+          "answer": "Acquired characteristics",
+          "citation": "[16.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which economist reasoned that if human populations grew without control, there would not be enough space and food?",
+          "answer": "Thomas Malthus",
+          "citation": "[16.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which process does nature provide the variations, and humans select those they find useful?",
+          "options": ["Natural selection", "Artificial selection", "Genetic drift", "Speciation"],
+          "answer": "Artificial selection",
+          "citation": "[16.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes how well an organism can survive and reproduce in its environment?",
+          "answer": "Fitness",
+          "citation": "[16.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is an example of an adaptation?",
+          "options": [
+            "A bird stretching its legs to make them longer",
+            "A crow flying away from a car it has seen before",
+            "The camouflage coloring of a scorpionfish",
+            "A human learning to use a tool"
+          ],
+          "answer": "The camouflage coloring of a scorpionfish",
+          "citation": "[16.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What principle states that all species—living and extinct—are descended from ancient common ancestors?",
+          "answer": "Common descent",
+          "citation": "[16.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the study of where organisms live now and where they and their ancestors lived in the past?",
+          "options": ["Systematics", "Biogeography", "Paleontology", "Embryology"],
+          "answer": "Biogeography",
+          "citation": "[16.4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Structures that are shared by related species and inherited from a common ancestor are called ________ structures.",
+          "answer": "Homologous",
+          "citation": "[16.4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The wing of a bee and the wing of a bird are examples of which type of structures?",
+          "options": ["Homologous", "Vestigial", "Analogous", "Coevolved"],
+          "answer": "Analogous",
+          "citation": "[16.4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for inherited structures that have lost much or all of their original function, such as the hipbones of a dolphin?",
+          "answer": "Vestigial structures",
+          "citation": "[16.4]"
+        }
+      ]
+    },
+    {
+      "subject": "Evolution of Populations and Speciation",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "In genetic terms, what does evolution involve in a population?",
+          "options": [
+            "A change in an individual's DNA during its life",
+            "A change in the frequency of alleles over time",
+            "The disappearance of all recessive alleles",
+            "The formation of identical clones"
+          ],
+          "answer": "A change in the frequency of alleles over time",
+          "citation": "[17.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What consists of all the genes, including all the different alleles for each gene, present in a population?",
+          "answer": "Gene pool",
+          "citation": "[17.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is NOT a main source of genetic variation?",
+          "options": ["Mutations", "Genetic recombination", "Lateral gene transfer", "Asexual reproduction"],
+          "answer": "Asexual reproduction",
+          "citation": "[17.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What kind of trait is controlled by two or more genes and often results in a bell curve of phenotypes?",
+          "answer": "Polygenic trait",
+          "citation": "[17.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which type of selection do individuals at one end of the curve have higher fitness than those in the middle or at the other end?",
+          "options": ["Stabilizing selection", "Disruptive selection", "Directional selection", "Natural selection"],
+          "answer": "Directional selection",
+          "citation": "[17.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which type of selection acts against individuals in the center of the curve and favors the extremes?",
+          "answer": "Disruptive selection",
+          "citation": "[17.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the name for a random change in allele frequency that happens in small populations due to chance events?",
+          "options": ["Genetic drift", "Gene flow", "Natural selection", "Mutagenesis"],
+          "answer": "Genetic drift",
+          "citation": "[17.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "A change in allele frequency following a dramatic reduction in the size of a population is called the ________ effect.",
+          "answer": "Bottleneck",
+          "citation": "[17.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which principle states that allele frequencies in a population should remain constant unless one or more factors cause them to change?",
+          "options": ["Darwinian principle", "Hardy-Weinberg principle", "Malthusian principle", "Mendelian principle"],
+          "answer": "Hardy-Weinberg principle",
+          "citation": "[17.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the formation of a new species?",
+          "answer": "Speciation",
+          "citation": "[17.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "If two populations are separated by a river and can no longer interbreed, what has occurred?",
+          "options": ["Behavioral isolation", "Temporal isolation", "Geographic isolation", "Genetic equilibrium"],
+          "answer": "Geographic isolation",
+          "citation": "[17.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What form of reproductive isolation occurs when two or more species reproduce at different times?",
+          "answer": "Temporal isolation",
+          "citation": "[17.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What do scientists use to estimate the length of time that two species have been evolving independently by using mutation rates?",
+          "options": ["Radioactive dating", "Molecular clock", "Hox genes", "Cladogram"],
+          "answer": "Molecular clock",
+          "citation": "[4, 17.4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which group of genes is involved in animal development and controls the identity of body parts?",
+          "answer": "Hox genes",
+          "citation": "[17.4]"
+        }
+      ]
+    },
+    {
+      "subject": "Classification and the Tree of Life",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the goal of systematics?",
+          "options": [
+            "To prove all animals have backbones",
+            "To organize living things into groups that have biological meaning",
+            "To find the oldest fossils in the world",
+            "To create names for animals using only one word"
+          ],
+          "answer": "To organize living things into groups that have biological meaning",
+          "citation": "[18.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "In binomial nomenclature, each species is assigned a two-part scientific name consisting of its ________ and its species identifier.",
+          "answer": "Genus",
+          "citation": "[18.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "List the Linnaean ranks in order from largest to smallest.",
+          "options": [
+            "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+            "Species, Genus, Family, Order, Class, Phylum, Kingdom",
+            "Domain, Kingdom, Phylum, Order, Class, Genus, Species",
+            "Kingdom, Class, Phylum, Order, Genus, Family, Species"
+          ],
+          "answer": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+          "citation": "[18.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the study of how living and extinct organisms are related?",
+          "answer": "Phylogeny",
+          "citation": "[18.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A group of species that includes a single common ancestor and all its descendants is called a(n):",
+          "options": ["Taxon", "Kingdom", "Clade", "Order"],
+          "answer": "Clade",
+          "citation": "[18.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "A group that consists of a single ancestral species and all its descendants and excludes any organisms not descended from that ancestor is ________.",
+          "answer": "Monophyletic",
+          "citation": "[18.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is a trait that arose in the most recent common ancestor of a lineage and was passed to its descendants?",
+          "options": ["Ancestral trait", "Derived character", "Analogous character", "Vestigial character"],
+          "answer": "Derived character",
+          "citation": "[18.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which domain contains unicellular prokaryotes that have cell walls containing peptidoglycan?",
+          "answer": "Bacteria",
+          "citation": "[18.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "How many domains of life are recognized in modern classification?",
+          "options": ["Two", "Three", "Five", "Six"],
+          "answer": "Three",
+          "citation": "[18.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "The domain Eukarya includes which four kingdoms?",
+          "answer": "Protista, Fungi, Plantae, Animalia",
+          "citation": "[18.3]"
+        }
+      ]
+    },
+    {
+      "subject": "History of Life on Earth",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which method determines the age of a fossil by comparing its placement with fossils in other rock layers?",
+          "options": ["Radiometric dating", "Relative dating", "Carbon-14 dating", "Cladistic dating"],
+          "answer": "Relative dating",
+          "citation": "[19.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are distinctive fossils used to establish and compare the relative ages of rock layers?",
+          "answer": "Index fossils",
+          "citation": "[19.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the time required for half of the radioactive atoms in a sample to decay?",
+          "options": ["Decay-rate", "Half-life", "Absolute time", "Radiometric period"],
+          "answer": "Half-life",
+          "citation": "[19.1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "The largest divisions of the geologic time scale are called ________.",
+          "answer": "Eons",
+          "citation": "[19.1]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "During which event do entire ecosystems vanish and many species become extinct in a relatively short time?",
+          "options": ["Background extinction", "Mass extinction", "Macroevolution", "Adaptive radiation"],
+          "answer": "Mass extinction",
+          "citation": "[19.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What model describes evolution as a slow, steady change in a line of descent?",
+          "answer": "Gradualism",
+          "citation": "[19.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the pattern of evolution where long stable periods are interrupted by brief periods of more rapid change?",
+          "options": ["Gradualism", "Punctuated equilibrium", "Adaptive radiation", "Coevolution"],
+          "answer": "Punctuated equilibrium",
+          "citation": "[19.2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "The process by which unrelated organisms independently evolve similarities when adapting to similar environments is called ________ evolution.",
+          "answer": "Convergent",
+          "citation": "[19.2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Miller and Urey's experiment was designed to show what?",
+          "options": [
+            "How dinosaurs became extinct",
+            "How the first cells divided",
+            "How organic molecules could have formed on early Earth",
+            "The exact age of the Earth"
+          ],
+          "answer": "How organic molecules could have formed on early Earth",
+          "citation": "[19.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What theory proposes that eukaryotic cells formed from a symbiotic relationship among several different prokaryotic cells?",
+          "answer": "Endosymbiotic theory",
+          "citation": "[19.3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which molecule do some scientists hypothesize existed by itself before DNA?",
+          "options": ["ATP", "RNA", "Glucose", "Amino acids"],
+          "answer": "RNA",
+          "citation": "[19.3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "The development of ________ reproduction sped up evolutionary change by increasing genetic variation.",
+          "answer": "Sexual",
+          "citation": "[19.3]"
+        }
+      ]
+    }
+  ]
+}
