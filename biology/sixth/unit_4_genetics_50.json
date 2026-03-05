@@ -1,0 +1,342 @@
+{
+  "Unit_4_Genetics_50": [
+    {
+      "subject": "Introduction to Genetics",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the scientific study of heredity called?",
+          "options": ["Genomics", "Genetics", "Evolution", "Bioinformatics"],
+          "answer": "Genetics",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the different forms of a gene called?",
+          "answer": "Alleles",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Mendel's principle which states that some alleles are dominant and others are recessive is the:",
+          "options": ["Principle of Segregation", "Principle of Independent Assortment", "Principle of Dominance", "Principle of Probability"],
+          "answer": "Principle of Dominance",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What term describes the separation of alleles during gamete formation?",
+          "answer": "Segregation",
+          "citation": "[4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The likelihood that a particular event will occur is called:",
+          "options": ["Possibility", "Genotype", "Probability", "Phenotype"],
+          "answer": "Probability",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "If an organism has two identical alleles for a particular gene, it is said to be what?",
+          "answer": "Homozygous",
+          "citation": "[6]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the genetic makeup of an organism called?",
+          "options": ["Phenotype", "Genotype", "Genome", "Karyotype"],
+          "answer": "Genotype",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "In a Tt x Tt cross, what is the probability that an offspring will be short (tt)?",
+          "answer": "1/4",
+          "citation": "[8]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which principle states that genes for different traits can segregate independently during the formation of gametes?",
+          "options": ["Segregation", "Independent Assortment", "Dominance", "Codominance"],
+          "answer": "Independent Assortment",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of inheritance is shown when the heterozygous phenotype is a blend between the two homozygous phenotypes?",
+          "answer": "Incomplete dominance",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which term describes a trait controlled by two or more genes?",
+          "options": ["Multiple alleles", "Single-gene trait", "Polygenic trait", "Codominant trait"],
+          "answer": "Polygenic trait",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "How many haploid daughter cells are produced at the end of meiosis?",
+          "answer": "Four",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "During which phase of meiosis I do homologous chromosomes pair up to form tetrads and undergo crossing-over?",
+          "options": ["Metaphase I", "Anaphase I", "Prophase I", "Telophase I"],
+          "answer": "Prophase I",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the sex cells used in reproduction (sperm and eggs) called?",
+          "answer": "Gametes",
+          "citation": "[14]"
+        }
+      ]
+    },
+    {
+      "subject": "DNA and Replication",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which experiment used radioactive isotopes to confirm that DNA is the genetic material in viruses?",
+          "options": ["Griffith's experiment", "Avery's experiment", "Hershey-Chase experiment", "Mendel's experiment"],
+          "answer": "Hershey-Chase experiment",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the three components of a DNA nucleotide?",
+          "answer": "5-carbon sugar (deoxyribose), phosphate group, and nitrogenous base",
+          "citation": "[16]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "According to base pairing rules, which base always pairs with Thymine (T) in DNA?",
+          "options": ["Guanine", "Cytosine", "Adenine", "Uracil"],
+          "answer": "Adenine",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the principal enzyme involved in DNA replication?",
+          "answer": "DNA polymerase",
+          "citation": "[18]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which direction do the two strands of a DNA double helix run?",
+          "options": ["Parallel", "Antiparallel", "Perpendicular", "Horizontal"],
+          "answer": "Antiparallel",
+          "citation": "[19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the repetitive DNA sequences at the tips of eukaryotic chromosomes called?",
+          "answer": "Telomeres",
+          "citation": "[20]"
+        }
+      ]
+    },
+    {
+      "subject": "RNA and Protein Synthesis",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which sugar is found in RNA but not in DNA?",
+          "options": ["Deoxyribose", "Glucose", "Ribose", "Fructose"],
+          "answer": "Ribose",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What nitrogenous base does RNA contain in place of thymine?",
+          "answer": "Uracil",
+          "citation": "[21]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of RNA carries the instructions for protein synthesis from the nucleus to the ribosome?",
+          "options": ["tRNA", "rRNA", "mRNA", "RNAi"],
+          "answer": "mRNA",
+          "citation": "[22]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process of synthesizing an RNA molecule from a DNA template called?",
+          "answer": "Transcription",
+          "citation": "[23]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the portions of pre-mRNA that are cut out and discarded called?",
+          "options": ["Exons", "Promoters", "Introns", "Codons"],
+          "answer": "Introns",
+          "citation": "[24]"
+        },
+        {
+          "type": "short_answer",
+          "question": "A group of three nucleotide bases in mRNA that specifies a particular amino acid is a(n):",
+          "answer": "Codon",
+          "citation": "[25]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process converts the sequence of bases in mRNA into a sequence of amino acids in a protein?",
+          "options": ["Transcription", "Translation", "Transformation", "Replication"],
+          "answer": "Translation",
+          "citation": "[26]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the three-base sequence on a tRNA molecule called?",
+          "answer": "Anticodon",
+          "citation": "[27]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The central dogma of molecular biology is that information is transferred from:",
+          "options": ["RNA to DNA to Protein", "Protein to RNA to DNA", "DNA to RNA to Protein", "DNA to Protein to RNA"],
+          "answer": "DNA to RNA to Protein",
+          "citation": "[28]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of mutation involves a single base pair in DNA being changed?",
+          "answer": "Point mutation",
+          "citation": "[29]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which genes act as master control switches to trigger patterns of development in animal embryos?",
+          "options": ["Operons", "Hox genes", "Promoters", "Telomeres"],
+          "answer": "Hox genes",
+          "citation": "[30]"
+        }
+      ]
+    },
+    {
+      "subject": "Human Heredity",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "A photograph showing the complete diploid set of human chromosomes grouped in pairs is a:",
+          "options": ["Pedigree", "Punnett Square", "Karyotype", "Genome Map"],
+          "answer": "Karyotype",
+          "citation": "[31]"
+        },
+        {
+          "type": "short_answer",
+          "question": "How many total chromosomes are in a typical human body cell?",
+          "answer": "46",
+          "citation": "[31]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which human blood group alleles are codominant?",
+          "options": ["A and O", "B and O", "A and B", "Rh+ and Rh-"],
+          "answer": "A and B",
+          "citation": "[32]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What chart shows the presence or absence of a trait within a family across generations?",
+          "answer": "Pedigree",
+          "citation": "[33]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which genetic disorder is caused by a dominant allele and results in mental deterioration later in life?",
+          "options": ["Sickle-cell disease", "Cystic fibrosis", "Huntington's disease", "Turner's syndrome"],
+          "answer": "Huntington's disease",
+          "citation": "[34]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the failure of homologous chromosomes to separate properly during meiosis called?",
+          "answer": "Nondisjunction",
+          "citation": "[35]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A female with only one X chromosome has which disorder?",
+          "options": ["Klinefelter's syndrome", "Turner's syndrome", "Down syndrome", "Superfemale syndrome"],
+          "answer": "Turner's syndrome",
+          "citation": "[36]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What was the main goal of the Human Genome Project?",
+          "answer": "To sequence all 3 billion base pairs of human DNA and identify all human genes",
+          "citation": "[37]"
+        }
+      ]
+    },
+    {
+      "subject": "Genetic Engineering",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which technique is used to make many copies of a specific gene?",
+          "options": ["Gel electrophoresis", "DNA fingerprinting", "Polymerase chain reaction (PCR)", "Hybridization"],
+          "answer": "Polymerase chain reaction (PCR)",
+          "citation": "[38]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do scientists use to cut DNA at specific base sequences?",
+          "answer": "Restriction enzymes",
+          "citation": "[39]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the small, circular DNA molecule found in many bacteria used in genetic engineering?",
+          "options": ["Chromosome", "Plasmid", "Codon", "Histone"],
+          "answer": "Plasmid",
+          "citation": "[40]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is an organism that contains genes from other organisms called?",
+          "answer": "Transgenic",
+          "citation": "[41]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which tool is used to identify individuals by analyzing highly variable regions of DNA?",
+          "options": ["Gene therapy", "DNA microarray", "DNA fingerprinting", "Selective breeding"],
+          "answer": "DNA fingerprinting",
+          "citation": "[42]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process of changing a gene to treat a medical disease or disorder?",
+          "answer": "Gene therapy",
+          "citation": "[43]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Crossing dissimilar individuals to bring together the best of both organisms is:",
+          "options": ["Inbreeding", "Hybridization", "Cloning", "Transformation"],
+          "answer": "Hybridization",
+          "citation": "[44]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the continued breeding of individuals with similar characteristics called?",
+          "answer": "Inbreeding",
+          "citation": "[45]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A member of a population of genetically identical cells produced from a single cell is a:",
+          "options": ["Hybrid", "Transgenic organism", "Clone", "Mutant"],
+          "answer": "Clone",
+          "citation": "[46]"
+        }
+      ]
+    }
+  ]
+}
