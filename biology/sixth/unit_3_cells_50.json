@@ -1,0 +1,385 @@
+{
+  "Unit_3_Cells_50": [
+    {
+      "subject": "Cell Theory and Microscopes",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is NOT a fundamental part of the cell theory?",
+          "options": [
+            "All living things are made up of cells",
+            "Cells are the basic units of structure and function",
+            "New cells come from existing cells",
+            "All cells contain a membrane-bound nucleus"
+          ],
+          "answer": "All cells contain a membrane-bound nucleus",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Who was the first scientist to use the term 'cells' after looking at thin slices of cork?",
+          "answer": "Robert Hooke",
+          "citation": "[4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of microscope focuses beams of electrons using magnetic fields to see objects as small as 1 billionth of a meter?",
+          "options": ["Light microscope", "Electron microscope", "Compound microscope", "Simple microscope"],
+          "answer": "Electron microscope",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for cells that do NOT enclose their DNA in a nucleus?",
+          "answer": "Prokaryotes",
+          "citation": "[6]"
+        }
+      ]
+    },
+    {
+      "subject": "Cell Organelles and Structures",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which organelle acts as the 'control center' of the cell and contains nearly all the cell's DNA?",
+          "options": ["Ribosome", "Nucleus", "Mitochondrion", "Vacuole"],
+          "answer": "Nucleus",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the fluid portion of the cell outside the nucleus called?",
+          "answer": "Cytoplasm",
+          "citation": "[8]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which organelle is responsible for breaking down lipids, sugars, and proteins into small molecules used by the rest of the cell?",
+          "options": ["Vacuole", "Lysosome", "Ribosome", "Golgi apparatus"],
+          "answer": "Lysosome",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "In many plant cells, there is a single, large sac filled with liquid that helps support heavy structures. What is this called?",
+          "answer": "Central vacuole",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which structure acts as a 'conveyor belt' or conveyor system to help move materials and give the cell its shape?",
+          "options": ["Cell wall", "Lipid bilayer", "Cytoskeleton", "Nucleolus"],
+          "answer": "Cytoskeleton",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which small organelles are the site of protein synthesis?",
+          "answer": "Ribosomes",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which organelle modifies, sorts, and packages proteins for storage or release from the cell?",
+          "options": ["Smooth ER", "Rough ER", "Golgi apparatus", "Nucleolus"],
+          "answer": "Golgi apparatus",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which organelle is the site where lipid components of the cell membrane are put together?",
+          "answer": "Endoplasmic reticulum",
+          "citation": "[14]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which organelle converts chemical energy stored in food into compounds that are more convenient for the cell to use?",
+          "options": ["Chloroplast", "Mitochondrion", "Lysosome", "Centriole"],
+          "answer": "Mitochondrion",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What pigment inside chloroplasts captures energy from sunlight?",
+          "answer": "Chlorophyll",
+          "citation": "[16]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Most cell membranes are composed of a flexible double-layered sheet called a:",
+          "options": ["Carbohydrate wall", "Protein pump", "Lipid bilayer", "Cytoplasmic bridge"],
+          "answer": "Lipid bilayer",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a membrane that allows some substances to pass across them while others cannot?",
+          "answer": "Selectively permeable",
+          "citation": "[18]"
+        }
+      ]
+    },
+    {
+      "subject": "Cell Transport",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "The movement of materials across the cell membrane without using cellular energy is called:",
+          "options": ["Active transport", "Passive transport", "Endocytosis", "Exocytosis"],
+          "answer": "Passive transport",
+          "citation": "[19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process by which particles move from an area of high concentration to an area of lower concentration?",
+          "answer": "Diffusion",
+          "citation": "[20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the diffusion of water through a selectively permeable membrane called?",
+          "options": ["Osmosis", "Active transport", "Facilitated diffusion", "Equilibrium"],
+          "answer": "Osmosis",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the water channel proteins that allow water to pass right through cell membranes?",
+          "answer": "Aquaporins",
+          "citation": "[21]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "If a cell is placed in a solution where the concentration of solutes is higher than inside the cell, the solution is:",
+          "options": ["Isotonic", "Hypotonic", "Hypertonic", "Equidistant"],
+          "answer": "Hypertonic",
+          "citation": "[22]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which type of transport requires energy to move materials against a concentration difference?",
+          "answer": "Active transport",
+          "citation": "[23]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process is the taking of material into the cell by means of infoldings of the cell membrane?",
+          "options": ["Exocytosis", "Endocytosis", "Osmosis", "Diffusion"],
+          "answer": "Endocytosis",
+          "citation": "[24]"
+        }
+      ]
+    },
+    {
+      "subject": "Photosynthesis and Energy",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the basic energy source used by all types of cells?",
+          "options": ["Glucose", "ATP", "RNA", "Chlorophyll"],
+          "answer": "ATP",
+          "citation": "[25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do we call organisms that make their own food using sunlight?",
+          "answer": "Autotrophs",
+          "citation": "[26]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the two stages of photosynthesis?",
+          "options": [
+            "Glycolysis and Krebs Cycle",
+            "Light-dependent and Light-independent reactions",
+            "Mitosis and Meiosis",
+            "Transcription and Translation"
+          ],
+          "answer": "Light-dependent and Light-independent reactions",
+          "citation": "[27]"
+        },
+        {
+          "type": "short_answer",
+          "question": "In which part of the chloroplast do the light-independent reactions (Calvin cycle) take place?",
+          "answer": "Stroma",
+          "citation": "[28]"
+        }
+      ]
+    },
+    {
+      "subject": "Cellular Respiration",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the process that releases energy from food when oxygen is present?",
+          "options": ["Photosynthesis", "Fermentation", "Cellular Respiration", "Mitosis"],
+          "answer": "Cellular Respiration",
+          "citation": "[29]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for chemical pathways that require oxygen?",
+          "answer": "Aerobic",
+          "citation": "[30]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the first stage of cellular respiration, which takes place in the cytoplasm?",
+          "options": ["Krebs Cycle", "Electron Transport", "Glycolysis", "Calvin Cycle"],
+          "answer": "Glycolysis",
+          "citation": "[31, 32]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What process do cells use to release energy from food in the absence of oxygen?",
+          "answer": "Fermentation",
+          "citation": "[33]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Approximately how much ATP is generated from one molecule of glucose during cellular respiration?",
+          "options": ["2", "4", "36", "100"],
+          "answer": "36",
+          "citation": "[34]"
+        }
+      ]
+    },
+    {
+      "subject": "Cell Growth and Division",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What are the two main reasons cells divide instead of continuing to grow?",
+          "options": [
+            "Food lack and heat gain",
+            "Information overload and material exchange problems",
+            "DNA replication and protein synthesis",
+            "Active transport and passive transport"
+          ],
+          "answer": "Information overload and material exchange problems",
+          "citation": "[35]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process by which a cell divides into two new daughter cells?",
+          "answer": "Cell division",
+          "citation": "[36]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "During which phase of the cell cycle is DNA replicated?",
+          "options": ["G1 phase", "S phase", "G2 phase", "M phase"],
+          "answer": "S phase",
+          "citation": "[37]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the period of growth between cell divisions?",
+          "answer": "Interphase",
+          "citation": "[38]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which phase of mitosis involves chromosomes lining up across the center of the cell?",
+          "options": ["Prophase", "Metaphase", "Anaphase", "Telophase"],
+          "answer": "Metaphase",
+          "citation": "[39]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What structure forms during cytokinesis in plant cells that eventually becomes the cell wall?",
+          "answer": "Cell plate",
+          "citation": "[40]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for a disorder in which body cells lose the ability to control growth?",
+          "options": ["Diabetes", "Cancer", "Apoptosis", "Cystic fibrosis"],
+          "answer": "Cancer",
+          "citation": "[41]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the unspecialized cells from which differentiated cells develop?",
+          "answer": "Stem cells",
+          "citation": "[42]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which phase of mitosis is the first and longest, where the genetic material inside the nucleus condenses?",
+          "options": ["Telophase", "Anaphase", "Prophase", "Metaphase"],
+          "answer": "Prophase",
+          "citation": "[43]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the process of programmed cell death?",
+          "answer": "Apoptosis",
+          "citation": "[44]"
+        }
+      ]
+    },
+    {
+      "subject": "General Cell Biology",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What type of cell is generally larger and more complex, containing dozens of internal structures?",
+          "options": ["Bacterium", "Prokaryote", "Eukaryote", "Virus"],
+          "answer": "Eukaryote",
+          "citation": "[45]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the threadlike structures that contain the genetic information passed from one generation to the next?",
+          "answer": "Chromosomes",
+          "citation": "[46, 47]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which proteins regulate the timing of the cell cycle in eukaryotic cells?",
+          "options": ["Enzymes", "Cyclins", "Hormones", "Antibodies"],
+          "answer": "Cyclins",
+          "citation": "[48]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do we call the mass of rapidly dividing cells that can damage surrounding tissue?",
+          "answer": "Tumor",
+          "citation": "[49]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following describes the level of organization in a multicellular organism from simplest to most complex?",
+          "options": [
+            "Tissue -> Cell -> Organ -> System",
+            "Cell -> Tissue -> Organ -> Organ system",
+            "Organ system -> Organ -> Tissue -> Cell",
+            "Cell -> Organ -> Tissue -> System"
+          ],
+          "answer": "Cell -> Tissue -> Organ -> Organ system",
+          "citation": "[50]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process in which cells become specialized for certain jobs?",
+          "answer": "Differentiation",
+          "citation": "[51]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of stem cell can develop into any type of cell in the body?",
+          "options": ["Pluripotent", "Multipotent", "Totipotent", "Specialized"],
+          "answer": "Totipotent",
+          "citation": "[52, 53]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the area where two sister chromatids are attached?",
+          "answer": "Centromere",
+          "citation": "[43]"
+        }
+      ]
+    }
+  ]
+}
