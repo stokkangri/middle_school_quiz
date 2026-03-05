@@ -1,0 +1,355 @@
+{
+  "Unit_2_Ecology_50": [
+    {
+      "subject": "The Biosphere",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the term for the part of Earth in which life exists, including land, water, and air?",
+          "options": ["Atmosphere", "Lithosphere", "Biosphere", "Hydrosphere"],
+          "answer": "Biosphere",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the scientific study of interactions among organisms and between organisms and their physical environment?",
+          "answer": "Ecology",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A group of individuals that belong to the same species and live in the same area is called a(n):",
+          "options": ["Community", "Population", "Ecosystem", "Biome"],
+          "answer": "Population",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What level of organization consists of all the organisms that live in a place, together with their physical environment?",
+          "answer": "Ecosystem",
+          "citation": "[4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is considered a biotic factor in a pond ecosystem?",
+          "options": ["Water temperature", "Sunlight", "Bacteria", "Sand"],
+          "answer": "Bacteria",
+          "citation": "[5, 6]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the three basic methods used by modern ecologists in their work?",
+          "answer": "Observation, experimentation, and modeling",
+          "citation": "[7, 8]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is an abiotic factor?",
+          "options": ["Mushrooms", "Precipitation", "Earthworms", "Algae"],
+          "answer": "Precipitation",
+          "citation": "[6]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the first producers of energy-rich compounds that are later used by other organisms?",
+          "answer": "Primary producers",
+          "citation": "[9, 10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What process uses chemical energy to produce carbohydrates in the absence of light?",
+          "options": ["Photosynthesis", "Nitrogen fixation", "Chemosynthesis", "Denitrification"],
+          "answer": "Chemosynthesis",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for organisms that must acquire energy from other organisms by consuming them?",
+          "answer": "Heterotrophs",
+          "citation": "[10, 12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of consumer feeds on plant leaves, roots, seeds, or fruits?",
+          "options": ["Carnivore", "Herbivore", "Detritivore", "Scavenger"],
+          "answer": "Herbivore",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for small pieces of dead and decaying plant and animal remains?",
+          "answer": "Detritus",
+          "citation": "[14]"
+        }
+      ]
+    },
+    {
+      "subject": "Energy Flow and Cycles of Matter",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "In what kind of stream does energy flow through an ecosystem?",
+          "options": ["A multi-directional cycle", "A one-way stream", "A closed loop", "A vertical column"],
+          "answer": "A one-way stream",
+          "citation": "[15, 16]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a series of steps in which organisms transfer energy by eating and being eaten?",
+          "answer": "Food chain",
+          "citation": "[17, 18]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What do ecologists call the network of complex feeding interactions in an ecosystem?",
+          "options": ["Food chain", "Food web", "Trophic level", "Biomass pyramid"],
+          "answer": "Food web",
+          "citation": "[18, 19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for each step in a food chain or food web?",
+          "answer": "Trophic level",
+          "citation": "[16, 20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "About how much energy available within one trophic level is transferred to the next level?",
+          "options": ["1 percent", "10 percent", "50 percent", "90 percent"],
+          "answer": "10 percent",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the total amount of living tissue within a given trophic level called?",
+          "answer": "Biomass",
+          "citation": "[22, 23]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "How does matter move through the biosphere compared to energy?",
+          "options": ["In a one-way stream", "It is used up and disappears", "It is recycled", "It enters from space constantly"],
+          "answer": "It is recycled",
+          "citation": "[24, 25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process by which bacteria convert nitrogen gas into ammonia?",
+          "answer": "Nitrogen fixation",
+          "citation": "[26, 27]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is a process that releases carbon dioxide into the atmosphere?",
+          "options": ["Photosynthesis", "Burning of fossil fuels", "Nitrogen fixation", "Formation of carbonate rocks"],
+          "answer": "Burning of fossil fuels",
+          "citation": "[28]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a nutrient whose supply limits the primary productivity of an ecosystem?",
+          "answer": "Limiting nutrient",
+          "citation": "[29]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What can occur when an aquatic ecosystem receives a large input of a limiting nutrient?",
+          "options": ["Algal bloom", "Desertification", "Nitrogen fixation", "Secondary succession"],
+          "answer": "Algal bloom",
+          "citation": "[30]"
+        }
+      ]
+    },
+    {
+      "subject": "Ecosystems and Communities",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the average year-to-year condition of temperature and precipitation in an area?",
+          "options": ["Weather", "Climate", "Microclimate", "Ecosystem"],
+          "answer": "Climate",
+          "citation": "[31, 32]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the process called when gases like carbon dioxide and methane trap sunlight energy in the atmosphere as heat?",
+          "answer": "Greenhouse effect",
+          "citation": "[33, 34]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the range of physical and biological conditions in which a species lives and the way it obtains what it needs to survive?",
+          "options": ["Habitat", "Tolerance", "Niche", "Biome"],
+          "answer": "Niche",
+          "citation": "[35, 36]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What principle states that no two species can occupy the same niche in the same habitat at the same time?",
+          "answer": "Competitive exclusion principle",
+          "citation": "[37]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A relationship in which one organism benefits and the other is neither helped nor harmed is:",
+          "options": ["Mutualism", "Parasitism", "Commensalism", "Predation"],
+          "answer": "Commensalism",
+          "citation": "[38, 39]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a species that is not usually abundant but exerts strong control on the structure of a community?",
+          "answer": "Keystone species",
+          "citation": "[40]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of succession begins in an area with no trace of a previous community, such as on bare rock?",
+          "options": ["Primary succession", "Secondary succession", "Climax succession", "Pioneer succession"],
+          "answer": "Primary succession",
+          "citation": "[41, 42]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the first species to colonize barren areas?",
+          "answer": "Pioneer species",
+          "citation": "[41, 42]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which biome is characterized by permafrost?",
+          "options": ["Desert", "Taiga", "Tundra", "Northwestern Coniferous Forest"],
+          "answer": "Tundra",
+          "citation": "[43, 44]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the sunlit upper layer of the ocean where photosynthesis can occur?",
+          "answer": "Photic zone",
+          "citation": "[45]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A wetland formed where a river meets the sea is called a(n):",
+          "options": ["Marsh", "Swamp", "Estuary", "Bog"],
+          "answer": "Estuary",
+          "citation": "[46, 47]"
+        }
+      ]
+    },
+    {
+      "subject": "Populations",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the number of individuals of a single species per unit area?",
+          "options": ["Population density", "Age structure", "Geographic range", "Carrying capacity"],
+          "answer": "Population density",
+          "citation": "[48]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the movement of individuals out of an area?",
+          "answer": "Emigration",
+          "citation": "[49, 50]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Under ideal conditions with unlimited resources, a population will show what kind of growth?",
+          "options": ["Logistic growth", "Linear growth", "Exponential growth", "Negative growth"],
+          "answer": "Exponential growth",
+          "citation": "[50, 51]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the largest number of individuals of a particular species that a particular environment can support?",
+          "answer": "Carrying capacity",
+          "citation": "[52, 53]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is a density-independent limiting factor?",
+          "options": ["Competition", "Predation", "Disease", "Unusual weather"],
+          "answer": "Unusual weather",
+          "citation": "[54, 55]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the scientific study of human populations called?",
+          "answer": "Demography",
+          "citation": "[56, 57]"
+        }
+      ]
+    },
+    {
+      "subject": "Humans in the Biosphere",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "The practice of clearing large areas of land to plant a single highly productive crop year after year is:",
+          "options": ["Sustainable development", "Agriculture", "Monoculture", "Biodiversity"],
+          "answer": "Monoculture",
+          "citation": "[58, 59]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a resource that cannot be replenished by natural processes within a reasonable amount of time?",
+          "answer": "Nonrenewable resource",
+          "citation": "[60, 61]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the process where a harmful substance increases in concentration at higher trophic levels in a food chain?",
+          "options": ["Desertification", "Eutrophication", "Biological magnification", "Deforestation"],
+          "answer": "Biological magnification",
+          "citation": "[62, 63]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the total of all the genetically based variation in all organisms in the biosphere?",
+          "answer": "Biodiversity",
+          "citation": "[64, 65]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A place where many species and habitats are in immediate danger of extinction is a(n):",
+          "options": ["Habitat fragment", "Ecological hot spot", "Ecosystem service", "Niche"],
+          "answer": "Ecological hot spot",
+          "citation": "[66, 67]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What describes the total area of functioning ecosystem needed to provide resources used and absorb wastes generated by a population?",
+          "answer": "Ecological footprint",
+          "citation": "[68, 69]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What atmospheric layer protects Earth from harmful ultraviolet rays in sunlight?",
+          "options": ["Biosphere", "Ozone layer", "Greenhouse layer", "Troposphere"],
+          "answer": "Ozone layer",
+          "citation": "[70, 71]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the increase in the average temperature on Earth?",
+          "answer": "Global warming",
+          "citation": "[72, 73]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is a primary source of water pollution?",
+          "options": ["Nitrogen fixation", "Photosynthesis", "Industrial and agricultural chemicals", "Transpiration"],
+          "answer": "Industrial and agricultural chemicals",
+          "citation": "[74, 75]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the splitting of ecosystems into pieces, often due to development?",
+          "answer": "Habitat fragmentation",
+          "citation": "[65, 76]"
+        }
+      ]
+    }
+  ]
+}
