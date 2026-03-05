@@ -1,0 +1,354 @@
+{
+  "Unit_6_Microorganisms_to_Plants_50": [
+    {
+      "subject": "Viruses and Prokaryotes",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the name of the protein coat that surrounds a virus particle?",
+          "options": ["Envelope", "Capsid", "Capsule", "Prophage"],
+          "answer": "Capsid",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a nonliving particle made of proteins, nucleic acids, and sometimes lipids that can replicate only by infecting living cells?",
+          "answer": "Virus",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which type of viral infection does the host cell burst immediately after many new virus particles are produced?",
+          "options": ["Lysogenic infection", "Bacterial infection", "Lytic infection", "Systemic infection"],
+          "answer": "Lytic infection",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do scientists call bacteriophage DNA that is embedded in the bacterial host's DNA?",
+          "answer": "Prophage",
+          "citation": "[4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which group of prokaryotes has cell walls that do not contain peptidoglycan and often lives in harsh environments?",
+          "options": ["Bacteria", "Archaea", "Eukarya", "Fungi"],
+          "answer": "Archaea",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the general term for unicellular organisms that lack a nucleus?",
+          "answer": "Prokaryotes",
+          "citation": "[6]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the name for rod-shaped prokaryotes?",
+          "options": ["Cocci", "Spirilla", "Bacilli", "Flagella"],
+          "answer": "Bacilli",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "By what process do most prokaryotes replicate their DNA and divide in half to produce two identical daughter cells?",
+          "answer": "Binary fission",
+          "citation": "[7]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "During which process do two bacterial cells form a hollow bridge to exchange genetic information?",
+          "options": ["Binary fission", "Mitosis", "Conjugation", "Transformation"],
+          "answer": "Conjugation",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What thick-walled internal structure can some prokaryotes form to survive extremely harsh conditions for years?",
+          "answer": "Endospore",
+          "citation": "[8]"
+        }
+      ]
+    },
+    {
+      "subject": "Protists and Fungi",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the name for eukaryotes that are not members of the plant, animal, or fungi kingdoms?",
+          "options": ["Bacteria", "Protists", "Archaea", "Viruses"],
+          "answer": "Protists",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for a temporary cytoplasmic projection used by some protists for movement and feeding?",
+          "answer": "Pseudopod",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which short, hairlike projections produce movement for ciliates?",
+          "options": ["Flagella", "Pseudopods", "Cilia", "Spores"],
+          "answer": "Cilia",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the small cavity in the cytoplasm of a protist that temporarily stores food?",
+          "answer": "Food vacuole",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What event occurs when an aquatic ecosystem receives a large input of a limiting nutrient, causing protists to grow in huge numbers?",
+          "options": ["Red tide", "Algal bloom", "Eutrophication", "Succession"],
+          "answer": "Algal bloom",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What complex carbohydrate is found in the cell walls of fungi?",
+          "answer": "Chitin",
+          "citation": "[14]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Fungal bodies are typically made up of long, slender branching filaments called what?",
+          "options": ["Roots", "Hyphae", "Stolons", "Mycelia"],
+          "answer": "Hyphae",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the densely branched network of hyphae that makes up the main body of a fungus, usually found underground?",
+          "answer": "Mycelium",
+          "citation": "[15]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the reproductive structure of a fungus that grows above ground, such as a mushroom?",
+          "options": ["Mycelium", "Sporangium", "Fruiting body", "Zygospore"],
+          "answer": "Fruiting body",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What do we call the symbiotic association between plant roots and fungi?",
+          "answer": "Mycorrhiza",
+          "citation": "[16]"
+        }
+      ]
+    },
+    {
+      "subject": "Introduction to Plants",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the principal green pigment used by plants to capture sunlight energy?",
+          "options": ["Xanthophyll", "Carotene", "Chlorophyll", "Hemoglobin"],
+          "answer": "Chlorophyll",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What feature defines most plant life cycles, shifting between a haploid and a diploid phase?",
+          "answer": "Alternation of generations",
+          "citation": "[18]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which phase of the plant life cycle is the multicellular diploid (2N) phase?",
+          "options": ["Gametophyte", "Sporophyte", "Zygote", "Spore"],
+          "answer": "Sporophyte",
+          "citation": "[19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which phase of the plant life cycle is the multicellular haploid (N) phase?",
+          "answer": "Gametophyte",
+          "citation": "[19]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which group of plants lacks specialized water-conducting vascular tissue and must stay small?",
+          "options": ["Gymnosperms", "Bryophytes", "Ferns", "Angiosperms"],
+          "answer": "Bryophytes",
+          "citation": "[20]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What rootlike filaments hold mosses in place and absorb water?",
+          "answer": "Rhizoids",
+          "citation": "[20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which vascular tissue carries water upward from the roots to every part of the plant?",
+          "options": ["Phloem", "Cambium", "Xylem", "Epidermis"],
+          "answer": "Xylem",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which vascular tissue transports solutions of nutrients and carbohydrates produced by photosynthesis through the plant?",
+          "answer": "Phloem",
+          "citation": "[21]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What kind of seed plant bears its seeds directly on the scales of cones?",
+          "options": ["Angiosperm", "Bryophyte", "Gymnosperm", "Monocot"],
+          "answer": "Gymnosperm",
+          "citation": "[22]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What structure in seed plants contains the entire male gametophyte?",
+          "answer": "Pollen grain",
+          "citation": "[23]"
+        }
+      ]
+    },
+    {
+      "subject": "Plant Structure and Function",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the single layer of cells that makes up the dermal tissue of young plants?",
+          "options": ["Cortex", "Endodermis", "Epidermis", "Mesophyll"],
+          "answer": "Epidermis",
+          "citation": "[24]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the regions of unspecialized cells responsible for continuing growth throughout a plant's lifetime?",
+          "answer": "Meristems",
+          "citation": "[25]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What kind of meristems are found in the growing tips of stems and roots?",
+          "options": ["Floral meristems", "Apical meristems", "Vascular cambium", "Cork cambium"],
+          "answer": "Apical meristems",
+          "citation": "[26]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the tough covering that protects the root tip as it grows through the soil?",
+          "answer": "Root cap",
+          "citation": "[27]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which layer of ground tissue completely encloses the vascular cylinder in plant roots?",
+          "options": ["Cortex", "Epidermis", "Endodermis", "Pericycle"],
+          "answer": "Endodermis",
+          "citation": "[27]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the waterproof strip in root endodermal cells that forces water into the vascular cylinder?",
+          "answer": "Casparian strip",
+          "citation": "[28]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What pattern of growth takes place at the tips and shoots of all seed plants, adding length?",
+          "options": ["Secondary growth", "Primary growth", "Lateral growth", "Apical dominance"],
+          "answer": "Primary growth",
+          "citation": "[29]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of growth in dicots and conifers increases the thickness of stems and roots?",
+          "answer": "Secondary growth",
+          "citation": "[30]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the small opening in the epidermis of a leaf that allows gas exchange?",
+          "options": ["Pore", "Stoma", "Vessel", "Aquaporin"],
+          "answer": "Stoma",
+          "citation": "[31]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the loss of water from a plant through its leaves called?",
+          "answer": "Transpiration",
+          "citation": "[32]"
+        }
+      ]
+    },
+    {
+      "subject": "Plant Reproduction and Response",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which reproductive organs of angiosperms are made of four kinds of specialized leaves?",
+          "options": ["Cones", "Flowers", "Seeds", "Fruits"],
+          "answer": "Flowers",
+          "citation": "[33]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for the innermost part of a flower that produces and protects female gametophytes?",
+          "answer": "Carpel",
+          "citation": "[33]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What process in angiosperms produces both a diploid zygote and a triploid endosperm?",
+          "options": ["Binary fission", "Cross-pollination", "Double fertilization", "Vegetative reproduction"],
+          "answer": "Double fertilization",
+          "citation": "[34]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the food-rich tissue that nourishes a seedling as it grows inside a seed?",
+          "answer": "Endosperm",
+          "citation": "[34]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which structure in flowering plants surrounds and protects seeds and develops from the ovary walls?",
+          "options": ["Flower", "Leaf", "Fruit", "Sporophyte"],
+          "answer": "Fruit",
+          "citation": "[35]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the period of time during which a plant embryo is alive but not growing?",
+          "answer": "Dormancy",
+          "citation": "[36]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the chemical signals that affect a plant's growth, activity, and development?",
+          "options": ["Enzymes", "Vitamins", "Hormones", "Antibodies"],
+          "answer": "Hormones",
+          "citation": "[37]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the tendency of a plant to grow toward a light source?",
+          "answer": "Phototropism",
+          "citation": "[38]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The response of a plant to the force of gravity is called what?",
+          "options": ["Phototropism", "Gravitropism", "Thigmotropism", "Hydrotropism"],
+          "answer": "Gravitropism",
+          "citation": "[39]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for a plant's growth response to touch, such as a vine wrapping around an object?",
+          "answer": "Thigmotropism",
+          "citation": "[39]"
+        }
+      ]
+    }
+  ]
+}
