@@ -1,0 +1,359 @@
+{
+  "Unit_8_Human_Body_50": [
+    {
+      "subject": "Organization and Homeostasis",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which level of organization in the human body consists of a group of cells that perform a single function?",
+          "options": ["Organ", "Tissue", "Organ system", "Cell"],
+          "answer": "Tissue",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the tissue that lines the interior and exterior surfaces of the body?",
+          "answer": "Epithelial tissue",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of tissue provides support for the body and connects its parts, including bone and fat cells?",
+          "options": ["Nervous tissue", "Muscle tissue", "Epithelial tissue", "Connective tissue"],
+          "answer": "Connective tissue",
+          "citation": "[2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the maintenance of relatively constant internal physical and chemical conditions within an organism?",
+          "answer": "Homeostasis",
+          "citation": "[3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which process is a system in which the result of a process helps to limit or block the process itself?",
+          "options": ["Positive feedback", "Diffusion", "Feedback inhibition", "Active transport"],
+          "answer": "Feedback inhibition",
+          "citation": "[4]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which part of the brain acts as the body's thermostat to help keep body temperature steady?",
+          "answer": "Hypothalamus",
+          "citation": "[4]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What organ is responsible for converting toxic ammonia into urea to maintain homeostasis?",
+          "options": ["Kidney", "Pancreas", "Liver", "Spleen"],
+          "answer": "Liver",
+          "citation": "[5]"
+        }
+      ]
+    },
+    {
+      "subject": "Digestive and Excretory Systems",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What is the measure of heat energy available in food called?",
+          "answer": "Calorie",
+          "citation": "[6]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which nutrient is the most important for every cell in the human body to carry out chemical reactions?",
+          "options": ["Proteins", "Carbohydrates", "Water", "Vitamins"],
+          "answer": "Water",
+          "citation": "[7]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What complex carbohydrate, also known as fiber, cannot be broken down by the digestive system but provides necessary bulk?",
+          "answer": "Cellulose",
+          "citation": "[8]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which enzyme in saliva begins the chemical breakdown of starches into simple sugars?",
+          "options": ["Pepsin", "Amylase", "Lipase", "Trypsin"],
+          "answer": "Amylase",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the muscular tube that connects the pharynx to the stomach?",
+          "answer": "Esophagus",
+          "citation": "[9]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What are the rhythmic contractions of smooth muscle that move food through the digestive tract called?",
+          "options": ["Absorption", "Ingestion", "Peristalsis", "Elimination"],
+          "answer": "Peristalsis",
+          "citation": "[9]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the tiny finger-like structures in the small intestine that increase surface area for nutrient absorption?",
+          "answer": "Villi",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the primary role of the large intestine in the digestive process?",
+          "options": ["Chemical digestion of proteins", "Absorption of water", "Production of bile", "Breaking down fats"],
+          "answer": "Absorption of water",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the basic functional unit of the kidney that filters impurities and collects wastes?",
+          "answer": "Nephron",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which part of the nephron does the actual filtration of blood take place?",
+          "options": ["Ureter", "Glomerulus", "Loop of Henle", "Urethra"],
+          "answer": "Glomerulus",
+          "citation": "[13]"
+        }
+      ]
+    },
+    {
+      "subject": "The Nervous System",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What are the basic units of the nervous system that carry electrical signals called impulses?",
+          "answer": "Neurons",
+          "citation": "[14]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the neuron carries impulses from the environment or other neurons toward the cell body?",
+          "options": ["Axon", "Myelin sheath", "Nodes", "Dendrites"],
+          "answer": "Dendrites",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the minimum level of a stimulus required to cause a nerve impulse?",
+          "answer": "Threshold",
+          "citation": "[16]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the point at which a neuron can transfer an impulse to another cell called?",
+          "options": ["Dendrite", "Synapse", "Axon terminal", "Myelin sheath"],
+          "answer": "Synapse",
+          "citation": "[16]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which part of the brain is the 'thinking' region responsible for voluntary activities?",
+          "answer": "Cerebrum",
+          "citation": "[17]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the brain coordinates movement and controls balance?",
+          "options": ["Brain stem", "Cerebrum", "Cerebellum", "Thalamus"],
+          "answer": "Cerebellum",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the tough, transparent layer of the eye through which light enters and is focused?",
+          "answer": "Cornea",
+          "citation": "[18]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the inner ear is fluid-filled and contains the nerve cells that detect sound?",
+          "options": ["Tympanum", "Semicircular canal", "Cochlea", "Auditory canal"],
+          "answer": "Cochlea",
+          "citation": "[19]"
+        }
+      ]
+    },
+    {
+      "subject": "Skeletal, Muscular, and Integumentary Systems",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "How many bones are found in a typical adult human skeleton?",
+          "answer": "206",
+          "citation": "[20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which part of the skeleton includes the bones of the arms, legs, pelvis, and shoulders?",
+          "options": ["Axial skeleton", "Internal skeleton", "Appendicular skeleton", "Central skeleton"],
+          "answer": "Appendicular skeleton",
+          "citation": "[21]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the cells that secret mineral deposits to replace cartilage during bone development?",
+          "answer": "Osteoblasts",
+          "citation": "[22]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of joint permits back-and-forth motion, such as those in the elbows and knees?",
+          "options": ["Ball-and-socket", "Hinge", "Pivot", "Saddle"],
+          "answer": "Hinge",
+          "citation": "[23]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Which type of muscle tissue is striated and under involuntary control, found only in the heart?",
+          "answer": "Cardiac muscle",
+          "citation": "[24]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "According to the sliding-filament model, which thin protein filament is pulled toward the center of the sarcomere during contraction?",
+          "options": ["Myosin", "Lignin", "Keratin", "Actin"],
+          "answer": "Actin",
+          "citation": "[25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What tough connective tissue connects skeletal muscles to bones?",
+          "answer": "Tendon",
+          "citation": "[26]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the dark brown pigment in the skin that protects it by absorbing ultraviolet rays?",
+          "options": ["Keratin", "Sebum", "Melanin", "Collagen"],
+          "answer": "Melanin",
+          "citation": "[27]"
+        }
+      ]
+    },
+    {
+      "subject": "Circulatory and Respiratory Systems",
+      "questions": [
+        {
+          "type": "short_answer",
+          "question": "What is the thick middle muscle layer of the heart called?",
+          "answer": "Myocardium",
+          "citation": "[28]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which side of the heart is responsible for pulmonary circulation, pumping oxygen-poor blood to the lungs?",
+          "options": ["Left side", "Right side", "Both sides", "Upper side"],
+          "answer": "Right side",
+          "citation": "[29]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What are the smallest blood vessels where oxygen and nutrients diffuse into tissues?",
+          "answer": "Capillaries",
+          "citation": "[30]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which component of blood is responsible for carrying oxygen and contains hemoglobin?",
+          "options": ["Plasma", "White blood cells", "Platelets", "Red blood cells"],
+          "answer": "Red blood cells",
+          "citation": "[31]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the condition where fatty deposits called plaque build up in artery walls?",
+          "answer": "Atherosclerosis",
+          "citation": "[32]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which respiratory structure serves as a common passageway for both air and food?",
+          "options": ["Larynx", "Trachea", "Pharynx", "Bronchus"],
+          "answer": "Pharynx",
+          "citation": "[33]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the large flat muscle at the bottom of the chest cavity that contracts to help with breathing?",
+          "answer": "Diaphragm",
+          "citation": "[34]"
+        }
+      ]
+    },
+    {
+      "subject": "Endocrine, Reproductive, and Immune Systems",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which hormone is released by the pancreas when blood glucose levels rise after a meal?",
+          "options": ["Glucagon", "Thyroxine", "Insulin", "Epinephrine"],
+          "answer": "Insulin",
+          "citation": "[35]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the period of rapid growth and sexual maturation during which the reproductive system becomes functional?",
+          "answer": "Puberty",
+          "citation": "[36]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In which male reproductive structure do sperm mature and get stored?",
+          "options": ["Seminiferous tubules", "Vas deferens", "Epididymis", "Urethra"],
+          "answer": "Epididymis",
+          "citation": "[37]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the release of a mature egg from the ovary into a Fallopian tube?",
+          "answer": "Ovulation",
+          "citation": "[38]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What hollow ball of cells is formed during early development and implants into the uterine wall?",
+          "options": ["Zygote", "Blastocyst", "Gastrula", "Fetus"],
+          "answer": "Blastocyst",
+          "citation": "[39]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name for any disease-causing agent, such as a virus or bacterium?",
+          "answer": "Pathogen",
+          "citation": "[40]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which nonspecific defense increases blood flow to an infected area, causing it to become red and painful?",
+          "options": ["Immune response", "Vaccination", "Inflammatory response", "Interferon"],
+          "answer": "Inflammatory response",
+          "citation": "[41]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a substance that triggers a specific immune response called?",
+          "answer": "Antigen",
+          "citation": "[42]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which type of immunity is temporary and results from being exposed to antibodies produced by others, such as through breast milk?",
+          "options": ["Active immunity", "Humoral immunity", "Cell-mediated immunity", "Passive immunity"],
+          "answer": "Passive immunity",
+          "citation": "[43]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the primary target cell of the HIV virus that causes AIDS?",
+          "answer": "Helper T cells",
+          "citation": "[44]"
+        }
+      ]
+    }
+  ]
+}
