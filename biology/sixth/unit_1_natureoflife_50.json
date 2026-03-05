@@ -1,0 +1,367 @@
+{
+  "Unit_1_Nature_of_Life_50": [
+    {
+      "subject": "The Science of Biology",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is a primary goal of science?",
+          "options": [
+            "To prove theories with absolute certainty",
+            "To provide natural explanations for events in the natural world",
+            "To create rules that never change",
+            "To support personal beliefs with evidence"
+          ],
+          "answer": "To provide natural explanations for events in the natural world",
+          "citation": "[1]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for the act of noticing and describing events in an orderly way?",
+          "answer": "Observation",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A logical interpretation based on what scientists already know is called a(n):",
+          "options": ["Hypothesis", "Theory", "Inference", "Bias"],
+          "answer": "Inference",
+          "citation": "[2]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a scientific explanation for a set of observations that can be tested?",
+          "answer": "Hypothesis",
+          "citation": "[2]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "In a controlled experiment, how many variables should be changed at a time?",
+          "options": ["None", "One", "Two", "All of them"],
+          "answer": "One",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the variable that is deliberately changed in an experiment?",
+          "answer": "Independent variable",
+          "citation": "[3]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the variable that is observed and changes in response to the independent variable?",
+          "answer": "Dependent variable",
+          "citation": "[3]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which group in an experiment is exposed to the same conditions as the experimental group except for one independent variable?",
+          "options": ["The test group", "The variable group", "The control group", "The data group"],
+          "answer": "Control group",
+          "citation": "[4], [5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What kind of data involves numbers found by counting or measuring?",
+          "answer": "Quantitative data",
+          "citation": "[5]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What kind of data is descriptive and involves characteristics that cannot usually be counted?",
+          "answer": "Qualitative data",
+          "citation": "[5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What does the Latin word 'Scientia' mean?",
+          "options": ["Experiment", "Nature", "Knowledge", "Truth"],
+          "answer": "Knowledge",
+          "citation": "[6]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Why do scientists often repeat their experiments several times?",
+          "answer": "To replicate the results",
+          "citation": "[5]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "If a hypothesis is not supported by the data, what is the next step in scientific methodology?",
+          "options": [
+            "Give up on the experiment",
+            "Revise the hypothesis and do a new experiment",
+            "Ignore the data and publish the result",
+            "Wait for a theory to be proven"
+          ],
+          "answer": "Revise the hypothesis and do a new experiment",
+          "citation": "[7]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which area of science focuses on ancient life by rebuilding skeletons?",
+          "options": ["Botany", "Paleontology", "Meteorology", "Chemistry"],
+          "answer": "Paleontology",
+          "citation": "[8]"
+        },
+        {
+          "type": "short_answer",
+          "question": "True or False: Science is a list of never-changing facts.",
+          "answer": "False",
+          "citation": "[9]"
+        }
+      ]
+    },
+    {
+      "subject": "Science in Context",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "Which of the following is NOT a scientific attitude that helps generate new ideas?",
+          "options": ["Skepticism", "Creativity", "Bias", "Open-mindedness"],
+          "answer": "Bias",
+          "citation": "[10]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What scientific attitude involves questioning existing ideas and refusing to accept them without evidence?",
+          "answer": "Skepticism",
+          "citation": "[10]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the purpose of peer review in scientific journals?",
+          "options": [
+            "To make sure scientists get paid",
+            "To allow scientists to share ideas and review each other's work",
+            "To prevent new ideas from being published",
+            "To prove that a hypothesis is an absolute truth"
+          ],
+          "answer": "To allow scientists to share ideas and review each other's work",
+          "citation": "[11]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is a well-tested explanation that unifies a broad range of observations and hypotheses?",
+          "answer": "Theory",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "A personal preference or point of view rather than a scientific one is known as a(n):",
+          "options": ["Inference", "Theory", "Bias", "Observation"],
+          "answer": "Bias",
+          "citation": "[13]"
+        },
+        {
+          "type": "short_answer",
+          "question": "Does science provide answers for questions about why life exists or the meaning of life?",
+          "answer": "No",
+          "citation": "[13]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which scientist's work became a central organizing theory in biology after years of testing?",
+          "options": ["James Hutton", "Charles Darwin", "Thomas Malthus", "Charles Lyell"],
+          "answer": "Charles Darwin",
+          "citation": "[12]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What can a useful theory help scientists do regarding natural events?",
+          "answer": "Make good predictions",
+          "citation": "[12]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which attitude helps scientists design experiments that provide good data?",
+          "options": ["Curiosity", "Creativity", "Skepticism", "Open-mindedness"],
+          "answer": "Creativity",
+          "citation": "[10]"
+        },
+        {
+          "type": "short_answer",
+          "question": "True or False: A scientific theory is the same thing as a 'hunch' or a guess.",
+          "answer": "False",
+          "citation": "[14]"
+        }
+      ]
+    },
+    {
+      "subject": "Studying Life",
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "question": "What is the scientific study of life called?",
+          "options": ["Geology", "Biology", "Sociology", "Paleontology"],
+          "answer": "Biology",
+          "citation": "[15]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What molecule stores the universal genetic code in all organisms?",
+          "answer": "DNA",
+          "citation": "[16]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The combination of chemical reactions through which an organism builds up or breaks down materials is:",
+          "options": ["Homeostasis", "Stimulus", "Metabolism", "Evolution"],
+          "answer": "Metabolism",
+          "citation": "[17]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the signal to which an organism responds called?",
+          "answer": "Stimulus",
+          "citation": "[17]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the process by which organisms keep their internal conditions relatively stable?",
+          "options": ["Evolution", "Metabolism", "Homeostasis", "Differentiation"],
+          "answer": "Homeostasis",
+          "citation": "[18]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of reproduction involves two parents coming together to form the first cell of a new organism?",
+          "answer": "Sexual reproduction",
+          "citation": "[19]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What type of reproduction involves a single organism making an exact copy of itself?",
+          "answer": "Asexual reproduction",
+          "citation": "[19]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "The smallest unit of an organism that can be considered fully alive is a(n):",
+          "options": ["Atom", "Molecule", "Organ", "Cell"],
+          "answer": "Cell",
+          "citation": "[18]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for organisms made of many cells?",
+          "answer": "Multicellular",
+          "citation": "[20]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the term for organisms made of only a single cell?",
+          "answer": "Unicellular",
+          "citation": "[20]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Over many generations, groups of organisms change over time. This is called:",
+          "options": ["Growth", "Metabolism", "Evolution", "Homeostasis"],
+          "answer": "Evolution",
+          "citation": "[21]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which Big Idea in biology describes how all forms of life are connected in a 'living planet'?",
+          "options": ["Cellular Basis of Life", "Interdependence in Nature", "Structure and Function", "Information and Heredity"],
+          "answer": "Interdependence in Nature",
+          "citation": "[22]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the part of Earth in which life exists, including land, water, and air?",
+          "answer": "Biosphere",
+          "citation": "[17]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "Which field of biology uses satellites and computers to study the global impact of humans?",
+          "options": ["Global Ecology", "Biotechnology", "Genomics", "Paleontology"],
+          "answer": "Global Ecology",
+          "citation": "[23]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the field of biology that focuses on reading, writing, and editing the genetic code?",
+          "answer": "Biotechnology",
+          "citation": "[23]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What system of measurement do most scientists use when gathering data?",
+          "options": ["English System", "Metric System", "Imperial System", "Standard System"],
+          "answer": "Metric System",
+          "citation": "[24]"
+        },
+        {
+          "type": "short_answer",
+          "question": "In the metric system, what is the basic unit of length?",
+          "answer": "Meter",
+          "citation": "[25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "How many millimeters are in 1 meter?",
+          "answer": "1000",
+          "citation": "[25]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the boiling point of water in degrees Celsius?",
+          "answer": "100",
+          "citation": "[26]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the freezing point of water in degrees Celsius?",
+          "answer": "0",
+          "citation": "[26]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "How many grams are in 1 kilogram?",
+          "options": ["10", "100", "1000", "10,000"],
+          "answer": "1000",
+          "citation": "[26]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the name of the revised version of the metric system (SI)?",
+          "answer": "International System of Units",
+          "citation": "[24]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What is the first step in using a microscope to estimate the size of a cell?",
+          "options": [
+            "Use the highest power lens first",
+            "Calculate the field of view",
+            "Stain the slide with chemicals",
+            "Draw a picture of the cell"
+          ],
+          "answer": "Calculate the field of view",
+          "citation": "[27]"
+        },
+        {
+          "type": "short_answer",
+          "question": "What is the most important safety rule in the biology lab?",
+          "answer": "Always follow your teacher's instructions",
+          "citation": "[25]"
+        },
+        {
+          "type": "multiple_choice",
+          "question": "What happens during 'cell differentiation'?",
+          "options": [
+            "Cells stay exactly the same as they divide",
+            "Cells begin to look different and do different jobs",
+            "Cells turn into nonliving matter",
+            "Cells stop using DNA"
+          ],
+          "answer": "Cells begin to look different and do different jobs",
+          "citation": "[16]"
+        }
+      ]
+    }
+  ]
+}
