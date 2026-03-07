@@ -6,7 +6,7 @@
     <title>National Biology Bowl Practice</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
-        .container { max-width: 700px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .container { max-width: 800px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; text-align: center; }
         .hidden { display: none; }
         .btn { padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; margin: 5px; }
@@ -18,8 +18,11 @@
         .option:hover { background: #dcdde1; }
         .selection-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; color: #34495e; }
-        #result-msg { font-weight: bold; margin-top: 15px; }
         .score-display { font-size: 1.5em; color: #27ae60; text-align: center; }
+        .bg-green-success { background-color: #dcfce7 !important; color: #166534; }
+        .bg-red-error { background-color: #fee2e2 !important; color: #991b1b; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
     </style>
 </head>
 <body>
@@ -43,13 +46,18 @@
             </select>
         </div>
 
-        <!-- NEW: Length Selection (The Stimulus) -->
         <div class="selection-group">
             <label for="length-select">Quiz Length:</label>
-            <select id="length-select" style="width: 100%; padding: 10px;">
+            <select id="length-select" style="width: 100%; padding: 10px;" onchange="toggleCustomInput()">
                 <option value="short">Short (Standard)</option>
                 <option value="long">Long (50 Questions)</option>
+                <option value="custom">Custom (Random selection from 50)</option>
             </select>
+        </div>
+
+        <div id="custom-count-container" class="selection-group hidden">
+            <label for="custom-count">Number of Questions (1-49):</label>
+            <input type="number" id="custom-count" min="1" max="49" value="10" style="width: 100%; padding: 10px;">
         </div>
 
         <button class="btn btn-primary" style="width: 100%;" onclick="loadQuiz()">Start Practice</button>
@@ -66,17 +74,28 @@
         <div id="navigation" style="margin-top: 20px;">
             <button class="btn btn-back" id="back-btn" onclick="changeQuestion(-1)">Back</button>
             <button class="btn btn-primary" id="next-btn" onclick="changeQuestion(1)">Next</button>
-            <button class="btn btn-reveal" onclick="revealAnswer()">Reveal</button>
+            <button class="btn btn-reveal" onclick="revealAnswer()">Reveal Answer</button>
             <button class="btn btn-primary hidden" id="submit-btn" onclick="showScore()">Submit Test</button>
         </div>
         <p id="reveal-area" class="hidden" style="margin-top:15px; padding:10px; background:#f9ebea; border-left:5px solid #c0392b;"></p>
     </div>
 
-    <!-- Step 3: Score Screen (The Conclusion) -->
+    <!-- Step 3: Score Screen (Data Analysis) -->
     <div id="score-screen" class="hidden">
-        <h2>Practice Complete!</h2>
+        <h2>Practice Results</h2>
         <p class="score-display" id="final-score"></p>
-        <button class="btn btn-primary" onclick="location.reload()">Try Another Unit</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Q#</th>
+                    <th>Question</th>
+                    <th>Your Response</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody id="results-table-body"></tbody>
+        </table>
+        <button class="btn btn-primary" style="margin-top:20px;" onclick="location.reload()">Start New Session</button>
     </div>
 </div>
 
@@ -85,48 +104,61 @@
     let currentIndex = 0;
     let userAnswers = {};
 
+    function toggleCustomInput() {
+        const lengthPref = document.getElementById('length-select').value;
+        document.getElementById('custom-count-container').classList.toggle('hidden', lengthPref !== 'custom');
+    }
+
     async function loadQuiz() {
         let fileName = document.getElementById('unit-select').value;
         const lengthPref = document.getElementById('length-select').value;
         
-        // If 'long' is selected, append '_50' to the filename (before the .json)
-        if (lengthPref === 'long') {
+        // Load the _50.json for both 'long' and 'custom' modes
+        if (lengthPref === 'long' || lengthPref === 'custom') {
             fileName = fileName.replace('.json', '_50.json');
         }
 
         const baseUrl = "https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/biology/sixth/";
         
         try {
-            // "Transcription": Fetching the raw genetic information (JSON)
             const response = await fetch(baseUrl + fileName);
-            if (!response.ok) throw new Error("Could not find the requested file.");
-            
+            if (!response.ok) throw new Error("File not found. Please ensure the JSON is uploaded.");
             const data = await response.json();
             const unitKey = Object.keys(data);
             
-            currentQuestions = [];
+            let allAvailableQuestions = [];
             data[unitKey].forEach(section => {
                 section.questions.forEach(q => {
                     q.subject = section.subject;
-                    currentQuestions.push(q);
+                    allAvailableQuestions.push(q);
                 });
             });
 
-            // Randomize the "gene pool" for this attempt
-            currentQuestions.sort(() => Math.random() - 0.5);
+            // Randomize the "Gene Pool"
+            allAvailableQuestions.sort(() => Math.random() - 0.5);
+
+            // Determine final question set size
+            if (lengthPref === 'custom') {
+                const count = parseInt(document.getElementById('custom-count').value) || 10;
+                // Ensure sample size is valid
+                const safeCount = Math.min(Math.max(count, 1), allAvailableQuestions.length);
+                currentQuestions = allAvailableQuestions.slice(0, safeCount);
+            } else {
+                currentQuestions = allAvailableQuestions;
+            }
 
             document.getElementById('setup').classList.add('hidden');
             document.getElementById('quiz-area').classList.remove('hidden');
             displayQuestion();
         } catch (e) {
-            alert("Error: " + e.message + "\nEnsure you have uploaded the _50.json version to your GitHub.");
+            alert("Error: " + e.message);
         }
     }
 
     function displayQuestion() {
         const q = currentQuestions[currentIndex];
         document.getElementById('subject-header').innerText = q.subject;
-        document.getElementById('question-text').innerText = `Q${currentIndex + 1}: ${q.question}`;
+        document.getElementById('question-text').innerText = `Question ${currentIndex + 1}: ${q.question}`;
         document.getElementById('reveal-area').classList.add('hidden');
         
         const optionsDiv = document.getElementById('answer-options');
@@ -142,7 +174,7 @@
             });
         } else {
             const val = userAnswers[currentIndex] || "";
-            optionsDiv.innerHTML = `<input type="text" id="sa-input" style="width:95%; padding:10px;" placeholder="Type your answer here..." value="${val}" oninput="saveAnswer(this.value)">`;
+            optionsDiv.innerHTML = `<input type="text" style="width:95%; padding:10px;" placeholder="Type answer..." value="${val}" oninput="saveAnswer(this.value)">`;
         }
 
         document.getElementById('back-btn').disabled = (currentIndex === 0);
@@ -151,167 +183,36 @@
         document.getElementById('submit-btn').classList.toggle('hidden', !isLast);
     }
 
-    function saveAnswer(val) {
-        userAnswers[currentIndex] = val;
-    }
-
-    function changeQuestion(step) {
-        currentIndex += step;
-        displayQuestion();
-    }
-
+    function saveAnswer(val) { userAnswers[currentIndex] = val; }
+    function changeQuestion(step) { currentIndex += step; displayQuestion(); }
     function revealAnswer() {
-        const q = currentQuestions[currentIndex];
         const area = document.getElementById('reveal-area');
-        area.innerHTML = `<strong>Correct Answer:</strong> ${q.answer}`;
+        area.innerHTML = `<strong>Correct:</strong> ${currentQuestions[currentIndex].answer}`;
         area.classList.remove('hidden');
     }
 
     function showScore() {
         let score = 0;
+        const tableBody = document.getElementById('results-table-body');
+        tableBody.innerHTML = "";
+
         currentQuestions.forEach((q, i) => {
-            if (userAnswers[i] && userAnswers[i].toLowerCase().trim() === q.answer.toLowerCase().trim()) {
-                score++;
-            }
+            const uAns = userAnswers[i] || "Skipped";
+            const isCorrect = uAns.toLowerCase().trim() === q.answer.toLowerCase().trim();
+            if (isCorrect) score++;
+
+            tableBody.innerHTML += `
+                <tr class="${isCorrect ? 'bg-green-success' : 'bg-red-error'}">
+                    <td>${i + 1}</td>
+                    <td>${q.question}</td>
+                    <td>${uAns}</td>
+                    <td>${q.answer}</td>
+                </tr>`;
         });
 
         document.getElementById('quiz-area').classList.add('hidden');
         document.getElementById('score-screen').classList.remove('hidden');
-        document.getElementById('final-score').innerText = `Your Score: ${score} / ${currentQuestions.length}`;
-    }
-</script>
-</body>
-</html>    <button onclick="startQuiz()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
-        Start Quiz
-    </button>
-    </div>
-
-    <div id="quiz-area" class="hidden">
-        <h2 id="subject-title"></h2>
-        <div id="question-box">
-            <p id="question-text"></p>
-            <div id="answer-input"></div>
-        </div>
-        
-        <div id="controls">
-            <button class="btn" id="back-btn" onclick="move(-1)">Back</button>
-            <button class="btn" id="next-btn" onclick="move(1)">Next</button>
-            <button class="btn btn-reveal" onclick="reveal()">Reveal</button>
-            <button class="btn" id="submit-btn" onclick="submitQuiz()">Submit Test</button>
-        </div>
-        <p id="reveal-text" class="hidden" style="color: #c0392b; font-weight: bold;"></p>
-    </div>
-
-    <div id="score-screen" class="hidden">
-        <h2>Practice Complete!</h2>
-        <p id="results"></p>
-        <button class="btn" onclick="location.reload()">Restart</button>
-    </div>
-</div>
-
-<script>
-    let quizData = [];
-    let currentIdx = 0;
-    let score = 0;
-    let userAnswers = [];
-
-    async function startQuiz() {
-        // Determine the user's choice (The Stimulus)
-        const selectedFile = document.getElementById('unit-select').value;
-        
-        // Construct the Raw URL (Information from conversation history)
-        const rawBaseUrl = "https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/biology/sixth/";
-        const finalUrl = rawBaseUrl + selectedFile;
-
-        try {
-            // Step 2: "Transcription" - Copying the master plan into a working blueprint
-            const response = await fetch(finalUrl);
-            if (!response.ok) throw new Error("Network error");
-            const data = await response.json();
-
-            // Standardize the data format
-            const unitKey = Object.keys(data);
-            quizData = [];
-            data[unitKey].forEach(section => {
-                section.questions.forEach(q => {
-                    q.subject = section.subject;
-                    quizData.push(q);
-                });
-            });
-
-            // Randomize the "Gene Pool"
-            quizData.sort(() => Math.random() - 0.5);
-
-            // Step 3: Transition the UI (The Response)
-            document.getElementById('setup').classList.add('hidden');
-            document.getElementById('quiz-area').classList.remove('hidden');
-            renderQuestion();
-            
-        } catch (err) {
-            alert("Error loading the unit: " + err.message);
-        }
-    }
-
-    function renderQuestion() {
-        const q = quizData[currentIdx];
-        document.getElementById('subject-title').innerText = q.subject;
-        document.getElementById('question-text').innerText = `Q${currentIdx + 1}: ${q.question}`;
-        document.getElementById('reveal-text').classList.add('hidden');
-        
-        const inputArea = document.getElementById('answer-input');
-        inputArea.innerHTML = '';
-
-        if (q.type === 'multiple_choice') {
-            q.options.forEach(opt => {
-                const label = document.createElement('label');
-                label.className = 'option';
-                label.innerHTML = `<input type="radio" name="choice" value="${opt}"> ${opt}`;
-                inputArea.appendChild(label);
-            });
-        } else {
-            inputArea.innerHTML = `<input type="text" id="sa-input" style="width: 100%; padding: 8px;" placeholder="Type your answer here...">`;
-        }
-        
-        document.getElementById('back-btn').disabled = currentIdx === 0;
-        document.getElementById('next-btn').style.display = currentIdx === quizData.length - 1 ? 'none' : 'inline-block';
-        document.getElementById('submit-btn').style.display = currentIdx === quizData.length - 1 ? 'inline-block' : 'none';
-    }
-
-    function move(dir) {
-        saveAnswer();
-        currentIdx += dir;
-        renderQuestion();
-    }
-
-    function saveAnswer() {
-        const q = quizData[currentIdx];
-        if (q.type === 'multiple_choice') {
-            const selected = document.querySelector('input[name="choice"]:checked');
-            userAnswers[currentIdx] = selected ? selected.value : null;
-        } else {
-            const val = document.getElementById('sa-input').value;
-            userAnswers[currentIdx] = val ? val.trim() : null;
-        }
-    }
-
-    function reveal() {
-        const q = quizData[currentIdx];
-        const revealEl = document.getElementById('reveal-text');
-        revealEl.innerText = `Correct Answer: ${q.answer}`;
-        revealEl.classList.remove('hidden');
-    }
-
-    function submitQuiz() {
-        saveAnswer();
-        score = 0;
-        quizData.forEach((q, i) => {
-            if (userAnswers[i] && userAnswers[i].toLowerCase() === q.answer.toLowerCase()) {
-                score++;
-            }
-        });
-        document.getElementById('quiz-area').classList.add('hidden');
-        document.getElementById('score-screen').classList.remove('hidden');
-        document.getElementById('results').innerText = `Your Score: ${score} / ${quizData.length}`;
+        document.getElementById('final-score').innerText = `Overall Fitness: ${score} / ${currentQuestions.length}`;
     }
 </script>
 </body>
