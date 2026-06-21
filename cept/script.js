@@ -6,6 +6,7 @@ let currentQuestionIndex = 0;
 let userAnswers = {};      // Captures inputs: { questionIndex: "A" }
 let checkedQuestions = {}; // Tracks validation lock: { questionIndex: true }
 let systemScores = {};     // Tracks point distribution: { questionIndex: 1 or 0 }
+let isReviewMode = false;  // Tracks if the quiz has been submitted for evaluation
 
 const loadingMessage = document.getElementById('loading-message');
 const startBtn = document.getElementById('start-btn');
@@ -59,6 +60,7 @@ function shuffleArray(arr) {
 startBtn.addEventListener('click', () => {
     const targetJsonFile = topicSelect.value;
     setupView.style.display = 'none';
+    scoreView.style.display = 'none';
     loadingMessage.textContent = 'Fetching chapter questions data...';
     loadingMessage.style.display = 'block';
 
@@ -73,9 +75,10 @@ startBtn.addEventListener('click', () => {
             userAnswers = {};
             checkedQuestions = {};
             systemScores = {};
+            isReviewMode = false;
 
             loadingMessage.style.display = 'none';
-            quizView.style.display = 'flex'; // Sets up two-column dashboard view layout
+            quizView.style.display = 'flex'; 
             
             buildSidebarGrid();
             loadQuestion();
@@ -85,7 +88,6 @@ startBtn.addEventListener('click', () => {
         });
 });
 
-// Build out clickable side panel block grid nodes
 function buildSidebarGrid() {
     const gridContainer = document.getElementById('question-grid');
     gridContainer.innerHTML = '';
@@ -100,7 +102,6 @@ function buildSidebarGrid() {
     });
 }
 
-// Adjust colors of navigation tabs dynamically
 function updateNavigationUI() {
     activeQuestions.forEach((_, index) => {
         const btn = document.getElementById(`sidebar-pointer-${index}`);
@@ -111,23 +112,28 @@ function updateNavigationUI() {
         if (index === currentQuestionIndex) {
             btn.classList.add('active-view');
         }
-        if (checkedQuestions[index]) {
-            btn.classList.add('checked-state'); // Verified/revealed green status marker
+        
+        // Color-coding updates
+        if (isReviewMode) {
+            // In review mode, show everything verified as green
+            btn.classList.add('checked-state');
+        } else if (checkedQuestions[index]) {
+            btn.classList.add('checked-state'); 
         } else if (userAnswers[index] !== undefined) {
-            btn.classList.add('answered'); // Selected choice yellow marker
+            btn.classList.add('answered'); 
         }
     });
 
-    // Control edge bounds tracking behaviors
     prevBtn.disabled = (currentQuestionIndex === 0);
     
-    // Switch dynamic tracking mode configurations at trailing quiz bounds
     if (currentQuestionIndex === activeQuestions.length - 1) {
-        nextBtn.textContent = "Finish Quiz";
-        nextBtn.style.backgroundColor = "var(--primary-color)";
+        nextBtn.textContent = isReviewMode ? "Next Question →" : "Finish Quiz";
+        nextBtn.style.backgroundColor = isReviewMode ? "var(--success-color)" : "var(--primary-color)";
+        if (isReviewMode) nextBtn.disabled = true; // Turn off button at absolute boundary line
     } else {
         nextBtn.textContent = "Next Question →";
         nextBtn.style.backgroundColor = "var(--success-color)";
+        nextBtn.disabled = false;
     }
 }
 
@@ -143,7 +149,8 @@ function loadQuestion() {
         label.className = 'option-label';
         
         const isChecked = userAnswers[currentQuestionIndex] === key ? 'checked' : '';
-        const isDisabled = checkedQuestions[currentQuestionIndex] ? 'disabled' : '';
+        // Lock selections permanently if question was checked or quiz is in review mode
+        const isDisabled = (checkedQuestions[currentQuestionIndex] || isReviewMode) ? 'disabled' : '';
         
         label.innerHTML = `
             <input type="radio" name="quiz-option" value="${key}" ${isChecked} ${isDisabled} onchange="saveSelectedAnswer('${key}')"> 
@@ -152,8 +159,8 @@ function loadQuestion() {
         qOptions.appendChild(label);
     });
 
-    // Handle historical visual layout parsing rules
-    if (checkedQuestions[currentQuestionIndex]) {
+    // Handle historical visual evaluation rendering configurations
+    if (checkedQuestions[currentQuestionIndex] || isReviewMode) {
         showStaticFeedback();
     } else {
         feedbackBox.style.display = 'none';
@@ -166,7 +173,7 @@ function loadQuestion() {
 }
 
 function saveSelectedAnswer(choiceKey) {
-    if (checkedQuestions[currentQuestionIndex]) return;
+    if (checkedQuestions[currentQuestionIndex] || isReviewMode) return;
     userAnswers[currentQuestionIndex] = choiceKey;
     updateNavigationUI();
 }
@@ -176,7 +183,6 @@ function jumpToQuestion(targetIndex) {
     loadQuestion();
 }
 
-// Check validation processing runtime logic
 checkBtn.addEventListener('click', () => {
     const selected = document.querySelector('input[name="quiz-option"]:checked');
     if (!selected) { alert('Select an answer block first!'); return; }
@@ -196,7 +202,7 @@ checkBtn.addEventListener('click', () => {
 
 revealBtn.addEventListener('click', () => {
     checkedQuestions[currentQuestionIndex] = true;
-    systemScores[currentQuestionIndex] = 0; // Revealing without checking defaults value payload to zero
+    systemScores[currentQuestionIndex] = 0; 
     showStaticFeedback();
     updateNavigationUI();
 });
@@ -205,7 +211,6 @@ function showStaticFeedback() {
     const currentQ = activeQuestions[currentQuestionIndex];
     const chosen = userAnswers[currentQuestionIndex];
     
-    // Disable active interface nodes
     const inputs = document.getElementsByName('quiz-option');
     inputs.forEach(input => input.disabled = true);
 
@@ -219,15 +224,14 @@ function showStaticFeedback() {
         feedbackBox.textContent = `Incorrect. Correct choice was ${currentQ.answer}.`;
         feedbackBox.className = "feedback incorrect";
     } else {
-        feedbackBox.textContent = `The correct answer is ${currentQ.answer}.`;
-        feedbackBox.className = "feedback correct";
+        feedbackBox.textContent = `Skipped. The correct answer is ${currentQ.answer}.`;
+        feedbackBox.className = "feedback incorrect";
     }
 
     explanationBox.textContent = `Explanation: ${currentQ.rationale}`;
     explanationBox.style.display = 'block';
 }
 
-// Handle layout navigation stepping boundaries
 prevBtn.addEventListener('click', () => {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
@@ -240,20 +244,44 @@ nextBtn.addEventListener('click', () => {
         currentQuestionIndex++;
         loadQuestion();
     } else {
-        // Tally results on complete execution run sequence mapping rules
+        if (isReviewMode) return; // Prevent re-triggering completion once already viewing review engine
+        
+        // Evaluate complete answers array to award final point score configurations
         let computedFinalScore = 0;
-        Object.keys(systemScores).forEach(k => {
-            computedFinalScore += systemScores[k];
+        
+        activeQuestions.forEach((question, index) => {
+            const chosenValue = userAnswers[index];
+            
+            // If they checked it using the button earlier, look at that score tracker
+            if (checkedQuestions[index]) {
+                computedFinalScore += (systemScores[index] || 0);
+            } else {
+                // If they never checked it but filled it out right before hitting finish
+                if (chosenValue === question.answer) {
+                    computedFinalScore += 1;
+                    systemScores[index] = 1;
+                } else {
+                    systemScores[index] = 0;
+                }
+            }
         });
 
-        quizView.style.display = 'none';
+        // Set review mode status flags
+        isReviewMode = true;
+
+        // Show the score bar layout but DO NOT hide quizView panel grid layout
         scoreView.style.display = 'block';
         finalScoreText.textContent = computedFinalScore;
         finalTotalText.textContent = activeQuestions.length;
+        
+        // Focus client attention view index frame back to the start of the quiz to let them review
+        currentQuestionIndex = 0;
+        loadQuestion();
     }
 });
 
 restartBtn.addEventListener('click', () => {
     scoreView.style.display = 'none';
+    quizView.style.display = 'none';
     setupView.style.display = 'block';
 });
