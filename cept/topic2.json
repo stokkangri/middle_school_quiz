@@ -1,0 +1,602 @@
+[
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which chemical component is primarily responsible for the initial setting and early strength development of Ordinary Portland Cement (OPC)?",
+    "options": {
+      "A": "Dicalcium Silicate (C2S)",
+      "B": "Tricalcium Silicate (C3S)",
+      "C": "Tricalcium Aluminate (C3A)",
+      "D": "Tetracalcium Aluminoferrite (C4AF)"
+    },
+    "answer": "B",
+    "rationale": "Tricalcium Silicate (C3S) hydrates rapidly and is primarily responsible for the early strength development and initial hardening of cement within the first 7 days."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which of the following statements best describes the structural property of 'Pozozzolana' when added to lime or OPC concrete mixes?",
+    "options": {
+      "A": "It drastically increases the initial setting time but lowers overall durability.",
+      "B": "It reacts chemically with calcium hydroxide to form compounds with cementitious properties, increasing long-term strength and water tightness.",
+      "C": "It increases the heat of hydration, making it ideal for rapid construction in cold weather.",
+      "D": "It acts strictly as an inert filler material with no chemical contribution."
+    },
+    "answer": "B",
+    "rationale": "Pozzolanas consume liberated calcium hydroxide from cement hydration, forming stable C-S-H gels that increase durability and reduce permeability over time."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What is the primary purpose of executing a 'Flemish Bond' instead of an 'English Bond' in traditional brick masonry?",
+    "options": {
+      "A": "To maximize the structural load-bearing capacity of a 10-inch thick wall.",
+      "B": "To minimize the usage of closer bricks.",
+      "C": "To achieve a more aesthetically balanced and pleasing face appearance on both sides of the wall.",
+      "D": "To reduce the total amount of mortar required for construction"
+    },
+    "answer": "C",
+    "rationale": "English bond is technically stronger due to continuous longitudinal joints, but Flemish bond is historically preferred for its superior architectural aesthetics on the facing wall."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which of the following timber defects is characterized by the separation of wood fibers along the annual rings, often caused by severe wind action or frost?",
+    "options": {
+      "A": "Heart Shake",
+      "B": "Star Shake",
+      "C": "Cup Shake (Ring Shake)",
+      "D": "Radial Shake"
+    },
+    "answer": "C",
+    "rationale": "Cup shakes or ring shakes occur as curved splits separating the annual growth rings, typically triggered by dynamic mechanical stress like high winds on the living tree."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What type of safety glass is manufactured by subjecting standard float glass to rapid heating followed by abrupt high-pressure air cooling?",
+    "options": {
+      "A": "Laminated Glass",
+      "B": "Tempered (Toughened) Glass",
+      "C": "Annealed Glass",
+      "D": "Wired Glass"
+    },
+    "answer": "B",
+    "rationale": "Tempering creates balanced internal stresses, causing the glass to shatter into small, blunt granular chunks instead of sharp jagged shards when fractured."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "In rock classification, into which geological category do basalt, granite, and pumice fall?",
+    "options": {
+      "A": "Sedimentary Rocks",
+      "B": "Metamorphic Rocks",
+      "C": "Igneous Rocks",
+      "D": "Calcified Sandstones"
+    },
+    "answer": "C",
+    "rationale": "Igneous rocks are formed directly from the cooling and solidification of molten magma or lava flows."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "The field test 'Slump Test' is standard practice on civil construction sites to measure which property of fresh concrete mixes?",
+    "options": {
+      "A": "Compressive ultimate load limits",
+      "B": "Workability and consistency",
+      "C": "Tensile elastic moduli",
+      "D": "Rate of dry shrinkage"
+    },
+    "answer": "B",
+    "rationale": "The slump test assesses wet concrete workability and fluid ease of placement by measuring the vertical drop of a compacted cone profile under its own weight."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which fundamental component is added to oil-based architectural paints to accelerate the oxidation and drying rate of the vehicle film?",
+    "options": {
+      "A": "Pigment",
+      "B": "Solvent (Thinner)",
+      "C": "Drier",
+      "D": "Base extender"
+    },
+    "answer": "C",
+    "rationale": "Driers act as organic metal catalyst additives that expedite the drying phase and solidification of the paint binder vehicle."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which specialized variety of brick is chemically engineered with rich alumina and silica contents to resist extremely high temperatures in industrial furnaces or fireplaces?",
+    "options": {
+      "A": "Fly Ash Brick",
+      "B": "Refractory (Fire) Brick",
+      "C": "Engineering Brick",
+      "D": "Sand-Lime Brick"
+    },
+    "answer": "B",
+    "rationale": "Firebricks exhibit very low thermal conductivity and exceptionally high melting points, allowing them to retain structural integrity in active fire boxes."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific operational treatment is performed on seasoned timber by saturating it with creosote oil under high pressure?",
+    "options": {
+      "A": "Kiln seasoning acceleration",
+      "B": "Chemical preservation against fungal decay and termite attacks",
+      "C": "Surface texturing for stain adhesion",
+      "D": "Fireproof encasement curing"
+    },
+    "answer": "B",
+    "rationale": "Pressure-treating timber with tar-distilled creosote creates a highly effective toxic barrier against wood-boring insects and damp rot fungi."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "In the structural evaluation of metals, what is the term for the material's capability to withstand substantial plastic deformation under tensile stress before fracturing?",
+    "options": {
+      "A": "Brittleness",
+      "B": "Malleability",
+      "C": "Ductility",
+      "D": "Elastic hardness"
+    },
+    "answer": "C",
+    "rationale": "Ductility is the structural property that permits materials like mild steel to elongate and neck down under tension, preventing abrupt catastrophic collapses."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which type of non-ferrous metal is heavily utilized in roofing flashings and plumbing configurations due to its exceptional resistance to atmospheric corrosion and high malleability?",
+    "options": {
+      "A": "Cast Iron",
+      "B": "Copper",
+      "C": "Structural Aluminum",
+      "D": "Lead"
+    },
+    "answer": "B",
+    "rationale": "Copper oxidizes into a stable protective green patina layer, shielding the core underlying metal from further environmental degradation."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What core structural failure occurs if fresh concrete is dropped from an excessive height (e.g., above 1.5 meters) directly into formwork zones?",
+    "options": {
+      "A": "Screed blinding",
+      "B": "Segregation of aggregate particles",
+      "C": "Flash setting of cement paste",
+      "D": "Efflorescence crystals deposition"
+    },
+    "answer": "B",
+    "rationale": "Excessive freefall heights isolate heavy coarse stone aggregates from the fluid mortar slurry, compromising structural homogeneity and strength."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which form of structural iron contains the highest percentage of carbon content, making it highly compressive but exceptionally brittle and un-weldable?",
+    "options": {
+      "A": "Wrought Iron",
+      "B": "Mild Steel",
+      "C": "Cast Iron",
+      "D": "Stainless Alloy Steel"
+    },
+    "answer": "C",
+    "rationale": "Cast iron possesses a high carbon percentage (2% to 4%), which crystallizes as graphite flakes, limiting its performance under tensile or impact forces."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific defect appears on finished brickwork as a white, powdery crystalline deposit due to the migration of water-soluble salts to the surface?",
+    "options": {
+      "A": "Spalling",
+      "B": "Efflorescence",
+      "C": "Crazing",
+      "D": "Blistering"
+    },
+    "answer": "B",
+    "rationale": "Efflorescence occurs when moisture wicks internal soluble salts outward, leaving mineral deposits behind on the brick face as the water evaporates."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which manufactured wood product consists of thin sheets of wood veneer glued together under high pressure with alternating grain directions?",
+    "options": {
+      "A": "Particle Board",
+      "B": "MDF (Medium Density Fiberboard)",
+      "C": "Plywood",
+      "D": "Oriented Strand Board (OSB)"
+    },
+    "answer": "C",
+    "rationale": "Cross-laminating wood grains in plywood distributes tensile strength uniformly along both dimensions while mitigating natural expansion and contraction."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What physical process describes the constant, slow plastic deformation of structural materials over extended durations under sustained dead loads?",
+    "options": {
+      "A": "Fatigue structural limit",
+      "B": "Elastic deflection rebound",
+      "C": "Creep",
+      "D": "Thermal dilation"
+    },
+    "answer": "C",
+    "rationale": "Creep is the progressive deformation under constant stress, distinct from elastic deflection, and is common in concrete beams over long timespans."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which metamorphic rock type is derived from the geological altering of pure sedimentary limestone under immense heat and crustal pressures?",
+    "options": {
+      "A": "Slate",
+      "B": "Marble",
+      "C": "Gneiss",
+      "D": "Quartzite"
+    },
+    "answer": "B",
+    "rationale": "Metamorphism causes calcite crystals in limestone to interlock and form a denser, crystalline matrix known as marble."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What unique physical property makes expanded polystyrene (EPS) or rigid polyisocyanurate sheets popular options in modern wall cavity build-ups?",
+    "options": {
+      "A": "High structural load-bearing capacity",
+      "B": "Excellent low thermal conductivity (High R-value insulation)",
+      "C": "Absolute acoustic transparency",
+      "D": "High fire-melting resistance thresholds"
+    },
+    "answer": "B",
+    "rationale": "Foams trap static air pockets within their closed-cell matrices, which limits convective and conductive heat transfer across the building envelope."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What type of hydraulic binder matrix is produced by burning a precise blend of crushed limestone and clay at high temperatures to form clinker?",
+    "options": {
+      "A": "Hydraulic Lime powder",
+      "B": "Ordinary Portland Cement (OPC)",
+      "C": "Gypsum Plaster compound",
+      "D": "Calcined Pozzolan slurry"
+    },
+    "answer": "B",
+    "rationale": "OPC requires sintering calcareous and argillaceous compounds at temperatures up to 1450°C to reorganize silicates into hydraulic minerals."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which fundamental structural component is embedded inside standard laminated glass panels to prevent shards from separating upon impact?",
+    "options": {
+      "A": "A microscopic stainless wire grid mesh",
+      "B": "A transparent Polyvinyl Butyral (PVB) interlayer sheet",
+      "C": "A dense coating of clear epoxy lacquer",
+      "D": "An un-plasticized acrylic edge bander"
+    },
+    "answer": "B",
+    "rationale": "The adhesive PVB core bonds glass sheets together, holding cracked shards securely to the plastic film to minimize injury risks."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What is the primary operational cause behind the common concrete structural defect known as 'Honeycombing'?",
+    "options": {
+      "A": "Using too much fine water mix ratio",
+      "B": "Inadequate mechanical vibration and compaction, leaving air voids between coarse aggregate stones",
+      "C": "Using rusted reinforcement rebar matrix lines",
+      "D": "Applying formwork release oil directly on reinforcement"
+    },
+    "answer": "B",
+    "rationale": "Insufficient compaction prevents fluid mortar from filling spaces around large stones and dense reinforcement configurations, creating honeycomb-like structural voids."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What type of ferrous alloy features an addition of at least 10.5% chromium content to form a passive oxide film that thwarts corrosion?",
+    "options": {
+      "A": "High-carbon tool steel",
+      "B": "Mild structural steel grade",
+      "C": "Stainless Steel",
+      "D": "Wrought iron strap work"
+    },
+    "answer": "C",
+    "rationale": "Chromium reacts with atmospheric oxygen to form a thin, self-healing surface layer of chromium oxide that protects the steel from corrosion."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which traditional roofing material is composed of natural metamorphic rock tiles split cleanly along foliation lines?",
+    "options": {
+      "A": "Terracotta baked clay tiles",
+      "B": "Slate shingles",
+      "C": "Bitumen composite strips",
+      "D": "Fiber-cement corrugated boards"
+    },
+    "answer": "B",
+    "rationale": "Slate's natural planar cleavage allows stones to be split into thin, durable, waterproof panels suited for sloped roofing systems."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific type of non-destructive testing uses electrical magnetic fields to map the depth, placement, and coverage of buried steel reinforcement bars?",
+    "options": {
+      "A": "Rebound Schmidt Hammer inspection",
+      "B": "Covermeter (Profometer) scanning test",
+      "C": "Core extraction compression testing",
+      "D": "Ultrasonic Pulse Velocity matrix tracking"
+    },
+    "answer": "B",
+    "rationale": "Covermeters utilize electromagnetic induction to locate rebar, estimate its diameter, and measure the thickness of concrete cover without damaging the structure."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which constituent of standard brick clay gives finished structural bricks their distinct red coloration after kiln firing operations?",
+    "options": {
+      "A": "Silica sand particles",
+      "B": "Alumina binding gel",
+      "C": "Iron Oxide",
+      "D": "Magnesium carbonate dust"
+    },
+    "answer": "C",
+    "rationale": "Iron oxide acts as a flux during vitrification, and its oxidation dictates the characteristic red hue of fired clay bricks."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What is the primary benefit of specified 'Fly Ash' substitution in standard mass-concrete infrastructure projects?",
+    "options": {
+      "A": "It drastically increases initial 24-hour setting speeds",
+      "B": "It reduces the overall heat of hydration, mitigating thermal cracking risks in thick concrete elements",
+      "C": "It eliminates the need for coarse stone aggregates completely",
+      "D": "It renders concrete completely transparent when dry"
+    },
+    "answer": "B",
+    "rationale": "Replacing cement with fly ash slows early hydration heat generation, reducing thermal stresses and potential cracking in large monolithic structural pours."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific brick masonry term denotes a custom layout component produced by splitting a standard brick lengthwise?",
+    "options": {
+      "A": "King Closer",
+      "B": "Queen Closer",
+      "C": "Bullnose profile",
+      "D": "Frog compression zone"
+    },
+    "answer": "B",
+    "rationale": "A queen closer is a brick cut in half along its length, typically placed next to a corner header to adjust vertical mortar joints in bonded masonry walls."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which organic polymer compound serves as the binding matrix in standard premium architectural acrylic emulsion paints?",
+    "options": {
+      "A": "Linseed oil varnish",
+      "B": "Synthetic acrylic resin emulsified in water",
+      "C": "Nitrocellulose solvent compounds",
+      "D": "Casein protein compounds"
+    },
+    "answer": "B",
+    "rationale": "Acrylic emulsion paints carry polymer resins suspended in water, forming a flexible, weather-resistant film once the water evaporates."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What structural design feature is incorporated into standard brick faces as a shallow depression to increase mortar mechanical bond keys?",
+    "options": {
+      "A": "Arris edge line",
+      "B": "Course baseline",
+      "C": "Frog",
+      "D": "Splay cut"
+    },
+    "answer": "C",
+    "rationale": "The frog provides a recess for mortar bedding, creating an interlocking joint that resists lateral shear stresses in brick masonry walls."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What major environmental risk factor accelerates 'Alkali-Silica Reaction' (ASR), which causes internal swelling and web-cracking in concrete?",
+    "options": {
+      "A": "Excessive carbon dioxide gas exposure",
+      "B": "Frequent moisture ingress combined with reactive silica aggregates and high alkali levels in the cement paste",
+      "C": "Prolonged exposure to ultraviolet rays",
+      "D": "Applying low-viscosity structural primers"
+    },
+    "answer": "B",
+    "rationale": "ASR creates an expansive gel when alkalis react with reactive silica in aggregates under moist conditions, causing internal pressure and cracking."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which material processing treatment involves reheating hardened, quenched carbon steel to a lower temperature to trade excessive brittleness for toughness?",
+    "options": {
+      "A": "Annealing",
+      "B": "Tempering",
+      "C": "Case hardening",
+      "D": "Normalizing"
+    },
+    "answer": "B",
+    "rationale": "Tempering relieves internal stresses caused by quenching, improving material ductility and shock resistance while retaining sufficient hardness."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific structural element defines a 'Veneer Wall' setup compared to a solid masonry load-bearing wall?",
+    "options": {
+      "A": "The wall uses no mortar joints and relies on mechanical structural clips entirely",
+      "B": "The masonry outer layer acts as a non-structural weather screen anchored back across a cavity to an independent backing structure",
+      "C": "The wall is formed by stacking decorative solid hardwood planks",
+      "D": "The wall carries all heavy floor loads directly via brick arches"
+    },
+    "answer": "B",
+    "rationale": "A masonry veneer serves as an exterior skin rather than a structural support, deflecting wind and rain while structural loads are carried by an inner frame."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which chemical compound is added to gypsum plaster configurations to delay setting time during interior application tasks?",
+    "options": {
+      "A": "Alum solution granules",
+      "B": "Retarder additives (like organic keratin or borax crystals)",
+      "C": "Calcium chloride accelerators",
+      "D": "Finely ground limestone dust"
+    },
+    "answer": "B",
+    "rationale": "Retarders interfere with gypsum crystal growth, extending working times for complex interior wall plastering."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "In structural timber design, how does 'Moisture Content' affect the ultimate compressive strength of structural timber beams?",
+    "options": {
+      "A": "Increasing moisture contents beyond the fiber saturation point increases wood beam capacity",
+      "B": "As moisture content falls below the fiber saturation point, timber cell walls stiffen, increasing structural strength capacity",
+      "C": "Moisture content changes have no mathematical effect on wood fiber loading limits",
+      "D": "Moisture content only impacts the color density of outer sapwood rings"
+    },
+    "answer": "B",
+    "rationale": "Drying timber removes water from cell walls, causing them to shrink and densify, which improves structural capacity compared to green lumber."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What unique structural property defines a 'Thermosetting' plastic polymer when compared to a 'Thermoplastic' polymer?",
+    "options": {
+      "A": "Thermosetting plastics can be repeatedly melted down and reshaped effortlessly",
+      "B": "Thermosetting plastics cross-link permanently during curing, resisting melting or reshaping when heated",
+      "C": "Thermosetting plastics are entirely water-soluble",
+      "D": "Thermosetting plastics lack tensile capacity entirely"
+    },
+    "answer": "B",
+    "rationale": "Thermosets undergo irreversible chemical cross-linking during heat curing, maintaining their shape and properties without softening at high temperatures."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What operational problem occurs in brick walls when the structural moisture barrier (DPC) is omitted or breached above the foundation level?",
+    "options": {
+      "A": "Thermal bridging spalling",
+      "B": "Rising Dampness via capillary suction actions within porous masonry pores",
+      "C": "Rapid chemical calcination of brick clay",
+      "D": "Screed crazing cracks"
+    },
+    "answer": "B",
+    "rationale": "Without a Damp-Proof Course (DPC), moisture draws up from the soil through masonry capillaries, causing damp patches, salt deposits, and blistering inside."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which type of non-destructive concrete evaluation method gauges surface compressive hardness by recording the rebound bounce velocity of a spring-loaded hammer mass?",
+    "options": {
+      "A": "Slump cone test profile",
+      "B": "Schmidt Rebound Hammer test",
+      "C": "Split-tensile cylinder compression test",
+      "D": "Proctor density compaction check"
+    },
+    "answer": "B",
+    "rationale": "The Schmidt Hammer measures surface hardness by bouncing a steel hammer off the concrete surface, providing a quick estimate of compressive strength."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific structural component is used to manage movement and prevent unpredictable cracking across long expanses of concrete floor slabs?",
+    "options": {
+      "A": "Solid cast-iron dowel pins keyed tightly along all edges",
+      "B": "Control (Expansion/Contraction) Joints cut at calculated intervals to guide volumetric movements",
+      "C": "Thick coats of bituminous adhesive along structural centers",
+      "D": "High-tensile perimeter tie straps"
+    },
+    "answer": "B",
+    "rationale": "Control joints create intentional weak points in concrete slabs, causing thermal or shrinkage cracking to occur neatly inside the joint rather than randomly across the floor."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which heavy metal material is widely specified for x-ray laboratory room partitioning due to its exceptional high density and radiation attenuation performance?",
+    "options": {
+      "A": "Structural sheet Aluminum",
+      "B": "Lead sheets",
+      "C": "Stainless steel plates",
+      "D": "High-strength zinc alloys"
+    },
+    "answer": "B",
+    "rationale": "Lead's high atomic number and density absorb x-rays efficiently, making it standard for shielding walls in medical radiation spaces."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What is the primary architectural purpose behind using 'Anodized Aluminum' for exterior window mullions and facade framing panels?",
+    "options": {
+      "A": "To increase the structural melting point during fire situations",
+      "B": "To chemically thicken the natural protective oxide layer, increasing corrosion resistance and allowing color dye integration",
+      "C": "To render the alloy completely flexible for on-site bending tasks",
+      "D": "To increase the material's thermal conductivity coefficient"
+    },
+    "answer": "B",
+    "rationale": "Anodizing is an electrochemical process that creates a thick, durable aluminum oxide finish, protecting exterior components from wear and weather."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which manufacturing failure causes concrete surface scaling, where a thin, brittle layer of cement paste flakes off shortly after curing?",
+    "options": {
+      "A": "Using large coarse stone aggregate particles",
+      "B": "Excessive floating or finishing operations while bleed water is still present on the slab surface",
+      "C": "Omitting horizontal shrinkage reinforcement meshes",
+      "D": "Pouring concrete mix below 25 degrees Celsius"
+    },
+    "answer": "B",
+    "rationale": "Working concrete before bleed water evaporates mixes water back into the surface paste, weakening the top layer and causing scaling or dusting issues."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What type of technical brick possesses high structural density, low water absorption (<4.5%), and exceptional compressive capacity, often specified for sewer environments?",
+    "options": {
+      "A": "Common building brick grade",
+      "B": "Engineering Brick",
+      "C": "Sand-lime facing block",
+      "D": "Fly-ash insulated unit"
+    },
+    "answer": "B",
+    "rationale": "Engineering bricks are fired at high temperatures to achieve a vitrified, dense structure with high strength and water resistance for damp, load-bearing applications."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What chemical reactions drive the degradation process known as 'Carbonation' in reinforced concrete assets?",
+    "options": {
+      "A": "Atmospheric carbon dioxide reacts with calcium hydroxide, lowering the concrete's pH and depassivating the embedded steel rebar",
+      "B": "Nitrogen compounds react with sand aggregates to dissolve cement bonds",
+      "C": "Ozone exposure converts iron bars into copper molecules",
+      "D": "Sulfate ions combine with water to increase mix volumes"
+    },
+    "answer": "A",
+    "rationale": "Carbonation neutralizes the alkalinity of concrete (dropping pH from ~13 to below 9), stripping the protective alkaline film from steel reinforcement and initiating rust."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which structural hardwood timber exhibit high oil content and exceptional natural resistance to marine borers and wet rot, making it ideal for shipbuilding and outdoor decking?",
+    "options": {
+      "A": "Douglas Fir softwood",
+      "B": "Teak Wood",
+      "C": "Balsa Wood grade",
+      "D": "European White Pine"
+    },
+    "answer": "B",
+    "rationale": "Teak contains natural resins and oils that repel water and wood-boring insects, maintaining durability in exposed marine applications without chemical treatments."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What specific condition is evaluated using a 'Le Chatelier' apparatus during standard laboratory cement quality checks?",
+    "options": {
+      "A": "The ultimate initial setting time threshold",
+      "B": "The soundness (volume stability and absence of delayed expansion issues) of cement",
+      "C": "The fineness modulus via dry sieving methods",
+      "D": "The total heat of hydration generation"
+    },
+    "answer": "B",
+    "rationale": "Le Chatelier tests evaluate cement soundness, confirming that excess unburnt lime or magnesia won't cause delayed expansion and cracking in the hardened paste."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which material layer is typically installed on the warm side of an insulated wall assembly to block moisture from entering the insulation cavity?",
+    "options": {
+      "A": "Breathable house-wrap fabric membrane",
+      "B": "Vapor Retarder / Vapor Barrier membrane",
+      "C": "Extruded neoprene gasket profile",
+      "D": "Perforated acoustic drainage backing"
+    },
+    "answer": "B",
+    "rationale": "Vapor barriers prevent warm, humid indoor air from migrating into cold wall cavities, preventing interstitial condensation behind insulation layers."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What type of flat-rolled steel structural roof deck profile is shaped with corrugations to support concrete toppings without independent shoring?",
+    "options": {
+      "A": "Smooth plate steel system",
+      "B": "Composite Metal Decking profile",
+      "C": "Flanged channel iron layout",
+      "D": "Expanded heavy wire lath mesh"
+    },
+    "answer": "B",
+    "rationale": "Corrugated metal decking acts as stay-in-place formwork during execution and bonds with the cured concrete slab to serve as positive tensile reinforcement."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "Which dynamic environmental phenomenon triggers 'Spalling' failures in exterior brick masonry structures during cold winter spells?",
+    "options": {
+      "A": "Ultraviolet polymer depolymerization actions",
+      "B": "The Freeze-Thaw Cycle (water trapped in brick pores expands by 9% upon freezing, breaking the clay face)",
+      "C": "Rapid chemical leaching of silica minerals",
+      "D": "Creep strain deformation alignment"
+    },
+    "answer": "B",
+    "rationale": "As moisture freezes inside porous masonry, volumetric expansion generates tensile stresses that flake or spall off the brick surface over multiple seasons."
+  },
+  {
+    "topic": "Topic 2: Materials, Properties, and Methods",
+    "q": "What precise operational benefit does 'Air-Entraining' admixtures introduce into wet concrete batch designs?",
+    "options": {
+      "A": "It doubles the structural density of concrete",
+      "B": "It introduces microscopic air bubbles that provide expansion space, improving freeze-thaw durability and workability",
+      "C": "It renders concrete completely impervious to oil stains",
+      "D": "It accelerates early clinker hydration reactions"
+    },
+    "answer": "B",
+    "rationale": "Air-entrainment forms millions of distinct micro-cavities that act as pressure relief chambers for expanding ice, protecting the concrete matrix from cracking."
+  }
+]

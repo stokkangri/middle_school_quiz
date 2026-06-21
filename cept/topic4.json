@@ -1,0 +1,602 @@
+[
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What is the primary reason structural steel plates are introduced into heavy timber joinery connections?",
+    "options": {
+      "A": "To accelerate the natural drying and seasoning rate of the timber elements",
+      "B": "To distribute highly concentrated structural loads over a wider area of wood fibers, preventing localized crushing",
+      "C": "To eliminate the need for any secondary mechanical fasteners like bolts",
+      "D": "To shield the wood permanently from atmospheric moisture absorption"
+    },
+    "answer": "B",
+    "rationale": "Wood has limited bearing strength perpendicular to its grain. Steel plates (flitch plates or gussets) distribute high localized loads across more timber surface area, preventing the bolts from crushing or shearing through the wood fibers."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which traditional woodworking joint features interlocking wedge-shaped fingers that provide exceptional tensile resistance, making it standard for high-quality drawer construction?",
+    "options": {
+      "A": "Butt joint",
+      "B": "Dovetail joint",
+      "C": "Mitre joint",
+      "D": "Lap joint"
+    },
+    "answer": "B",
+    "rationale": "The flared geometry of a dovetail joint creates a mechanical lock that inherently resists tensile forces pulling the pieces apart, even without adhesive."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What unique risk occurs when a stainless steel bolt is fastened tightly through a structural carbon steel bracket in an exposed, humid outdoor environment?",
+    "options": {
+      "A": "Hydrogen embrittlement of the bolt",
+      "B": "Galvanic corrosion of the carbon steel bracket due to the electrical potential difference between dissimilar metals",
+      "C": "Rapid rot of adjacent timber members due to chemical leaching",
+      "D": "Complete loss of tensile strength in the stainless steel bolt within 48 hours"
+    },
+    "answer": "B",
+    "rationale": "When two dissimilar metals contact in the presence of an electrolyte (moisture), the less noble metal (carbon steel) becomes an anode and corrodes sacrificially next to the more noble metal (stainless steel)."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which structural wood joint uses a projecting tab on one member that inserts precisely into a matching square pocket carved into the receiving member?",
+    "options": {
+      "A": "Dowelled joint",
+      "B": "Mortise and Tenon joint",
+      "C": "Tongue and Groove joint",
+      "D": "Spline joint"
+    },
+    "answer": "B",
+    "rationale": "The mortise (hole/pocket) and tenon (tongue/projection) is a foundational timber frame joint that provides excellent rigidity and load transfer capabilities."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "In heavy timber construction, what is the specific operational function of a 'Split-Ring Connector' embedded between two overlapping wood members?",
+    "options": {
+      "A": "To act as a flexible spring that absorbs earthquake vibration waves",
+      "B": "To increase the shear load capacity of the bolted joint by transferring forces across a larger timber perimeter",
+      "C": "To seal the internal bolt hole against moisture accumulation",
+      "D": "To adjust the vertical alignment of the timber elements during assembly"
+    },
+    "answer": "B",
+    "rationale": "Split rings are installed into matching precut circular grooves between timber faces. They distribute shear loads across a much larger area of wood than a standard bolt shank alone can achieve."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which type of welding joint is executed along the corner intersection of two structural metal plates positioned perpendicular to one another?",
+    "options": {
+      "A": "Butt weld",
+      "B": "Fillet weld",
+      "C": "Plug weld",
+      "D": "Seam weld"
+    },
+    "answer": "B",
+    "rationale": "Fillet welds are triangular in cross-section and are used to join overlapping plates or parts that meet at right angles, such as T-joints or lap joints."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "When detailing wood joinery for outdoor applications, why is a 'Dapped' or sloped cut preferred on top surfaces of timber elements?",
+    "options": {
+      "A": "To improve the tensile resistance of the wood elements",
+      "B": "To facilitate easy water runoff, preventing pooling and subsequent wood rot at the interface",
+      "C": "To decrease the total weight of the timber frame connection",
+      "D": "To match the grain direction perfectly"
+    },
+    "answer": "B",
+    "rationale": "Sloped or dapped timber profiles prevent moisture from sitting on exposed horizontal end-grains, minimizing the risk of fungal growth and structural rot."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What major mechanical advantage do high-strength structural bolts (such as ASTM A325 or A490) offer in slip-critical metal connections?",
+    "options": {
+      "A": "They deform plastically to allow the steel plates to slide freely",
+      "B": "They are tensioned to lock clamping forces, depending entirely on surface friction between plates to transfer loads",
+      "C": "They are completely flexible and resist shear stresses by bending",
+      "D": "They eliminate the requirement for washers on either side"
+    },
+    "answer": "B",
+    "rationale": "Slip-critical connections rely on high bolt tension to clamp steel plates tightly together. The load is transferred through the friction between the mating surfaces rather than the bolt shank bearing against the holes."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which joint configuration involves overlapping two pieces of material flat against each other and securing them with mechanical fasteners?",
+    "options": {
+      "A": "Mitre joint",
+      "B": "Lap joint",
+      "C": "Bridle joint",
+      "D": "Dado joint"
+    },
+    "answer": "B",
+    "rationale": "A lap joint involves placing one member over another, either partially recessed or fully flush, and fastening them together through their overlapping faces."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What is the purpose of using a 'Gusset Plate' in a structural steel or wood truss connection joint?",
+    "options": {
+      "A": "To insulate the connection from sudden thermal changes",
+      "B": "To unify multiple converging members at a single node, distributing forces smoothly between them",
+      "C": "To act as a decorative cover for unsightly welds or bolts",
+      "D": "To allow structural members to expand and contract completely independently"
+    },
+    "answer": "B",
+    "rationale": "Gusset plates act as central structural hubs, connecting chords and web members of trusses to ensure forces are transferred efficiently through a single shared node point."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which defect can occur in a welded steel connection if the molten weld pool cools too rapidly and traps atmospheric gases inside?",
+    "options": {
+      "A": "Warping distortions",
+      "B": "Porosity",
+      "C": "Lamellar tearing",
+      "D": "Slag inclusion"
+    },
+    "answer": "B",
+    "rationale": "Porosity appears as tiny gas bubbles or voids trapped within the cooled weld metal, which weakens the cross-section and can lead to structural failure."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "In finish carpentry, what does a 'Mitre Joint' typically entail?",
+    "options": {
+      "A": "Cutting both meeting wood members at an angle (usually 45 degrees) to form a clean 90-degree corner with no visible end grain",
+      "B": "Carving out a deep cylindrical socket for metal dowels",
+      "C": "Interlocking finger extensions along the length of a beam",
+      "D": "Securing two boards end-to-end with a lap plate"
+    },
+    "answer": "A",
+    "rationale": "Mitre joints bisect the corner angle to hide the end grain of both boards, making them ideal for architectural trim, moldings, and picture frames."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of modern timber fastener features a flat steel plate punched with numerous integral small nails, commonly used to manufacture roof trusses?",
+    "options": {
+      "A": "Lag screw matrix",
+      "B": "Gang-Nail / Truss Connector Plate",
+      "C": "Flitch plate system",
+      "D": "Shear cup plate"
+    },
+    "answer": "B",
+    "rationale": "Truss plates are pressed hydraulically into the faces of light wood members, providing quick, uniform load transfers across the joints of pre-engineered roof trusses."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Why must washers be included under the nut and head of a high-strength bolt in structural steel connections?",
+    "options": {
+      "A": "To prevent the steel bolt from rusting over time",
+      "B": "To prevent the sharp edges of the nut from scoring and damaging the structural steel plates during tightening",
+      "C": "To ensure the connection remains acoustically silent",
+      "D": "To seal the bolt hole against air pressure losses"
+    },
+    "answer": "B",
+    "rationale": "Washers distribute the high clamping force under the nut or bolt head, protecting the steel plates from damage and ensuring consistent tensioning."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which wood joint involves cutting a continuous rectangular groove along the edge of one board to accept a corresponding ridge cut along the edge of an adjacent board?",
+    "options": {
+      "A": "Mortise and tenon",
+      "B": "Tongue and Groove joint",
+      "C": "Dovetail key joint",
+      "D": "Half-lap step joint"
+    },
+    "answer": "B",
+    "rationale": "Tongue and groove joinery allows adjacent long boards (like flooring or cladding) to interlock side-by-side, maintaining a flush alignment while allowing for wood movement."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What is the primary structural risk associated with over-tightening a lag screw into a timber framing connection?",
+    "options": {
+      "A": "Stripping the internal wood fibers, destroying the screw's thread grip and holding capacity",
+      "B": "Bending the steel screw shank out of alignment",
+      "C": "Causing the wood member to catch fire due to friction",
+      "D": "Increasing the moisture content of the joint"
+    },
+    "answer": "A",
+    "rationale": "Excessive torque strips out the internal wooden threads cut by the screw, replacing the tight mechanical interlock with loose, pulverized wood pulp."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which type of non-destructive weld inspection method uses high-frequency sound waves to detect internal structural voids or cracks deep inside a thick steel joint?",
+    "options": {
+      "A": "Dye penetrant inspection",
+      "B": "Ultrasonic Testing (UT)",
+      "C": "Visual examination",
+      "D": "Magnetic particle spray"
+    },
+    "answer": "B",
+    "rationale": "Ultrasonic testing sends sound waves through the metal. Internal defects reflect the waves differently, allowing technicians to locate anomalies deep within the weld matrix."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What design feature is essential when engineering heavy timber fasteners to accommodate wood's natural 'hygroscopic' behavior?",
+    "options": {
+      "A": "Gluing all connections with rigid epoxy to prevent any expansion",
+      "B": "Using oversized or slotted bolt holes that allow the timber to expand and contract across the grain without splitting",
+      "C": "Applying high-pressure heat to freeze the wood dimensions permanently",
+      "D": "Using extremely short fasteners exclusively"
+    },
+    "answer": "B",
+    "rationale": "Wood expands and contracts with changes in humidity, primarily perpendicular to the grain. Rigid, unyielding connections can cause the timber to split under internal moisture stresses."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which edge treatment is used to prevent the sharp external corners of wood or metal plates from chipping, burring, or causing handling injuries?",
+    "options": {
+      "A": "Mortising",
+      "B": "Chamfering / Beveling",
+      "C": "Anodizing",
+      "D": "Grooving"
+    },
+    "answer": "B",
+    "rationale": "Chamfering replaces a sharp 90-degree corner with a sloped edge profile, increasing safety and durability for both wood and metal components."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What is a 'Flitch Beam' assembly?",
+    "options": {
+      "A": "A beam made purely out of high-density recycled plastics",
+      "B": "A composite beam consisting of a structural steel plate sandwiched tightly between two timber beams and secured with bolts",
+      "C": "A concrete beam reinforced with bamboo fibers",
+      "D": "A hollow box beam constructed from thin plywood sheets"
+    },
+    "answer": "B",
+    "rationale": "Flitch beams combine the stiffness and load-bearing capacity of steel with the ease of fastening and architectural warmth of timber elements."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which component is added to threaded bolt assemblies to prevent nuts from loosening due to ongoing dynamic building vibrations?",
+    "options": {
+      "A": "Flat copper shims",
+      "B": "Lock Washers or Nylon-insert Lock Nuts",
+      "C": "High-viscosity grease coatings",
+      "D": "Lead expansion shields"
+    },
+    "answer": "B",
+    "rationale": "Split-ring lock washers or nylon-insert nuts apply constant tension or mechanical resistance to the threads, preventing the nut from backing off under vibrating loads."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of woodworking joint features interlocking, square fingers along the ends of two boards, common in manufacturing engineered finger-jointed studs?",
+    "options": {
+      "A": "Finger (Box) joint",
+      "B": "Scarf joint",
+      "C": "Rabbet joint",
+      "D": "Spline connection"
+    },
+    "answer": "A",
+    "rationale": "Finger joints create a series of matching profiles that maximize the glue surface area, allowing short pieces of timber to be joined into long structural studs."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "In structural steel fabrication, what is the purpose of an 'Erection Bolt'?",
+    "options": {
+      "A": "To provide the permanent, final load-bearing connection for the frame",
+      "B": "To temporarily hold structural steel members in place on-site during crane operations until final welding or high-strength bolting is completed",
+      "C": "To connect electrical grounding wires to the steel column",
+      "D": "To adjust the density of the metal plates"
+    },
+    "answer": "B",
+    "rationale": "Erection bolts are temporary fasteners that secure the steel framework safely during assembly, holding components in alignment until permanent connections are completed."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which wood-to-metal jointing device is designed to be recessed completely within a pre-bored timber pocket, enabling a heavy wood beam to hook directly onto a concealed steel plate?",
+    "options": {
+      "A": "Common wire nail",
+      "B": "Shear Plate connector",
+      "C": "Corrugated metal fastener",
+      "D": "Toe-nailed bracket"
+    },
+    "answer": "B",
+    "rationale": "Shear plates are flush-mounted into timber members. They are used for wood-to-metal connections or demountable timber joints, transferring load through the steel plate interface."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of weld failure is caused by an operator moving the welding torch too quickly, leaving incomplete bonding at the root of a V-groove joint?",
+    "options": {
+      "A": "Overlapping profile distortion",
+      "B": "Lack of Penetration / Incomplete Fusion",
+      "C": "Slag oxidation crusting",
+      "D": "Crater cracking expansion"
+    },
+    "answer": "B",
+    "rationale": "Incomplete penetration occurs when the weld metal fails to extend through the full depth of the joint groove, reducing its effective cross-sectional strength."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which woodworking joint features a cut that runs along the end or edge of a board, forming a single open step profile to receive another board?",
+    "options": {
+      "A": "Dado joint",
+      "B": "Rabbet (Rebate) joint",
+      "C": "Mortise pocket",
+      "D": "Mitre trim"
+    },
+    "answer": "B",
+    "rationale": "A rabbet is an L-shaped recess cut along the edge or end of a timber member, common in cabinet back panels and door frame assemblies."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of fastener is threaded along its entire length without a projecting head, designed to be screwed flush or below metal surfaces to lock a collar or gear onto a shaft?",
+    "options": {
+      "A": "Carriage bolt",
+      "B": "Set Screw / Grub Screw",
+      "C": "Toggle bolt",
+      "D": "Cotter pin"
+    },
+    "answer": "B",
+    "rationale": "Set screws are headless fasteners driven into an assembly to prevent relative movement between two mating parts through compression on the shaft."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Why is a 'Scarf Joint' specified instead of a simple square butt joint when joining timber elements end-to-end?",
+    "options": {
+      "A": "To create a decorative cross-hatch pattern",
+      "B": "To bevel the meeting ends at a shallow angle, maximizing glue surface area and preserving structural strength continuity",
+      "C": "To allow the wood to absorb water evenly",
+      "D": "To eliminate the need for clamping operations"
+    },
+    "answer": "B",
+    "rationale": "By tapering the meeting ends at a shallow angle, a scarf joint allows structural loads to pass smoothly across the connection with minimal loss of tensile or bending strength."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of metal fastener features a smooth cylindrical shank with a factory-formed head on one side, installed by heating it red-hot and hammering the plain end to form a second head?",
+    "options": {
+      "A": "Self-tapping screw",
+      "B": "Rivet",
+      "C": "Expansion anchor bolt",
+      "D": "Machine bolt"
+    },
+    "answer": "B",
+    "rationale": "Riveting is a classic hot-clamping fastening method used in historic steel bridges and buildings, forming a tight permanent connection as the metal cools and shrinks."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which joint utilizes a third independent piece of timber inserted into matching slots cut into both main joining boards to reinforce a edge-to-edge connection?",
+    "options": {
+      "A": "Butt configuration",
+      "B": "Spline / Key joint",
+      "C": "End lap step",
+      "D": "Blind dado"
+    },
+    "answer": "B",
+    "rationale": "A spline acts as an internal alignment and strengthening key, bridging the joint interface to increase the shear and glue capacity of the connection."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What specific hazard is mitigated by using hot-dip galvanized or ceramic-coated steel fasteners when securing treated exterior wood decking?",
+    "options": {
+      "A": " Fastener corrosion caused by alkaline copper chemicals used in modern wood preservation treatments",
+      "B": "Spontaneous combustion of the timber matrix",
+      "C": "Rapid drying out of the timber cells",
+      "D": "Termite attraction to the metal parts"
+    },
+    "answer": "A",
+    "rationale": "Modern pressure-treated timber contains high concentrations of copper, which accelerates the corrosion of standard steel screws. Heavy zinc or ceramic coatings protect the fastener from degradation."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "In structural steel design, what does a 'Welded Lap Joint' consist of?",
+    "options": {
+      "A": "Placing two plates end-to-end in the same plane and welding the seam",
+      "B": "Overlapping two steel plates and applying fillet welds along the edge profiles of the connection",
+      "C": "Drilling holes through both plates and filling them with lead plugs",
+      "D": "Twisting two rods together before heat welding"
+    },
+    "answer": "B",
+    "rationale": "Lap joints require minimal precision tracking preparation, using fillet welds to secure the overlapping edges of the structural steel plates."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which woodworking joint is characterized by a continuous rectangular channel cut across the grain of a board, into which the end of another board is seated?",
+    "options": {
+      "A": "Rabbet joint",
+      "B": "Dado / Housing joint",
+      "C": "Groove joint",
+      "D": "Butt corner"
+    },
+    "answer": "B",
+    "rationale": "A dado is cut perpendicular to the wood grain, often used to support shelving within cabinet carcasses or bookcases."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of specialized heavy bolt features a domed, smooth head with a square section underneath the shank to prevent spinning when tightened into wood?",
+    "options": {
+      "A": "Hex machine bolt",
+      "B": "Carriage Bolt",
+      "C": "Lag bolt screw",
+      "D": "Toggle clamping bolt"
+    },
+    "answer": "B",
+    "rationale": "The square neck under a carriage bolt's smooth dome sinks into the wood fibers, locking it against rotation so the nut can be tightened from the opposite side."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What problem is caused by inserting steel bolts too close together or too close to the end margin of a structural wood post?",
+    "options": {
+      "A": "Volumetric swelling of the bolt",
+      "B": "End-splitting or shear-out failure of the timber along its grain lines",
+      "C": "Instant calcination of the wood cell walls",
+      "D": "Anodizing of the bolt shank"
+    },
+    "answer": "B",
+    "rationale": "Inadequate end distances or tight bolt spacing can split wood fibers along the grain, causing the bolt to tear through the end of the timber under tension."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which structural metal connection technique uses a electric arc to melt a consumable wire electrode into a joint under a protective blanket of inert gas?",
+    "options": {
+      "A": "Oxy-acetylene torch cutting",
+      "B": "Gas Metal Arc Welding (GMAW / MIG)",
+      "C": "Hot riveting",
+      "D": "Induction brazing"
+    },
+    "answer": "B",
+    "rationale": "MIG welding uses a continuous wire electrode and a shielding gas (like argon or CO2) to protect the molten weld pool from atmospheric contamination."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What traditional joinery method uses a small wooden wedge or pin driven through a projecting tenon to secure a joint tightly without adhesive?",
+    "options": {
+      "A": "Dowelled lap",
+      "B": "Tusk Tenon / Drawbore joint",
+      "C": "Blind dado insert",
+      "D": "Mitre spline lock"
+    },
+    "answer": "B",
+    "rationale": "Tusk tenon joinery uses a removable wooden wedge or key to clamp the joint tight, making it a classic selection for historic timber frame structures."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What structural function do 'Stitch Welds' (intermittent welding) provide in long built-up steel sections?",
+    "options": {
+      "A": "They completely seal the joint against water leaks",
+      "B": "They connect plates at regular intervals to prevent buckling while reducing heat distortion and welding costs compared to continuous welds",
+      "C": "They double the melting point of the steel assembly",
+      "D": "They permit the steel plates to expand dynamically"
+    },
+    "answer": "B",
+    "rationale": "Intermittent welds provide sufficient shear transfer between plates while preventing excessive thermal input that can distort or warp structural steel elements."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which carpentry fastener features a sharp point, a coarse wood thread profile, and a hexagonal head that requires a wrench or socket to install?",
+    "options": {
+      "A": "Machine screw",
+      "B": "Lag Screw / Lag Bolt",
+      "C": "Finish brad nail",
+      "D": "Stove bolt"
+    },
+    "answer": "B",
+    "rationale": "Lag screws combine the heavy holding power of a bolt with the self-threading capability of a screw, making them ideal for heavy timber frames."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What joinery step prevents wood elements from splitting when a wood screw is driven into dense hardwood species near an edge?",
+    "options": {
+      "A": "Saturating the board with mineral spirits",
+      "B": "Drilling a pilot hole of appropriate diameter before driving the screw",
+      "C": "Hammering the screw halfway down first",
+      "D": "Applying heavy coats of wood stain"
+    },
+    "answer": "B",
+    "rationale": "Pilot holes remove a core of wood fibers, providing clearance for the screw shank to enter without generating excessive lateral splitting stresses."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of steel frame connection is engineered to transfer both shear forces and bending moments directly into a supporting column?",
+    "options": {
+      "A": "Simple shear connection (Web angles only)",
+      "B": "Moment Connection (Rigid joint with flange plates or full penetration welds)",
+      "C": "Pinned link hanger",
+      "D": "Slotted expansion seat"
+    },
+    "answer": "B",
+    "rationale": "Moment connections connect both the web and the flanges of an I-beam to a column, providing the rotational restraint needed to resist bending moments."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which woodworking joint geometry is formed by cutting a matching series of interlocking rectangular teeth along the meeting edges of two perpendicular boards?",
+    "options": {
+      "A": "Box (Finger) Joint",
+      "B": "Bevel mitre joint",
+      "C": "Splayed scarf",
+      "D": "Mortise pocket"
+    },
+    "answer": "A",
+    "rationale": "Box joints use straight, interlocking fingers to increase glue surface area and mechanical alignment at 90-degree corners."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Why are structural steel columns often anchored to concrete foundations using adjustable leveling nuts underneath a thick steel base plate?",
+    "options": {
+      "A": "To insulate the column from the foundation's moisture",
+      "B": "To allow precise plumbing, leveling, and height adjustment of the column before filling the gap underneath with high-strength non-shrink grout",
+      "C": "To allow the column to rotate freely during windstorms",
+      "D": "To eliminate the need for embedding anchor bolts in the concrete"
+    },
+    "answer": "B",
+    "rationale": "Leveling nuts provide control over the column's vertical alignment and height on irregular concrete surfaces. Once aligned, non-shrink grout is packed underneath to ensure solid bearing."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What traditional timber framing technique uses round wooden pins driven through offset holes in a mortise and tenon joint to pull the connection tightly together?",
+    "options": {
+      "A": "Toe-nailing line",
+      "B": "Drawboring / Pegging",
+      "C": "Spline clamping",
+      "D": "Blind gluing"
+    },
+    "answer": "B",
+    "rationale": "Drawboring intentionally misaligns the hole in the tenon slightly closer to its shoulder. When the wooden peg is driven through, it forces the joint to clamp shut."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which defect appears in steel weld zones when hydrogen diffuses into the metal matrix, causing brittle failures hours or days after completion?",
+    "options": {
+      "A": "Slag crusting overrun",
+      "B": "Delayed / Hydrogen Cracking",
+      "C": "Porosity scaling",
+      "D": "Weld spatter flash"
+    },
+    "answer": "B",
+    "rationale": "Hydrogen cracking is a form of delayed cold cracking that occurs when moisture or contaminants introduce hydrogen into high-stress steel welds."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What type of simple joint is formed when two square-cut boards are placed directly against each other without any mechanical interlocking cut modifications?",
+    "options": {
+      "A": "Dovetail joint",
+      "B": "Butt Joint",
+      "C": "Dado joint",
+      "D": "Scarf joint"
+    },
+    "answer": "B",
+    "rationale": "Butt joints are the simplest joint type, relying entirely on fasteners or adhesives to hold the flush-mating, unaltered faces together."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Why are steel structural bolts specified with a 'Pretension' force in high-load structural frameworks?",
+    "options": {
+      "A": "To allow the bolt shank to stretch and bend freely",
+      "B": "To clamp the plates with predictable pressure, preventing joint slippage and minimizing cyclic fatigue stress variations on the bolt threads",
+      "C": "To reduce the net weight of the connection",
+      "D": "To facilitate quick hand-disassembly later"
+    },
+    "answer": "B",
+    "rationale": "Pretensioning elongates the bolt to create a tight clamping force, ensuring the connection behaves predictably under dynamic loading conditions."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "Which wood joinery configuration is produced by cutting a single step on the meeting ends of both boards so they overlap while maintaining a uniform surface thickness?",
+    "options": {
+      "A": "Half-Lap Joint",
+      "B": "Mitre corner joint",
+      "C": "Tongue and groove panel",
+      "D": "Through dado slot"
+    },
+    "answer": "A",
+    "rationale": "Half-lap joints remove half the thickness from each board, creating a flush overlapping joint that retains the same thickness as the individual boards."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "What material is placed inside the expansion joints of metal gutters or metal roof flashings to maintain a waterproof seal while allowing thermal movement?",
+    "options": {
+      "A": "Rigid structural welding alloy",
+      "B": "Flexible Elastomeric Sealant / Polyurethane Caulk",
+      "C": "Hard Portland cement paste",
+      "D": "Powdered gypsum binder"
+    },
+    "answer": "B",
+    "rationale": "Elastomeric sealants adhere tightly to metal surfaces while remaining flexible enough to compress and stretch during thermal expansion and contraction cycles."
+  },
+  {
+    "topic": "Topic 4: Joineries with wood and metal",
+    "q": "In steel frame details, what does a 'Kope Cut' or beam coping reference?",
+    "options": {
+      "A": "Polishing the steel surface to a reflective mirror finish",
+      "B": "Cutting away a segment of a beam's flange and web to allow it to fit flush against the profile of an intersecting structural member",
+      "C": "Coating the steel joint with zinc-rich primer spray",
+      "D": "Threading the internal wall of a structural pipe"
+    },
+    "answer": "B",
+    "rationale": "Coping processes cut away the flange sections of a secondary beam so its web can connect cleanly to a primary girder without structural profile interference."
+  }
+]

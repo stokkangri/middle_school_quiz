@@ -1,0 +1,602 @@
+[
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the fundamental distinction between 'Static Anthropometrics' and 'Dynamic Anthropometrics'?",
+    "options": {
+      "A": "Static measurements track structural body dimensions taken in fixed, standardized poses, while dynamic measurements track dimensions taken during active movement or operational tasks",
+      "B": "Static anthropometrics applies only to child measurements, whereas dynamic anthropometrics tracks adult growth cycles",
+      "C": "Static measurements are calculated in imperial units, while dynamic measurements use metric scales exclusively",
+      "D": "Static measurements vary by geographic climate, while dynamic data remains completely fixed globally"
+    },
+    "answer": "A",
+    "rationale": "Static (structural) anthropometrics tracks human dimensions under passive, static conditions (e.g., stature, eye height sitting). Dynamic (functional) anthropometrics measures clearances and reaches when the human body is engaged in physical work or active movement."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When designing the clear overhead height of a standard commercial doorway or structural corridor, which human percentile constraint should be used?",
+    "options": {
+      "A": "5th percentile female data",
+      "B": "50th percentile male data",
+      "C": "95th (or higher) percentile male data",
+      "D": "Mean average population data exclusively"
+    },
+    "answer": "C",
+    "rationale": "To prevent tall users from bumping their heads, clearance heights must accommodate the upper limit of population stature variations. Therefore, the 95th or 99th percentile data threshold is used."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What ergonomic design rule is applied when determining the maximum structural reach zone for controls on a vehicle dashboard or manufacturing workstation?",
+    "options": {
+      "A": "Design for the 95th percentile reach threshold",
+      "B": "Design for the 5th percentile reach threshold, ensuring the shortest users can access controls easily",
+      "C": "Design using the exact midpoint average height statistics",
+      "D": "Design exclusively for standing males"
+    },
+    "answer": "B",
+    "rationale": "For reach envelopes, if the shortest user (5th percentile) can safely reach a control button or shelf, the rest of the taller population will also be able to reach it easily."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What specific body dimension is used to determine the ideal height for a fixed task chair's seat pan surface from the finished floor?",
+    "options": {
+      "A": "Sitting height",
+      "B": "Popliteal height",
+      "C": "Buttock-knee length",
+      "D": "Elbow rest height"
+    },
+    "answer": "B",
+    "rationale": "Popliteal height tracks the vertical distance from the underside of the foot to the back of the knee. If a seat is higher than a user's popliteal height, the front edge of the seat pan will compress nerves and vessels beneath the thighs."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Under standard international accessibility codes (such as ADA), what is the minimum clear floor width required to allow a single standard manual wheelchair to pass through a doorway?",
+    "options": {
+      "A": "24 inches (610 mm)",
+      "B": "32 inches (815 mm)",
+      "C": "48 inches (1220 mm)",
+      "D": "60 inches (1525 mm)"
+    },
+    "answer": "B",
+    "rationale": "Accessibility standards require a minimum clear opening width of 32 inches at doorways to clear the wheel-hubs and hand-rims of standard adult manual wheelchairs."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What clear circular diameter footprint is specified by universal design standards to allow a manual or power wheelchair to complete a full 360-degree turnaround maneuver?",
+    "options": {
+      "A": "36 inches (915 mm)",
+      "B": "42 inches (1065 mm)",
+      "C": "60 inches (1525 mm)",
+      "D": "72 inches (1830 mm)"
+    },
+    "answer": "C",
+    "rationale": "A 60-inch (5-foot / 1525 mm) turning circle accommodates the dynamic sweeping envelope of a standard adult wheelchair rotating full circle without hitting surrounding structural walls."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which human metric evaluates the distance from the rear of the buttocks to the back of the lower leg behind the knee, determining the ideal depth of a chair seat pan?",
+    "options": {
+      "A": "Popliteal clearance height",
+      "B": "Buttock-Popliteal Length",
+      "C": "Hip breadth",
+      "D": "Stature length"
+    },
+    "answer": "B",
+    "rationale": "Buttock-to-popliteal length determines seat pan depth. If a seat pan is too deep, the user cannot sit fully back to utilize the lumbar support without the front cushion pressing into the back of their knees."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When detailing the height of a standard kitchen or laboratory work counter for general standing manual tasks, what is the standard architectural height range from the floor line?",
+    "options": {
+      "A": "28 to 30 inches (710–760 mm)",
+      "B": "34 to 36 inches (860–915 mm)",
+      "C": "40 to 42 inches (1015–1065 mm)",
+      "D": "46 to 48 inches (1170–1220 mm)"
+    },
+    "answer": "B",
+    "rationale": "A counter height of 36 inches (approx. 900 mm) aligns with standing elbow resting positions for a broad segment of the adult population, optimizing leverage and reducing back fatigue."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the primary anatomical issue that occurs if an office workstation desk surface is positioned too high relative to a user's sitting elbow height?",
+    "options": {
+      "A": "Compression of the popliteal artery underneath the thigh joints",
+      "B": "Forced constant shrugging and elevation of the shoulders, leading to trapezius muscle fatigue and neck strain",
+      "C": "Loss of visual acuity due to altered focal distances",
+      "D": "Hyperextension of the lumbar spine structure"
+    },
+    "answer": "B",
+    "rationale": "When a desk surface sits above resting elbow height, the user must raise their shoulders continuously to place their hands on keyboards, straining the trapezius and neck muscle networks."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which percentile anthropometric parameter is utilized when engineering the maximum width of a single public auditorium or airplane seat pan?",
+    "options": {
+      "A": "5th percentile male hip breadth",
+      "B": "95th percentile female hip breadth",
+      "C": "50th percentile child waist circumference",
+      "D": "Mean population shoulder width measurements"
+    },
+    "answer": "B",
+    "rationale": "For seat pan clearances, designing for the 95th percentile width threshold ensures that larger users fit into the seat layout comfortably without being pinched by the armrests."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What ergonomic sightline guideline defines the ideal horizontal plane placement for the top edge of a digital computer monitor screen relative to an office worker's eyes?",
+    "options": {
+      "A": "The top edge should be 10 inches above eye level",
+      "B": "The top edge should be directly at or slightly below resting horizontal eye level",
+      "C": "The center of the monitor must align with the chin",
+      "D": "The screen must angle upward at 45 degrees"
+    },
+    "answer": "B",
+    "rationale": "The resting human gaze drops slightly downward (approx. 15–20 degrees). Aligning the top of the monitor at eye level helps prevent neck extension and eye strain."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "In stairs and step engineering, what classic ergonomic formula connects the structural dimensions of the Riser (R) and the Tread (T) to match human stride pacing?",
+    "options": {
+      "A": "1 Riser + 1 Tread = 12 inches",
+      "B": "2 Risers + 1 Tread = 24 to 25 inches (or 620–640 mm)",
+      "C": "3 Risers + 2 Treads = 40 inches",
+      "D": "Riser multiplied by Tread must equal 100"
+    },
+    "answer": "B",
+    "rationale": "Blondel's staircase formula ensures that stair steps match the natural rhythm of a human stride, balancing the energy required for vertical lifting against horizontal movement."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the primary risk associated with choosing an exceptionally deep tread width (e.g., 18 inches) combined with a low riser height on an interior building staircase?",
+    "options": {
+      "A": "It speeds up travel times excessively",
+      "B": "It disrupts the natural stride rhythm, causing users to misstep or take awkward half-steps because it fails to align with human stride pacing",
+      "C": "It decreases the structural weight capacity of the staircase structure",
+      "D": "It accelerates wear along the front edge of the step nosing"
+    },
+    "answer": "B",
+    "rationale": "Stairs that deviate significantly from standard human stride geometry force users into awkward pacing cadences, which can increase the risk of trips and falls."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When designing a public service counter with an adjacent high bar stool, what is the recommended vertical clearance gap between the stool seat cushion and the underside of the counter table?",
+    "options": {
+      "A": "4 to 6 inches (100–150 mm)",
+      "B": "10 to 12 inches (250–300 mm)",
+      "C": "18 to 20 inches (450–500 mm)",
+      "D": "24 to 26 inches (610–660 mm)"
+    },
+    "answer": "B",
+    "rationale": "A 10- to 12-inch vertical gap provides sufficient thigh clearance for a 95th percentile male user while positioning the forearms comfortably on the counter surface."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which specific body anthropometric measurement determines the height of a standing user’s bent forearm, serving as the benchmark for positioning precision hand tools or delicate assembly work?",
+    "options": {
+      "A": "Olecranon (Elbow) Height",
+      "B": "Acromion (Shoulder) Height",
+      "C": "Dactylion height",
+      "D": "Sitting eye height"
+    },
+    "answer": "A",
+    "rationale": "Standing elbow height (olecranon height) is the primary reference line for working surfaces. Precision work is typically positioned slightly above elbow height, while heavy manual labor is placed below it to leverage body weight."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "In office ergonomics, what does the 'Normal Reach Zone' represent for a worker sitting at a flat desk layout?",
+    "options": {
+      "A": "The area swept by the full arm extending completely out from the shoulder blade joints",
+      "B": "The comfortable area swept by the lower forearm rotating around an elbow axis pinned close to the body side",
+      "C": "The distance accessed only by leaning forward from the waist hips",
+      "D": "The reach envelope achieved by standing up from the chair seat"
+    },
+    "answer": "B",
+    "rationale": "The normal reach zone is accessible without stretching the upper torso, sweeping only the lower arm using the elbow as a pivot point. Frequently used tools should remain within this zone."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the 'Maximum Reach Zone' for a seated office worker?",
+    "options": {
+      "A": "The distance reached by fully extending the arm from the shoulder joint without bending or twisting the trunk torso",
+      "B": "The distance achieved by standing fully upright on the tiptoes",
+      "C": "The area reached by using an external mechanical reaching tool",
+      "D": "The floor area beneath the chair caster wheels"
+    },
+    "answer": "A",
+    "rationale": "The maximum reach zone extends the entire length of the arm from the shoulder. Items placed here should only be accessed occasionally to minimize repetitive strain on the shoulder muscles."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which design philosophy rejects a rigid single-dimension 'average' standard to engineer spaces and items that adapt through adjustable controls to fit a broad user spectrum?",
+    "options": {
+      "A": "Design for Extreme Populations",
+      "B": "Design for Adjustability range",
+      "C": "Design for the Average user stereotype",
+      "D": "Deconstructive spatial planning"
+    },
+    "answer": "B",
+    "rationale": "Design for adjustability (e.g., adjustable office chairs or monitor arms) allows a single product to accommodate a broad population spectrum, typically from the 5th percentile female to the 95th percentile male."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Under universal accessibility guidelines, what is the maximum permissible vertical lip or threshold step allowed at an exterior sliding door entrance without requiring a sloped ramp adjustment?",
+    "options": {
+      "A": "0.25 inches (6.4 mm)",
+      "B": "0.50 inches (12.7 mm)",
+      "C": "1.00 inch (25.4 mm)",
+      "D": "2.00 inches (50.8 mm)"
+    },
+    "answer": "B",
+    "rationale": "To prevent tripping and allow smooth wheelchair passage, door thresholds must not exceed 0.5 inches. Any step higher than this requires a bevel or ramp treatment."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What specific human body clearance parameter governs the structural width allocation between twin handrails inside a public egress emergency staircase?",
+    "options": {
+      "A": "Maximum bidirectional shoulder (Biacromial) breadth of the 95th percentile male population",
+      "B": "Chest depth sitting down",
+      "C": "Popliteal forward extensions",
+      "D": "Standing waist diameter dimensions"
+    },
+    "answer": "A",
+    "rationale": "Staircase and escape corridor clearances must allow the shoulder profiles of large individuals (95th percentile biacromial breadth) to pass without friction during emergency evacuations."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When planning knee space clearance beneath an accessible dining table or desk, which percentile statistic is used to ensure adequate vertical leg room?",
+    "options": {
+      "A": "5th percentile sitting knee height",
+      "B": "95th percentile sitting knee height",
+      "C": "50th percentile female thigh circumference",
+      "D": "Mean average hip breadth"
+    },
+    "answer": "B",
+    "rationale": "To accommodate users with longer legs or larger thighs, the vertical clearance under a table must be determined based on the 95th percentile sitting knee height."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which body metric measures the vertical distance from a hard sitting surface up to the outer corner of the eye, directly influencing auditorium sloped floor design and sightlines?",
+    "options": {
+      "A": "Sitting Height",
+      "B": "Sitting Eye Height",
+      "C": "Mid-shoulder height sitting",
+      "D": "Cranial height profile"
+    },
+    "answer": "B",
+    "rationale": "Sitting eye height is critical for theater, stadium, and auditorium layout design, ensuring that the sightlines of shorter individuals can clear the heads of rows in front of them."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What anatomical issue can occur if an office worker uses a chair with an excessively soft, unsupportive seat cushion that allows the hips to sink deep into the frame?",
+    "options": {
+      "A": "Hyperextension of the arm wrists",
+      "B": "Posterior rotation of the pelvis, causing flattening of the natural lumbar curve and increased intervertebral disc pressure",
+      "C": "Loss of circulation to the upper shoulders exclusively",
+      "D": "Sudden drops in bone mineral density"
+    },
+    "answer": "B",
+    "rationale": "Excessively soft cushions fail to support the ischial tuberosities ('sit bones'). This tilts the pelvis backward, flattening the lumbar curve and shifting load onto the spinal discs."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the standard handrail height range specified by building codes for public staircases, measured vertically from the leading edge of the step tread nosing?",
+    "options": {
+      "A": "26 to 28 inches (660–710 mm)",
+      "B": "34 to 38 inches (865–965 mm)",
+      "C": "42 to 44 inches (1065–1120 mm)",
+      "D": "48 to 50 inches (1220–1270 mm)"
+    },
+    "answer": "B",
+    "rationale": "A height range of 34 to 38 inches matches average adult hand position zones when walking on an incline, providing effective leverage and support for stability."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which anthropometric dimension is critical when specifying the clearance between the vertical rungs of a permanent industrial safety ladder and the wall structure behind it?",
+    "options": {
+      "A": "Foot Length / Shoe Clearance depth of a 95th percentile user",
+      "B": "Sitting hip breadth",
+      "C": "Forearm length tracking",
+      "D": "Knee-to-knee width limits"
+    },
+    "answer": "A",
+    "rationale": "The gap behind a ladder rung must accommodate the length of a large heavy boot (95th percentile foot length) so the ball of the foot can plant firmly on the rung without hitting the wall."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What primary spatial layout error occurs when an interior designer sets public counter checkouts exclusively based on the mean average height of a population dataset?",
+    "options": {
+      "A": "The configuration will fit exactly 99% of all users perfectly",
+      "B": "The layout fails to accommodate approximately 50% of the population, leaving shorter users struggling to reach and taller users bending awkwardly",
+      "C": "The data fields collapse automatically",
+      "D": "The furniture items degrade twice as fast"
+    },
+    "answer": "B",
+    "rationale": "Designing exclusively for the average user ignores the statistical variance in human dimensions. This approach typically creates a layout that does not comfortably fit shorter or taller individuals."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the maximum horizontal slope ratio permitted under universal access codes for an architectural ramp section located along a standard public accessible route?",
+    "options": {
+      "A": "1:4 ratio",
+      "B": "1:8 ratio",
+      "C": "1:12 ratio",
+      "D": "1:20 ratio"
+    },
+    "answer": "C",
+    "rationale": "A maximum slope of 1:12 (1 inch of vertical rise for every 12 inches of horizontal run) keeps the ramp angle low enough for standard wheelchair users to ascend without tipping backward or exhausting themselves."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which specific body anthropometric metric defines the width across the widest portion of the shoulders, governing the design of narrow emergency access hatches or escape crawl tunnels?",
+    "options": {
+      "A": "Biacromial / Shoulder Breadth",
+      "B": "Chest depth tracking",
+      "C": "Inter-pupillary line",
+      "D": "Sitting waist span"
+    },
+    "answer": "A",
+    "rationale": "Biacromial breadth measures maximum external shoulder width. This dimension determines the minimum clearance diameter for escape hatches, tubes, or narrow access doors."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When designing an ergonomic task chair, what structural benefit is provided by a slightly waterfall-shaped (downward curved) front edge on the seat pan cushion?",
+    "options": {
+      "A": "It prevents the chair from tipping forward under sudden shifts",
+      "B": "It relieves pressure on the popliteal artery and sciatic nerve networks behind the user's knees, maintaining healthy lower leg blood circulation",
+      "C": "It increases the absolute vertical lift range of the hydraulic piston",
+      "D": "It locks the pelvic cradle completely flat"
+    },
+    "answer": "B",
+    "rationale": "A radiused or waterfall edge profile distributes contact pressure across a larger area, preventing sharp tissue compression behind the knee joints."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the primary function of the lumbar support curve integrated into high-quality ergonomic office chair backrests?",
+    "options": {
+      "A": "To compress the shoulder blade matrix forward",
+      "B": "To preserve and support the natural forward inward curve (lordosis) of the lower lumbar spine, reducing muscle strain on the back",
+      "C": "To force the user into a constant 45-degree forward lean angle",
+      "D": "To adjust sitting height relative to the armrests"
+    },
+    "answer": "B",
+    "rationale": "Sitting causes the pelvis to tilt backward, flattening the natural inward curve (lordosis) of the lower back. A lumbar support maintains this curve, reducing stress on the discs and supporting muscles."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which anthropometric dimension dictates the minimum horizontal spacing needed between rows of seating in a standard sports stadium or commercial cinema layout?",
+    "options": {
+      "A": "Sitting eye height",
+      "B": "Buttock-to-Knee Length of the 95th percentile population",
+      "C": "Standing hip height",
+      "D": "Biacromial shoulder width"
+    },
+    "answer": "B",
+    "rationale": "Buttock-to-knee length determines the distance from the back of the seat to the front edge of the knees. Designing rows around the 95th percentile ensures that taller spectators have adequate legroom."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What minimum clear floor width must be maintained along an accessible public pathway corridor to allow two standard wheelchairs to pass each other moving in opposite directions?",
+    "options": {
+      "A": "36 inches (915 mm)",
+      "B": "48 inches (1220 mm)",
+      "C": "60 inches (1525 mm)",
+      "D": "84 inches (2135 mm)"
+    },
+    "answer": "C",
+    "rationale": "A clear corridor width of 60 inches (5 feet) allows two standard wheelchairs (which require 30 to 32 inches each) to pass safely without colliding or pulling off the path."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which human percentile grouping should be used to establish the maximum height for an emergency wall-mounted fire extinguisher or alarm pull-box?",
+    "options": {
+      "A": "5th percentile female vertical upward reach limit",
+      "B": "95th percentile male eye height",
+      "C": "50th percentile general mean stature",
+      "D": "99th percentile child height limits"
+    },
+    "answer": "A",
+    "rationale": "Emergency controls must be accessible to everyone in a building. Setting the mounting height based on the 5th percentile female reach ensures that shorter individuals can easily access the alarm or extinguisher."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "In workspace ergonomics, what type of grip is utilized when a hand wraps full finger contact completely around a cylindrical tool handle to exert high force, such as using a hammer?",
+    "options": {
+      "A": "Pinch grip",
+      "B": "Power Grip",
+      "C": "Precision tip touch",
+      "D": "Lateral key grip"
+    },
+    "answer": "B",
+    "rationale": "A power grip wraps the fingers around an object, counterbalanced by the thumb, maximizing the hand's surface area contact to deliver significant muscular force."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which anthropometric feature tracks the distance between the two pupil centers of the eyes, critical for detailing binoculars, virtual reality headsets, and optical sensors?",
+    "options": {
+      "A": "Interpupillary Distance (IPD)",
+      "B": "Biocular frame line",
+      "C": "Focal arc span",
+      "D": "Zygomatic breadth"
+    },
+    "answer": "A",
+    "rationale": "Interpupillary distance measures the spacing between eye pupils. Hardware interfaces must account for this dimension to ensure proper optical alignment and prevent eye strain or double vision."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What specific body parameter measures the vertical height from the floor line up to the top crest of the head skeleton when standing erect?",
+    "options": {
+      "A": "Stature (or Standing Height)",
+      "B": "Acromion height",
+      "C": "Sitting crown level",
+      "D": "Vertex apex tracking"
+    },
+    "answer": "A",
+    "rationale": "Stature is the baseline anthropometric dimension tracking full skeletal height from the soles of the feet to the top of the head (vertex)."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When detailing furniture components like office chair armrests, what anatomical dimension determines the optimal height of the arm support pad relative to the seat pan?",
+    "options": {
+      "A": "Sitting height",
+      "B": "Elbow Rest Height sitting",
+      "C": "Shoulder breadth sitting",
+      "D": "Torso depth track"
+    },
+    "answer": "B",
+    "rationale": "Sitting elbow rest height measures the vertical distance from the seat cushion to the underside of the forearm. Armrests that match this height allow the shoulders to rest in a neutral position."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What design outcome occurs if an entry security turnstile slot is detailed using the 5th percentile female hip breadth dimensions exclusively?",
+    "options": {
+      "A": "Every building user passes through smoothly",
+      "B": "The opening will be too narrow for a large portion of the population, blocking larger individuals from entering",
+      "C": "The turnstile mechanism locks up mechanically",
+      "D": "The structural height drops over time"
+    },
+    "answer": "B",
+    "rationale": "Designing an opening or enclosure around the lower percentile limit (5th percentile width) excludes individuals with larger physical dimensions."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Under universal access standards, what is the maximum mounting height permitted for the operable handles of a public door to ensure reachability from a seated position?",
+    "options": {
+      "A": "36 inches (915 mm)",
+      "B": "48 inches (1220 mm)",
+      "C": "60 inches (1525 mm)",
+      "D": "72 inches (1830 mm)"
+    },
+    "answer": "B",
+    "rationale": "To remain reachable for individuals in wheelchairs or shorter users, door handles, latches, and locks must be mounted no higher than 48 inches above the finished floor line."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which human grip configuration involves pressing an object tightly between the pad of the thumb and the pad of the index finger for fine motor control tasks?",
+    "options": {
+      "A": "Power grip",
+      "B": "Pinch Grip (or Precision Grip)",
+      "C": "Hook grasp",
+      "D": "Hook grip closure"
+    },
+    "answer": "B",
+    "rationale": "Pinch grips leverage fine motor coordination between the thumb and fingertips to perform precise manipulations, such as holding a pen, needle, or small electronics screw."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What is the structural consequence of failing to provide sufficient foot clearance (toe kicks) under the base of kitchen counter storage cabinetry?",
+    "options": {
+      "A": "The cabinet drawers jam frequently",
+      "B": "Users are forced to lean forward awkwardly from the waist, straining lower back muscles because they cannot stand flush and close to the work surface",
+      "C": "The flooring material wears down prematurely",
+      "D": "Cabinet doors lose alignment over time"
+    },
+    "answer": "B",
+    "rationale": "A recessed toe kick area (typically 4 inches high and 3 inches deep) allows a standing user to step closer to the counter, keeping their posture upright and reducing lower back strain."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which data type tracks the physical changes in body dimensions across decades, such as the gradual increase in average height and weight across generations?",
+    "options": {
+      "A": "Static baseline index",
+      "B": "Secular Trend data",
+      "C": "Climatic morphological drift",
+      "D": "Dynamic geometric constancy"
+    },
+    "answer": "B",
+    "rationale": "Secular trends reflect long-term shifts in a population's average size, height, and weight over generations, often driven by improvements in nutrition and healthcare."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What clear vertical distance must be maintained between the surface of an office workstation seat cushion and the underside of the desk keyboard drawer?",
+    "options": {
+      "A": "Thigh Clearance depth requirements of a 95th percentile user",
+      "B": "Chest thickness metrics",
+      "C": "Standing hip profile height",
+      "D": "Forearm reach length limits"
+    },
+    "answer": "A",
+    "rationale": "The vertical clearance space between a seat pan and the desk structure must accommodate the thigh thickness of larger users (95th percentile) so they can fit their legs under the desk comfortably."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "When designing public telephone booths, ATM alcoves, or control desks, what reach boundary limits must be evaluated for an accessible forward reach layout?",
+    "options": {
+      "A": "15 inches minimum low reach height up to a 48 inches maximum high reach height above floor line",
+      "B": "5 inches minimum low reach height up to 30 inches maximum high reach height",
+      "C": "30 inches minimum low reach height up to 72 inches maximum high reach height",
+      "D": "Zero to 100 inches bounds completely free"
+    },
+    "answer": "A",
+    "rationale": "Accessibility standards define a clear reach envelope for forward interactions between 15 inches (minimum low limits to prevent deep bending) and 48 inches (maximum height limits to prevent tipping)."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which human dimension tracks the full horizontal tip-to-tip span of both arms extended sideways parallel to the ground surface plane?",
+    "options": {
+      "A": "Stature span",
+      "B": "Arm Span",
+      "C": "Biacromial shoulder radius",
+      "D": "Functional forward extension"
+    },
+    "answer": "B",
+    "rationale": "Arm span tracks total reach distance from fingertip to fingertip across extended arms, a dimension that closely correlates with an individual's standing stature."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What anatomical issue occurs when an office worker uses a computer keyboard with their wrists continuously bent upward (extended) at a steep angle?",
+    "options": {
+      "A": "Compression of the median nerve inside the carpal tunnel channel, increasing the risk of Carpal Tunnel Syndrome",
+      "B": "Accelerated breakdown of shoulder joints",
+      "C": "Loss of fine bone density inside the palm",
+      "D": "Rapid loss of systemic muscle coordination"
+    },
+    "answer": "A",
+    "rationale": "Sustained wrist extension increases fluid pressure inside the carpal tunnel, compressing the median nerve against surrounding tendons and leading to pain, numbness, and injury."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which percentile body metric should be used to establish the maximum depth of a deep commercial storage shelf or sorting bin to ensure access for shorter workers?",
+    "options": {
+      "A": "95th percentile male forward arm reach",
+      "B": "5th percentile female forward arm reach",
+      "C": "50th percentile general mean arm span",
+      "D": "99th percentile child reach span"
+    },
+    "answer": "B",
+    "rationale": "To ensure that items placed at the back of a deep shelf are reachable for shorter users, the maximum depth limit must be designed around the 5th percentile female forward reach envelope."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Under ADA accessibility standards, what is the maximum slope permitted for a cross-slope (the slope perpendicular to the direction of travel) along a public sidewalk path?",
+    "options": {
+      "A": "1:20 ratio",
+      "B": "1:50 ratio (or 2% maximum cross-slope)",
+      "C": "1:5 ratio",
+      "D": "1:10 ratio"
+    },
+    "answer": "B",
+    "rationale": "Excessive cross-slopes can cause wheelchairs to veer sideways, requiring significant effort to correct. A maximum cross-slope limit of 2% maintains stability for wheelchair users and individuals using walking aids."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "Which specific body anthropometric measurement tracks the distance from the finished floor to the underside of the knee joint when standing upright?",
+    "options": {
+      "A": "Patella vertex line",
+      "B": "Tibial Height",
+      "C": "Popliteal standing height",
+      "D": "Iliac crest height"
+    },
+    "answer": "C",
+    "rationale": "Standing popliteal height tracks the distance from the floor to the crease behind the knee joint, serving as a reference point for designing high stools, specialized seating, or protective apparel."
+  },
+  {
+    "topic": "Topic 6: Anthropometrics",
+    "q": "What ergonomic risk factor describes holding a body part in a static, unyielding position for long periods, such as holding an arm overhead during assembly work?",
+    "options": {
+      "A": "Dynamic muscle fatigue cycle",
+      "B": "Static Load / Prolonged Static Posture",
+      "C": "Ballistic muscular motion strain",
+      "D": "Isokinetic balance breakdown"
+    },
+    "answer": "B",
+    "rationale": "Static loads restrict blood flow to the muscles, causing waste products to accumulate and leading to rapid fatigue and an increased risk of musculoskeletal injuries."
+  }
+]

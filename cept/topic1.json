@@ -1,0 +1,602 @@
+[
+  {
+    "topic": "Topic 1: Orthographic Projection",
+    "q": "In a first-angle orthographic projection, if an object is positioned above the Horizontal Plane (HP) and in front of the Vertical Plane (VP), where will its Top View be projected?",
+    "options": {
+      "A": "Above the XY reference line, on the VP",
+      "B": "Below the XY reference line, on the HP",
+      "C": "On the profile plane",
+      "D": "Intersecting the XY reference line"
+    },
+    "answer": "B",
+    "rationale": "In first-angle projection, the plan (top view) is always projected downward onto the horizontal plane, placing it below the ground/reference line."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "When a right circular cone is cut by a plane parallel to one of its generators, what is the true shape of the resulting section?",
+    "options": {
+      "A": "Circle",
+      "B": "Ellipse",
+      "C": "Parabola",
+      "D": "Hyperbola"
+    },
+    "answer": "C",
+    "rationale": "Cutting a cone parallel to its generator yields a parabola. (Cutting parallel to the axis yields a hyperbola; an inclined plane yields an ellipse)."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "If a drawing is produced at a scale of 1:50, a physical wall measuring 5 meters in reality will be represented on paper by a length of:",
+    "options": {
+      "A": "10 mm",
+      "B": "50 mm",
+      "C": "100 mm",
+      "D": "500 mm"
+    },
+    "answer": "C",
+    "rationale": "At a 1:50 scale, 5 meters (5000 mm) divided by 50 equals 100 mm on paper."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What architectural graphic convention does a dashed line typically signify in a standard floor plan view?",
+    "options": {
+      "A": "Primary load-bearing walls in section cut",
+      "B": "Elements or structures located above the horizontal cutting plane, such as ceiling beams or roof overhangs",
+      "C": "Changes in floor material textures",
+      "D": "Property boundaries and setbacks"
+    },
+    "answer": "B",
+    "rationale": "Dashed lines on floor plans typically represent overhead architectural features that reside above the standard 4-foot horizontal cut plane."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "Which metric sheet size represents exactly half the physical surface area of a standard A2 drawing sheet?",
+    "options": {
+      "A": "A0",
+      "B": "A1",
+      "C": "A3",
+      "D": "A4"
+    },
+    "answer": "C",
+    "rationale": "In the ISO 216 standard, as the sheet number increases, the area halves. Therefore, an A3 sheet is exactly half the surface area of an A2 sheet."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What graphic symbol is mandatory on all architectural site plans to anchor geographical orientation?",
+    "options": {
+      "A": "Graphic Scale bar",
+      "B": "North Arrow indicator",
+      "C": "Centerline symbol",
+      "D": "Benchmark elevation mark"
+    },
+    "answer": "B",
+    "rationale": "A North Arrow is essential on all site layout layers to provide correct geographical context and true structural orientation."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In perspective drawings, what does the term 'Station Point' (SP) define?",
+    "options": {
+      "A": "The location of the main train station on the site layout map",
+      "B": "The physical position of the observer’s eye relative to the object being viewed",
+      "C": "The vertical plane where the drawing sheet is conceptually placed",
+      "D": "The highest apex point of the building facade"
+    },
+    "answer": "B",
+    "rationale": "The Station Point establishes the precise coordinates of the observer's eye in space, controlling the viewing cone and perspective distortion."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In architectural presentation drawings, what does the term 'Poche' mean?",
+    "options": {
+      "A": "The decorative frame bordering a presentation layout board",
+      "B": "The dark solid fill or dense hatching applied to the interior core of cut walls and structural columns",
+      "C": "The chemical properties of specialized watercolor papers",
+      "D": "The specific layout formatting of architectural title blocks"
+    },
+    "answer": "B",
+    "rationale": "Poche refers to the solid black fill or cross-hatching inside cut structural materials, making solid elements instantly readable against voids."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What is the standard graphic standard for representing glass reflectivity and transparency on elevation drawings?",
+    "options": {
+      "A": "Coloring the pane solid matte black",
+      "B": "Thin, angled parallel lines across the pane to suggest highlights and a reflective surface sheen",
+      "C": "Dense stippling over the entire window frame",
+      "D": "Leaving the window entirely blank with no lines inside"
+    },
+    "answer": "B",
+    "rationale": "Thin, diagonal parallel strokes are the universal convention for denoting glass panels and transparent openings on vertical elevations."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does a 'Key Plan' illustrate on a large, multi-sheet architectural layout?",
+    "options": {
+      "A": "A list of all mechanical security master keys for the doors",
+      "B": "A small-scale thumbnail diagram showing where the current detailed plan segment fits within the larger overall building footprint",
+      "C": "The primary structural foundation grid system",
+      "D": "A legend explaining material hatch symbols"
+    },
+    "answer": "B",
+    "rationale": "Key plans display a small index boundary map to identify the location of the specific segment being viewed relative to the entire site."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "Which type of pictorial projection keeps the plan view completely un-distorted at full scale while projecting vertical lines straight up at an angle?",
+    "options": {
+      "A": "Isometric Projection",
+      "B": "Military (Planometric) Projection",
+      "C": "Cavalier Oblique Projection",
+      "D": "Two-Point Perspective Projection"
+    },
+    "answer": "B",
+    "rationale": "Military projection preserves the exact geometric angles of the plan layout, making it an optimal graphic tool for quick urban massing analysis."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What unique operational statement best defines the function of a 'Reflected Ceiling Plan' (RCP)?",
+    "options": {
+      "A": "An x-ray photograph looking down onto the roofing tiles",
+      "B": "The RCP mirrors the plan layout, looking upward to chart lighting, HVAC fixtures, and ceiling bulkheads",
+      "C": "The RCP is drawn at double the scale of the main floor plan layer",
+      "D": "The RCP completely omits all structural walls and columns"
+    },
+    "answer": "B",
+    "rationale": "An RCP mirrors the ceiling plan layout onto a horizontal plane below, aligning ceiling fixtures with the architectural layout directly below."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does an architectural 'Site Plan' primarily illustrate that a standard 'Floor Plan' does not?",
+    "options": {
+      "A": "The internal spatial layout of individual closets",
+      "B": "The overall building placement within property boundaries, including setbacks, topography, access roads, and utility connections",
+      "C": "The detailed plumbing joinery for kitchen sinks",
+      "D": "The structural composition of internal drywalls"
+    },
+    "answer": "B",
+    "rationale": "Site plans focus on contextual macro relationships, illustrating property dimensions, setbacks, natural topography, and adjacent site features."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "The aspect ratio used across all standard metric ISO paper sizes (A0, A1, A2, A3, A4) is based on what mathematical ratio?",
+    "options": {
+      "A": "1:1 (Square layout profile)",
+      "B": "4:3 (Classic landscape view)",
+      "C": "1:√2 (Approximately 1:1.414)",
+      "D": "Golden Ratio (1:1.618)"
+    },
+    "answer": "C",
+    "rationale": "The 1:√2 ratio ensures that folding or cutting a sheet across its length preserves the exact same proportional dimensions in the next size down."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In drawing notation, what type of line type is designated by a line with short arrows or dots that connects annotation text cleanly to specific components?",
+    "options": {
+      "A": "Dimension Line",
+      "B": "Leader Line",
+      "C": "Break Line",
+      "D": "Section Cut Line"
+    },
+    "answer": "B",
+    "rationale": "Leader lines feature sharp arrowheads or dots that clearly connect text callouts or material notes to specific parts of a drawing."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In perspective drawings, the horizon line always aligns exactly with which of the following variables?",
+    "options": {
+      "A": "The highest peak of the roof layout",
+      "B": "The observer's eye level, serving as the baseline for all horizontal vanishing points",
+      "C": "The natural ground line baseline",
+      "D": "The baseline edge of the picture plane template"
+    },
+    "answer": "B",
+    "rationale": "The horizon line is determined by the height of the observer's eyes, and it forms the axis for all horizontal vanishing lines."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "When a building feature is drawn using a scale of 5:1, what does this indicate about the representation?",
+    "options": {
+      "A": "The drawing represents an enlargement to show intricate manufacturing or joint details",
+      "B": "The object on paper is five times smaller than the true physical component",
+      "C": "The drawing represents an entire city master layout matrix",
+      "D": "Five distinct building projects are shown on a single sheet layout"
+    },
+    "answer": "A",
+    "rationale": "A 5:1 scale is an enlarging scale where the drawing layout is five times larger than life, typically used to display micro details."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What is the primary function of a 'Break Line' in an architectural construction drawing?",
+    "options": {
+      "A": "To indicate the exact boundary line where structural failure occurs",
+      "B": "To show that a long, continuous element has been shortened on paper while maintaining its true scale dimension",
+      "C": "To indicate the placement of dilatation expansion joints",
+      "D": "To terminate a dimension line string"
+    },
+    "answer": "B",
+    "rationale": "Break lines interrupt a continuous drawing to conserve space on paper when an item's cross-section remains constant over a long distance."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "Which type of drawing represents a three-dimensional volume where all three axes are drawn at the exact same scale and the true lengths are maintained without foreshortening?",
+    "options": {
+      "A": "Cabinet Oblique Projection",
+      "B": "Two-Point Perspective drawing",
+      "C": "Isometric Projection",
+      "D": "One-Point Perspective drawing"
+    },
+    "answer": "C",
+    "rationale": "Isometric projections use equal 120-degree spatial angles between axes with no foreshortening, allowing measurements at equal scales along all three axes."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In a standard architectural floor plan layout, what height is the horizontal cutting plane typically assumed to be above the finished floor level?",
+    "options": {
+      "A": "300 mm (1 foot)",
+      "B": "1200 mm to 1500 mm (4 to 5 feet)",
+      "C": "2400 mm (8 feet)",
+      "D": "Directly along the ceiling line"
+    },
+    "answer": "B",
+    "rationale": "Floor plans are horizontal section cuts taken 4 to 5 feet above the floor to capture doors, windows, and opening geometries."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What type of line weight should be assigned to the outermost profile lines of a building section cut to maximize spatial depth and readability?",
+    "options": {
+      "A": "The thinnest available line weight value",
+      "B": "A thick, bold line weight profile to differentiate cut materials from background elements",
+      "C": "A light dashed line configuration",
+      "D": "A wavy break line pattern"
+    },
+    "answer": "B",
+    "rationale": "Bold, thick line weights are used for the section cut profiles ('the ground line or cut envelope') to create strong visual hierarchy."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In orthographic projection, what does a 'Profile Plane' (PP) represent?",
+    "options": {
+      "A": "A horizontal plane used to project roof lines",
+      "B": "A vertical plane perpendicular to both the horizontal and vertical planes, used to project side views",
+      "C": "The plane tracking the solar azimuth path",
+      "D": "The title block area profile on a sheet layout"
+    },
+    "answer": "B",
+    "rationale": "The Profile Plane is perpendicular to the HP and VP, acting as the side projection plane to illustrate left or right side profiles."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "When creating a site presentation grid, what is the clear graphic distinction between True North and Magnetic North?",
+    "options": {
+      "A": "True North points to the geographic North Pole, while Magnetic North points to the earth's shifting magnetic pole",
+      "B": "True North is only utilized for interior kitchen plan details",
+      "C": "Magnetic North matches the path of the winter solstice sun",
+      "D": "There is no mathematical or graphic distinction between them"
+    },
+    "answer": "A",
+    "rationale": "True North targets the geographic pole used on standard maps, while Magnetic North aligns with compass readings, requiring declination adjustments."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "Which scale is most appropriate for rendering a large-scale master plan or urban layout configuration?",
+    "options": {
+      "A": "1:5",
+      "B": "1:20",
+      "C": "1:100",
+      "D": "1:2000"
+    },
+    "answer": "D",
+    "rationale": "Urban master plans represent large regions, requiring small scales like 1:2000 or 1:5000 to fit the entire site boundary on a standard sheet."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What type of architectural projection introduces visual foreshortening where parallel lines converge toward distant points, replicating human sight?",
+    "options": {
+      "A": "Axonometric Projection",
+      "B": "Perspective Projection",
+      "C": "Oblique Projection",
+      "D": "Orthographic Projection"
+    },
+    "answer": "B",
+    "rationale": "Perspective projection replicates human perception by converging parallel lines toward vanishing points on a horizon line."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "If a door frame is 2000 mm high in reality and measures 20 mm on an architectural print, what scale was used for the drawing?",
+    "options": {
+      "A": "1:10",
+      "B": "1:50",
+      "C": "1:100",
+      "D": "1:200"
+    },
+    "answer": "C",
+    "rationale": "20 mm / 2000 mm simplifies to a ratio of 1/100, meaning the sheet uses a standard 1:100 scale layout."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In architectural drafting, what does a phantom line style (long dash, two short dashes) typically indicate?",
+    "options": {
+      "A": "The location of underground sewer lines",
+      "B": "Alternate positions of moving parts, such as door swings or future expansion boundaries",
+      "C": "The main gridlines for load-bearing columns",
+      "D": "The center axis of symmetrical windows"
+    },
+    "answer": "B",
+    "rationale": "Phantom lines show alternative positions of adjustable components, property zones, or future construction boundaries."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does a 'Site Layout Plan' primarily help a mechanical engineer identify regarding external infrastructure layout?",
+    "options": {
+      "A": "The thickness of internal bathroom floor tiles",
+      "B": "The specific path of incoming municipal water lines and main drainage link points",
+      "C": "The wattage of individual desktop monitor setups",
+      "D": "The pattern of fabric stitching on office furniture"
+    },
+    "answer": "B",
+    "rationale": "Site layouts track the connection paths of municipal services (water, sewer, gas, electricity) from street mains to the building envelope."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What unique advantage does a Cavalier Oblique projection offer over an Isometric projection?",
+    "options": {
+      "A": "It displays all horizontal surfaces with accurate perspective vanishing lines",
+      "B": "The front face is oriented parallel to the viewing screen, allowing true un-distorted shape and scale measurement along the X and Y axes",
+      "C": "It reduces the line weight of background elements automatically",
+      "D": "It can only be drawn by using complex 3D computer rendering matrices"
+    },
+    "answer": "B",
+    "rationale": "Oblique projections place the primary face parallel to the picture plane, meaning the front elevation remains completely undistorted."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In third-angle orthographic projection, where is the Top View positioned relative to the Front View?",
+    "options": {
+      "A": "Directly below the Front View layout",
+      "B": "Directly above the Front View layout",
+      "C": "Offset to the far right margin at a 45-degree angle",
+      "D": "Superimposed on top of the side view cut"
+    },
+    "answer": "B",
+    "rationale": "In third-angle projection, the viewing plane sits between the object and the observer, placing the top view directly above the front view."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does an architectural line weight convention with very light, thin lines typically represent?",
+    "options": {
+      "A": "Primary load-bearing concrete structural columns",
+      "B": "Material hatch textures, dimension extension lines, and surface details",
+      "C": "The main outer building envelope profile",
+      "D": "The primary cutting axis line for structural cross-sections"
+    },
+    "answer": "B",
+    "rationale": "Light line weights are reserved for secondary graphic elements like material hatches and dimension strings to avoid cluttering main structural cuts."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "When a scale bar is included on a presentation sheet layout, what primary risk does it mitigate?",
+    "options": {
+      "A": "The risk of incorrect color selection on elevations",
+      "B": "The risk of drawings becoming mathematically useless if the sheet is scaled, copied, or printed at a non-standard sheet size",
+      "C": "The risk of missing structural columns entirely",
+      "D": "The risk of using incorrect regional structural unit codes"
+    },
+    "answer": "B",
+    "rationale": "A graphic scale bar expands or shrinks proportionally with the drawing, ensuring scale usability even if printed at non-standard sizes."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In graphic communication, what does a centerline symbol (long dash, short dash) indicate?",
+    "options": {
+      "A": "The boundary line where a property ends",
+      "B": "The exact geometric center axis of symmetrical objects, structural columns, or utility pipes",
+      "C": "The path of high-voltage overhead lines",
+      "D": "The finished floor level mark"
+    },
+    "answer": "B",
+    "rationale": "Centerlines mark axes of symmetry, providing reference lines for structural column centers, windows, and circular geometries."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does a 'Cross-Section' drawing reveal that cannot be fully expressed by a standard Elevation drawing?",
+    "options": {
+      "A": "The texture details of the exterior brick siding",
+      "B": "The internal floor-to-floor heights, structural wall composition, slab thicknesses, and vertical spatial relationships",
+      "C": "The layout of adjacent municipal access roads",
+      "D": "The landscape arrangement of the backyard zone"
+    },
+    "answer": "B",
+    "rationale": "Cross-sections reveal internal structural layers, wall details, floor slab heights, and vertical relationships by cutting through the building."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What unique feature defines a 'Cabinet Oblique' projection compared to a standard 'Cavalier Oblique' projection?",
+    "options": {
+      "A": "The cabinet oblique completely removes the horizontal ground reference plane",
+      "B": "The cabinet oblique foreshortens the depth axis by half (50% reduction) to create a more realistic proportion",
+      "C": "The cabinet oblique uses three independent vanishing points on the horizon",
+      "D": "The cabinet oblique can only be utilized for detailing window joinery frames"
+    },
+    "answer": "B",
+    "rationale": "Cabinet oblique drawings scale the depth axis by half to correct the distorted, elongated appearance typical of Cavalier oblique drawings."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "Which type of drawing scale is written in the format '1 mm = 50 mm' or '1:50'?",
+    "options": {
+      "A": "Graphic Scale bar",
+      "B": "Representative Fraction (RF) / Numerical Scale",
+      "C": "Verbal Scale layout",
+      "D": "Linear baseline scale"
+    },
+    "answer": "B",
+    "rationale": "Ratios like 1:50 represent numerical scales or representative fractions, indicating that one unit on paper equals fifty units in reality."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What is the primary architectural drafting convention for showing that a specific door hinges inward on a floor plan matrix?",
+    "options": {
+      "A": "Coloring the door panel bright red",
+      "B": "A straight line representing the door panel at 90 degrees, paired with a clean radial arc mapping the path of the door swing",
+      "C": "Drawing a large solid black cross over the room space",
+      "D": "Using a dense cross-hatch pattern across the entry clearance"
+    },
+    "answer": "B",
+    "rationale": "Door swings use a line for the door panel and a light arc to show the travel path, verifying spatial clearance on the plan."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "On professional site drawings, what do thin lines labeled with specific numeric values tracking across the ground layout denote?",
+    "options": {
+      "A": "High-voltage electrical transmission pathways",
+      "B": "Contour lines mapping topographic elevation heights above a standard datum baseline",
+      "C": "Underground structural foundation support beams",
+      "D": "Pedestrian crosswalk layouts"
+    },
+    "answer": "B",
+    "rationale": "Numbered topographic lines connect points of equal elevation, visualizing the slope and contours of the natural site terrain."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What is the standard scale typically utilized for highly detailed kitchen cabinetry or window frame construction drawings?",
+    "options": {
+      "A": "1:5 or 1:10",
+      "B": "1:100",
+      "C": "1:500",
+      "D": "1:2500"
+    },
+    "answer": "A",
+    "rationale": "Large scales like 1:5 or 1:10 provide the fidelity needed to document small assemblies, joinery details, and material junctions."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In a 2-point perspective drawing, where do all parallel horizontal lines tracking along the sides of a structure eventually converge?",
+    "options": {
+      "A": "Directly at the station point location",
+      "B": "At two distinct vanishing points located on the horizon line",
+      "C": "At a single central point located on the ground line plane",
+      "D": "They remain perfectly parallel and never converge on paper"
+    },
+    "answer": "B",
+    "rationale": "Two-point perspective uses two vanishing points on the horizon line to converge the two sets of parallel horizontal wall lines."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What drawing layer or layout shows a building's external vertical faces flat without any three-dimensional depth distortion?",
+    "options": {
+      "A": "Floor Plan",
+      "B": "Elevation",
+      "C": "Perspective drawing",
+      "D": "Isometric assembly"
+    },
+    "answer": "B",
+    "rationale": "Elevations are orthographic projections of vertical building faces, providing true scale dimensions without perspective distortion."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What graphic standard indicates where a building is cut to produce a cross-section drawing?",
+    "options": {
+      "A": "A light centerline track line",
+      "B": "A bold cutting-plane line (long dash followed by two short dashes) finished with directional arrows indicating the viewing direction",
+      "C": "A dense stipple pattern covering the whole floor area",
+      "D": "A series of wavy break lines"
+    },
+    "answer": "B",
+    "rationale": "Cutting-plane lines track the section path on floor plans, using direction arrows to show which way the observer is looking."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "If a physical building measures 60 meters long and must fit onto a drawing sheet length of 300 mm, what is the absolute minimum standard scale that can be utilized?",
+    "options": {
+      "A": "1:50",
+      "B": "1:100",
+      "C": "1:200",
+      "D": "1:500"
+    },
+    "answer": "C",
+    "rationale": "60 meters is 60,000 mm. At a 1:200 scale, 60,000 / 200 equals 300 mm, making it the minimum scale required to fit the drawing on the sheet."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In isometric drawings, at what angle are the two primary horizontal recrossing axes drawn relative to a horizontal baseline?",
+    "options": {
+      "A": "15 degrees",
+      "B": "30 degrees",
+      "C": "45 degrees",
+      "D": "60 degrees"
+    },
+    "answer": "B",
+    "rationale": "Isometric drawings tilt horizontal axes to 30 degrees relative to the baseline, maintaining full scale measurements along all paths."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What standard architectural graphic abbreviation is universally utilized to label a finished floor level reference point?",
+    "options": {
+      "A": "FFL",
+      "B": "RWP",
+      "C": "DPC",
+      "D": "TOB"
+    },
+    "answer": "A",
+    "rationale": "FFL stands for Finished Floor Level, used on sections and elevations to establish a benchmark height reference."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "When a site plan shows lines paired with coordinates and markers like 'S 45° 30' E', what system is being represented?",
+    "options": {
+      "A": "The plumbing slope index data",
+      "B": "Property boundary bearings and surveyor property data lines",
+      "C": "The annual sun tracking alignment",
+      "D": "The internal spatial structural grid system"
+    },
+    "answer": "B",
+    "rationale": "Bearings specify boundary vector angles relative to North or South axes, defining property lines on site layout sheets."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What is the primary graphic purpose of applying a 'Stipple' pattern (fine dotting) to an architectural material layer?",
+    "options": {
+      "A": "To represent concrete, sand, or stone materials in section or surface elevation views",
+      "B": "To show that a wall is hollow inside",
+      "C": "To indicate electrical ceiling fixture wiring arrays",
+      "D": "To show overhead structural beam layouts"
+    },
+    "answer": "A",
+    "rationale": "Stippling is the standard material hatch for concrete mix, plaster surfaces, or soil fills in technical drawings."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "In 3-point perspective drawings, what unique optical condition does the third vanishing point introduce?",
+    "options": {
+      "A": "It creates a secondary horizon baseline axis",
+      "B": "It introduces convergence to vertical lines, simulating looking sharply up or down at tall structures",
+      "C": "It removes all depth axes distortions from the rendering",
+      "D": "It can only be used to document single-story residential projects"
+    },
+    "answer": "B",
+    "rationale": "Three-point perspective adds a vertical vanishing point, introducing foreshortening to vertical edges when viewing objects from high or low angles."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What does an architectural plan scale of '1:100' mean when reading layout measurements?",
+    "options": {
+      "A": "One unit on paper is equal to one hundred identical units in true physical reality",
+      "B": "The project layout has been enlarged one hundred times past actual life scale",
+      "C": "The project requires one hundred unique sheets to build successfully",
+      "D": "The layout is strictly drawn using structural imperial inches"
+    },
+    "answer": "A",
+    "rationale": "A 1:100 scale represents a reduction factor where real-world features are drawn one hundred times smaller than their true physical dimensions."
+  },
+  {
+    "topic": "Topic 1: Architectural Graphics, Representation & Scale",
+    "q": "What standard notation indicator tracks cumulative horizontal dimension strings across an architectural construction plan?",
+    "options": {
+      "A": "A wavy line track line labeled with random alphanumeric keys",
+      "B": "Continuous dimension lines with tick marks, dots, or arrows at line intersections, labeled with numeric values above the line",
+      "C": "A series of circles tracking across room spaces",
+      "D": "A bold solid fill layer running along room margins"
+    },
+    "answer": "B",
+    "rationale": "Dimension strings use witness lines, dimension lines, and architectural slash ticks to display component measurements clearly."
+  }
+]

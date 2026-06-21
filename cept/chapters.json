@@ -1,0 +1,8 @@
+[
+  { "id": "topic1", "name": "Topic 1: Orthographic Projections", "file": "topic1.json" },
+  { "id": "topic2", "name": "Topic 2: Materials, Properties, and Methods", "file": "topic2.json" },
+  { "id": "topic3", "name": "Topic 3: Basics of Structure", "file": "topic3.json" },
+  { "id": "topic4", "name": "Topic 4: Joineries with Wood and Metal", "file": "topic4.json" },
+  { "id": "topic5", "name": "Topic 5: Mapping and Data Representation", "file": "topic5.json" },
+  { "id": "topic6", "name": "Topic 6: Anthropometrics", "file": "topic6.json" }
+]

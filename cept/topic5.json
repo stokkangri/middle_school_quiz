@@ -1,0 +1,602 @@
+[
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which type of map completely eliminates geographic scale to prioritize topological connectivity and sequential relationships, such as a subway network map?",
+    "options": {
+      "A": "Topographic map",
+      "B": "Schematic Map (or Topological Map)",
+      "C": "Cadastral survey map",
+      "D": "Isarithmic map"
+    },
+    "answer": "B",
+    "rationale": "Schematic maps, like subway transit maps, distort or entirely discard geographic scale, distance, and true directions to maximize readability of topological connections, linkages, and station sequences."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of map uses organizational boundaries shaded or patterned in proportion to a specific statistical variable, such as population density or average income?",
+    "options": {
+      "A": "Isarithmic Map",
+      "B": "Choropleth Map",
+      "C": "Dot Density Map",
+      "D": "Proportional Symbol Map"
+    },
+    "answer": "B",
+    "rationale": "Choropleth maps use color shading or patterns within predefined administrative boundaries to represent spatial variations of a normalized statistical variable."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "In a Geographic Information System (GIS), how is spatial data structurally managed within a 'Vector' data model?",
+    "options": {
+      "A": "As a continuous grid matrix of square cells storing numerical values",
+      "B": "Using explicit coordinate geometry expressed as points, lines, and polygons",
+      "C": "Exclusively as unreferenced photographic pixels",
+      "D": "As an unorganized list of text descriptions"
+    },
+    "answer": "B",
+    "rationale": "The vector data model represents discrete real-world features using explicit coordinate geometry built from points (X, Y), lines (sequences of points), and polygons (closed loops of lines)."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which cartographic data representation method uses continuous lines to connect points of equal value, such as elevation above sea level or atmospheric pressure?",
+    "options": {
+      "A": "Isarithmic / Isoline Map",
+      "B": "Choropleth Map",
+      "C": "Flow map",
+      "D": "Dasymetric Map"
+    },
+    "answer": "A",
+    "rationale": "Isoline maps (or isarithmic maps) use continuous lines (contours, isotherms, isobars) to link points sharing an identical attribute value across a continuous surface."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What primary geometric property is completely preserved without distortion across the entire surface of a 'Conformal' map projection?",
+    "options": {
+      "A": "True area measurements",
+      "B": "Local angles and shapes of small features",
+      "C": "Exact linear distances from all points",
+      "D": "Great-circle shortest routes"
+    },
+    "answer": "B",
+    "rationale": "Conformal projections preserve local angles and shapes of small geographic areas accurately around any point, though they cause severe distortion in size/area toward map margins."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What unique map type modifies the physical size of geographic areas or countries directly in proportion to a specific data value, such as total gross domestic product (GDP)?",
+    "options": {
+      "A": "Topographic sheet",
+      "B": "Cartogram",
+      "C": "Chorochromatic map",
+      "D": "Orthophoto map"
+    },
+    "answer": "B",
+    "rationale": "A cartogram distorts geographic size or distance intentionally, scaling the area of a region relative to a specific thematic attribute value rather than its actual physical land footprint."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "In cartography, what occurs when a map scale transitions from a 'Large-Scale' view (e.g., 1:500) to a 'Small-Scale' view (e.g., 1:500,000)?",
+    "options": {
+      "A": "The map covers a smaller geographic area but shows much higher detail",
+      "B": "The map covers a larger geographic area but displays lower detail and higher data generalization",
+      "C": "The physical dimensions of the printed paper layout shrink",
+      "D": "The distortion of the earth's curvature is completely eliminated"
+    },
+    "answer": "B",
+    "rationale": "Small-scale maps have larger denominators, meaning they cover vast geographic areas on a single sheet, requiring significant generalization and omitting minor local features."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which GIS data model is optimized for representing continuously varying geographic phenomena, such as terrain elevations, soil temperature gradients, or satellite imagery?",
+    "options": {
+      "A": "Vector polygon model",
+      "B": "Raster data model",
+      "C": "Relational attribute table",
+      "D": "CAD block reference file"
+    },
+    "answer": "B",
+    "rationale": "Raster data structures employ a continuous matrix of grid cells (pixels), making them suited for representing continuously changing data fields across space, such as elevations or remote sensing bands."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of map projection is produced by projecting the Earth’s coordinates onto a cylinder wrapped around the globe, famously distorting polar landmass sizes?",
+    "options": {
+      "A": "Azimuthal projection",
+      "B": "Conic projection",
+      "C": "Cylindrical (e.g., Mercator) projection",
+      "D": "Stereographic projection"
+    },
+    "answer": "C",
+    "rationale": "Cylindrical projections wrap a plane cylinder around the globe. While excellent for navigation because lines of constant bearing are straight, they introduce extreme area exaggeration near the poles."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which data classification method divides a statistical dataset into classes that each contain an equal number of geographic features, regardless of the data values?",
+    "options": {
+      "A": "Equal Interval",
+      "B": "Quantile Classification",
+      "C": "Natural Breaks (Jenks)",
+      "D": "Standard Deviation"
+    },
+    "answer": "B",
+    "rationale": "Quantile classification distributes data by sorting features and splitting them into intervals so each class contains an identical count of items, emphasizing rank order."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific survey maps are drafted to legally document property boundaries, plot dimensions, ownership limits, and building footprints for taxation and land registration?",
+    "options": {
+      "A": "Geological maps",
+      "B": "Cadastral Maps",
+      "C": "Aeronautical charts",
+      "D": "Bathymetric sheets"
+    },
+    "answer": "B",
+    "rationale": "Cadastral maps are high-precision, large-scale legal documents tracking real-estate limits, property lines, parcel codes, and ownership data for public registries."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "When contour lines are packed tightly together on a standard topographic survey map, what terrain condition is indicated?",
+    "options": {
+      "A": "A perfectly flat horizontal plateau",
+      "B": "A steep slope or sudden vertical drop",
+      "C": "A wide river basin channel",
+      "D": "A subterranean limestone cave"
+    },
+    "answer": "B",
+    "rationale": "Because contour lines denote fixed vertical increments, closely spaced lines indicate a rapid change in elevation over a short horizontal distance, representing a steep slope."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which type of thematic map positions varying numbers of identical individual dots across regions to illustrate the spatial density and distribution of a phenomenon without using administrative shading?",
+    "options": {
+      "A": "Choropleth Map",
+      "B": "Dot Density Map",
+      "C": "Proportional symbol sheet",
+      "D": "Isopleth diagram"
+    },
+    "answer": "B",
+    "rationale": "Dot density maps represent data by scattering fixed-value dots across zones, visually communicating variations in concentration and clustering directly to the viewer."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What process is used in GIS to align a scanned historical paper map or aerial photograph to a known real-world coordinate reference system?",
+    "options": {
+      "A": "Vectorization",
+      "B": "Georeferencing",
+      "C": "Data buffering",
+      "D": "Topology validation"
+    },
+    "answer": "B",
+    "rationale": "Georeferencing establishes spatial orientation by linking pixel coordinates on an unreferenced image file to real-world map coordinates using Ground Control Points (GCPs)."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What primary cartographic problem prevents a sphere (the Earth) from being flattened perfectly into a two-dimensional map sheet without errors?",
+    "options": {
+      "A": "The magnetic field variations of the poles",
+      "B": "The impossibility of flattening a 3D non-developable surface without compressing, tearing, or stretching it",
+      "C": "The seasonal fluctuations of sea level lines",
+      "D": "The lack of accurate digital laser measurements"
+    },
+    "answer": "B",
+    "rationale": "A sphere has a non-developable surface geometry, meaning it cannot be unrolled or projected onto a flat plane without distorting area, shape, distance, or direction."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "In digital data mapping, what does the abbreviation 'metadata' represent?",
+    "options": {
+      "A": "Data that is stored exclusively in encrypted hidden files",
+      "B": "Structured information that describes the lineage, accuracy, coordinate system, and properties of a dataset ('data about data')",
+      "C": "The underlying mathematical formulas of geometric curves",
+      "D": "A system of physical reference markers placed on the ground"
+    },
+    "answer": "B",
+    "rationale": "Metadata provides documentation explaining the source, scale, projection, collection dates, and attribute fields of a map file, ensuring correct usage."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which map type uses symbols of varying sizes placed at specific points to represent numerical values associated with discrete geographic locations?",
+    "options": {
+      "A": "Choropleth map",
+      "B": "Proportional (Graduated) Symbol Map",
+      "C": "Isopleth map",
+      "D": "Dasymetric map"
+    },
+    "answer": "B",
+    "rationale": "Proportional symbol maps scale symbols (such as circles or bars) in direct relation to data magnitude at point locations, allowing for effective visual comparisons."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of map projection preserves true area relationships across all regions, making it ideal for displaying global density distributions accurately?",
+    "options": {
+      "A": "Conformal projection",
+      "B": "Equivalent / Equal-Area Projection",
+      "C": "Equidistant projection",
+      "D": "Azimuthal gnomonic projection"
+    },
+    "answer": "B",
+    "rationale": "Equal-area (equivalent) projections maintain correct proportional sizes of landmasses relative to one another, which is essential for comparative thematic maps."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific topographic feature is indicated by a series of concentric closed contour lines on a map where the elevation values increase sequentially toward the center?",
+    "options": {
+      "A": "A deep sinkhole valley",
+      "B": "A hill or mountain peak",
+      "C": "A linear ridge spine",
+      "D": "A flat vertical cliff face"
+    },
+    "answer": "B",
+    "rationale": "Concentric rings with values that rise inward indicate a terrain summit or hilltop. If values decrease inward, they represent a basin or depression."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What GIS operation creates a zone of a specified distance around selected geographical features, such as mapping a 100-meter environmental protection zone along a river corridor?",
+    "options": {
+      "A": "Spatial Intersection",
+      "B": "Buffering",
+      "C": "Network Routing",
+      "D": "Attribute Join"
+    },
+    "answer": "B",
+    "rationale": "Buffering generates a geometric polygon offset enclosing a point, line, or area feature at a fixed or variable proximity radius."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which map classification method uses mathematical algorithms to place class boundaries at locations where there are large gaps or jumps in the dataset values?",
+    "options": {
+      "A": "Equal Interval method",
+      "B": "Natural Breaks (Jenks Optimization)",
+      "C": "Quantile sorting",
+      "D": "Geometric progression"
+    },
+    "answer": "B",
+    "rationale": "Jenks Natural Breaks reduces variance within classes while maximizing variance between classes by identifying natural clusters and gaps inherent in the data distribution."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What does a map scale of '1:24,000' explicitly mean in cartography?",
+    "options": {
+      "A": "One unit on the map chart represents exactly 24,000 of those same units in the real-world environment",
+      "B": "The map sheet is 24,000 times larger than the physical city territory",
+      "C": "The map features exactly 24,000 distinct attribute fields",
+      "D": "The layout can only be read accurately at an altitude of 24,000 feet"
+    },
+    "answer": "A",
+    "rationale": "A representative fraction scale is a dimensionless ratio; 1 inch on paper represents 24,000 inches on the ground, and 1 centimeter represents 24,000 centimeters."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific name is given to lines on a map that connect points of identical horizontal coordinate location, establishing a globally standard grid structure?",
+    "options": {
+      "A": "Contours and profiles",
+      "B": "Parallels of Latitude and Meridians of Longitude",
+      "C": "Isobars and isotherms",
+      "D": "Rhumb lines and vectors"
+    },
+    "answer": "B",
+    "rationale": "Latitude (parallels) and longitude (meridians) form the geographic coordinate system grid used to pin point positions on the earth's surface."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which data visualization format maps directional movement, volume, and traffic paths between geographic hubs using lines of varying thicknesses?",
+    "options": {
+      "A": "Flow Map",
+      "B": "Choropleth grid",
+      "C": "Isarithmic map",
+      "D": "Topographic layout"
+    },
+    "answer": "A",
+    "rationale": "Flow maps use linear symbols to convey the movement of goods, people, or information between locations, with line thickness indicating quantity or volume."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What major limitation occurs when displaying population totals directly inside a standard choropleth map without normalizing the data by area?",
+    "options": {
+      "A": "The map values become completely invisible",
+      "B": "It creates a misleading display where larger administrative zones appear disproportionately significant ('the size-bias error')",
+      "C": "It changes the underlying coordinate system",
+      "D": "It forces the map scale to become completely non-linear"
+    },
+    "answer": "B",
+    "rationale": "Mapping raw totals in a choropleth map skews interpretation because large regions dominate visually. Normalizing data (e.g., people per square kilometer) accounts for varying region sizes."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "In GIS, what type of map analysis overlay function combines two vector datasets to retain only the spatial features that overlap in both layers?",
+    "options": {
+      "A": "Union",
+      "B": "Intersect",
+      "C": "Symmetrical Difference",
+      "D": "Identity"
+    },
+    "answer": "B",
+    "rationale": "An intersect operation performs a spatial clip and attribute merge, outputting only the intersecting geometries common to both input layers."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of map projection displays all straight lines drawn from the central origin point as true great-circle shortest navigation routes?",
+    "options": {
+      "A": "Mercator cylindrical",
+      "B": "Gnomonic (Azimuthal) Projection",
+      "C": "Lambert conformal conic",
+      "D": "Robinson pseudo-cylindrical"
+    },
+    "answer": "B",
+    "rationale": "On a gnomonic projection, any straight line connecting two points forms a segment of a great circle, making it a valuable tool for plotting transoceanic flight paths."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which cartographic technique uses continuous color gradients across an un-bounded surface to model statistical concentrations, such as urban crime hotspots?",
+    "options": {
+      "A": "Dasymetric segmentation",
+      "B": "Kernel Density Estimation / Heat Mapping",
+      "C": "Cadastral indexing",
+      "D": "Quantile clustering"
+    },
+    "answer": "B",
+    "rationale": "Kernel density estimation computes localized event density across a continuous raster surface, highlighting point clusters as smooth heat zones."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific map graphic component defines the relationship between the visual variables (colors, symbols, line types) used on a map layout and their corresponding real-world attributes?",
+    "options": {
+      "A": "Compass rose",
+      "B": "Map Legend / Key",
+      "C": "Neatline border",
+      "D": "Grid index"
+    },
+    "answer": "B",
+    "rationale": "The legend explains the meaning of map symbology, translating abstract lines, patterns, and colors back into understandable real-world categories."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What data format creates a continuous digital representation of terrain elevations across land surfaces using a regular grid array of elevation pixels?",
+    "options": {
+      "A": "Digital Elevation Model (DEM)",
+      "B": "Vector shapefile format",
+      "C": "PostScript layout file",
+      "D": "Relational attribute matrix"
+    },
+    "answer": "A",
+    "rationale": "A DEM is a raster representation of terrain elevation, where each grid cell contains a numerical value corresponding to the altitude above a vertical datum."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What classification framework divides data into ranges where the difference between the maximum and minimum values of each class is identical?",
+    "options": {
+      "A": "Quantile method",
+      "B": "Equal Interval method",
+      "C": "Geometric interval calculation",
+      "D": "Jenks optimization"
+    },
+    "answer": "B",
+    "rationale": "Equal interval classification takes the full data range and divides it into equal-sized steps (e.g., 0–10, 10–20, 20–30), making it straightforward to interpret for uniformly distributed datasets."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which data system represents 3D surfaces through a network of contiguous, non-overlapping triangles built from elevation nodes and breaklines?",
+    "options": {
+      "A": "Raster Grid matrix",
+      "B": "Triangulated Irregular Network (TIN)",
+      "C": "Polygonal choropleth framework",
+      "D": "Bézier spline path"
+    },
+    "answer": "B",
+    "rationale": "A TIN structures terrain data as a vector network of triangles, allowing for efficient modeling of irregular topography by clustering nodes where relief changes rapidly."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What is the primary advantage of utilizing an 'Orthophotograph' over a standard uncorrected aerial perspective photograph?",
+    "options": {
+      "A": "It records values using infrared light bands exclusively",
+      "B": "It has been geometrically corrected to remove distortions from camera tilt and terrain relief, giving it a uniform scale that allows direct distance measurements",
+      "C": "It requires significantly less computer storage space",
+      "D": "It entirely eliminates shadows from buildings"
+    },
+    "answer": "B",
+    "rationale": "Orthophotos combine the visual detail of aerial photography with the geometric accuracy of a planimetric map, correcting for lens distortions and terrain displacement."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific cartographic problem is addressed by map 'Generalization'?",
+    "options": {
+      "A": "The requirement to encrypt map files before distribution",
+      "B": "The need to simplify, omit, or displace geographic details to maintain clarity and readability when reducing a map's scale",
+      "C": "Changing the global coordinate projection systems",
+      "D": "Calculating the precise curvature radius of the earth"
+    },
+    "answer": "B",
+    "rationale": "As map scale decreases, space constraints require features to be generalized (e.g., merging small islands, smoothing winding roads) to prevent clutter."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of thematic map uses modified demographic boundaries to depict statistical trends, splitting internal data using ancillary data sources like land cover?",
+    "options": {
+      "A": "Dasymetric Map",
+      "B": "Isarithmic map",
+      "C": "Simple choropleth layout",
+      "D": "Topographic coordinate sheet"
+    },
+    "answer": "A",
+    "rationale": "Dasymetric maps improve on choropleth maps by incorporating secondary data (like satellite land cover) to refine statistical boundaries into realistic zones of concentration."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "In cartography, what property is indicated by a line on a map called a 'Rhumb Line' (or loxodrome)?",
+    "options": {
+      "A": "It tracks the shortest possible path over a curved sphere",
+      "B": "It is a line of constant compass bearing, crossing all meridians of longitude at the same angle",
+      "C": "It connects points of identical terrain slope steepness",
+      "D": "It marks the exact perimeter boundary of a public parcel"
+    },
+    "answer": "B",
+    "rationale": "A rhumb line maintains a constant compass heading. While not the shortest path between two points, its straight profile on Mercator projections simplified open-ocean navigation."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which data visualization method relies on color hues and saturation to represent categorical data variables (such as different soil types or zoning districts) across a region?",
+    "options": {
+      "A": "Graduated choropleth classification",
+      "B": "Unique Values / Qualitative Mapping",
+      "C": "Isoline path tracing",
+      "D": "Proportional symbol classification"
+    },
+    "answer": "B",
+    "rationale": "Qualitative unique-value mapping uses distinct, non-ordered color sets to represent nominal categories (e.g., commercial vs. residential zoning) where no numeric ranking exists."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What does a 'V-shape' in a series of topographic contour lines indicate when crossing a river or stream channel?",
+    "options": {
+      "A": "The contour lines are parallel to the water flow path",
+      "B": "The apex of the V points upstream, directly toward higher elevation ground",
+      "C": "The apex of the V points downstream, tracking the current of the water",
+      "D": "The river channel features a vertical waterfall drop"
+    },
+    "answer": "B",
+    "rationale": "By the 'law of V-angles,' when contour lines cross a valley or stream channel, they bend into a V shape that points upstream toward higher elevation areas."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which coordinate framework uses a 2D Cartesian coordinate system to divide the earth into sixty vertical zones, each spanning six degrees of longitude?",
+    "options": {
+      "A": "Universal Transverse Mercator (UTM)",
+      "B": "State Plane Coordinate System (SPCS)",
+      "C": "World Geodetic System 1984 (WGS84)",
+      "D": "Mollweide global grid"
+    },
+    "answer": "A",
+    "rationale": "UTM zones project the Earth in 6-degree segments using a transverse Mercator cylinder, minimizing distortion within zones for precise regional mapping."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What spatial database function links an external data table to a map layer’s attribute table based on a shared common ID field?",
+    "options": {
+      "A": "Spatial Buffer calculation",
+      "B": "Attribute Join",
+      "C": "Geocoding conversion",
+      "D": "Raster reclassification"
+    },
+    "answer": "B",
+    "rationale": "An attribute join appends tabular data fields to a geographic dataset's attribute table by matching a unique key identifier column common to both tables."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which cartographic symbol variable is most effective for communicating ordered quantitative data changes, such as increasing pollution concentration?",
+    "options": {
+      "A": "Color Hue (e.g., red vs. blue vs. green)",
+      "B": "Color Value / Lightness (e.g., light red to dark red)",
+      "C": "Shape configuration (e.g., circle vs. star)",
+      "D": "Pattern orientation angle"
+    },
+    "answer": "B",
+    "rationale": "Color value (lightness/darkness) inherently implies order and magnitude, making it effective for representing sequential quantitative data variations."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of map projection balances shape, area, and distance distortions to provide an aesthetically pleasing view of the whole world, often used for atlas maps?",
+    "options": {
+      "A": "Pure Conformal projection",
+      "B": "Compromise Projection (e.g., Robinson or Winkel Tripel)",
+      "C": "Gnomonic azimuthal layout",
+      "D": "Pure Equal-Area projection"
+    },
+    "answer": "B",
+    "rationale": "Compromise projections do not perfectly preserve any single geometric property, but instead minimize overall distortion across the map to provide a balanced global view."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What specific topographic feature is represented by two adjacent high terrain points separated by a lower dip or pass line?",
+    "options": {
+      "A": "A sheer cliff wall",
+      "B": "A Saddle / Mountain Pass",
+      "C": "An isolated circular depression",
+      "D": "A uniform alluvial fan"
+    },
+    "answer": "B",
+    "rationale": "On a contour map, a saddle appears as a low point positioned between two higher elevation regions, bounded by descending slopes on either side."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What process converts physical addresses or placenames into explicit numerical coordinate points (X, Y) positioned on a digital map framework?",
+    "options": {
+      "A": "Geocoding",
+      "B": "Rasterization",
+      "C": "Spatial clipping",
+      "D": "Topological indexing"
+    },
+    "answer": "A",
+    "rationale": "Geocoding uses reference address databases to interpolate textual address locations and output coordinate points for mapping."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which resolution metric defines the smallest physical area or pixel dimensions that can be captured and resolved by a satellite remote sensing sensor?",
+    "options": {
+      "A": "Spectral resolution",
+      "B": "Spatial Resolution",
+      "C": "Temporal interval frequency",
+      "D": "Radiometric scale"
+    },
+    "answer": "B",
+    "rationale": "Spatial resolution refers to the physical dimensions of the ground area represented by a single pixel in a satellite image (e.g., 30-meter pixels)."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What cartographic error occurs when thematic data categories overlap, placing a single data value into multiple classes simultaneously?",
+    "options": {
+      "A": "Normalized data skew",
+      "B": "Non-exclusive data classification",
+      "C": "Scale dependency drift",
+      "D": "Spatial autocorrelation breakdown"
+    },
+    "answer": "B",
+    "rationale": "Data classes must be mutually exclusive (e.g., 10–20, 21–30) so that each data point fits into exactly one category without ambiguity."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What map layout feature establishes a fixed graphic ratio bar allowing users to measure real-world distances directly off a printed sheet, even if it is scaled down via photocopying?",
+    "options": {
+      "A": "Textual description line",
+      "B": "Graphic Scale Bar",
+      "C": "Representative fraction statement",
+      "D": "Neatline grid tick"
+    },
+    "answer": "B",
+    "rationale": "Unlike text ratios (e.g., '1 inch = 1 mile'), a graphic scale bar expands or shrinks proportionally with the map document during resizing, maintaining its accuracy."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What type of data layer consists of vector lines representing historical paths, river flows, utility networks, or transportation networks where routing calculations are executed?",
+    "options": {
+      "A": "Continuous surface layer",
+      "B": "Linear Network layer",
+      "C": "Discrete polygon matrix",
+      "D": "Unreferenced raster image"
+    },
+    "answer": "B",
+    "rationale": "Network layers are composed of interconnected lines (edges) and points (nodes) that model the flow of traffic, water, or utilities for routing analyses."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "Which descriptive index represents the orientation of a sloped terrain surface measured clockwise in degrees relative to true North?",
+    "options": {
+      "A": "Vertical elevation angle",
+      "B": "Aspect",
+      "C": "Contour interval",
+      "D": "Planimetric vector offset"
+    },
+    "answer": "B",
+    "rationale": "Aspect identifies the downslope direction of a hill face. For example, a slope facing directly east has an aspect value of 90 degrees."
+  },
+  {
+    "topic": "Topic 5: Mapping and Data Representation",
+    "q": "What condition is met when a GIS vector dataset maintains flawless 'Topology' across its elements?",
+    "options": {
+      "A": "All file features are colored according to their attribute values",
+      "B": "Spatial relationships (such as adjacency, connectivity, and containment) between features are explicitly defined and maintained regardless of geometric distortion",
+      "C": "The map files are translated into highly compressed image graphics",
+      "D": "All lines are adjusted to follow straight lines exclusively"
+    },
+    "answer": "B",
+    "rationale": "Topology defines spatial relationships mathematically, ensuring that adjacent polygons share boundaries without gaps or overlaps, and intersecting lines connect at shared nodes."
+  }
+]
