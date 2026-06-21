@@ -11,6 +11,7 @@ let isReviewMode = false;  // Tracks if the quiz has been submitted for evaluati
 const loadingMessage = document.getElementById('loading-message');
 const startBtn = document.getElementById('start-btn');
 const topicSelect = document.getElementById('topic-select');
+const quantitySelect = document.getElementById('quantity-select'); // Reference to quantity control
 const setupView = document.getElementById('setup-view');
 const quizView = document.getElementById('quiz-view');
 const scoreView = document.getElementById('score-view');
@@ -59,6 +60,8 @@ function shuffleArray(arr) {
 
 startBtn.addEventListener('click', () => {
     const targetJsonFile = topicSelect.value;
+    const selectedSize = quantitySelect.value; // Read quantity selection
+
     setupView.style.display = 'none';
     scoreView.style.display = 'none';
     loadingMessage.textContent = 'Fetching chapter questions data...';
@@ -67,10 +70,19 @@ startBtn.addEventListener('click', () => {
     fetch(targetJsonFile)
         .then(res => { if (!res.ok) throw new Error(); return res.json(); })
         .then(questions => {
-            activeQuestions = questions;
-            shuffleArray(activeQuestions);
+            // 1. Shuffle the full pool first to make item selection completely random
+            shuffleArray(questions);
             
-            // Clear all runtime state engines
+            // 2. Slice the questions array based on selection constraints
+            if (selectedSize === 'all') {
+                activeQuestions = questions;
+            } else {
+                const targetAmount = parseInt(selectedSize, 10);
+                // If the selected choice (e.g. 50) is larger than the file has, capture everything safely
+                activeQuestions = questions.slice(0, Math.min(targetAmount, questions.length));
+            }
+            
+            // Reset state trackers
             currentQuestionIndex = 0;
             userAnswers = {};
             checkedQuestions = {};
@@ -113,9 +125,7 @@ function updateNavigationUI() {
             btn.classList.add('active-view');
         }
         
-        // Color-coding updates
         if (isReviewMode) {
-            // In review mode, show everything verified as green
             btn.classList.add('checked-state');
         } else if (checkedQuestions[index]) {
             btn.classList.add('checked-state'); 
@@ -129,7 +139,7 @@ function updateNavigationUI() {
     if (currentQuestionIndex === activeQuestions.length - 1) {
         nextBtn.textContent = isReviewMode ? "Next Question →" : "Finish Quiz";
         nextBtn.style.backgroundColor = isReviewMode ? "var(--success-color)" : "var(--primary-color)";
-        if (isReviewMode) nextBtn.disabled = true; // Turn off button at absolute boundary line
+        if (isReviewMode) nextBtn.disabled = true;
     } else {
         nextBtn.textContent = "Next Question →";
         nextBtn.style.backgroundColor = "var(--success-color)";
@@ -149,7 +159,6 @@ function loadQuestion() {
         label.className = 'option-label';
         
         const isChecked = userAnswers[currentQuestionIndex] === key ? 'checked' : '';
-        // Lock selections permanently if question was checked or quiz is in review mode
         const isDisabled = (checkedQuestions[currentQuestionIndex] || isReviewMode) ? 'disabled' : '';
         
         label.innerHTML = `
@@ -159,7 +168,6 @@ function loadQuestion() {
         qOptions.appendChild(label);
     });
 
-    // Handle historical visual evaluation rendering configurations
     if (checkedQuestions[currentQuestionIndex] || isReviewMode) {
         showStaticFeedback();
     } else {
@@ -244,19 +252,15 @@ nextBtn.addEventListener('click', () => {
         currentQuestionIndex++;
         loadQuestion();
     } else {
-        if (isReviewMode) return; // Prevent re-triggering completion once already viewing review engine
+        if (isReviewMode) return; 
         
-        // Evaluate complete answers array to award final point score configurations
         let computedFinalScore = 0;
         
         activeQuestions.forEach((question, index) => {
             const chosenValue = userAnswers[index];
-            
-            // If they checked it using the button earlier, look at that score tracker
             if (checkedQuestions[index]) {
                 computedFinalScore += (systemScores[index] || 0);
             } else {
-                // If they never checked it but filled it out right before hitting finish
                 if (chosenValue === question.answer) {
                     computedFinalScore += 1;
                     systemScores[index] = 1;
@@ -266,15 +270,12 @@ nextBtn.addEventListener('click', () => {
             }
         });
 
-        // Set review mode status flags
         isReviewMode = true;
 
-        // Show the score bar layout but DO NOT hide quizView panel grid layout
         scoreView.style.display = 'block';
         finalScoreText.textContent = computedFinalScore;
         finalTotalText.textContent = activeQuestions.length;
         
-        // Focus client attention view index frame back to the start of the quiz to let them review
         currentQuestionIndex = 0;
         loadQuestion();
     }
