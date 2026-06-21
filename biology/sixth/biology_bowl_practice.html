@@ -18,11 +18,16 @@
         .option:hover { background: #dcdde1; }
         .selection-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; color: #34495e; }
+<<<<<<< Updated upstream
         .score-display { font-size: 1.5em; color: #27ae60; text-align: center; }
         .bg-green-success { background-color: #dcfce7 !important; color: #166534; }
         .bg-red-error { background-color: #fee2e2 !important; color: #991b1b; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+=======
+        #result-msg { font-weight: bold; margin-top: 15px; }
+        .score-display { font-size: 1.5em; color: #27ae60; text-align: center; }
+>>>>>>> Stashed changes
     </style>
 </head>
 <body>
@@ -46,6 +51,7 @@
             </select>
         </div>
 
+<<<<<<< Updated upstream
         <div class="selection-group">
             <label for="length-select">Quiz Length:</label>
             <select id="length-select" style="width: 100%; padding: 10px;" onchange="toggleCustomInput()">
@@ -60,6 +66,17 @@
             <input type="number" id="custom-count" min="1" max="49" value="10" style="width: 100%; padding: 10px;">
         </div>
 
+=======
+        <!-- NEW: Length Selection (The Stimulus) -->
+        <div class="selection-group">
+            <label for="length-select">Quiz Length:</label>
+            <select id="length-select" style="width: 100%; padding: 10px;">
+                <option value="short">Short (Standard)</option>
+                <option value="long">Long (50 Questions)</option>
+            </select>
+        </div>
+
+>>>>>>> Stashed changes
         <button class="btn btn-primary" style="width: 100%;" onclick="loadQuiz()">Start Practice</button>
     </div>
 
@@ -74,12 +91,17 @@
         <div id="navigation" style="margin-top: 20px;">
             <button class="btn btn-back" id="back-btn" onclick="changeQuestion(-1)">Back</button>
             <button class="btn btn-primary" id="next-btn" onclick="changeQuestion(1)">Next</button>
+<<<<<<< Updated upstream
             <button class="btn btn-reveal" onclick="revealAnswer()">Reveal Answer</button>
+=======
+            <button class="btn btn-reveal" onclick="revealAnswer()">Reveal</button>
+>>>>>>> Stashed changes
             <button class="btn btn-primary hidden" id="submit-btn" onclick="showScore()">Submit Test</button>
         </div>
         <p id="reveal-area" class="hidden" style="margin-top:15px; padding:10px; background:#f9ebea; border-left:5px solid #c0392b;"></p>
     </div>
 
+<<<<<<< Updated upstream
     <!-- Step 3: Score Screen (Data Analysis) -->
     <div id="score-screen" class="hidden">
         <h2>Practice Results</h2>
@@ -96,6 +118,13 @@
             <tbody id="results-table-body"></tbody>
         </table>
         <button class="btn btn-primary" style="margin-top:20px;" onclick="location.reload()">Start New Session</button>
+=======
+    <!-- Step 3: Score Screen (The Conclusion) -->
+    <div id="score-screen" class="hidden">
+        <h2>Practice Complete!</h2>
+        <p class="score-display" id="final-score"></p>
+        <button class="btn btn-primary" onclick="location.reload()">Try Another Unit</button>
+>>>>>>> Stashed changes
     </div>
 </div>
 
@@ -104,23 +133,32 @@
     let currentIndex = 0;
     let userAnswers = {};
 
+<<<<<<< Updated upstream
     function toggleCustomInput() {
         const lengthPref = document.getElementById('length-select').value;
         document.getElementById('custom-count-container').classList.toggle('hidden', lengthPref !== 'custom');
     }
 
+=======
+>>>>>>> Stashed changes
     async function loadQuiz() {
         let fileName = document.getElementById('unit-select').value;
         const lengthPref = document.getElementById('length-select').value;
         
+<<<<<<< Updated upstream
         // Load the _50.json for both 'long' and 'custom' modes
         if (lengthPref === 'long' || lengthPref === 'custom') {
+=======
+        // If 'long' is selected, append '_50' to the filename (before the .json)
+        if (lengthPref === 'long') {
+>>>>>>> Stashed changes
             fileName = fileName.replace('.json', '_50.json');
         }
 
         const baseUrl = "https://raw.githubusercontent.com/stokkangri/middle_school_quiz/main/biology/sixth/";
         
         try {
+<<<<<<< Updated upstream
             const response = await fetch(baseUrl + fileName);
             if (!response.ok) throw new Error("File not found. Please ensure the JSON is uploaded.");
             const data = await response.json();
@@ -146,19 +184,46 @@
             } else {
                 currentQuestions = allAvailableQuestions;
             }
+=======
+            // "Transcription": Fetching the raw genetic information (JSON)
+            const response = await fetch(baseUrl + fileName);
+            if (!response.ok) throw new Error("Could not find the requested file.");
+            
+            const data = await response.json();
+            const unitKey = Object.keys(data);
+            
+            currentQuestions = [];
+            data[unitKey].forEach(section => {
+                section.questions.forEach(q => {
+                    q.subject = section.subject;
+                    currentQuestions.push(q);
+                });
+            });
+
+            // Randomize the "gene pool" for this attempt
+            currentQuestions.sort(() => Math.random() - 0.5);
+>>>>>>> Stashed changes
 
             document.getElementById('setup').classList.add('hidden');
             document.getElementById('quiz-area').classList.remove('hidden');
             displayQuestion();
         } catch (e) {
+<<<<<<< Updated upstream
             alert("Error: " + e.message);
+=======
+            alert("Error: " + e.message + "\nEnsure you have uploaded the _50.json version to your GitHub.");
+>>>>>>> Stashed changes
         }
     }
 
     function displayQuestion() {
         const q = currentQuestions[currentIndex];
         document.getElementById('subject-header').innerText = q.subject;
+<<<<<<< Updated upstream
         document.getElementById('question-text').innerText = `Question ${currentIndex + 1}: ${q.question}`;
+=======
+        document.getElementById('question-text').innerText = `Q${currentIndex + 1}: ${q.question}`;
+>>>>>>> Stashed changes
         document.getElementById('reveal-area').classList.add('hidden');
         
         const optionsDiv = document.getElementById('answer-options');
@@ -174,7 +239,11 @@
             });
         } else {
             const val = userAnswers[currentIndex] || "";
+<<<<<<< Updated upstream
             optionsDiv.innerHTML = `<input type="text" style="width:95%; padding:10px;" placeholder="Type answer..." value="${val}" oninput="saveAnswer(this.value)">`;
+=======
+            optionsDiv.innerHTML = `<input type="text" id="sa-input" style="width:95%; padding:10px;" placeholder="Type your answer here..." value="${val}" oninput="saveAnswer(this.value)">`;
+>>>>>>> Stashed changes
         }
 
         document.getElementById('back-btn').disabled = (currentIndex === 0);
@@ -183,6 +252,7 @@
         document.getElementById('submit-btn').classList.toggle('hidden', !isLast);
     }
 
+<<<<<<< Updated upstream
     function saveAnswer(val) { userAnswers[currentIndex] = val; }
     function changeQuestion(step) { currentIndex += step; displayQuestion(); }
     function revealAnswer() {
@@ -208,11 +278,39 @@
                     <td>${uAns}</td>
                     <td>${q.answer}</td>
                 </tr>`;
+=======
+    function saveAnswer(val) {
+        userAnswers[currentIndex] = val;
+    }
+
+    function changeQuestion(step) {
+        currentIndex += step;
+        displayQuestion();
+    }
+
+    function revealAnswer() {
+        const q = currentQuestions[currentIndex];
+        const area = document.getElementById('reveal-area');
+        area.innerHTML = `<strong>Correct Answer:</strong> ${q.answer}`;
+        area.classList.remove('hidden');
+    }
+
+    function showScore() {
+        let score = 0;
+        currentQuestions.forEach((q, i) => {
+            if (userAnswers[i] && userAnswers[i].toLowerCase().trim() === q.answer.toLowerCase().trim()) {
+                score++;
+            }
+>>>>>>> Stashed changes
         });
 
         document.getElementById('quiz-area').classList.add('hidden');
         document.getElementById('score-screen').classList.remove('hidden');
+<<<<<<< Updated upstream
         document.getElementById('final-score').innerText = `Overall Fitness: ${score} / ${currentQuestions.length}`;
+=======
+        document.getElementById('final-score').innerText = `Your Score: ${score} / ${currentQuestions.length}`;
+>>>>>>> Stashed changes
     }
 </script>
 </body>
