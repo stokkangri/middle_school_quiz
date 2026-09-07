@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steer Straight — FTC PD Control Lab</title>
+  <meta name="description" content="Learn why no control &lt; P &lt; PD for FTC driving, with interactive path + error graphs. Optional note on PID drawbacks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lexend:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Steer Straight</a>
+    <nav class="nav">
+      <a href="#ladder">Ladder</a>
+      <a href="#lab">Lab</a>
+      <a href="#p-only">P only</a>
+      <a href="#pd">Add D</a>
+      <a href="#code">Code</a>
+      <a href="#integral">Why not I?</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="brand-mark">Steer Straight · FTC Drive Lab</p>
+        <h1>Teach your robot to fix its own drift.</h1>
+        <p class="lede">
+          Race four controllers to the same destination — on a diagonal path —
+          and watch error graphs prove the ladder: none &lt; P &lt; PD.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#lab">Try the live lab</a>
+          <a class="btn ghost" href="#ladder">See the ladder</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <canvas id="hero-canvas" width="720" height="420"></canvas>
+        <p class="hero-caption">Same start → same goal · gray = none · blue = P · orange = PD</p>
+      </div>
+    </section>
+
+    <section class="section idea">
+      <h2>The big idea</h2>
+      <p>
+        Pick any start and destination — not only “straight up the field.”
+        An IMU tells you heading <strong>error</strong> (how many degrees you face the wrong way).
+        Controllers turn that error into steering. A constant “push” (carpet, weak motor)
+        makes the differences easy to see.
+      </p>
+      <div class="formula-strip" role="presentation">
+        <span>error = desiredHeading − measuredYaw</span>
+        <span class="sep">→</span>
+        <span>steer = Kp·e + Kd·ė (+ Ki·∫e for PID)</span>
+      </div>
+    </section>
+
+    <!-- LADDER -->
+    <section class="section" id="ladder">
+      <div class="section-head">
+        <h2>The control ladder</h2>
+        <p>Simple ranking for first-year FTC drive / heading hold:</p>
+      </div>
+      <ol class="ladder">
+        <li>
+          <strong class="tag none">None</strong>
+          Open-loop: motors get a fixed command. Drift and side-push send you past the goal.
+        </li>
+        <li>
+          <strong class="tag p">P</strong>
+          Steers harder when more off-heading. Reaches the corridor but often <em>wiggles</em> (overshoot).
+        </li>
+        <li>
+          <strong class="tag pd">PD</strong>
+          Adds damping from how fast error is changing. Same push, smoother path, smaller error spikes.
+        </li>
+        <li>
+          <strong class="tag pid">PID</strong>
+          Can cancel a stubborn leftover bias — but on short FTC autos it often <em>winds up</em> and overshoots. Optional later.
+        </li>
+      </ol>
+      <p class="ladder-sum">
+        <strong>Remember:</strong> no control &lt; P &lt; PD for most teleop/auto line drives.
+        PID is not automatically “best” — it has tradeoffs (see below).
+      </p>
+    </section>
+
+    <!-- LAB -->
+    <section class="section lab" id="lab">
+      <div class="section-head">
+        <h2>Live lab · path + graphs</h2>
+        <p>
+          Robots share one start (S) and goal (G). A <em>constant side push</em> exaggerates drift.
+          Compare paths, then read the error graphs under the field.
+        </p>
+      </div>
+
+      <div class="lab-layout">
+        <div class="lab-stage">
+          <canvas id="lab-canvas" width="900" height="420"></canvas>
+          <div class="lab-legend">
+            <span class="dot none"></span> None
+            <span class="dot p"></span> P
+            <span class="dot pd"></span> PD
+            <span class="dot pid"></span> PID
+            <span class="dot goal"></span> Ideal path S→G
+          </div>
+          <div class="graph-row">
+            <div class="graph-card">
+              <h3>Heading error vs time</h3>
+              <canvas id="err-canvas" width="900" height="180"></canvas>
+              <p class="graph-note">Closer to zero = facing the destination better.</p>
+            </div>
+            <div class="graph-card">
+              <h3>Distance to goal vs time</h3>
+              <canvas id="dist-canvas" width="900" height="180"></canvas>
+              <p class="graph-note">Which line reaches the bottom (goal) first and stays there?</p>
+            </div>
+          </div>
+          <p class="scoreline" id="scoreline">Run a race to see miss distance at the goal.</p>
+        </div>
+
+        <aside class="lab-controls">
+          <label class="ctrl">
+            <span>Show controllers</span>
+            <select id="mode">
+              <option value="all">All four</option>
+              <option value="ladder">None + P + PD</option>
+              <option value="p-pd">P vs PD</option>
+              <option value="pid-compare">PD vs PID</option>
+            </select>
+          </label>
+          <label class="ctrl">
+            <span>Path angle (diagonal field)</span>
+            <input id="path-angle" type="range" min="-50" max="50" value="28" />
+            <output id="path-angle-out">28°</output>
+          </label>
+          <label class="ctrl">
+            <span>Constant side push (exaggerated)</span>
+            <input id="bias" type="range" min="0" max="90" value="55" />
+            <output id="bias-out">55</output>
+          </label>
+          <label class="ctrl">
+            <span>Random skid noise</span>
+            <input id="skid" type="range" min="0" max="50" value="25" />
+            <output id="skid-out">25</output>
+          </label>
+          <label class="ctrl">
+            <span>Kp</span>
+            <input id="kp" type="range" min="0" max="4" step="0.05" value="1.6" />
+            <output id="kp-out">1.60</output>
+          </label>
+          <label class="ctrl">
+            <span>Kd</span>
+            <input id="kd" type="range" min="0" max="2.5" step="0.05" value="0.85" />
+            <output id="kd-out">0.85</output>
+          </label>
+          <label class="ctrl">
+            <span>Ki (PID only)</span>
+            <input id="ki" type="range" min="0" max="1.2" step="0.02" value="0.35" />
+            <output id="ki-out">0.35</output>
+          </label>
+          <label class="ctrl">
+            <span>Drive speed</span>
+            <input id="speed" type="range" min="50" max="160" value="100" />
+            <output id="speed-out">100</output>
+          </label>
+          <div class="ctrl-actions">
+            <button type="button" class="btn primary" id="reset-btn">Restart race</button>
+            <button type="button" class="btn ghost" id="pause-btn">Pause</button>
+          </div>
+          <p class="hint" id="lab-hint">
+            Crank side push high. Gray wanders off. Blue corrects but wiggles. Orange settles. Magenta may overshoot after windup.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section split" id="p-only">
+      <div>
+        <h2>Proportional only</h2>
+        <p><strong>P</strong> means: “the farther off I am, the harder I steer back.”</p>
+        <ul class="plain-list">
+          <li>Beats <em>none</em> — you actually aim at the goal</li>
+          <li>Still misses how <em>fast</em> error is changing</li>
+          <li>Often overshoots → snake / wiggle on the path graph</li>
+        </ul>
+        <p class="callout warn">
+          On the heading-error graph, P usually swings past zero and back.
+          That oscillation is what D is for.
+        </p>
+      </div>
+      <pre class="code" tabindex="0"><code># Python-style (P only) — any direction to goal
+desired = angle_to(goal)      # not always 0°!
+error = wrap(desired - yaw)
+steer = Kp * error
+drive(speed - steer, speed + steer)</code></pre>
+    </section>
+
+    <section class="section split reverse" id="pd">
+      <div>
+        <h2>Add differential (D)</h2>
+        <p>
+          <strong>D</strong> watches <em>change in error</em>:
+          “If I’m slamming toward the line, ease off.”
+        </p>
+        <ul class="plain-list">
+          <li>Same side push as P — smaller wiggles</li>
+          <li>Error graph hugs zero sooner</li>
+          <li>Usually best simple choice for FTC line drives</li>
+        </ul>
+        <p class="callout ok">
+          Ladder check: PD’s path stays nearer the dashed S→G line than P or none.
+        </p>
+      </div>
+      <pre class="code" tabindex="0"><code># Python-style PD
+error = wrap(desired - yaw)
+d_error = error - prev_error
+steer = Kp * error + Kd * d_error
+prev_error = error
+drive(speed - steer, speed + steer)
+# sleep(0.02)  # steady loop time matters for D</code></pre>
+    </section>
+
+    <section class="section" id="code">
+      <div class="section-head">
+        <h2>How it looks in FTC</h2>
+        <p>Blocks sketch · OnBot Java · Python-style text — same math.</p>
+      </div>
+      <div class="code-tabs" role="tablist">
+        <button class="tab active" data-tab="blocks" role="tab" aria-selected="true">Blocks (sketch)</button>
+        <button class="tab" data-tab="java" role="tab" aria-selected="false">OnBot Java</button>
+        <button class="tab" data-tab="python" role="tab" aria-selected="false">Python text</button>
+      </div>
+      <div class="tab-panels">
+        <div class="tab-panel active" id="panel-blocks" role="tabpanel">
+          <div class="blocks-board" aria-label="Block-style PD loop">
+            <div class="blk event">when opMode is active ▾</div>
+            <div class="blk nest">
+              <div class="blk set">set <span class="chip">desired</span> to <span class="chip">angle toward goal</span></div>
+              <div class="blk set">set <span class="chip">error</span> to <span class="chip">desired − yaw</span></div>
+              <div class="blk set">set <span class="chip">dError</span> to <span class="chip">error − prevError</span></div>
+              <div class="blk set">set <span class="chip">steer</span> to
+                <span class="chip">Kp × error</span> + <span class="chip">Kd × dError</span>
+              </div>
+              <div class="blk call">call <span class="chip">setMotorPowers</span>
+                left: <span class="chip">speed − steer</span>
+                right: <span class="chip">speed + steer</span>
+              </div>
+              <div class="blk set">set <span class="chip">prevError</span> to <span class="chip">error</span></div>
+            </div>
+          </div>
+          <p class="fineprint">Teaching sketch — real FTC Blocks use REV IMU / motor block names.</p>
+        </div>
+        <div class="tab-panel" id="panel-java" role="tabpanel" hidden>
+          <pre class="code" tabindex="0"><code>// OnBot Java — PD toward a field point (any heading)
+double Kp = 1.6, Kd = 0.85;
+double prevError = 0;
+
+while (opModeIsActive() && !atGoal()) {
+    double desired = angleToGoal(pose, goal); // degrees
+    double yaw = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.DEGREES);
+    double error = AngleUnit.normalizeDegrees(desired - yaw);
+    double dError = error - prevError;
+    double steer = Kp * error + Kd * dError;
+    prevError = error;
+    left.setPower(Range.clip(speed - steer / 100.0, -1, 1));
+    right.setPower(Range.clip(speed + steer / 100.0, -1, 1));
+    sleep(20);
+}</code></pre>
+        </div>
+        <div class="tab-panel" id="panel-python" role="tabpanel" hidden>
+          <pre class="code" tabindex="0"><code>desired = angle_to(goal)   # works on diagonals too
+error = wrap(desired - get_yaw())
+d_error = error - prev_error
+steer = Kp * error + Kd * d_error
+prev_error = error
+drive(speed - steer, speed + steer)</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section integral" id="integral">
+      <h2>PID on the ladder — why “more letters” ≠ always better</h2>
+      <p>
+        In the lab, turn on <strong>PD vs PID</strong>. With a big constant push, PID may finally cancel bias —
+        but watch the error graph for a late swing: that is <em>integral windup</em>.
+      </p>
+      <details class="fold" open>
+        <summary>Disadvantages of I for many FTC autos</summary>
+        <ul class="plain-list">
+          <li><strong>Windup</strong> — error piles up while you cannot yet correct; then the robot overshoots hard.</li>
+          <li><strong>Short moves</strong> — I needs time; a 2-second segment may end before I helps.</li>
+          <li><strong>Extra tuning</strong> — Ki fights Kp/Kd; first-year teams get lost.</li>
+          <li><strong>Reset rules</strong> — must clear the integral when the target changes or you stop.</li>
+        </ul>
+      </details>
+      <details class="fold">
+        <summary>When I can still be useful</summary>
+        <p>
+          Long hold against a steady bias (teleop heading lock on a tilted field, weak motor).
+          Even then: clamp the integral and reset often.
+        </p>
+      </details>
+      <pre class="code dim" tabindex="0"><code>integral += error * dt
+integral = clamp(integral, -maxI, maxI)   # required!
+steer = Kp*error + Ki*integral + Kd*d_error</code></pre>
+    </section>
+
+    <section class="section practice">
+      <h2>Class checklist</h2>
+      <ol class="steps">
+        <li>Set path angle ≠ 0 so S→G is diagonal. Restart race.</li>
+        <li>Mode <strong>None + P + PD</strong>, side push ~40. Compare who hits G.</li>
+        <li>Read <em>heading error</em> graph: none stays wrong; P oscillates; PD settles.</li>
+        <li>Mode <strong>PD vs PID</strong>, raise Ki — look for late overshoot (windup).</li>
+        <li>Say the ladder out loud: <strong>none &lt; P &lt; PD</strong>; PID is optional with risks.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Steer Straight — FTC learning demo. Deploy this folder to GitHub Pages or Netlify.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
