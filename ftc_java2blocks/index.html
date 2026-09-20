@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java → Blocks · FTC round-trip helper</title>
+  <meta name="description" content="After small Java tweaks to Blocks-style OpModes, convert back to Blocks. Flags edits that break round-trip." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lexend:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <a href="#">Java → Blocks</a>
+      <span class="badge">round-trip helper</span>
+    </div>
+    <p class="tagline">Build in Blocks, make a small Java tweak, convert back — and see which edits still map to blocks.</p>
+    <ol class="workflow">
+      <li><span>1</span> Start in Blocks</li>
+      <li><span>2</span> Small Java edit</li>
+      <li><span>3</span> Convert here</li>
+      <li><span>4</span> Re-open .blk</li>
+    </ol>
+  </header>
+
+  <main class="layout">
+    <section class="panel java-panel">
+      <div class="panel-head">
+        <h1>Java (after a small edit)</h1>
+        <div class="actions">
+          <button type="button" class="btn ghost" id="load-sample">Load sample tweak</button>
+          <button type="button" class="btn ghost" id="load-all-motors">Load all-motors demo</button>
+          <button type="button" class="btn primary" id="convert-btn">Convert back</button>
+        </div>
+      </div>
+      <textarea id="java-input" spellcheck="false" aria-label="Java source"></textarea>
+      <div class="config-row">
+        <label for="config-input">Robot config XML (device names)</label>
+        <input type="file" id="config-input" accept=".xml,text/xml,application/xml" />
+        <span id="config-label" class="config-label">Using names from hardwareMap.get — load test_config.xml for validation</span>
+      </div>
+      <details class="limits" open>
+        <summary>Edits that usually round-trip</summary>
+        <ul>
+          <li>Numbers, signs, and simple math (<code>* 0.5</code>, <code>Range.clip</code>, <code>Math.abs</code>, stick axes)</li>
+          <li>Extra <code>setPower</code> / <code>sleep</code> / <code>telemetry</code> / <code>setZeroPowerBehavior</code> lines</li>
+          <li><code>if</code> / <code>else if</code> / <code>while</code> using gamepad or <code>opModeIsActive</code></li>
+          <li>Locals: <code>double</code> / <code>int</code> / <code>boolean</code> / <code>String</code> assignments</li>
+        </ul>
+        <p class="limits-note">Avoid new classes, vision, threads, Road Runner, <code>switch</code>, lambdas — those stay in Java (or a myBlock).</p>
+      </details>
+    </section>
+
+    <section class="panel out-panel">
+      <div class="panel-head">
+        <h2>Blocks preview</h2>
+        <div class="actions">
+          <button type="button" class="btn ghost" id="download-blk" disabled>Download .blk</button>
+          <button type="button" class="btn ghost" id="copy-xml" disabled>Copy XML</button>
+        </div>
+      </div>
+      <div id="blocks-preview" class="blocks-preview" aria-live="polite">
+        <p class="placeholder">Click <strong>Convert back</strong> to regenerate blocks from your Java tweak.</p>
+      </div>
+    </section>
+
+    <section class="panel diag-panel">
+      <div class="panel-head">
+        <h2>Round-trip report</h2>
+        <span id="status-pill" class="status idle">Idle</span>
+      </div>
+      <div id="report" class="report">
+        <p class="placeholder">Edits that cannot map to Blocks will show here, with rewrite tips.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>
+      Educational tool — <strong>Download .blk</strong> now uses real FTC Blocks types (SDK-compatible).
+      Activate a config whose device names match your Java. Always smoke-test on the RC after upload.
+    </p>
+  </footer>
+
+  <script src="parser.js"></script>
+  <script src="convert.js"></script>
+  <script src="config_xml.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
