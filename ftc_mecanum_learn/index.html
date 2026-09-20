@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drive · Mecanum vs 6-wheel</title>
+  <meta name="description" content="Compare mecanum strafe with a goBILDA-style 6-wheel tank chassis — and see how to reach the same spot without strafe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">FTC · for kids</p>
+    <h1 id="page-title">Mecanum wheels</h1>
+    <p class="lede" id="page-lede">
+      Hold keys like a gamepad stick. Watch the wheels — and see why this robot can slide sideways.
+    </p>
+  </header>
+
+  <main class="stage">
+    <section class="sim" aria-label="Robot animation">
+      <div class="field">
+        <div class="goal" id="goal" hidden>
+          <span>GOAL</span>
+        </div>
+        <div class="robot" id="robot" data-chassis="mecanum" data-pattern="x">
+          <div class="body">
+            <span class="nose" aria-hidden="true">▲</span>
+            <span class="label-front">FRONT</span>
+          </div>
+
+          <!-- Mecanum: 4 wheels with angled rollers -->
+          <div class="wheel-set" id="set-mecanum">
+            <svg class="pattern-overlay" viewBox="0 0 100 100" aria-hidden="true">
+              <g class="po-x">
+                <line x1="18" y1="22" x2="82" y2="78" />
+                <line x1="82" y1="22" x2="18" y2="78" />
+                <text x="50" y="52" text-anchor="middle">X</text>
+              </g>
+              <g class="po-o">
+                <polygon points="50,16 84,50 50,84 16,50" />
+                <text x="50" y="53" text-anchor="middle">O</text>
+              </g>
+              <g class="po-flip">
+                <line x1="18" y1="22" x2="82" y2="78" />
+                <line x1="82" y1="22" x2="18" y2="78" class="po-dim" />
+                <circle cx="82" cy="22" r="9" class="po-bad" />
+                <text x="50" y="52" text-anchor="middle">FR!</text>
+              </g>
+            </svg>
+
+            <div class="wheel fl" data-wheel="fl">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-fl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-fl)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim"><div class="spokes"></div></div>
+              <svg class="roller-mark" viewBox="0 0 40 40" aria-hidden="true">
+                <line x1="3" y1="8" x2="37" y2="8" />
+                <line x1="3" y1="14" x2="37" y2="14" />
+                <line x1="3" y1="20" x2="37" y2="20" class="roller-dir" />
+                <line x1="3" y1="26" x2="37" y2="26" />
+                <line x1="3" y1="32" x2="37" y2="32" />
+              </svg>
+              <span class="wtag">FL</span>
+              <span class="spin-arrow" id="arrow-fl"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-fl"></i></div>
+            </div>
+            <div class="wheel fr" data-wheel="fr">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-fr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-fr)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim"><div class="spokes"></div></div>
+              <svg class="roller-mark" viewBox="0 0 40 40" aria-hidden="true">
+                <line x1="3" y1="8" x2="37" y2="8" />
+                <line x1="3" y1="14" x2="37" y2="14" />
+                <line x1="3" y1="20" x2="37" y2="20" class="roller-dir" />
+                <line x1="3" y1="26" x2="37" y2="26" />
+                <line x1="3" y1="32" x2="37" y2="32" />
+              </svg>
+              <span class="wtag">FR</span>
+              <span class="spin-arrow" id="arrow-fr"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-fr"></i></div>
+            </div>
+            <div class="wheel bl" data-wheel="bl">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-bl)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim"><div class="spokes"></div></div>
+              <svg class="roller-mark" viewBox="0 0 40 40" aria-hidden="true">
+                <line x1="3" y1="8" x2="37" y2="8" />
+                <line x1="3" y1="14" x2="37" y2="14" />
+                <line x1="3" y1="20" x2="37" y2="20" class="roller-dir" />
+                <line x1="3" y1="26" x2="37" y2="26" />
+                <line x1="3" y1="32" x2="37" y2="32" />
+              </svg>
+              <span class="wtag">BL</span>
+              <span class="spin-arrow" id="arrow-bl"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-bl"></i></div>
+            </div>
+            <div class="wheel br" data-wheel="br">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-br" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-br)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim"><div class="spokes"></div></div>
+              <svg class="roller-mark" viewBox="0 0 40 40" aria-hidden="true">
+                <line x1="3" y1="8" x2="37" y2="8" />
+                <line x1="3" y1="14" x2="37" y2="14" />
+                <line x1="3" y1="20" x2="37" y2="20" class="roller-dir" />
+                <line x1="3" y1="26" x2="37" y2="26" />
+                <line x1="3" y1="32" x2="37" y2="32" />
+              </svg>
+              <span class="wtag">BR</span>
+              <span class="spin-arrow" id="arrow-br"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-br"></i></div>
+            </div>
+          </div>
+
+          <!-- goBILDA-style 6-wheel tank: 3 per side, no mecanum rollers -->
+          <div class="wheel-set" id="set-tank" hidden>
+            <div class="wheel tank fl" data-wheel="t-fl">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tfl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tfl)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">FL</span>
+              <span class="spin-arrow" id="arrow-t-fl"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-fl"></i></div>
+            </div>
+            <div class="wheel tank ml" data-wheel="t-ml">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tml" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tml)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">ML</span>
+              <span class="spin-arrow" id="arrow-t-ml"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-ml"></i></div>
+            </div>
+            <div class="wheel tank bl" data-wheel="t-bl">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tbl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tbl)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">BL</span>
+              <span class="spin-arrow" id="arrow-t-bl"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-bl"></i></div>
+            </div>
+            <div class="wheel tank fr" data-wheel="t-fr">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tfr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tfr)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">FR</span>
+              <span class="spin-arrow" id="arrow-t-fr"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-fr"></i></div>
+            </div>
+            <div class="wheel tank mr" data-wheel="t-mr">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tmr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tmr)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">MR</span>
+              <span class="spin-arrow" id="arrow-t-mr"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-mr"></i></div>
+            </div>
+            <div class="wheel tank br" data-wheel="t-br">
+              <svg class="arc-spin" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <marker id="ah-tbr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M 0 0 L 7 3.5 L 0 7 Z" class="arc-head" />
+                  </marker>
+                </defs>
+                <path class="arc-path" marker-end="url(#ah-tbr)" d="M 72 18 A 36 36 0 1 1 28 18" fill="none" />
+              </svg>
+              <div class="rim traction"><div class="spokes"></div></div>
+              <span class="wtag">BR</span>
+              <span class="spin-arrow" id="arrow-t-br"></span>
+              <div class="speed-bar" aria-hidden="true"><i id="bar-t-br"></i></div>
+            </div>
+          </div>
+
+          <div class="bot-vector" id="bot-vector" hidden>
+            <div class="bot-arrow"></div>
+            <span id="bot-vector-label">move</span>
+          </div>
+        </div>
+        <p class="field-hint" id="mode-hint">Swap chassis above the keys. Press keys to drive — arcs show spin; v± shows wheel power.</p>
+      </div>
+
+      <aside class="hud">
+        <h2>Chassis</h2>
+        <div class="chassis-toggle" role="group" aria-label="Chassis type">
+          <button type="button" data-chassis="mecanum" class="active">Mecanum (4)</button>
+          <button type="button" data-chassis="tank">goBILDA 6-wheel</button>
+        </div>
+        <p class="chassis-note" id="chassis-note">
+          Angled rollers let you <strong>strafe</strong> (slide sideways).
+        </p>
+
+        <div class="pattern-panel mec-only" id="pattern-panel">
+          <h2>Roller pattern</h2>
+          <div class="pattern-toggle" role="group" aria-label="Mecanum roller pattern">
+            <button type="button" data-pattern="x" class="active">X (correct)</button>
+            <button type="button" data-pattern="o">O (wrong)</button>
+            <button type="button" data-pattern="flip-fr">FR flipped</button>
+          </div>
+          <p class="pattern-note" id="pattern-note">
+            Yellow bars on the wheels show roller angle. <strong>X</strong> = side forces add → strafe works.
+          </p>
+        </div>
+
+        <h2>Keyboard = gamepad</h2>
+        <ul class="keymap">
+          <li><kbd>W</kbd> / <kbd>↑</kbd> drive forward <span class="pad">= left stick up</span></li>
+          <li><kbd>S</kbd> / <kbd>↓</kbd> drive back <span class="pad">= left stick down</span></li>
+          <li id="strafe-key"><kbd>A</kbd> / <kbd>←</kbd> strafe left <span class="pad">= left stick left</span></li>
+          <li id="strafe-key-r"><kbd>D</kbd> / <kbd>→</kbd> strafe right <span class="pad">= left stick right</span></li>
+          <li><kbd>Q</kbd> / <kbd>J</kbd> turn left <span class="pad">= right stick left</span></li>
+          <li><kbd>E</kbd> / <kbd>L</kbd> turn right <span class="pad">= right stick right</span></li>
+        </ul>
+        <p class="hold-note" id="hold-note">Hold keys for continuous motion. Combine them (e.g. <kbd>W</kbd>+<kbd>D</kbd>).</p>
+
+        <div class="readouts">
+          <div><span>drive</span><strong id="v-drive">0.00</strong></div>
+          <div id="readout-strafe"><span>strafe</span><strong id="v-strafe">0.00</strong></div>
+          <div><span>turn</span><strong id="v-turn">0.00</strong></div>
+        </div>
+
+        <div class="wheel-powers" id="powers-mecanum" aria-live="polite">
+          <div>FL <strong id="p-fl">0.00</strong></div>
+          <div>FR <strong id="p-fr">0.00</strong></div>
+          <div>BL <strong id="p-bl">0.00</strong></div>
+          <div>BR <strong id="p-br">0.00</strong></div>
+        </div>
+        <div class="wheel-powers tank-powers" id="powers-tank" aria-live="polite" hidden>
+          <div class="span2">LEFT <strong id="p-left">0.00</strong></div>
+          <div class="span2">RIGHT <strong id="p-right">0.00</strong></div>
+          <div>FL <strong id="p-t-fl">0.00</strong></div>
+          <div>FR <strong id="p-t-fr">0.00</strong></div>
+          <div>ML <strong id="p-t-ml">0.00</strong></div>
+          <div>MR <strong id="p-t-mr">0.00</strong></div>
+          <div>BL <strong id="p-t-bl">0.00</strong></div>
+          <div>BR <strong id="p-t-br">0.00</strong></div>
+        </div>
+
+        <div class="demo-btns">
+          <button type="button" data-demo="drive">Demo drive</button>
+          <button type="button" data-demo="strafe" id="btn-demo-strafe">Demo strafe</button>
+          <button type="button" data-demo="turn">Demo turn</button>
+          <button type="button" data-demo="curve">Demo curve ≠ speeds</button>
+          <button type="button" data-demo="sideways" class="accent">Demo: sideways goal</button>
+          <button type="button" data-demo="stop" class="ghost">Stop / reset</button>
+        </div>
+        <p class="speed-note" id="speed-note">
+          <strong>Demo: sideways goal</strong> places a target to the side. Mecanum slides there; 6-wheel must turn → drive → turn.
+        </p>
+      </aside>
+    </section>
+
+    <section class="lessons">
+      <article class="lesson" id="lesson-drive">
+        <h2>1 · Drive (forward / back)</h2>
+        <p class="mec-only">All four wheels spin the <em>same way</em> on each side. Front and back on one side match — the robot rolls forward or back.</p>
+        <p class="tank-only" hidden>All <em>six</em> wheels: left three share one power, right three share the other. Same power both sides → roll forward or back (tank / goBILDA starter style).</p>
+        <p class="formula mec-only"><code>FL = drive</code> · <code>BL = drive</code> · <code>FR = drive</code> · <code>BR = drive</code></p>
+        <p class="formula tank-only" hidden><code>LEFT = drive</code> · <code>RIGHT = drive</code></p>
+      </article>
+
+      <article class="lesson" id="lesson-turn">
+        <h2>2 · Turn (spin)</h2>
+        <p>Left side goes one way, right side the other — the robot rotates in place.</p>
+        <p class="formula mec-only"><code>FL = +turn</code> · <code>BL = +turn</code> · <code>FR = −turn</code> · <code>BR = −turn</code></p>
+        <p class="formula tank-only" hidden><code>LEFT = +turn</code> · <code>RIGHT = −turn</code></p>
+      </article>
+
+      <article class="lesson highlight" id="lesson-strafe">
+        <h2>3 · Strafe (slide sideways)</h2>
+        <div class="mec-only">
+          <p>
+            On a normal robot, sideways is impossible. Mecanum rollers are angled (~45°).
+            For strafe, <strong>front and back on the same side spin opposite ways</strong>.
+          </p>
+          <ul>
+            <li>Forward/back forces from those wheels <strong>cancel</strong>.</li>
+            <li>The angled rollers add up sideways — the robot <strong>slides left or right</strong>.</li>
+          </ul>
+          <p class="formula"><code>FL = +strafe</code> · <code>BL = −strafe</code> · <code>FR = −strafe</code> · <code>BR = +strafe</code></p>
+          <p class="try">Try holding <kbd>A</kbd> or <kbd>D</kbd> and watch FL vs BL go opposite.</p>
+        </div>
+        <div class="tank-only" hidden>
+          <p>
+            <strong>Strafe does not work</strong> on the 6-wheel goBILDA-style chassis — plain wheels have no angled rollers.
+            Pressing <kbd>A</kbd> / <kbd>D</kbd> does nothing to the robot’s position.
+          </p>
+          <p class="try">
+            To reach a spot beside you: <strong>turn 90°</strong> → <strong>drive</strong> → <strong>turn back</strong>.
+            Use <strong>Demo: sideways goal</strong> to watch that path.
+          </p>
+        </div>
+      </article>
+
+      <article class="lesson" id="lesson-mix">
+        <h2>4 · TeleOp mix</h2>
+        <pre class="mix mec-only">FL = drive + strafe + turn
+BL = drive − strafe + turn
+FR = drive − strafe − turn
+BR = drive + strafe − turn</pre>
+        <pre class="mix tank-only" hidden>LEFT  = drive + turn
+RIGHT = drive − turn
+(strafe is ignored)</pre>
+      </article>
+
+      <article class="lesson" id="lesson-speeds">
+        <h2>5 · Different absolute speeds</h2>
+        <p>
+          Yes — left and right can spin at different |power|.
+          <strong>Drive + turn</strong> (curve) is the clearest case — like a car taking a corner.
+        </p>
+        <p class="try">Press <kbd>W</kbd>+<kbd>E</kbd> or <strong>Demo curve ≠ speeds</strong>. Watch orange bars differ left vs right.</p>
+      </article>
+
+      <article class="lesson" id="lesson-nstrafe">
+        <h2>6 · Same place, no strafe</h2>
+        <p>
+          Goal is beside the robot. <strong>Mecanum:</strong> one strafe. <strong>6-wheel:</strong> turn to face the goal → drive forward → turn to face front again.
+          Same ending position; longer path without strafe.
+        </p>
+        <p class="try">Switch chassis and press <strong>Demo: sideways goal</strong> on each.</p>
+      </article>
+
+      <article class="lesson mec-only" id="lesson-pattern">
+        <h2>7 · Roller pattern (X · O · flipped)</h2>
+        <p>
+          Code can be perfect and strafe still fail if rollers are mounted wrong.
+          Use <strong>Roller pattern</strong> above the keys, then hold <kbd>A</kbd>/<kbd>D</kbd>:
+        </p>
+        <ul>
+          <li><strong>X</strong> — correct; side forces add → clean strafe.</li>
+          <li><strong>O</strong> — common mistake; side forces cancel → almost no slide.</li>
+          <li><strong>FR flipped</strong> — one wheel wrong → weak slide + unwanted spin/crab.</li>
+        </ul>
+        <p class="try">Watch the faint X/O on the chassis and the striped rollers on each wheel, then try Demo strafe.</p>
+      </article>
+    </section>
+
+    <section class="vector-gallery" id="vector-gallery" aria-label="Velocity vector snapshots">
+      <div class="vg-head">
+        <div>
+          <h2>Velocity vectors → final motion</h2>
+          <p class="vg-lede">
+            Each snapshot shows wheel velocity arrows. They add (and sometimes cancel).
+            The big orange arrow is the <strong>resultant</strong> — how the robot moves.
+          </p>
+        </div>
+        <div class="vg-controls">
+          <button type="button" id="vg-prev" aria-label="Previous snapshot">‹</button>
+          <button type="button" id="vg-pause" aria-pressed="false" aria-label="Pause or play">Pause</button>
+          <button type="button" id="vg-next" aria-label="Next snapshot">›</button>
+        </div>
+      </div>
+      <div class="vg-stage">
+        <div class="vg-slide-wrap" id="vg-slide-wrap"></div>
+        <div class="vg-dots" id="vg-dots" role="tablist" aria-label="Snapshots"></div>
+      </div>
+      <div class="vg-meta">
+        <h3 id="vg-title">Drive forward</h3>
+        <p id="vg-caption"></p>
+        <ul id="vg-bullets"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Swap Mecanum ↔ 6-wheel · Vector snapshots at bottom · Sideways goal demo. Open <code>index.html</code> or host this folder statically.</p>
+  </footer>
+
+  <script src="vectors.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
