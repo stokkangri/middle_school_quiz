@@ -1,0 +1,771 @@
+{
+  "schemaVersion": 1,
+  "event": "Botany B",
+  "season": "2027",
+  "note": "Original practice questions for Science Olympiad Division B Botany, aligned to the 2027 topic list. Graph numbers are practice patterns for coaching, not data from a published study. The official rules take precedence.",
+  "topics": [
+    { "id": "plant_cells", "label": "Plant cells" },
+    { "id": "roots", "label": "Roots" },
+    { "id": "stems", "label": "Stems" },
+    { "id": "leaves", "label": "Leaves" },
+    { "id": "spores", "label": "Spores" },
+    { "id": "flowers_seeds", "label": "Flowers, fruits, and seeds" },
+    { "id": "growth", "label": "Growth and differentiation" },
+    { "id": "transport", "label": "Transport and nutrition" },
+    { "id": "plant_groups", "label": "Plant groups" },
+    { "id": "history", "label": "History of botany" },
+    { "id": "genetics", "label": "Genetics and reproduction" },
+    { "id": "photosynthesis", "label": "Photosynthesis" },
+    { "id": "taxonomy", "label": "Taxonomy" },
+    { "id": "evolution", "label": "Paleobotany and evolution" },
+    { "id": "cycles", "label": "Energy and nutrient cycles" },
+    { "id": "plant_uses", "label": "How people and animals use plants" },
+    { "id": "competition", "label": "Competition" },
+    { "id": "gmos", "label": "GMOs" },
+    { "id": "food_products", "label": "Foods and plant products" },
+    { "id": "diseases", "label": "Plant diseases and deficiencies" }
+  ],
+  "questions": [
+    {
+      "id": "cells-chloroplast",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "plant_cells",
+      "question": "Which organelle captures light for photosynthesis?",
+      "options": ["Mitochondrion", "Chloroplast", "Nucleus", "Ribosome"],
+      "answer": "Chloroplast",
+      "explanation": "Chlorophyll inside the chloroplast absorbs light. Mitochondria release energy from food by cellular respiration. Plant cells have both."
+    },
+    {
+      "id": "cells-wall-outside",
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "plant_cells",
+      "question": "In a plant cell, the cell wall is outside the cell membrane.",
+      "answer": true,
+      "explanation": "The cell membrane is the living boundary of the cell. The cellulose cell wall sits outside it and supports the cell."
+    },
+    {
+      "id": "cells-plant-only",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "plant_cells",
+      "question": "Select ALL structures that plant cells can have and typical animal cells do not.",
+      "options": ["Cell wall", "Chloroplast", "Large central vacuole", "Cell membrane"],
+      "answer": ["Cell wall", "Chloroplast", "Large central vacuole"],
+      "explanation": "Both plant and animal cells have a cell membrane. Plant cells also have a cellulose cell wall, and green cells have chloroplasts. A large central vacuole stores water and helps keep the cell firm."
+    },
+    {
+      "id": "roots-label",
+      "type": "label",
+      "difficulty": "medium",
+      "topic": "roots",
+      "question": "Name each labeled part of the root tip.",
+      "diagram": "root_tip",
+      "labels": [
+        { "key": "A", "answer": "root cap", "accept": ["root cap", "cap"] },
+        { "key": "B", "answer": "apical meristem", "accept": ["apical meristem", "zone of cell division", "meristem"] },
+        { "key": "C", "answer": "zone of elongation", "accept": ["zone of elongation", "elongation zone", "elongation"] },
+        { "key": "D", "answer": "root hair", "accept": ["root hair", "root hairs"] }
+      ],
+      "wordBank": ["root cap", "apical meristem", "zone of elongation", "root hair", "cuticle", "anther"],
+      "explanation": "The root cap protects the tip as it pushes through soil. The apical meristem divides. Cells lengthen in the zone of elongation. Root hairs, farther up, add surface area for water and minerals."
+    },
+    {
+      "id": "roots-hairs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "roots",
+      "question": "Root hairs help a plant mostly by",
+      "options": ["making pollen", "adding surface area for taking in water and minerals", "opening and closing stomata", "producing wood"],
+      "answer": "adding surface area for taking in water and minerals",
+      "explanation": "Each root hair is a long extension of an epidermal cell. More surface area means more contact with water and minerals in the soil."
+    },
+    {
+      "id": "roots-casparian",
+      "type": "free_response",
+      "difficulty": "hard",
+      "topic": "roots",
+      "question": "Name the waterproof strip in the endodermis that forces water to cross a cell membrane before it enters the vascular tissue.",
+      "answer": "Casparian strip",
+      "accept": ["Casparian strip", "the Casparian strip", "Casparian strips"],
+      "explanation": "The Casparian strip is a waxy band in the cell walls of the endodermis. Water cannot sneak between those cells, so it must pass through a living cell. The plant can then control which minerals enter the xylem."
+    },
+    {
+      "id": "stems-monocot-bundles",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "stems",
+      "question": "How are vascular bundles usually arranged in a monocot stem?",
+      "options": ["In one ring near the outside", "Scattered through the stem", "Only in the bark", "Only in the flowers"],
+      "answer": "Scattered through the stem",
+      "explanation": "Corn is a clear example: its bundles are scattered. A dicot stem, such as a bean, usually has bundles in a ring. That ring is one reason many dicots can add wood."
+    },
+    {
+      "id": "stems-xylem-inside",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "stems",
+      "question": "In a young dicot stem, xylem is usually toward the inside of each vascular bundle and phloem toward the outside.",
+      "answer": true,
+      "explanation": "In a typical young dicot bundle, xylem faces the center of the stem and phloem faces the outside. Remember: xylem carries water, phloem carries sugars."
+    },
+    {
+      "id": "stems-apical",
+      "type": "free_response",
+      "difficulty": "medium",
+      "topic": "stems",
+      "question": "What meristem makes a stem or root grow longer?",
+      "answer": "apical meristem",
+      "accept": ["apical meristem", "the apical meristem"],
+      "explanation": "Apical meristems sit at shoot tips and root tips. Their cell divisions cause primary growth, which adds length. The vascular cambium causes thickening, not length."
+    },
+    {
+      "id": "leaves-label",
+      "type": "label",
+      "difficulty": "medium",
+      "topic": "leaves",
+      "question": "Name each labeled part of the leaf cross section.",
+      "diagram": "leaf",
+      "labels": [
+        { "key": "A", "answer": "cuticle", "accept": ["cuticle", "waxy cuticle"] },
+        { "key": "B", "answer": "palisade mesophyll", "accept": ["palisade mesophyll", "palisade", "palisade layer"] },
+        { "key": "C", "answer": "spongy mesophyll", "accept": ["spongy mesophyll", "spongy layer"] },
+        { "key": "D", "answer": "stoma", "accept": ["stoma", "stomata", "stomate", "guard cells"] },
+        { "key": "E", "answer": "vein", "accept": ["vein", "vascular bundle", "vascular tissue"] }
+      ],
+      "wordBank": ["cuticle", "palisade mesophyll", "spongy mesophyll", "stoma", "vein", "root cap", "anther"],
+      "explanation": "The waxy cuticle limits water loss. Palisade cells are packed with chloroplasts and do much of the photosynthesis. Spongy mesophyll has air spaces for gases. A stoma is a pore between guard cells. The vein holds xylem and phloem."
+    },
+    {
+      "id": "leaves-stomata",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "leaves",
+      "question": "What is the main job of stomata?",
+      "options": ["Carry water up from the roots inside xylem", "Let gases in and out of the leaf", "Make pollen", "Protect the root tip"],
+      "answer": "Let gases in and out of the leaf",
+      "explanation": "Stomata are pores, often on the underside of a leaf. Carbon dioxide enters, and oxygen and water vapor leave. Guard cells open and close each pore."
+    },
+    {
+      "id": "leaves-transpiration",
+      "type": "data_analysis",
+      "difficulty": "medium",
+      "topic": "leaves",
+      "stimulus": "The line shows a typical daily pattern of transpiration for a watered plant on a sunny day. The numbers are relative units for practice, not a published data set.",
+      "question": "At which time is transpiration highest?",
+      "chart": {
+        "type": "line",
+        "xLabel": "Time",
+        "yLabel": "Water loss (relative)",
+        "series": [
+          {
+            "name": "Transpiration",
+            "points": [
+              { "label": "6 AM", "value": 1 },
+              { "label": "9 AM", "value": 6 },
+              { "label": "12 PM", "value": 14 },
+              { "label": "3 PM", "value": 11 },
+              { "label": "6 PM", "value": 4 },
+              { "label": "9 PM", "value": 1 }
+            ]
+          }
+        ]
+      },
+      "options": ["6 AM", "9 AM", "12 PM", "9 PM"],
+      "answer": "12 PM",
+      "explanation": "On a typical sunny day the rate is low at dawn and at night, when stomata are mostly closed, and highest around midday. Clouds, dry air, and dry soil can change a real plant's curve."
+    },
+    {
+      "id": "spores-fern",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "spores",
+      "question": "Ferns spread using spores. Where are those spores made on many ferns?",
+      "options": ["Inside a fruit", "In sori on the fronds", "In a pine cone", "On root hairs"],
+      "answer": "In sori on the fronds",
+      "explanation": "A sorus is a cluster of sporangia, often a brown dot on the underside of a fern frond. Each sporangium releases spores. Ferns do not make seeds or fruits."
+    },
+    {
+      "id": "spores-moss-seeds",
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "spores",
+      "question": "Mosses make seeds inside cones.",
+      "answer": false,
+      "explanation": "Mosses reproduce with spores. They do not make seeds or cones. Cones are a gymnosperm structure, as in pines."
+    },
+    {
+      "id": "spores-which-groups",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "spores",
+      "question": "Select ALL that usually disperse by spores rather than seeds.",
+      "options": ["Moss", "Fern", "Pine tree", "Sunflower"],
+      "answer": ["Moss", "Fern"],
+      "explanation": "Mosses and ferns are seedless. A pine makes seeds in cones, and a sunflower makes seeds inside a fruit. A seed contains a multicellular embryo. A spore is usually a single reproductive cell."
+    },
+    {
+      "id": "flowers-label",
+      "type": "label",
+      "difficulty": "medium",
+      "topic": "flowers_seeds",
+      "question": "Name each labeled part of the flower. The thin stalk under the yellow anther is drawn, but it is not one of the letters.",
+      "diagram": "flower",
+      "labels": [
+        { "key": "A", "answer": "petal", "accept": ["petal", "petals"] },
+        { "key": "B", "answer": "sepal", "accept": ["sepal", "sepals"] },
+        { "key": "C", "answer": "anther", "accept": ["anther", "anthers"] },
+        { "key": "D", "answer": "stigma", "accept": ["stigma"] },
+        { "key": "E", "answer": "ovary", "accept": ["ovary"] }
+      ],
+      "wordBank": ["petal", "sepal", "anther", "stigma", "ovary", "filament", "root hair"],
+      "explanation": "Petals often attract pollinators. Sepals cover the bud. The anther makes pollen and sits on a filament; together they are the stamen. The stigma is the sticky top of the pistil. The ovary holds ovules, which can become seeds. The ovary can become the fruit."
+    },
+    {
+      "id": "seeds-label",
+      "type": "label",
+      "difficulty": "medium",
+      "topic": "flowers_seeds",
+      "question": "Name each labeled part of this opened bean seed.",
+      "diagram": "seed",
+      "labels": [
+        { "key": "A", "answer": "seed coat", "accept": ["seed coat", "testa"] },
+        { "key": "B", "answer": "cotyledon", "accept": ["cotyledon", "cotyledons", "seed leaf"] },
+        { "key": "C", "answer": "radicle", "accept": ["radicle", "embryonic root"] },
+        { "key": "D", "answer": "plumule", "accept": ["plumule", "embryonic shoot"] }
+      ],
+      "wordBank": ["seed coat", "cotyledon", "radicle", "plumule", "sepal", "xylem"],
+      "explanation": "The seed coat protects the seed. A bean has two cotyledons, which store food. The radicle is the embryonic root and the plumule is the embryonic shoot. Together with the rest of the tiny plant, they are the embryo."
+    },
+    {
+      "id": "flowers-stamen",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "flowers_seeds",
+      "question": "Which part is the male, pollen-making structure of a flower?",
+      "options": ["Pistil", "Stamen", "Sepal", "Ovary"],
+      "answer": "Stamen",
+      "explanation": "A stamen is an anther plus its filament. The anther produces pollen. The pistil (stigma, style, and ovary) is the female structure."
+    },
+    {
+      "id": "flowers-pistil-order",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "flowers_seeds",
+      "question": "From the top of the pistil down to the bottom, the parts are",
+      "options": ["ovary, style, stigma", "stigma, style, ovary", "anther, filament, sepal", "sepal, petal, pedicel"],
+      "answer": "stigma, style, ovary",
+      "explanation": "Pollen lands on the stigma. The pollen tube grows down the style. Fertilization happens in an ovule inside the ovary."
+    },
+    {
+      "id": "fruits-which",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "flowers_seeds",
+      "question": "Select ALL that are fruits in botany. A fruit develops from a flower and holds seeds.",
+      "options": ["Tomato", "Green bean", "Apple", "Potato"],
+      "answer": ["Tomato", "Green bean", "Apple"],
+      "explanation": "A tomato is a berry, and a bean pod is the ovary wall around the seeds. An apple is a fruit too, even though some of the flesh grows from tissue outside the ovary. A potato is a stem tuber, not a fruit."
+    },
+    {
+      "id": "growth-secondary",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "growth",
+      "question": "What does secondary growth do to a woody stem?",
+      "options": ["Makes it longer from the tip only", "Makes it thicker", "Makes flowers", "Makes spores"],
+      "answer": "Makes it thicker",
+      "explanation": "Secondary growth adds tissue from the vascular cambium, including wood (secondary xylem). Length comes from primary growth at the apical meristems."
+    },
+    {
+      "id": "growth-differentiation",
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "growth",
+      "question": "Differentiation is when cells become specialized for particular jobs.",
+      "answer": true,
+      "explanation": "Growth makes more cells or larger cells. Differentiation is the next idea: a cell may become a xylem cell, a guard cell, or a root-hair cell, each with its own job."
+    },
+    {
+      "id": "transport-phloem",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "transport",
+      "question": "Which tissue carries sugars from leaves to the rest of the plant?",
+      "options": ["Xylem", "Phloem", "Cuticle", "Epidermis"],
+      "answer": "Phloem",
+      "explanation": "Phloem moves sugars, often as sucrose, from sources such as leaves to sinks such as roots, fruits, and growing tips. Xylem moves water and minerals upward."
+    },
+    {
+      "id": "transport-transpiration",
+      "type": "free_response",
+      "difficulty": "easy",
+      "topic": "transport",
+      "question": "What is the loss of water vapor from a plant called?",
+      "answer": "transpiration",
+      "accept": ["transpiration"],
+      "explanation": "Most transpiration happens through open stomata. It pulls water up the xylem and also cools the leaf. Some water is lost through the cuticle, but much less."
+    },
+    {
+      "id": "transport-root-pressure",
+      "type": "true_false",
+      "difficulty": "hard",
+      "topic": "transport",
+      "question": "Root pressure is the main reason water can reach the top of a tall tree.",
+      "answer": false,
+      "explanation": "Root pressure can push water a short distance. In a tall tree, water is pulled up the xylem as transpiration evaporates water from the leaves. Water molecules stick to each other (cohesion) and to the xylem wall (adhesion). This is the cohesion-tension theory."
+    },
+    {
+      "id": "groups-monocot",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "plant_groups",
+      "question": "Which plant is a monocot?",
+      "options": ["Bean", "Corn", "Oak", "Sunflower"],
+      "answer": "Corn",
+      "explanation": "Corn has one cotyledon, parallel leaf veins, and flower parts in multiples of three. Beans, oaks, and sunflowers are dicots (eudicots)."
+    },
+    {
+      "id": "groups-dicot",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "plant_groups",
+      "question": "Select ALL typical features of a dicot (eudicot).",
+      "options": ["Two cotyledons", "Leaf veins that usually form a net", "Flower parts often in fours or fives", "Vascular bundles scattered through the stem"],
+      "answer": ["Two cotyledons", "Leaf veins that usually form a net", "Flower parts often in fours or fives"],
+      "explanation": "Scattered stem bundles are typical of monocots. Dicots usually have two cotyledons, netlike veins, flower parts in fours or fives, and stem bundles in a ring. Many biologists now use the name eudicot for this group."
+    },
+    {
+      "id": "groups-kelp",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "plant_groups",
+      "question": "Kelp is a large alga. It does not have true roots, stems, and leaves.",
+      "answer": true,
+      "explanation": "Kelp can be many meters long, so algae are not all single-celled. It has a holdfast, a stipe, and blades. Those parts do similar jobs to roots, stems, and leaves, but they are not the true organs of a land plant."
+    },
+    {
+      "id": "groups-cryptogam",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "plant_groups",
+      "question": "Which organism is a cryptogam?",
+      "options": ["Pine", "Fern", "Sunflower", "Pea"],
+      "answer": "Fern",
+      "explanation": "Cryptogam is an older word for a plant that reproduces with spores instead of seeds, such as a moss or fern. A fern is also an embryophyte, meaning a land plant. Pines and flowering plants make seeds, so they are not cryptogams."
+    },
+    {
+      "id": "groups-embryophyte",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "plant_groups",
+      "question": "Which organism is an embryophyte?",
+      "options": ["Kelp", "A moss", "A diatom", "Spirogyra, a green alga"],
+      "answer": "A moss",
+      "explanation": "Embryophytes are land plants. The embryo develops inside the parent. Mosses, ferns, and flowering plants are embryophytes. Kelp, diatoms, and Spirogyra are algae."
+    },
+    {
+      "id": "groups-woody",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "plant_groups",
+      "question": "A tree that adds a new ring of wood each year is best described as",
+      "options": ["herbaceous", "woody", "an alga", "a fungus"],
+      "answer": "woody",
+      "explanation": "Woody plants keep aboveground stems and add secondary xylem, which is wood. Herbaceous plants do not build a persistent woody stem. Annual rings can show a year of that thickening."
+    },
+    {
+      "id": "history-theophrastus",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "history",
+      "question": "Who is often called the Father of Botany for early written studies of plants?",
+      "options": ["Gregor Mendel", "Theophrastus", "Jan Ingenhousz", "Robert Hooke"],
+      "answer": "Theophrastus",
+      "explanation": "Theophrastus, a student of Aristotle, wrote early books describing plants and how they grow. Later scientists built on that start."
+    },
+    {
+      "id": "history-linnaeus",
+      "type": "free_response",
+      "difficulty": "easy",
+      "topic": "history",
+      "question": "Who developed the two-word system of scientific names used for plants?",
+      "answer": "Linnaeus",
+      "accept": ["Linnaeus", "Carl Linnaeus", "Carolus Linnaeus", "Carl von Linne", "Carl von Linné"],
+      "explanation": "Carl Linnaeus (also written Carolus Linnaeus) made binomial nomenclature the standard: a genus name plus a species epithet, as in Zea mays."
+    },
+    {
+      "id": "history-hooke",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "history",
+      "question": "Who used the word cells for the little rooms he saw in cork?",
+      "options": ["Carl Linnaeus", "Robert Hooke", "Gregor Mendel", "Jan Ingenhousz"],
+      "answer": "Robert Hooke",
+      "explanation": "In 1665 Hooke looked at thin slices of cork with a microscope and called the empty boxes cells. Those boxes were the walls of dead plant cells."
+    },
+    {
+      "id": "genetics-mendel",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "genetics",
+      "question": "Gregor Mendel discovered patterns of inheritance by studying",
+      "options": ["bread mold", "pea plants", "humans only", "moss spores"],
+      "answer": "pea plants",
+      "explanation": "Mendel tracked traits such as seed shape and plant height in garden peas. His counts led to the ideas of dominant and recessive factors, which we now call alleles."
+    },
+    {
+      "id": "genetics-hetero",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "genetics",
+      "question": "A heterozygous plant has two different alleles for a gene.",
+      "answer": true,
+      "explanation": "Hetero means different. A plant with alleles T and t is heterozygous. A plant with TT or tt is homozygous."
+    },
+    {
+      "id": "genetics-punnett",
+      "type": "data_analysis",
+      "difficulty": "medium",
+      "topic": "genetics",
+      "stimulus": "Practice counts: a class grew offspring from two heterozygous tall pea plants (Tt × Tt). T (tall) is dominant to t (short).",
+      "question": "About what fraction of the offspring were short?",
+      "table": {
+        "caption": "Practice counts from a Tt × Tt cross",
+        "headers": ["Phenotype", "Number of plants"],
+        "rows": [
+          ["Tall", "73"],
+          ["Short", "24"]
+        ]
+      },
+      "options": ["About 1/2", "About 1/4", "About 3/4", "All of them"],
+      "answer": "About 1/4",
+      "explanation": "24 short plants out of 97 is close to 1/4. A Punnett square for Tt × Tt predicts 1 TT : 2 Tt : 1 tt, so about 3 tall : 1 short. Real counts rarely match the ratio exactly."
+    },
+    {
+      "id": "genetics-moss-generation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "genetics",
+      "question": "In mosses, the green mat you usually notice is the",
+      "options": ["sporophyte", "gametophyte", "seed", "fruit"],
+      "answer": "gametophyte",
+      "explanation": "Plants alternate generations. In mosses the familiar green plant is the gametophyte, the stage that makes gametes. A sporophyte grows out of it and makes spores. In ferns and flowering plants, the plant you notice is the sporophyte."
+    },
+    {
+      "id": "photo-products",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "photosynthesis",
+      "question": "Which pair is produced by photosynthesis?",
+      "options": ["Carbon dioxide and water", "Glucose and oxygen", "Pollen and nectar only", "Nitrogen gas and soil"],
+      "answer": "Glucose and oxygen",
+      "explanation": "A simple form of the reaction is carbon dioxide + water + light energy → glucose + oxygen. Chlorophyll in the chloroplast captures the light."
+    },
+    {
+      "id": "photo-absorption",
+      "type": "data_analysis",
+      "difficulty": "medium",
+      "topic": "photosynthesis",
+      "stimulus": "The bars show a typical absorption pattern for chlorophyll a. The heights are relative practice values, not one lab's measurements.",
+      "question": "Which color of light is absorbed the least?",
+      "chart": {
+        "type": "bar",
+        "xLabel": "Color of light",
+        "yLabel": "Relative absorption",
+        "points": [
+          { "label": "Violet", "value": 80 },
+          { "label": "Blue", "value": 95 },
+          { "label": "Green", "value": 10 },
+          { "label": "Yellow", "value": 25 },
+          { "label": "Orange", "value": 60 },
+          { "label": "Red", "value": 85 }
+        ]
+      },
+      "options": ["Blue", "Green", "Red", "Violet"],
+      "answer": "Green",
+      "explanation": "Chlorophyll a absorbs blue and red light strongly and absorbs green light poorly. Leaves look green because much of the green light is reflected."
+    },
+    {
+      "id": "photo-respiration-night",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "photosynthesis",
+      "question": "Plant cells carry out cellular respiration only at night.",
+      "answer": false,
+      "explanation": "Plants break down glucose for energy both day and night. Photosynthesis needs light, so it stops in the dark. Respiration does not."
+    },
+    {
+      "id": "tax-genus",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "taxonomy",
+      "question": "In the scientific name Zea mays (corn), Zea is the",
+      "options": ["species epithet", "genus", "family", "kingdom"],
+      "answer": "genus",
+      "explanation": "A scientific name is a genus plus a species epithet. Zea is the genus. mays is the species epithet. The family of grasses is Poaceae."
+    },
+    {
+      "id": "tax-epithet",
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "taxonomy",
+      "question": "In a scientific name, the second word (the species epithet) is capitalized.",
+      "answer": false,
+      "explanation": "The genus is capitalized and the species epithet is lowercase. The whole name is italicized or underlined, as in Zea mays."
+    },
+    {
+      "id": "evo-cuticle",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "evolution",
+      "question": "A waxy cuticle helps a land plant mainly by",
+      "options": ["making pollen", "slowing water loss", "fixing nitrogen", "absorbing soil minerals through the leaf"],
+      "answer": "slowing water loss",
+      "explanation": "Life on land dries a plant out. A waxy cuticle covers the epidermis and slows evaporation. Stomata then let the plant exchange gases without leaving the whole surface open."
+    },
+    {
+      "id": "evo-flowers-late",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "evolution",
+      "question": "In the fossil record, flowering plants appear before ferns.",
+      "answer": false,
+      "explanation": "Early land plants and ferns appear long before flowers. Seed plants such as gymnosperms also appear before flowering plants. Angiosperms, the flowering plants, become common much later."
+    },
+    {
+      "id": "cycles-nitrogen",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "cycles",
+      "question": "Bacteria in the root nodules of beans and other legumes help the plant mainly by",
+      "options": ["making the flowers open", "fixing nitrogen from the air into a form the plant can use", "reflecting green light", "producing wood"],
+      "answer": "fixing nitrogen from the air into a form the plant can use",
+      "explanation": "Rhizobium and its relatives live in the nodules and fix nitrogen. The plant shares sugars. This mutualism is an important step in the nitrogen cycle."
+    },
+    {
+      "id": "cycles-inputs",
+      "type": "multi_select",
+      "difficulty": "easy",
+      "topic": "cycles",
+      "question": "Select ALL that a plant must take in for photosynthesis.",
+      "options": ["Carbon dioxide", "Water", "Light energy", "Oxygen used as a raw material to build glucose"],
+      "answer": ["Carbon dioxide", "Water", "Light energy"],
+      "explanation": "Photosynthesis builds glucose from carbon dioxide and water, using light energy. Oxygen is released as a product. It is not a raw material that gets built into the sugar."
+    },
+    {
+      "id": "uses-cotton",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "plant_uses",
+      "question": "Cotton thread is made from",
+      "options": ["xylem from the trunk", "fibers attached to the seeds", "pollen grains", "root hairs"],
+      "answer": "fibers attached to the seeds",
+      "explanation": "Cotton fibers are long hairs that grow on the seed coat. People spin those hairs into thread. The fibers are almost pure cellulose."
+    },
+    {
+      "id": "uses-materials",
+      "type": "multi_select",
+      "difficulty": "easy",
+      "topic": "plant_uses",
+      "question": "Select ALL materials that come from plants.",
+      "options": ["Cotton fabric", "Linen made from flax", "Natural rubber", "Wool yarn"],
+      "answer": ["Cotton fabric", "Linen made from flax", "Natural rubber"],
+      "explanation": "Cotton and flax are plant fibers. Natural rubber is latex, often from the rubber tree. Wool is hair from sheep, so it is not a plant material."
+    },
+    {
+      "id": "comp-allelo",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "competition",
+      "question": "Allelopathy is when a plant",
+      "options": ["loses water through stomata", "releases chemicals that help or harm nearby plants", "grows a thicker trunk", "makes spores in a sorus"],
+      "answer": "releases chemicals that help or harm nearby plants",
+      "explanation": "Black walnut is a famous example. Its roots and husks release juglone, which keeps some neighboring plants from growing well. That is one way plants compete besides grabbing light, water, and minerals."
+    },
+    {
+      "id": "comp-graph",
+      "type": "data_analysis",
+      "difficulty": "medium",
+      "topic": "competition",
+      "stimulus": "Practice data: average height of two plants grown alone and grown in the same pot. These numbers were made for practice.",
+      "question": "Which claim fits the graph?",
+      "chart": {
+        "type": "grouped_bar",
+        "xLabel": "How they were grown",
+        "yLabel": "Average height (cm)",
+        "groups": ["Alone", "Together"],
+        "series": [
+          { "name": "Plant A", "values": [40, 22] },
+          { "name": "Plant B", "values": [30, 28] }
+        ]
+      },
+      "options": [
+        "Plant B lost more height than Plant A",
+        "Plant A lost more height when the plants grew together than Plant B did",
+        "Both plants grew taller together than they did alone",
+        "The two treatments gave each plant the same height"
+      ],
+      "answer": "Plant A lost more height when the plants grew together than Plant B did",
+      "explanation": "Plant A drops from 40 cm alone to 22 cm together, a loss of 18 cm. Plant B drops from 30 cm to 28 cm, a loss of 2 cm. Growing together hurt Plant A more. That pattern fits competition, though this particular graph is practice data."
+    },
+    {
+      "id": "gmo-define",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "gmos",
+      "question": "A genetically modified plant is a plant that",
+      "options": ["was watered with fertilizer", "has had its DNA changed by genetic engineering", "grew in a new garden", "is any plant a farmer chooses to grow"],
+      "answer": "has had its DNA changed by genetic engineering",
+      "explanation": "Genetic engineering adds, removes, or edits DNA directly. Watering, transplanting, or simply choosing a plant to grow does not make it a GMO."
+    },
+    {
+      "id": "gmo-breeding",
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "gmos",
+      "question": "Saving seeds from the best plants is the same method as making a genetically modified organism.",
+      "answer": false,
+      "explanation": "Saving seeds from favored plants is traditional breeding. It changes crops over many generations, but it does not directly edit DNA the way genetic engineering does. Both can be used in farming. They are different methods."
+    },
+    {
+      "id": "food-carrot",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "food_products",
+      "question": "Which food is a root?",
+      "options": ["Potato", "Carrot", "Broccoli", "Celery"],
+      "answer": "Carrot",
+      "explanation": "A carrot is a taproot. A potato is a stem tuber. Broccoli is a cluster of flower buds. A celery stalk is a petiole, the stalk of a leaf."
+    },
+    {
+      "id": "food-roots",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "food_products",
+      "question": "Select ALL of these foods that are roots.",
+      "options": ["Carrot", "Beet", "Radish", "Potato"],
+      "answer": ["Carrot", "Beet", "Radish"],
+      "explanation": "Carrots, beets, and radishes are storage roots. A potato is an underground stem. You can tell a potato is a stem because it has buds, the eyes."
+    },
+    {
+      "id": "dis-nitrogen",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "diseases",
+      "question": "A shortage of nitrogen usually yellows which leaves first?",
+      "options": ["Only the root cap", "Older leaves", "Only the petals", "Brand-new leaves, while older leaves stay dark green"],
+      "answer": "Older leaves",
+      "explanation": "Nitrogen can move out of older leaves to feed new growth, so older leaves yellow first. Iron does not move as easily, so an iron shortage yellows young leaves first, often between the veins."
+    },
+    {
+      "id": "dis-causes",
+      "type": "multi_select",
+      "difficulty": "medium",
+      "topic": "diseases",
+      "question": "Select ALL that can make a plant look sick or grow poorly.",
+      "options": ["A fungal infection", "Too little nitrogen in the soil", "A viral infection", "Plenty of chlorophyll in a healthy leaf"],
+      "answer": ["A fungal infection", "Too little nitrogen in the soil", "A viral infection"],
+      "explanation": "Fungi, viruses, and bacteria can infect plants. A missing nutrient, such as nitrogen, can also cause poor growth and yellow leaves. Plenty of chlorophyll is a sign of a healthy leaf, not a cause of sickness."
+    },
+    {
+      "id": "dis-yellow-virus",
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "diseases",
+      "question": "If a leaf is yellow, the cause must be a virus.",
+      "answer": false,
+      "explanation": "Yellowing, called chlorosis, can come from too little nitrogen or iron, from waterlogged soil, or from infection. Color alone does not tell you the cause."
+    },
+    {
+      "id": "flowers-perfect",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "flowers_seeds",
+      "question": "A flower has stamens and a pistil, but it has no petals. It is",
+      "options": ["complete but imperfect", "perfect but incomplete", "a spore case", "neither male nor female"],
+      "answer": "perfect but incomplete",
+      "explanation": "Complete means all four sets of parts: sepals, petals, stamens, and pistil. Perfect means both stamens and a pistil are present. Missing petals makes this flower incomplete, and it is still perfect."
+    },
+    {
+      "id": "growth-cambium",
+      "type": "free_response",
+      "difficulty": "hard",
+      "topic": "growth",
+      "question": "Name the lateral meristem that adds wood (secondary xylem) and secondary phloem.",
+      "answer": "vascular cambium",
+      "accept": ["vascular cambium", "the vascular cambium"],
+      "explanation": "The vascular cambium is a thin layer of dividing cells between wood and bark. Cells it makes toward the inside become secondary xylem (wood). Cells toward the outside become secondary phloem."
+    },
+    {
+      "id": "stems-wood",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "stems",
+      "question": "Wood is mostly",
+      "options": ["secondary phloem", "secondary xylem", "epidermis", "pith only"],
+      "answer": "secondary xylem",
+      "explanation": "Each year's secondary xylem builds the wood of a trunk. Secondary phloem is part of the inner bark and does not pile up the same way. The epidermis is only the young outer layer."
+    },
+    {
+      "id": "transport-cohesion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "transport",
+      "question": "Which idea best explains how a continuous column of water is pulled to the top of a tall tree?",
+      "options": ["Root pressure alone", "Cohesion-tension theory", "Phloem pumping sugars up the trunk", "Water entering through open stomata"],
+      "answer": "Cohesion-tension theory",
+      "explanation": "Transpiration at the leaves pulls on the water column. Cohesion keeps water molecules stuck to one another, and adhesion helps them stick to the xylem wall. Root pressure is real but too weak to supply the top of a tall tree. Stomata let water vapor out. They are not where water enters."
+    },
+    {
+      "id": "genetics-fern-stage",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "genetics",
+      "question": "The familiar leafy fern plant is the",
+      "options": ["gametophyte", "sporophyte", "seed", "pollen grain"],
+      "answer": "sporophyte",
+      "explanation": "The large fern makes spores, so it is the sporophyte. Its gametophyte is a small, often heart-shaped plant that makes eggs and sperm. In mosses it is the other way around: the green mat is the gametophyte."
+    },
+    {
+      "id": "photo-stroma",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "photosynthesis",
+      "question": "In a chloroplast, the Calvin cycle (the sugar-building reactions) happens in the",
+      "options": ["stroma", "root cap", "cuticle", "cell wall"],
+      "answer": "stroma",
+      "explanation": "The stroma is the fluid inside the chloroplast. The Calvin cycle uses carbon dioxide there to build sugar. The light-catching reactions happen in the thylakoid membranes."
+    },
+    {
+      "id": "dis-iron",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "diseases",
+      "question": "Iron does not move easily inside a plant. An iron shortage usually shows first as",
+      "options": ["yellowing of the oldest leaves only", "yellowing between the veins of young leaves", "a powdery fungus on the stem", "a missing root cap"],
+      "answer": "yellowing between the veins of young leaves",
+      "explanation": "Iron stays in older leaves, so new leaves run short first. The tissue between veins turns yellow while veins may stay green. Nitrogen is mobile, so a nitrogen shortage yellows older leaves first. A powdery coating suggests a fungus, not an iron shortage."
+    },
+    {
+      "id": "evo-seeds-first",
+      "type": "true_false",
+      "difficulty": "hard",
+      "topic": "evolution",
+      "question": "In the fossil record, seeds appear before flowers.",
+      "answer": true,
+      "explanation": "Seed plants such as early gymnosperms appear before flowering plants. Flowers and fruits are the later angiosperm traits. Ferns and other spore plants are older still."
+    },
+    {
+      "id": "cycles-carbon",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "topic": "cycles",
+      "question": "Which path returns carbon dioxide to the air from sugars a plant made?",
+      "options": ["Photosynthesis only", "Cellular respiration and decomposition", "Nitrogen fixation", "Transpiration"],
+      "answer": "Cellular respiration and decomposition",
+      "explanation": "Photosynthesis stores carbon in sugars. Cellular respiration in plants, animals, and decomposers releases carbon dioxide again. Transpiration moves water, and nitrogen fixation moves nitrogen, not this carbon."
+    }
+  ]
+}
