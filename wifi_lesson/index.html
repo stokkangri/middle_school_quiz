@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two roads to the robot — Wi-Fi vs Wi-Fi Direct</title>
+  <meta name="description" content="A middle-school picture of how an FTC Driver Hub reaches the robot on Wi-Fi Direct, and how ordinary Wi-Fi can continue through a router to the internet.">
+  <style>
+    :root {
+      --ink: #1c1915;
+      --paper: #efe4cf;
+      --card: #fffaf2;
+      --wifi: #1463d8;
+      --direct: #e25b12;
+      --library: #5b3cc4;
+      --client: #0e8f62;
+      --paint: #f0b429;
+      --pavement: #e4d7c4;
+      --hi: #ffe34d;
+      --path: #ffd7a8;
+      --ip: #c9e4ff;
+      --port: #c8f5c4;
+      --server: #e4d8ff;
+      --client-mark: #ffd0e4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% -12%, #fff 0, transparent 36%),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    body.is-still .paint-line::after,
+    body.is-still .dot,
+    body.is-still .gate-room,
+    body.is-still .led {
+      animation: none !important;
+    }
+
+    body.is-still .dot {
+      top: auto;
+      bottom: 2px;
+    }
+
+    .sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 12px;
+      z-index: 9;
+      border: 3px solid var(--ink);
+    }
+
+    .skip:focus { left: 12px; }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+
+    a { color: var(--wifi); }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 8px;
+    }
+
+    h3 { margin: 0; }
+
+    mark {
+      background: var(--hi);
+      color: inherit;
+      border-radius: 0.2em;
+      padding: 0.02em 0.28em;
+      font-weight: 750;
+    }
+
+    mark.path { background: var(--path); }
+    mark.ip { background: var(--ip); }
+    mark.port { background: var(--port); }
+    mark.server { background: var(--server); }
+    mark.client { background: var(--client-mark); }
+
+    .hero {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: #fff8ea;
+      padding: 5px 9px;
+      border-radius: 999px;
+    }
+
+    .deck {
+      font-size: 1.18rem;
+      max-width: 46rem;
+      margin-bottom: 0;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button, .btn {
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      padding: 8px 14px;
+      box-shadow: 4px 4px 0 var(--ink);
+      cursor: pointer;
+    }
+
+    button:hover, .btn:hover { transform: translate(-1px, -1px); }
+
+    button:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 var(--ink);
+    }
+
+    button:focus-visible {
+      outline: 4px solid var(--hi);
+      outline-offset: 2px;
+    }
+
+    button[aria-pressed="true"],
+    button.chosen {
+      background: var(--hi);
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 28px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    section { margin: 0 0 42px; }
+
+    .lede { max-width: 46rem; }
+
+    .cast {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .cast article, .word, .step, .fact {
+      background: var(--card);
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      box-shadow: 6px 6px 0 var(--ink);
+      padding: 14px;
+    }
+
+    .cast h3 { font-size: 1.15rem; margin-bottom: 4px; }
+
+    .ico {
+      width: 64px;
+      height: 64px;
+      display: block;
+    }
+
+    .room .ico, .cast .ico { margin: 0 auto 4px; }
+
+    .halls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .hall {
+      background: #fffaf2;
+      border: 3px solid var(--ink);
+      border-radius: 18px;
+      box-shadow: 7px 7px 0 var(--ink);
+      padding: 14px 12px 16px;
+    }
+
+    .street { text-align: center; margin-bottom: 12px; }
+
+    .street p { margin: 8px 0 0; font-size: 0.95rem; }
+
+    .sign {
+      display: inline-block;
+      color: white;
+      background: var(--wifi);
+      border: 3px solid var(--ink);
+      border-radius: 8px;
+      padding: 4px 12px;
+      box-shadow: 3px 3px 0 var(--ink);
+      font-size: 1.35rem;
+    }
+
+    .hall-direct .sign { background: var(--direct); }
+
+    .kicker {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .stack { display: flex; flex-direction: column; align-items: center; }
+
+    .room {
+      width: min(100%, 240px);
+      background: #fff;
+      border: 2.5px solid var(--ink);
+      border-radius: 14px;
+      padding: 8px 10px 10px;
+      text-align: center;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .room h3 { font-size: 1rem; margin: 2px 0; }
+
+    .room p, .fine { font-size: 0.86rem; margin: 2px 0 0; line-height: 1.35; }
+
+    .room.small {
+      width: auto;
+      flex: 1 1 7.5rem;
+      max-width: 150px;
+      min-width: 0;
+      padding: 8px;
+    }
+
+    .room.hot { outline: 4px solid var(--hi); outline-offset: 2px; }
+
+    .is-absent { opacity: 0.38; filter: grayscale(0.9); }
+
+    .ribbon {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 2px solid var(--ink);
+    }
+
+    .ribbon.server { background: var(--server); }
+    .ribbon.client { background: var(--client-mark); }
+
+    .corridor {
+      position: relative;
+      height: 74px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .corridor.short { height: 48px; }
+
+    .paint-line {
+      width: 26px;
+      height: 100%;
+      border-radius: 13px;
+      background: var(--pavement);
+      border: 2px solid var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hall-wifi .paint-line { box-shadow: 0 0 0 3px #9ec0f5; }
+    .hall-direct .paint-line,
+    #panel-direct .paint-line { box-shadow: 0 0 0 3px #f3b48a; }
+    #panel-wifi .paint-line { box-shadow: 0 0 0 3px #9ec0f5; }
+
+    .paint-line::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      background: repeating-linear-gradient(to bottom, var(--paint) 0 9px, transparent 9px 18px);
+      animation: march-y 0.7s linear infinite;
+    }
+
+    .paint-line.across {
+      width: min(78%, 320px);
+      height: 26px;
+      margin: 6px auto;
+    }
+
+    .paint-line.across::after {
+      background: repeating-linear-gradient(to right, var(--paint) 0 9px, transparent 9px 18px);
+      animation-name: march-x;
+    }
+
+    .corridor-label {
+      position: absolute;
+      left: calc(50% + 20px);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: #fff;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 2px 7px;
+    }
+
+    .dot {
+      position: absolute;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin-left: -8px;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      z-index: 2;
+      top: 0;
+    }
+
+    .dot.bot { background: var(--direct); animation: fall 1.7s linear infinite; }
+    .dot.web { background: var(--wifi); animation: fall 2.15s linear infinite; animation-delay: 0.35s; }
+    .dot.bounce { animation: downup 2.5s ease-in-out infinite; }
+
+    .split {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .branch { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+
+    .pair {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 8px;
+    }
+
+    .split, .branch, .other-town { min-width: 0; max-width: 100%; }
+
+    .other-town {
+      margin-top: 14px;
+      width: 100%;
+      border: 2.5px dashed #8a8175;
+      border-radius: 14px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .other-town .pair { opacity: 0.72; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+
+    .swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      display: inline-block;
+    }
+
+    .swatch.bot { background: var(--direct); }
+    .swatch.web { background: var(--wifi); }
+
+    .device-switch, .road-switch, .missions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .url-line {
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 1.25rem;
+      font-weight: 750;
+      background: #fff;
+      display: inline-block;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      padding: 8px 12px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .same {
+      display: grid;
+      grid-template-columns: minmax(260px, 340px) 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .phone {
+      background: #1c1915;
+      color: #fff8ea;
+      border-radius: 28px;
+      padding: 18px 12px 16px;
+      box-shadow: 7px 7px 0 var(--ink);
+    }
+
+    .phone-top {
+      text-align: center;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .net {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      text-align: left;
+      background: #2a261f;
+      color: #fff8ea;
+      margin-bottom: 8px;
+      box-shadow: none;
+    }
+
+    .net small { display: block; font-weight: 600; color: #f0e2c4; }
+
+    .net[aria-pressed="true"] { background: var(--hi); color: var(--ink); }
+    .net[aria-pressed="true"] small { color: #3a3120; }
+
+    .bars {
+      width: 28px;
+      height: 22px;
+      flex: none;
+      background:
+        radial-gradient(circle at 0% 100%, transparent 58%, #7dffb2 59% 68%, transparent 69%),
+        radial-gradient(circle at 0% 100%, transparent 38%, #7dffb2 39% 48%, transparent 49%),
+        radial-gradient(circle at 0% 100%, transparent 16%, #7dffb2 17% 26%, transparent 27%);
+    }
+
+    .result, .why, #door-note, #comic-caption {
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 4px 4px 0 var(--ink);
+      min-height: 4.5rem;
+    }
+
+    .words {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .word h3 { margin: 6px 0; }
+
+    .visit-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) auto minmax(260px, 380px);
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mansion { width: 100%; }
+
+    .cottage, .mansion {
+      background: #fffaf2;
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      box-shadow: 6px 6px 0 var(--ink);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .plot { width: min(100%, 380px); margin: 0 auto; }
+
+    .roof-svg {
+      display: block;
+      width: 100%;
+      height: 58px;
+      margin-bottom: -1px;
+    }
+
+    .roof-sign {
+      text-align: center;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .doors { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
+
+    .door {
+      width: 118px;
+      min-height: 148px;
+      background: #6b3a22;
+      color: #fff8ea;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 10px 8px;
+      border-radius: 10px 10px 6px 6px;
+      box-shadow: inset -10px 0 0 rgba(0, 0, 0, 0.25), 4px 4px 0 var(--ink);
+    }
+
+    .door.is-open {
+      background: #f6e2b0;
+      color: var(--ink);
+    }
+
+    .door-num { font-size: 1.35rem; font-weight: 800; }
+
+    .walk-arrow {
+      font-weight: 800;
+      text-align: center;
+      max-width: 7rem;
+    }
+
+    .comic {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      overflow: clip;
+    }
+
+    .frame {
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      min-height: 230px;
+      padding: 12px;
+      box-shadow: 5px 5px 0 var(--ink);
+      text-align: center;
+    }
+
+    .frame.is-lit { outline: 4px solid var(--hi); outline-offset: 2px; }
+
+    .shelf {
+      margin: 48px auto 6px;
+      height: 14px;
+      width: 70%;
+      background: #6b3a22;
+      border: 2px solid var(--ink);
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .shelf-book {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      width: 36px;
+      height: 36px;
+      transform: translateX(-50%);
+    }
+
+    .frame .ico, .word .ico, .cottage .ico, .mansion .ico { margin-left: auto; margin-right: auto; }
+
+    .frame-book {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto;
+    }
+
+    .road-cartoon {
+      height: 28px;
+      margin: 28px auto 0;
+      width: 80%;
+      border-radius: 14px;
+      border: 2px solid var(--ink);
+      background: repeating-linear-gradient(to right, var(--paint) 0 10px, var(--pavement) 10px 18px);
+    }
+
+    #flying-book {
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      z-index: 3;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(3px 3px 0 rgba(28, 25, 21, 0.35));
+    }
+
+    .try-card, .quiz, .facts {
+      background: transparent;
+    }
+
+    #try-stage { position: relative; margin-top: 8px; overflow: clip; }
+
+    .road-panel { display: none; }
+    .road-panel.is-on { display: block; }
+
+    .traveler {
+      position: absolute;
+      z-index: 4;
+      width: 46px;
+      height: 46px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(3px 4px 0 rgba(28, 25, 21, 0.35));
+    }
+
+    .traveler .ico { display: none; width: 46px; height: 46px; }
+    .traveler.book [data-kind="book"],
+    .traveler.joy [data-kind="joy"],
+    .traveler.web [data-kind="web"] { display: block; }
+
+    .check {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: 750;
+      margin: 8px 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .step { margin: 0; }
+    .step b {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--hi);
+      border: 2px solid var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .quiz { display: grid; gap: 12px; padding: 0; border: 0; }
+    .quiz fieldset {
+      margin: 0;
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: 5px 5px 0 var(--ink);
+      padding: 12px;
+    }
+
+    .quiz legend { font-weight: 800; padding: 0 6px; }
+    .quiz button { margin: 8px 8px 0 0; }
+    .quiz .why { margin-top: 10px; box-shadow: none; }
+    .quiz fieldset.solved { background: #f3ffe8; }
+    .quiz fieldset.missed { background: #fff4ee; }
+    .banner {
+      margin-top: 12px;
+      background: var(--hi);
+      border: 3px solid var(--ink);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 800;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .facts { display: grid; gap: 10px; padding: 0; list-style: none; }
+    .facts li { margin: 0; }
+
+    .led {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background: #7cffb2;
+      border: 2px solid var(--ink);
+      animation: blink 1.4s steps(1) infinite;
+    }
+
+    @keyframes march-y { to { background-position-y: 18px; } }
+    @keyframes march-x { to { background-position-x: 18px; } }
+    @keyframes fall {
+      from { top: -4px; }
+      to { top: calc(100% - 14px); }
+    }
+    @keyframes downup {
+      0% { top: -4px; }
+      42% { top: calc(100% - 16px); }
+      58% { top: calc(100% - 16px); }
+      100% { top: -4px; }
+    }
+    @keyframes blink {
+      0%, 49% { background: #7cffb2; }
+      50%, 100% { background: #244833; }
+    }
+    @keyframes gate {
+      0%, 38% { transform: translateX(0); }
+      46% { transform: translateX(-6px); }
+      54% { transform: translateX(6px); }
+      62%, 100% { transform: translateX(0); }
+    }
+
+    .gate-room { animation: gate 2.5s ease-in-out infinite; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .halls, .cast, .same, .visit-row, .comic, .steps, .words {
+        grid-template-columns: 1fr;
+      }
+      .visit-row { justify-items: center; }
+      .pair { flex-direction: column; align-items: center; }
+      .room.small { width: min(100%, 200px); max-width: 200px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .paint-line::after, .dot, .gate-room, .led { animation: none !important; }
+      .dot { top: auto; bottom: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#map">Skip to the two roads</a>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-driver" viewBox="0 0 64 64">
+      <rect x="14" y="6" width="36" height="52" rx="6" fill="#1c1915"/>
+      <rect x="18" y="12" width="28" height="32" rx="3" fill="#d7f4ff"/>
+      <circle cx="27" cy="28" r="5" fill="#1463d8"/>
+      <circle cx="39" cy="28" r="5" fill="#e25b12"/>
+      <rect x="28" y="48" width="8" height="3" rx="1.5" fill="#f0b429"/>
+    </symbol>
+    <symbol id="i-robot" viewBox="0 0 64 64">
+      <rect x="8" y="28" width="48" height="20" rx="6" fill="#5b3cc4"/>
+      <rect x="16" y="14" width="32" height="18" rx="4" fill="#1c1915"/>
+      <rect x="20" y="18" width="24" height="9" rx="2" fill="#7cffb2"/>
+      <circle cx="16" cy="52" r="6" fill="#1c1915"/>
+      <circle cx="48" cy="52" r="6" fill="#1c1915"/>
+      <circle cx="16" cy="52" r="2" fill="#f0b429"/>
+      <circle cx="48" cy="52" r="2" fill="#f0b429"/>
+      <rect x="30" y="4" width="4" height="12" fill="#1c1915"/>
+      <circle cx="32" cy="5" r="4" fill="#e25b12"/>
+    </symbol>
+    <symbol id="i-router" viewBox="0 0 64 64">
+      <rect x="8" y="28" width="48" height="24" rx="6" fill="#1463d8"/>
+      <path d="M20 28 L14 10" stroke="#1c1915" stroke-width="3" fill="none"/>
+      <path d="M44 28 L50 10" stroke="#1c1915" stroke-width="3" fill="none"/>
+      <circle cx="14" cy="8" r="3.5" fill="#f0b429"/>
+      <circle cx="50" cy="8" r="3.5" fill="#f0b429"/>
+      <circle cx="20" cy="40" r="3" fill="#7cffb2"/>
+      <circle cx="32" cy="40" r="3" fill="#ffe34d"/>
+      <circle cx="44" cy="40" r="3" fill="#ffb1b1"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 64 64">
+      <path d="M18 48 h30 a11 11 0 0 0 1-22 a14 14 0 0 0-26-2 a9 9 0 0 0-5 24z" fill="#d7ecff" stroke="#1c1915" stroke-width="2.5"/>
+    </symbol>
+    <symbol id="i-library" viewBox="0 0 64 64">
+      <polygon points="6,28 32,8 58,28" fill="#f0b429" stroke="#1c1915" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="12" y="28" width="40" height="28" fill="#fff8ea" stroke="#1c1915" stroke-width="2.5"/>
+      <rect x="27" y="38" width="10" height="18" fill="#5b3cc4"/>
+      <rect x="16" y="34" width="7" height="8" fill="#9ec0f5"/>
+      <rect x="41" y="34" width="7" height="8" fill="#9ec0f5"/>
+    </symbol>
+    <symbol id="i-house" viewBox="0 0 64 64">
+      <polygon points="6,30 32,10 58,30" fill="#0e8f62" stroke="#1c1915" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="14" y="30" width="36" height="26" fill="#fff8ea" stroke="#1c1915" stroke-width="2.5"/>
+      <rect x="28" y="40" width="10" height="16" fill="#e25b12"/>
+      <rect x="18" y="36" width="7" height="7" fill="#9ec0f5"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 64 64">
+      <path d="M10 12 h20 l2 4 2-4 h20 v42 H34 l-2-4 -2 4 H10z" fill="#ffe34d" stroke="#1c1915" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M32 16 v34" stroke="#1c1915" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-laptop" viewBox="0 0 64 64">
+      <rect x="12" y="12" width="40" height="28" rx="3" fill="#1c1915"/>
+      <rect x="16" y="16" width="32" height="20" fill="#d7f4ff"/>
+      <path d="M6 44 h52 l-6 8 H12z" fill="#d9d0c2" stroke="#1c1915" stroke-width="2.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-gate" viewBox="0 0 64 64">
+      <rect x="30" y="6" width="4" height="52" fill="#1c1915"/>
+      <rect x="6" y="28" width="52" height="12" fill="#c62828" stroke="#1c1915" stroke-width="2"/>
+      <rect x="8" y="28" width="8" height="12" fill="#fff8ea"/>
+      <rect x="24" y="28" width="8" height="12" fill="#fff8ea"/>
+      <rect x="40" y="28" width="8" height="12" fill="#fff8ea"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="22" fill="#d7ecff" stroke="#1c1915" stroke-width="2.5"/>
+      <ellipse cx="32" cy="32" rx="10" ry="22" fill="none" stroke="#1463d8" stroke-width="2"/>
+      <path d="M10 32 h44 M14 22 h36 M14 42 h36" fill="none" stroke="#1463d8" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-joy" viewBox="0 0 64 64">
+      <rect x="6" y="18" width="52" height="30" rx="15" fill="#1c1915"/>
+      <circle cx="22" cy="33" r="7" fill="#e25b12"/>
+      <circle cx="42" cy="28" r="4" fill="#7cffb2"/>
+      <circle cx="50" cy="36" r="4" fill="#ffe34d"/>
+    </symbol>
+  </svg>
+
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">FTC robotics · middle school</p>
+      <h1>Two roads to the robot</h1>
+      <p class="deck">
+        A <mark class="client">Driver Hub</mark> can drive the robot only after they share a road.
+        <mark class="path">Wi-Fi</mark> and <mark class="path">Wi-Fi Direct</mark> wear the same paint.
+        One road can reach the internet through a router.
+        The other is a private hall that stops at the robot.
+      </p>
+      <div class="toolbar">
+        <button type="button" id="motion-btn" aria-pressed="false">Pause motion</button>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="On this page">
+      <a href="#cast">Who is who</a>
+      <a href="#map">The two roads</a>
+      <a href="#paint">Same paint</a>
+      <a href="#words">Six words</a>
+      <a href="#doors">Address and doors</a>
+      <a href="#book">The book</a>
+      <a href="#try">Walk a road</a>
+      <a href="#match">Match day</a>
+      <a href="#check">Quick check</a>
+    </nav>
+
+    <section id="cast">
+      <h2>Who is who</h2>
+      <p class="lede">The jobs stay the same even when the boxes change. A phone can do either job. A REV hub can do either job. The road does not care which shell you used.</p>
+      <div class="cast">
+        <article>
+          <svg class="ico" aria-hidden="true"><use href="#i-driver"/></svg>
+          <p class="ribbon client">Visitor · client</p>
+          <h3>Driver side</h3>
+          <p>The <strong>REV Driver Hub</strong>, or an Android phone running the <strong>FTC Driver Station</strong> app. It sits with the drivers. It visits the robot and asks it to move.</p>
+        </article>
+        <article>
+          <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+          <p class="ribbon server">Library · server</p>
+          <h3>Robot side</h3>
+          <p>The <strong>REV Control Hub</strong> on the robot, or an Android phone running the <strong>FTC Robot Controller</strong> app. It stays put, holds the program, and answers the driver.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="map">
+      <h2>Same paint. Different street signs.</h2>
+      <p class="lede">Both halls are drawn with the same yellow dashes. That is the paint. The sign is the name. Watch the dots: orange goes toward the robot, blue tries to reach google.com.</p>
+      <div class="halls">
+        <article class="hall hall-wifi">
+          <header class="street">
+            <span class="kicker">Street sign</span>
+            <h3 class="sign">Wi-Fi</h3>
+            <p>A shared road through a router. It can continue to the internet.</p>
+          </header>
+          <div class="stack">
+            <article class="room">
+              <p class="ribbon client">Visitor · client</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-driver"/></svg>
+              <h3>Driver Hub</h3>
+              <p>or your laptop</p>
+            </article>
+            <div class="corridor" aria-hidden="true">
+              <i class="paint-line"></i>
+              <b class="dot bot"></b>
+              <b class="dot web"></b>
+            </div>
+            <article class="room">
+              <svg class="ico" aria-hidden="true"><use href="#i-router"/></svg>
+              <h3>Router</h3>
+              <p>The town crossing. <span class="led" aria-hidden="true"></span></p>
+            </article>
+            <i class="paint-line across" aria-hidden="true"></i>
+            <div class="split">
+              <div class="branch">
+                <div class="corridor" aria-hidden="true">
+                  <i class="paint-line"></i>
+                  <b class="dot bot"></b>
+                </div>
+                <article class="room">
+                  <p class="ribbon server">Library · server</p>
+                  <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+                  <h3>Your robot</h3>
+                  <p>Only if the robot joined this same Wi-Fi.</p>
+                </article>
+              </div>
+              <div class="branch">
+                <div class="corridor" aria-hidden="true">
+                  <i class="paint-line"></i>
+                  <b class="dot web"></b>
+                </div>
+                <article class="room">
+                  <svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg>
+                  <h3>Internet</h3>
+                  <p>The ramp past the router.</p>
+                </article>
+                <div class="pair">
+                  <article class="room small">
+                    <p class="ribbon server">Server</p>
+                    <svg class="ico" aria-hidden="true"><use href="#i-library"/></svg>
+                    <h3>google.com</h3>
+                  </article>
+                  <article class="room small">
+                    <p class="ribbon server">Server</p>
+                    <svg class="ico" aria-hidden="true"><use href="#i-library"/></svg>
+                    <h3>github.com</h3>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hall hall-direct">
+          <header class="street">
+            <span class="kicker">Street sign</span>
+            <h3 class="sign">Wi-Fi Direct</h3>
+            <p>A private road. The robot is at the end of it. No router in the middle.</p>
+          </header>
+          <div class="stack">
+            <article class="room">
+              <p class="ribbon client">Visitor · client</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-driver"/></svg>
+              <h3>Driver Hub</h3>
+              <p>The client joins the robot’s road.</p>
+            </article>
+            <div class="corridor" aria-hidden="true">
+              <i class="paint-line"></i>
+              <b class="dot bot"></b>
+            </div>
+            <article class="room">
+              <p class="ribbon server">Library · server</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+              <h3 data-device-name>REV Control Hub</h3>
+              <p>Address <mark class="ip" data-ip>192.168.43.1</mark></p>
+              <p>Web door <mark class="port">8080</mark></p>
+            </article>
+            <div class="corridor" aria-hidden="true">
+              <span class="corridor-label">toward google.com</span>
+              <i class="paint-line"></i>
+              <b class="dot web bounce"></b>
+            </div>
+            <article class="room gate-room">
+              <svg class="ico" aria-hidden="true"><use href="#i-gate"/></svg>
+              <h3>Road ends</h3>
+              <p>A trip to Google turns around here.</p>
+            </article>
+            <div class="other-town">
+              <p class="fine"><strong>A different road.</strong> Not connected to this hall.</p>
+              <div class="pair">
+                <article class="room small">
+                  <p class="ribbon server">Server</p>
+                  <h3>google.com</h3>
+                </article>
+                <article class="room small">
+                  <p class="ribbon server">Server</p>
+                  <h3>github.com</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="swatch bot"></i> Orange dot: joystick messages going to the robot</span>
+        <span><i class="swatch web"></i> Blue dot: a trip toward google.com</span>
+      </div>
+      <p>On the Wi-Fi road, the blue dot can pass the router and reach the internet. On the Wi-Fi Direct road, the blue dot hits a gate and comes back. The yellow paint never promised Google. You learn that by walking.</p>
+
+      <h3>Which box is the robot?</h3>
+      <p class="lede">On the private road the robot keeps a famous house number. The number depends on which box owns the road. The web door stays <mark class="port">8080</mark>.</p>
+      <div class="device-switch" role="group" aria-label="Robot device">
+        <button type="button" id="pick-hub" aria-pressed="true">REV Control Hub</button>
+        <button type="button" id="pick-phone" aria-pressed="false">Robot Controller phone</button>
+      </div>
+      <p class="url-line" aria-label="Browser address">http://<mark class="ip" data-ip>192.168.43.1</mark>:<mark class="port">8080</mark></p>
+      <p class="fine">House number, colon, door. A laptop types this. The Driver Hub usually finds the robot for you once it is on the right road.</p>
+    </section>
+
+    <section id="paint">
+      <h2>The icon will not tell you</h2>
+      <p class="lede">On a phone, both roads use the Wi-Fi symbol. Same paint. The words next to the icon are the street sign. <mark class="hi">FTC-ROBOT</mark> below is an example name. Yours will look ordinary in the list too.</p>
+      <div class="same">
+        <div class="phone">
+          <div class="phone-top">Wi-Fi</div>
+          <button type="button" class="net" data-net="home" aria-pressed="false">
+            <span class="bars" aria-hidden="true"></span>
+            <span><strong>Home-WiFi</strong><small>same icon as the other row</small></span>
+          </button>
+          <button type="button" class="net" data-net="robot" aria-pressed="false">
+            <span class="bars" aria-hidden="true"></span>
+            <span><strong>FTC-ROBOT</strong><small>same icon as the other row</small></span>
+          </button>
+        </div>
+        <div>
+          <div id="net-result" class="result" aria-live="polite">Pick a network. The icon matches on both rows. You only learn the destination by joining the road.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="words">
+      <h2>Six words, drawn as a town</h2>
+      <div class="words">
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-gate"/></svg>
+          <h3><mark class="path">Path</mark></h3>
+          <p>Wi-Fi or Wi-Fi Direct is a hallway, a private road. The yellow dashes are the paint. The street sign is the name. Until you walk it, you do not know if google.com is at the end.</p>
+        </article>
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-house"/></svg>
+          <h3><mark class="ip">IP address</mark></h3>
+          <p>The house number. On the Control Hub’s own road it is <mark class="ip">192.168.43.1</mark>. A router road hands out a different number, such as 192.168.1.42. That second number is only an example.</p>
+        </article>
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-library"/></svg>
+          <h3><mark class="port">Port</mark></h3>
+          <p>A door on that house. Door <mark class="port">8080</mark> is the robot’s web page, where a program book can be dropped off. Joystick messages use a different door so they are not mixed up with the web page.</p>
+        </article>
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-book"/></svg>
+          <h3><mark class="hi">File</mark></h3>
+          <p>A program is a book on a shelf. It does not float to the robot. Someone carries it along a path, to a house number, through a door, onto the robot’s shelf.</p>
+        </article>
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-house"/></svg>
+          <h3><mark class="client">Client</mark></h3>
+          <p>A private house that goes visiting. The Driver Hub is a client. Your laptop is a client when it opens the robot’s page or google.com.</p>
+        </article>
+        <article class="word">
+          <svg class="ico" aria-hidden="true"><use href="#i-library"/></svg>
+          <h3><mark class="server">Server</mark></h3>
+          <p>A library that stays open and answers visitors. The robot is a server. <mark class="server">google.com</mark> and <mark class="server">github.com</mark> are servers too. They live on the internet road, not on the robot’s private road.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="doors">
+      <h2>House number, then a door</h2>
+      <p class="lede">The Driver Hub is the visitor. The robot is the library. Same building, more than one door. Click a door. The address follows the robot box you picked above.</p>
+      <div class="visit-row">
+        <article class="cottage">
+          <svg class="ico" aria-hidden="true"><use href="#i-house"/></svg>
+          <p class="ribbon client">Client</p>
+          <h3>Private house</h3>
+          <p>Driver Hub or a laptop. It visits. It is not the town library.</p>
+        </article>
+        <p class="walk-arrow">walks the path →</p>
+        <div class="plot">
+          <p class="roof-sign"><span class="ribbon server">Server · library</span></p>
+          <svg class="roof-svg" viewBox="0 0 360 64" aria-hidden="true">
+            <polygon points="10,60 180,8 350,60" fill="#5b3cc4" stroke="#1c1915" stroke-width="8" stroke-linejoin="round"/>
+          </svg>
+          <article class="mansion">
+            <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+            <h3 data-device-name>REV Control Hub</h3>
+            <p>Address <mark class="ip" data-ip>192.168.43.1</mark></p>
+            <div class="doors">
+              <button type="button" class="door" id="door-web">
+                <span class="door-num">8080</span>
+                <span>Web page door</span>
+              </button>
+              <button type="button" class="door" id="door-drive">
+                <span class="door-num">drive</span>
+                <span>Joystick door</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p id="door-note">Click a door on the library.</p>
+    </section>
+
+    <section id="book">
+      <h2>A file is a book you carry</h2>
+      <p class="lede">An OpMode starts in the laptop’s house. It arrives in the robot’s library only if it travels a real road.</p>
+      <div class="comic" id="comic">
+        <article class="frame" data-frame="0">
+          <svg class="ico" aria-hidden="true"><use href="#i-laptop"/></svg>
+          <h3>Laptop house</h3>
+          <p class="fine"><mark class="client">Client</mark> shelf</p>
+          <div class="shelf" data-shelf>
+            <svg class="shelf-book" id="book-home" aria-hidden="true"><use href="#i-book"/></svg>
+          </div>
+        </article>
+        <article class="frame" data-frame="1">
+          <h3><mark class="path">The path</mark></h3>
+          <p class="fine">Wi-Fi Direct, or Wi-Fi if the robot joined it.</p>
+          <div class="road-cartoon" data-shelf></div>
+        </article>
+        <article class="frame" data-frame="2">
+          <svg class="ico" aria-hidden="true"><use href="#i-library"/></svg>
+          <h3>Robot library</h3>
+          <p class="fine"><mark class="ip" data-ip>192.168.43.1</mark> door <mark class="port">8080</mark></p>
+          <div class="shelf" data-shelf>
+            <svg class="shelf-book" id="book-robot" hidden aria-hidden="true"><use href="#i-book"/></svg>
+          </div>
+        </article>
+        <svg id="flying-book" hidden aria-hidden="true"><use href="#i-book"/></svg>
+      </div>
+      <div class="toolbar" style="margin-top:12px">
+        <button type="button" id="carry-btn">Carry the book</button>
+      </div>
+      <p id="comic-caption">The book is still on the laptop shelf. Nothing has moved yet.</p>
+    </section>
+
+    <section id="try">
+      <h2>Walk it yourself</h2>
+      <p class="lede">Pick a road. Then send a joystick wiggle, carry the program book, or try to visit a website. The sign is not enough. You have to take the path.</p>
+      <div class="road-switch" role="group" aria-label="Which road you are walking">
+        <button type="button" id="road-direct" aria-pressed="true">Walk Wi-Fi Direct</button>
+        <button type="button" id="road-wifi" aria-pressed="false">Walk Wi-Fi through a router</button>
+      </div>
+      <div id="try-stage">
+        <div class="road-panel is-on" id="panel-direct">
+          <div class="stack">
+            <article class="room" data-stop="you">
+              <p class="ribbon client">Client</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-driver"/></svg>
+              <h3>You</h3>
+              <p>Driver Hub or laptop</p>
+            </article>
+            <div class="corridor" aria-hidden="true"><i class="paint-line"></i></div>
+            <article class="room" data-stop="robot">
+              <p class="ribbon server">Server</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+              <h3 data-device-name>REV Control Hub</h3>
+              <p><mark class="ip" data-ip>192.168.43.1</mark> · door <mark class="port">8080</mark></p>
+            </article>
+            <div class="corridor" aria-hidden="true">
+              <span class="corridor-label">no ramp</span>
+              <i class="paint-line"></i>
+            </div>
+            <article class="room" data-stop="gate">
+              <svg class="ico" aria-hidden="true"><use href="#i-gate"/></svg>
+              <h3>Gate</h3>
+              <p>Internet is not this way.</p>
+            </article>
+          </div>
+        </div>
+        <div class="road-panel" id="panel-wifi">
+          <label class="check"><input type="checkbox" id="robot-joined" checked> The robot joined this Wi-Fi too</label>
+          <div class="stack">
+            <article class="room" data-stop="you">
+              <p class="ribbon client">Client</p>
+              <svg class="ico" aria-hidden="true"><use href="#i-laptop"/></svg>
+              <h3>You</h3>
+              <p>Driver Hub or laptop</p>
+            </article>
+            <div class="corridor" aria-hidden="true"><i class="paint-line"></i></div>
+            <article class="room" data-stop="router">
+              <svg class="ico" aria-hidden="true"><use href="#i-router"/></svg>
+              <h3>Router</h3>
+              <p>Crossing, not a library</p>
+            </article>
+            <i class="paint-line across" aria-hidden="true"></i>
+            <div class="split">
+              <div class="branch">
+                <div class="corridor" aria-hidden="true"><i class="paint-line"></i></div>
+                <article class="room" data-stop="robot">
+                  <p class="ribbon server">Server</p>
+                  <svg class="ico" aria-hidden="true"><use href="#i-robot"/></svg>
+                  <h3>Robot</h3>
+                  <p>Example address <mark class="ip">192.168.1.42</mark></p>
+                </article>
+              </div>
+              <div class="branch">
+                <div class="corridor" aria-hidden="true"><i class="paint-line"></i></div>
+                <article class="room" data-stop="internet">
+                  <svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg>
+                  <h3>Internet</h3>
+                </article>
+                <div class="pair">
+                  <article class="room small" data-stop="google">
+                    <p class="ribbon server">Server</p>
+                    <h3>google.com</h3>
+                  </article>
+                  <article class="room small" data-stop="github">
+                    <p class="ribbon server">Server</p>
+                    <h3>github.com</h3>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="traveler" class="traveler book" hidden>
+          <svg class="ico" data-kind="book" aria-hidden="true"><use href="#i-book"/></svg>
+          <svg class="ico" data-kind="joy" aria-hidden="true"><use href="#i-joy"/></svg>
+          <svg class="ico" data-kind="web" aria-hidden="true"><use href="#i-globe"/></svg>
+        </div>
+      </div>
+      <div class="missions">
+        <button type="button" data-mission="drive">Send a joystick wiggle</button>
+        <button type="button" data-mission="book">Carry the program book</button>
+        <button type="button" data-mission="google">Visit google.com</button>
+        <button type="button" data-mission="github">Visit github.com</button>
+      </div>
+      <div id="result" class="result" aria-live="polite">Pick a road, then send something down the hall.</div>
+    </section>
+
+    <section id="match">
+      <h2>On match day</h2>
+      <div class="steps">
+        <article class="step"><b>1</b><p>The robot side opens the private road and keeps its house number.</p></article>
+        <article class="step"><b>2</b><p>The Driver Hub joins <em>that</em> road by name, not the school Wi-Fi.</p></article>
+        <article class="step"><b>3</b><p>The driver is the <mark class="client">client</mark>. The robot is the <mark class="server">server</mark>.</p></article>
+        <article class="step"><b>4</b><p>Joystick wiggles stay on that hall. Google is not part of driving.</p></article>
+      </div>
+    </section>
+
+    <section id="check">
+      <h2>Quick check</h2>
+      <div class="quiz" id="quiz">
+        <fieldset>
+          <legend>You need github.com. Which road do you walk?</legend>
+          <button type="button" data-ok="false">Wi-Fi Direct, the private robot road</button>
+          <button type="button" data-ok="true">Wi-Fi that goes through a router</button>
+          <p class="why" hidden>github.com is a server on the internet. Only the router road has a ramp to that town.</p>
+        </fieldset>
+        <fieldset>
+          <legend>At a match, your Driver Hub should talk to your robot on a private road. Which sign is that?</legend>
+          <button type="button" data-ok="true">Wi-Fi Direct</button>
+          <button type="button" data-ok="false">The venue’s public Wi-Fi</button>
+          <p class="why" hidden>Wi-Fi Direct is the private hall between your driver and your robot. You do not need the internet to drive.</p>
+        </fieldset>
+        <fieldset>
+          <legend>The plaque says 192.168.43.1 and you want the robot’s web page. What else do you need?</legend>
+          <button type="button" data-ok="false">A different house on the same road</button>
+          <button type="button" data-ok="true">Door 8080, the port</button>
+          <p class="why" hidden>192.168.43.1 is the house. 8080 is the web door. Together they look like 192.168.43.1:8080.</p>
+        </fieldset>
+      </div>
+      <div id="score" class="banner" hidden>You can explain this to your team. Same paint, different road. Address, then door. Client visits, server answers.</div>
+    </section>
+
+    <section id="facts">
+      <h2>The real numbers on a real team</h2>
+      <ul class="facts">
+        <li class="fact"><mark class="ip">192.168.43.1</mark> is the Control Hub’s house number on the network it creates itself. The Driver Station still calls this kind of link Wi-Fi Direct.</li>
+        <li class="fact"><mark class="ip">192.168.49.1</mark> is the usual house number when the robot side is an Android phone on Wi-Fi Direct.</li>
+        <li class="fact">Door <mark class="port">8080</mark> is the web page for both. A browser opens <strong>http://</strong> that address, a colon, and 8080.</li>
+        <li class="fact">On a normal router, the router assigns the house numbers. They will not be those famous ones. The internet may be available on that same road.</li>
+        <li class="fact">Join the robot’s network on a laptop and google.com often stops loading, even while the Wi-Fi icon looks fine. You are on the private road. Google’s library is on the other one. Leave that road, join the home router, and the internet comes back — you may also lose the robot until it is on that router too.</li>
+        <li class="fact">At many events the private road is the one you use, so the driver is tied to that robot and the venue’s internet is not required.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const devices = {
+      hub: { ip: "192.168.43.1", name: "REV Control Hub" },
+      phone: { ip: "192.168.49.1", name: "Robot Controller phone" }
+    };
+    let deviceKey = "hub";
+    let road = "direct";
+    let runToken = 0;
+    let bookToken = 0;
+
+    const motionBtn = document.getElementById("motion-btn");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function setMotion(on) {
+      document.body.classList.toggle("is-still", !on);
+      motionBtn.textContent = on ? "Pause motion" : "Play motion";
+      motionBtn.setAttribute("aria-pressed", on ? "false" : "true");
+    }
+
+    motionBtn.addEventListener("click", () => {
+      setMotion(document.body.classList.contains("is-still"));
+    });
+    if (reduceMotion) setMotion(false);
+
+    function applyDevice(key) {
+      deviceKey = key;
+      const info = devices[key];
+      document.querySelectorAll("[data-ip]").forEach((el) => {
+        el.textContent = info.ip;
+      });
+      document.querySelectorAll("[data-device-name]").forEach((el) => {
+        el.textContent = info.name;
+      });
+      document.getElementById("pick-hub").setAttribute("aria-pressed", key === "hub" ? "true" : "false");
+      document.getElementById("pick-phone").setAttribute("aria-pressed", key === "phone" ? "true" : "false");
+      const openDoor = document.querySelector(".door.is-open");
+      if (openDoor) doorNote.innerHTML = doorText(openDoor.id === "door-web" ? "web" : "drive");
+    }
+
+    document.getElementById("pick-hub").addEventListener("click", () => applyDevice("hub"));
+    document.getElementById("pick-phone").addEventListener("click", () => applyDevice("phone"));
+
+    const netCopy = {
+      home: "You joined <mark class=\"path\">Home-WiFi</mark>. This road goes to a router. Past that crossing you can reach <mark class=\"server\">google.com</mark> and <mark class=\"server\">github.com</mark>. Your robot is on this road only if it joined Home-WiFi too.",
+      robot: "You joined <mark class=\"path\">FTC-ROBOT</mark>. The icon matched the other row, but this hall ends at the robot, the <mark class=\"server\">server</mark>. A trip to google.com turns around. The paint did not change. The road did."
+    };
+
+    document.querySelector(".phone").addEventListener("click", (event) => {
+      const btn = event.target.closest(".net");
+      if (!btn) return;
+      document.querySelectorAll(".net").forEach((n) => {
+        n.setAttribute("aria-pressed", n === btn ? "true" : "false");
+      });
+      document.getElementById("net-result").innerHTML = netCopy[btn.dataset.net];
+    });
+
+    const doorNote = document.getElementById("door-note");
+    function doorText(which) {
+      const ip = devices[deviceKey].ip;
+      if (which === "web") {
+        return `Door <mark class="port">8080</mark> is the web page. A laptop knocks here to drop off a program book. People write it as http://<mark class="ip">${ip}</mark>:<mark class="port">8080</mark> — house, colon, door.`;
+      }
+      return `The Driver Hub sends joystick wiggles through a different door on the same house, <mark class="ip">${ip}</mark>. The book and the driving do not share a door, so they do not get mixed up.`;
+    }
+
+    document.querySelectorAll(".door").forEach((door) => {
+      door.addEventListener("click", () => {
+        document.querySelectorAll(".door").forEach((d) => d.classList.toggle("is-open", d === door));
+        doorNote.innerHTML = doorText(door.id === "door-web" ? "web" : "drive");
+      });
+    });
+
+    const comic = document.getElementById("comic");
+    const flying = document.getElementById("flying-book");
+    const comicCaption = document.getElementById("comic-caption");
+    const captions = [
+      "The program is a book on a shelf in the laptop’s house.",
+      "It travels the <mark class=\"path\">path</mark>. It cannot skip the road.",
+      "It is put down at a house number, through door <mark class=\"port\">8080</mark>, on the robot’s library shelf."
+    ];
+
+    function centerIn(el, box) {
+      const a = el.getBoundingClientRect();
+      const b = box.getBoundingClientRect();
+      return {
+        left: (a.left + a.width / 2 - b.left) + "px",
+        top: (a.top + a.height / 2 - b.top) + "px"
+      };
+    }
+
+    document.getElementById("carry-btn").addEventListener("click", async () => {
+      const token = ++bookToken;
+      const spots = [...comic.querySelectorAll("[data-shelf]")];
+      const frames = [...comic.querySelectorAll("[data-frame]")];
+      flying.hidden = false;
+      document.getElementById("book-home").hidden = true;
+      document.getElementById("book-robot").hidden = true;
+      const points = spots.map((el) => centerIn(el, comic));
+      flying.style.left = points[0].left;
+      flying.style.top = points[0].top;
+      frames.forEach((frame, i) => frame.classList.toggle("is-lit", i === 0));
+      comicCaption.innerHTML = captions[0];
+      if (document.body.classList.contains("is-still")) {
+        frames.forEach((frame) => frame.classList.add("is-lit"));
+        flying.hidden = true;
+        document.getElementById("book-robot").hidden = false;
+        comicCaption.innerHTML = captions[2];
+        return;
+      }
+      const anim = flying.animate(points.map((p) => ({ left: p.left, top: p.top })), {
+        duration: 2400,
+        easing: "ease-in-out",
+        fill: "forwards"
+      });
+      const started = performance.now();
+      const timer = setInterval(() => {
+        if (token !== bookToken) return;
+        const step = Math.min(2, Math.floor((performance.now() - started) / 800));
+        frames.forEach((frame, i) => frame.classList.toggle("is-lit", i === step));
+        comicCaption.innerHTML = captions[step];
+      }, 200);
+      try { await anim.finished; } catch (err) { /* cancelled */ }
+      clearInterval(timer);
+      if (token !== bookToken) return;
+      frames.forEach((frame, i) => frame.classList.toggle("is-lit", i === 2));
+      comicCaption.innerHTML = captions[2];
+      flying.hidden = true;
+      document.getElementById("book-robot").hidden = false;
+    });
+
+    function setRoad(next) {
+      road = next;
+      document.getElementById("road-direct").setAttribute("aria-pressed", next === "direct" ? "true" : "false");
+      document.getElementById("road-wifi").setAttribute("aria-pressed", next === "wifi" ? "true" : "false");
+      document.getElementById("panel-direct").classList.toggle("is-on", next === "direct");
+      document.getElementById("panel-wifi").classList.toggle("is-on", next === "wifi");
+      runToken++;
+      document.getElementById("traveler").hidden = true;
+    }
+
+    window.addEventListener("resize", () => {
+      runToken++;
+      document.getElementById("traveler").hidden = true;
+    });
+
+    document.getElementById("road-direct").addEventListener("click", () => setRoad("direct"));
+    document.getElementById("road-wifi").addEventListener("click", () => setRoad("wifi"));
+
+    const joined = document.getElementById("robot-joined");
+    joined.addEventListener("change", () => {
+      document.querySelector("#panel-wifi [data-stop='robot']").classList.toggle("is-absent", !joined.checked);
+    });
+
+    function missionStops(mission) {
+      const panel = document.querySelector(".road-panel.is-on");
+      const stop = (name) => panel.querySelector(`[data-stop="${name}"]`);
+      if (mission === "drive" || mission === "book") {
+        if (road === "direct") return [stop("you"), stop("robot")];
+        return joined.checked ? [stop("you"), stop("router"), stop("robot")] : [stop("you"), stop("router")];
+      }
+      if (road === "direct") return [stop("you"), stop("robot"), stop("gate")];
+      return [stop("you"), stop("router"), stop("internet"), stop(mission)];
+    }
+
+    function missionHtml(mission) {
+      const ip = devices[deviceKey].ip;
+      const arrivedRobot = road === "direct" || joined.checked;
+      if (mission === "drive") {
+        if (road === "direct") {
+          return "The joystick wiggle stayed on the private road. The Driver Hub is the <mark class=\"client\">client</mark>, a visitor. The robot is the <mark class=\"server\">server</mark>, the library that answers.";
+        }
+        if (arrivedRobot) {
+          return "The wiggle walked <mark class=\"path\">Wi-Fi</mark> to the router, then to the robot. This same road can also continue to the internet. The robot is here only because it joined this Wi-Fi.";
+        }
+        return "The wiggle reached the router and stopped. A router is a crossing, not the robot’s library. Join the robot to this Wi-Fi, or walk the private road instead.";
+      }
+      if (mission === "book") {
+        if (road === "direct") {
+          return `You carried the program like a book to address <mark class="ip">${ip}</mark>, door <mark class="port">8080</mark>. It now sits on the robot’s shelf.`;
+        }
+        if (arrivedRobot) {
+          return "You carried the book on the router road. Here the robot’s house number is assigned by the router — <mark class=\"ip\">192.168.1.42</mark> is only an example — and the web door is still <mark class=\"port\">8080</mark>.";
+        }
+        return "There is no robot library on this road right now, so there is no shelf for the book.";
+      }
+      const site = mission === "google" ? "google.com" : "github.com";
+      if (road === "wifi") {
+        return `You reached <mark class="server">${site}</mark>. It is a library on the internet, so it is a server too. Your device was the client. The router was the crossing that made the visit possible.`;
+      }
+      return `You walked the road named <mark class="path">Wi-Fi Direct</mark>. The yellow paint looks like Wi-Fi, but the hall ends at the robot. <mark class="server">${site}</mark> is a server on a different road, so this visit turns around at the gate.`;
+    }
+
+    document.querySelector(".missions").addEventListener("click", async (event) => {
+      const btn = event.target.closest("[data-mission]");
+      if (!btn) return;
+      const mission = btn.dataset.mission;
+      const token = ++runToken;
+      const stage = document.getElementById("try-stage");
+      const traveler = document.getElementById("traveler");
+      const kind = mission === "book" ? "book" : mission === "drive" ? "joy" : "web";
+      const stops = missionStops(mission).filter(Boolean);
+      stage.querySelectorAll(".room").forEach((room) => room.classList.remove("hot"));
+      const points = stops.map((el) => centerIn(el, stage));
+      traveler.hidden = false;
+      traveler.className = "traveler " + kind;
+      traveler.style.left = points[0].left;
+      traveler.style.top = points[0].top;
+      const result = document.getElementById("result");
+      if (document.body.classList.contains("is-still") || points.length < 2) {
+        const last = stops[stops.length - 1];
+        traveler.style.left = points[points.length - 1].left;
+        traveler.style.top = points[points.length - 1].top;
+        last.classList.add("hot");
+        result.innerHTML = missionHtml(mission);
+        return;
+      }
+      const anim = traveler.animate(points.map((p) => ({ left: p.left, top: p.top })), {
+        duration: 700 * (points.length - 1),
+        easing: "linear",
+        fill: "forwards"
+      });
+      try { await anim.finished; } catch (err) { return; }
+      if (token !== runToken) return;
+      stops[stops.length - 1].classList.add("hot");
+      if (road === "direct" && (mission === "google" || mission === "github")) {
+        stops[stops.length - 1].animate(
+          [{ transform: "translateX(0)" }, { transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "translateX(0)" }],
+          { duration: 380 }
+        );
+      }
+      result.innerHTML = missionHtml(mission);
+    });
+
+    const quiz = document.getElementById("quiz");
+    quiz.addEventListener("click", (event) => {
+      const btn = event.target.closest("button[data-ok]");
+      if (!btn) return;
+      const field = btn.closest("fieldset");
+      field.querySelectorAll("button").forEach((b) => b.classList.toggle("chosen", b === btn));
+      const ok = btn.dataset.ok === "true";
+      field.classList.toggle("solved", ok);
+      field.classList.toggle("missed", !ok);
+      field.querySelector(".why").hidden = false;
+      const solved = quiz.querySelectorAll("fieldset.solved").length;
+      document.getElementById("score").hidden = solved !== 3;
+    });
+  </script>
+</body>
+</html>
