@@ -257,6 +257,7 @@ body {
 .blk.set { background: #5b8def; color: #fff; }
 .blk.call { background: #3dba7a; }
 .blk.call.wait { background: #f0b429; }
+.blk.call.myblock { background: #2a7de1; color: #fff; }
 .blk.loop { background: #3dba7a; color: #062214; }
 .blk.logic { background: #5b8def; color: #fff; }
 .blk.hw { background: #7c6af0; color: #fff; }

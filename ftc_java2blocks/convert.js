@@ -1,6 +1,107 @@
 /* IR → visual Blocks HTML + Blockly-ish .blk XML */
 
 const Java2BlocksConvert = (() => {
+  /** Known @ExportToBlocks signatures for RobotMyBlocks (lookup string must match RC reflection). */
+  const MYBLOCK_META = {
+    initRobot: {
+      heading: "Robot",
+      comment: "Init once — maps test_config devices and sets PIDF",
+      tooltip: "Call at the start of Auto or TeleOp",
+      labels: [],
+      types: [],
+    },
+    driveForward: {
+      heading: "Drive",
+      comment: "Drive forward (+) or back (−) using encoders + PIDF",
+      tooltip: "",
+      labels: ["Inches", "Max power 0..1"],
+      types: ["double", "double"],
+    },
+    strafeRight: {
+      heading: "Drive",
+      comment: "Strafe right (+) or left (−) — mecanum",
+      tooltip: "",
+      labels: ["Inches", "Max power 0..1"],
+      types: ["double", "double"],
+    },
+    turnDegrees: {
+      heading: "Drive",
+      comment: "Spin right (+) or left (−) degrees (encoder estimate — tune)",
+      tooltip: "",
+      labels: ["Degrees", "Max power 0..1"],
+      types: ["double", "double"],
+    },
+    driveArcade: {
+      heading: "Drive",
+      comment: "TeleOp mecanum: forward, strafe, turn in −1..1",
+      tooltip: "",
+      labels: ["Forward", "Strafe", "Turn"],
+      types: ["double", "double", "double"],
+    },
+    stopDrive: {
+      heading: "Drive",
+      comment: "Stop all drive motors",
+      tooltip: "",
+      labels: [],
+      types: [],
+    },
+    liftMoveInches: {
+      heading: "Lift",
+      comment: "Move lift by encoder inches (approx) with PIDF",
+      tooltip: "",
+      labels: ["Inches", "Max power 0..1"],
+      types: ["double", "double"],
+    },
+    liftPower: {
+      heading: "Lift",
+      comment: "TeleOp lift power −1..1 (no PID hold)",
+      tooltip: "",
+      labels: ["Power"],
+      types: ["double"],
+    },
+    liftStop: {
+      heading: "Lift",
+      comment: "Stop lift motor",
+      tooltip: "",
+      labels: [],
+      types: [],
+    },
+    leftServo: {
+      heading: "Servo",
+      comment: "left_servo position 0..1",
+      tooltip: "",
+      labels: ["Position"],
+      types: ["double"],
+    },
+    rightServo: {
+      heading: "Servo",
+      comment: "right_servo position 0..1",
+      tooltip: "",
+      labels: ["Position"],
+      types: ["double"],
+    },
+    servosOpen: {
+      heading: "Servo",
+      comment: "Open-ish poses (0.8)",
+      tooltip: "",
+      labels: [],
+      types: [],
+    },
+    servosClose: {
+      heading: "Servo",
+      comment: "Closed-ish poses (0.2)",
+      tooltip: "",
+      labels: [],
+      types: [],
+    },
+  };
+
+  function myBlockLookupString(className, method, types, returnType) {
+    const pkg = "org.firstinspires.ftc.teamcode." + className;
+    const params = (types || []).join(",");
+    return `${pkg} ${method}(${params}) ${returnType || "void"}`;
+  }
+
   function esc(s) {
     return String(s)
       .replace(/&/g, "&amp;")
@@ -87,6 +188,12 @@ const Java2BlocksConvert = (() => {
         return `<div class="blk call"${pad}>call sleep ${chip(exprToText(n.ms))} ms</div>`;
       case "idle":
         return `<div class="blk call"${pad}>call idle</div>`;
+      case "myBlockCall": {
+        const args = (n.args || []).map((a) => chip(exprToText(a))).join(" ");
+        return `<div class="blk call myblock"${pad}>myBlock ${chip(
+          `${n.className}.${n.method}`
+        )} ${args}</div>`;
+      }
       case "telemetryAdd":
         return `<div class="blk call"${pad}>telemetry.addData ${chip(`"${n.key}"`)} ${chip(
           exprToText(n.value)
@@ -559,6 +666,63 @@ const Java2BlocksConvert = (() => {
         return `<block type="telemetry_update" id="${nid()}"></block>`;
       case "idle":
         return `<block type="linearOpMode_idle" id="${nid()}"></block>`;
+      case "myBlockCall": {
+        // FTC myBlocks are misc_callJava_* — NOT Blockly procedures_callnoreturn.
+        // Runtime looks up Java via methodLookupString (see BlocksClassFilter.getLookupString).
+        const className = n.className || "RobotMyBlocks";
+        const method = n.method || "myBlock";
+        const args = n.args || [];
+        const meta = MYBLOCK_META[method] || {
+          heading: "call Java method",
+          comment: "",
+          tooltip: "",
+          labels: args.map((_, i) => `ARG${i}`),
+          types: args.map(() => "double"),
+        };
+        const types = meta.types.length ? meta.types : args.map(() => "double");
+        const labels = meta.labels.length ? meta.labels : types.map((t) => t);
+        const paramCount = types.length;
+        const lookup = myBlockLookupString(className, method, types, "void");
+        let argAttrs = "";
+        for (let i = 0; i < paramCount; i++) {
+          argAttrs +=
+            ` argLabel${i}="${esc(labels[i] || "")}"` +
+            ` argType${i}="${esc(types[i] || "double")}"` +
+            ` argAuto${i}=""`;
+        }
+        const values = args
+          .map(
+            (a, i) =>
+              `<value name="ARG${i}">${exprXml(a || { type: "literal", value: "0" })}</value>`
+          )
+          .join("");
+        // Pad missing args with 0 if signature longer than call (shouldn't happen)
+        let pad = "";
+        for (let i = args.length; i < paramCount; i++) {
+          pad += `<value name="ARG${i}"><block type="math_number" id="${nid()}"><field name="NUM">0</field></block></value>`;
+        }
+        return (
+          `<block type="misc_callJava_noReturn" id="${nid()}">` +
+          `<mutation createDropdownFunctionName=""` +
+          ` methodLookupString="${esc(lookup)}"` +
+          ` fullClassName="org.firstinspires.ftc.teamcode.${esc(className)}"` +
+          ` simpleName="${esc(className)}"` +
+          ` parameterCount="${paramCount}"` +
+          ` returnType="void"` +
+          ` color="289"` +
+          ` heading="${esc(meta.heading || "call Java method")}"` +
+          ` comment="${esc(meta.comment || "")}"` +
+          ` tooltip="${esc(meta.tooltip || "")}"` +
+          ` accessMethod="callJava"` +
+          ` convertReturnValue=""` +
+          `${argAttrs}></mutation>` +
+          `<field name="HEADING">${esc(meta.heading || "call Java method")}</field>` +
+          `<field name="CLASS_NAME">${esc(className)}</field>` +
+          `<field name="METHOD_NAME">${esc(method)}</field>` +
+          `${values}${pad}` +
+          `</block>`
+        );
+      }
       case "while":
         return `<block type="controls_whileUntil" id="${nid()}"><field name="MODE">WHILE</field><value name="BOOL">${exprXml(
           n.cond

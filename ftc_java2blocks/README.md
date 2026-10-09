@@ -66,6 +66,26 @@ Static hosting: **GitHub Pages** or **Netlify**.
 
 **Robot config XML:** pass `--config test_config.xml` (or load it in the web UI). That file is the source of truth for hardware **device names**; the converter validates `hardwareMap.get(..., "name")` against it and stamps those names into the `.blk`.
 
-**Breaks round-trip:** vision, threads, Road Runner, `switch`, lambdas, custom classes, arrays of motors, **`String + number` concatenation** (use separate `telemetry.addData` lines for numbers).
+**Breaks round-trip:** vision, threads, Road Runner, `switch`, lambdas, custom classes (except myBlocks libraries), arrays of motors, **`String + number` concatenation** (use separate `telemetry.addData` lines for numbers).
 
-Generated `.blk` uses **real FTC Blocks type names** from the SDK (e.g. `dcMotor_setProperty_Number`, `linearOpMode_waitForStart`, `gamepad_getProperty_Number`) plus the required `<Extra>` trailer so **Upload Op Mode** on the RC can load it. Device names must match your active config. Always open and smoke-test after upload.
+### myBlocks (`*MyBlocks` / `BlocksOpModeCompanion`)
+
+| Input | Converter behavior |
+|-------|-------------------|
+| `RobotMyBlocks.java` (`extends BlocksOpModeCompanion`) | **Library** — info only, no `.blk`, exit 0. Deploy as Java. |
+| `RobotMyBlocks.bindFromLinearOpMode(this);` | **Ignored** (no warning) — Blocks binds context itself. |
+| `RobotMyBlocks.driveForward(...)`, `initRobot()`, … | **myBlock call** → FTC `misc_callJava_noReturn` (not a Blockly procedure). Keep library Java on the RC. |
+| Bare `return;` after `if (!opModeIsActive())` | **Ignored**. |
+
+### How `.blk` reaches Java myBlocks
+
+Blocks does **not** call your Java method by bare name. At run time it generates JavaScript like `callJava(..., "org.firstinspires.ftc.teamcode.RobotMyBlocks initRobot() void", ...)`, which the RC resolves via reflection to the `@ExportToBlocks` method.
+
+So:
+
+1. `RobotMyBlocks.java` must be built on the RC (provides the Java methods + toolbox myBlocks).
+2. The `.blk` must contain **`misc_callJava_noReturn`** blocks with the correct `methodLookupString` — not Blockly `procedures_callnoreturn` (that causes `Could not find identifier: initRobot`).
+
+If you see that identifier error, re-convert with this updated tool and re-upload the `.blk`.
+
+Generated `.blk` uses **real FTC Blocks type names** from the SDK (e.g. `dcMotor_setProperty_Number`, `linearOpMode_waitForStart`, `misc_callJava_noReturn`) plus the required `<Extra>` trailer so **Upload Op Mode** on the RC can load it. Device names must match your active config. Always open and smoke-test after upload.

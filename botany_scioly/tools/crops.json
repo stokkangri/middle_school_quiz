@@ -1,0 +1,18 @@
+[
+  {"page": 7, "name": "plant_cell", "box": [0.66, 0.24, 0.96, 0.58], "note": "Plant cell without the color key"},
+  {"page": 8, "name": "root_systems", "box": [0.66, 0.28, 0.96, 0.55], "note": "Taproot and fibrous drawings, captions cropped off"},
+  {"page": 9, "name": "stem_bundles", "box": [0.66, 0.26, 0.96, 0.555], "note": "Bundle patterns without dicot/monocot captions"},
+  {"page": 10, "name": "leaf_section", "box": [0.66, 0.26, 0.96, 0.55], "note": "Leaf cross section without the color key"},
+  {"page": 11, "name": "fern_sori", "box": [0.66, 0.24, 0.96, 0.55], "note": "Fern frond with orange sori, legend cropped off"},
+  {"page": 12, "name": "flower_parts", "box": [0.66, 0.26, 0.96, 0.595], "note": "Flower diagram without the color key"},
+  {"page": 14, "name": "root_zones", "box": [0.66, 0.24, 0.96, 0.58], "note": "Root tip zones without the zone names"},
+  {"page": 15, "name": "xylem_phloem", "box": [0.43, 0.24, 0.57, 0.92], "note": "Water up in xylem, sugar down in phloem"},
+  {"page": 16, "name": "stomata", "box": [0.66, 0.26, 0.96, 0.58], "note": "Open and closed stomata, color key cropped off"},
+  {"page": 17, "name": "chloroplast_io", "box": [0.66, 0.24, 0.96, 0.59], "note": "Inputs and outputs of a chloroplast, including the H2O label"},
+  {"page": 23, "name": "plant_groups_line", "box": [0.66, 0.28, 0.96, 0.56], "note": "Bryophyte to angiosperm sequence"},
+  {"page": 26, "name": "alternation", "box": [0.66, 0.24, 0.96, 0.62], "note": "Alternation of generations cycle"},
+  {"page": 30, "name": "nutrient_cycle", "box": [0.66, 0.22, 0.96, 0.60], "note": "Atmosphere, plants, consumers, and soil, legend cropped off"},
+  {"page": 31, "name": "succession", "box": [0.66, 0.30, 0.96, 0.68], "note": "Bare ground to climax forest"},
+  {"page": 35, "name": "nitrogen_leaves", "box": [0.66, 0.28, 0.96, 0.59], "note": "Yellow older leaves and green new growth, color key cropped off"},
+  {"page": 80, "name": "chlorophyll_spectra", "box": [0.12, 0.25, 0.88, 0.64], "note": "Chlorophyll a and b absorption graph. Credit stays in the question, not on the crop."}
+]

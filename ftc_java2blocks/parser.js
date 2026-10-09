@@ -30,7 +30,88 @@ const Java2BlocksParser = (() => {
       "new SomeClass(...) is mostly unsupported (except simple ElapsedTime). Prefer hardwareMap.get and primitives.",
     annotation:
       "Only @TeleOp / @Autonomous (name=) are read. Other annotations are ignored.",
+    library:
+      "This file is a myBlocks library (BlocksOpModeCompanion). Deploy it as Java on the RC — do not convert it to .blk. Convert Sample Auto/TeleOp OpModes that call it instead.",
   };
+
+  /** Java-only glue: Blocks fills OpMode context automatically for myBlocks. */
+  const IGNORE_CALL_RE =
+    /^(?:\w+\.)?(?:bindFromLinearOpMode|bindFromOpMode)\s*\(/;
+
+  /** Stock types / utilities — not myBlock classes. */
+  const NOT_MYBLOCK_CLASS = new Set([
+    "Math",
+    "Range",
+    "System",
+    "Arrays",
+    "Collections",
+    "DcMotor",
+    "DcMotorEx",
+    "Servo",
+    "CRServo",
+    "ElapsedTime",
+    "Telemetry",
+    "HardwareMap",
+    "LinearOpMode",
+    "OpMode",
+  ]);
+
+  function isMyBlockClass(name) {
+    if (!name || NOT_MYBLOCK_CLASS.has(name)) return false;
+    // Explicit teaching libraries: *MyBlocks (e.g. RobotMyBlocks)
+    return /MyBlocks$/i.test(name);
+  }
+
+  function splitCallArgs(argsStr) {
+    const s = String(argsStr || "").trim();
+    if (!s) return [];
+    const args = [];
+    let depth = 0;
+    let cur = "";
+    let inString = false;
+    let stringChar = "";
+    let escaped = false;
+    for (let i = 0; i < s.length; i++) {
+      const ch = s[i];
+      if (inString) {
+        cur += ch;
+        if (escaped) escaped = false;
+        else if (ch === "\\") escaped = true;
+        else if (ch === stringChar) inString = false;
+        continue;
+      }
+      if (ch === '"' || ch === "'") {
+        inString = true;
+        stringChar = ch;
+        cur += ch;
+        continue;
+      }
+      if (ch === "(" || ch === "[" || ch === "{") {
+        depth++;
+        cur += ch;
+        continue;
+      }
+      if (ch === ")" || ch === "]" || ch === "}") {
+        depth--;
+        cur += ch;
+        continue;
+      }
+      if (ch === "," && depth === 0) {
+        if (cur.trim()) args.push(cur.trim());
+        cur = "";
+        continue;
+      }
+      cur += ch;
+    }
+    if (cur.trim()) args.push(cur.trim());
+    return args;
+  }
+
+  function makeInfo(line, code, message, tipKey) {
+    const iss = makeIssue(line, code, message, tipKey);
+    iss.level = "info";
+    return iss;
+  }
 
   function makeIssue(line, code, message, tipKey, suggestion) {
     return {
@@ -160,7 +241,12 @@ const Java2BlocksParser = (() => {
 
       const cls = ln.match(/class\s+(\w+)\s+extends\s+(\w+)/);
       if (cls) {
-        if (cls[2] !== "LinearOpMode") {
+        if (cls[2] === "BlocksOpModeCompanion") {
+          ir.libraryClass = cls[1];
+          ir.library = true;
+          ir.opModeName = cls[1];
+          ir.flavor = "myBlocksLibrary";
+        } else if (cls[2] !== "LinearOpMode") {
           issues.push(
             makeIssue(
               idx + 1,
@@ -173,7 +259,7 @@ const Java2BlocksParser = (() => {
           ir.opModeName = cls[1];
         }
       }
-      if (/class\s+\w+\s+extends\s+OpMode\b/.test(ln)) {
+      if (/class\s+\w+\s+extends\s+OpMode\b/.test(ln) && !/LinearOpMode/.test(ln)) {
         issues.push(
           makeIssue(
             idx + 1,
@@ -185,6 +271,26 @@ const Java2BlocksParser = (() => {
         );
       }
     });
+
+    // myBlocks library: deploy as Java — do not convert to .blk
+    if (ir.library) {
+      issues.push(
+        makeInfo(
+          1,
+          ir.libraryClass || "",
+          `Skipping convert: ${ir.libraryClass || "this class"} is a myBlocks library (extends BlocksOpModeCompanion).`,
+          "library"
+        )
+      );
+      ir.init = [];
+      ir.run = [
+        {
+          type: "comment",
+          text: `Deploy ${ir.libraryClass || "library"} as Java on the RC (@ExportToBlocks). Convert Sample Auto/TeleOp instead.`,
+        },
+      ];
+      return { ir, issues, ok: true, library: true };
+    }
 
     // Extract runOpMode body
     const joined = blanked.join("\n");
@@ -415,6 +521,33 @@ const Java2BlocksParser = (() => {
     // waitForStart
     if (/waitForStart\s*\(\s*\)\s*;?/.test(t) && !t.includes("while")) {
       return { type: "waitForStart" };
+    }
+
+    // Bare return; — common after if (!opModeIsActive()); not a Blocks concept
+    if (/^return\s*;$/.test(t)) {
+      return null;
+    }
+
+    // Java-only myBlocks glue (ignore — no warning)
+    if (IGNORE_CALL_RE.test(t)) {
+      return null;
+    }
+
+    // Static myBlock call: RobotMyBlocks.driveForward(12.0, 0.4);
+    const myBlockStmt = t.match(/^([A-Za-z_]\w*)\.([A-Za-z_]\w*)\s*\(([\s\S]*)\)\s*;$/);
+    if (myBlockStmt && isMyBlockClass(myBlockStmt[1])) {
+      const className = myBlockStmt[1];
+      const method = myBlockStmt[2];
+      if (method === "bindFromLinearOpMode" || method === "bindFromOpMode") {
+        return null;
+      }
+      const argStrs = splitCallArgs(myBlockStmt[3]);
+      return {
+        type: "myBlockCall",
+        className,
+        method,
+        args: argStrs.map((a) => parseExpr(a, line, issues)),
+      };
     }
 
     // while (cond) { body }  — balanced parens (opModeIsActive() && ... is OK)
@@ -654,11 +787,23 @@ const Java2BlocksParser = (() => {
     const gamepad = e.match(/^(gamepad[12])\.(\w+)$/);
     if (gamepad) return { type: "gamepad", pad: gamepad[1], field: gamepad[2] };
 
-    // method call on device
+    // method call on device (not myBlocks — those are statements)
     const call = e.match(/^(\w+)\.(\w+)\s*\(\s*([^)]*)\s*\)$/);
     if (call) {
+      if (isMyBlockClass(call[1])) {
+        // Unexpected myBlock in expression position (void helpers) — soft note only if used as value
+        issues.push(
+          makeIssue(
+            line,
+            e,
+            `myBlock ${call[1]}.${call[2]}() used in an expression — prefer a statement call.`,
+            "method",
+            "Call myBlocks as statements (e.g. RobotMyBlocks.driveForward(12, 0.4);), not inside assignments."
+          )
+        );
+      }
       const known = ["getPower", "getCurrentPosition", "getPosition", "seconds", "milliseconds"];
-      if (!known.includes(call[2])) {
+      if (!known.includes(call[2]) && !isMyBlockClass(call[1])) {
         issues.push(
           makeIssue(
             line,
@@ -674,7 +819,7 @@ const Java2BlocksParser = (() => {
         object: call[1],
         method: call[2],
         args: call[3]
-          ? call[3].split(",").map((a) => parseExpr(a.trim(), line, issues))
+          ? splitCallArgs(call[3]).map((a) => parseExpr(a.trim(), line, issues))
           : [],
       };
     }
@@ -763,5 +908,5 @@ const Java2BlocksParser = (() => {
     });
   }
 
-  return { parse, SUGGESTIONS };
+  return { parse, SUGGESTIONS, isMyBlockClass, splitCallArgs };
 })();

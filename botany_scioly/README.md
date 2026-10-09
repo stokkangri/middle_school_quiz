@@ -24,8 +24,21 @@ multi_select: options array and answer array of the correct option strings.
 true_false: answer is true or false, not a string.
 free_response: answer string plus accept array of allowed phrases.
 label: diagram is flower, seed, root_tip, or leaf, or include an svg string. labels is [{ "key": "A", "answer": "petal", "accept": ["petal"] }]. Optional wordBank.
-data_analysis: include chart or table, plus options and answer for a choice question, or answer and accept for a typed question.
+data_analysis: include chart, table, or image, plus options and answer for a choice question, or answer and accept for a typed question.
+An image question can add "image": "images/pack/example.png" and "imageAlt". Use "credit" when the figure needs a source line.
 chart types: bar with points [{label, value}], line with series [{name, points:[{label, value}]}], grouped_bar with groups and series [{name, values}].
 ```
 
-Graph numbers in this bank are practice patterns for coaching, not measurements from a published study.
+Graph numbers in this bank are practice patterns for coaching, not measurements from a published study, except the chlorophyll absorption figure, which is credited on the question.
+
+## Figures from the starter pack
+
+Division B diagrams live in `images/pack/`. Questions that use them are in the bank with ids starting `pack-`. The crops leave off color-key legends that would name the answer.
+
+```
+python3 tools/extract_starter_pack.py
+python3 tools/crop_figures.py
+python3 tools/add_questions.py tools/pack_questions.json
+```
+
+`tools/crops.json` lists each crop as fractions of the page: left, top, right, bottom. Study slides need `--rotation 90` (the default). The exam pages later in the PDF are already upright, so use `--rotation 0` for those. Rendered pages and OCR text stay in `tools/work/` and are not part of the quiz.

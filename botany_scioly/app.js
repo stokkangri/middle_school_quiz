@@ -164,7 +164,7 @@
       if (!Array.isArray(q.labels) || !q.labels.length) return "label question needs a labels array";
       if (!q.diagram && !q.svg) return "label question needs diagram or svg";
     }
-    if (q.type === "data_analysis" && !q.chart && !q.table) return "data question needs a chart or a table";
+    if (q.type === "data_analysis" && !q.chart && !q.table && !q.image) return "data question needs a chart, a table, or an image";
     if ((kind === "free_response" || kind === "multiple_choice") && (q.answer == null || q.answer === "")) return "missing answer";
     return "";
   }
@@ -479,6 +479,12 @@
       img.alt = q.imageAlt || "Question figure";
       img.className = "figure";
       parent.appendChild(img);
+      if (q.credit) {
+        const credit = document.createElement("p");
+        credit.className = "credit";
+        credit.textContent = q.credit;
+        parent.appendChild(credit);
+      }
     }
     if (q.chart) {
       const drawn = chartSvg(q.chart);

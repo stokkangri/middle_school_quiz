@@ -20,6 +20,7 @@
       <a href="#pd">Add D</a>
       <a href="#code">Code</a>
       <a href="#integral">Why not I?</a>
+      <a href="#pidf">PIDF</a>
     </nav>
   </header>
 
@@ -197,7 +198,7 @@
 desired = angle_to(goal)      # not always 0°!
 error = wrap(desired - yaw)
 steer = Kp * error
-drive(speed - steer, speed + steer)</code></pre>
+drive(speed - steer, speed + steer)  # each arg is one side: both motors on that side</code></pre>
     </section>
 
     <section class="section split reverse" id="pd">
@@ -221,7 +222,7 @@ error = wrap(desired - yaw)
 d_error = error - prev_error
 steer = Kp * error + Kd * d_error
 prev_error = error
-drive(speed - steer, speed + steer)
+drive(speed - steer, speed + steer)  # both motors on each side
 # sleep(0.02)  # steady loop time matters for D</code></pre>
     </section>
 
@@ -247,13 +248,13 @@ drive(speed - steer, speed + steer)
                 <span class="chip">Kp × error</span> + <span class="chip">Kd × dError</span>
               </div>
               <div class="blk call">call <span class="chip">setMotorPowers</span>
-                left: <span class="chip">speed − steer</span>
-                right: <span class="chip">speed + steer</span>
+                both left motors: <span class="chip">speed − steer</span>
+                both right motors: <span class="chip">speed + steer</span>
               </div>
               <div class="blk set">set <span class="chip">prevError</span> to <span class="chip">error</span></div>
             </div>
           </div>
-          <p class="fineprint">Teaching sketch — real FTC Blocks use REV IMU / motor block names.</p>
+          <p class="fineprint">Teaching sketch — real FTC Blocks use REV IMU / motor block names. “Left” and “right” are side powers: copy each one to both motors on that side.</p>
         </div>
         <div class="tab-panel" id="panel-java" role="tabpanel" hidden>
           <pre class="code" tabindex="0"><code>// OnBot Java — PD toward a field point (any heading)
@@ -267,8 +268,13 @@ while (opModeIsActive() && !atGoal()) {
     double dError = error - prevError;
     double steer = Kp * error + Kd * dError;
     prevError = error;
-    left.setPower(Range.clip(speed - steer / 100.0, -1, 1));
-    right.setPower(Range.clip(speed + steer / 100.0, -1, 1));
+    // One power per side. Both wheels on that side share it.
+    double leftPower = Range.clip(speed - steer / 100.0, -1, 1);
+    double rightPower = Range.clip(speed + steer / 100.0, -1, 1);
+    frontLeft.setPower(leftPower);
+    backLeft.setPower(leftPower);
+    frontRight.setPower(rightPower);
+    backRight.setPower(rightPower);
     sleep(20);
 }</code></pre>
         </div>
@@ -278,6 +284,7 @@ error = wrap(desired - get_yaw())
 d_error = error - prev_error
 steer = Kp * error + Kd * d_error
 prev_error = error
+# left side → both left motors; right side → both right motors
 drive(speed - steer, speed + steer)</code></pre>
         </div>
       </div>
@@ -310,6 +317,157 @@ integral = clamp(integral, -maxI, maxI)   # required!
 steer = Kp*error + Ki*integral + Kd*d_error</code></pre>
     </section>
 
+    <section class="section" id="pidf">
+      <div class="section-head">
+        <h2>PIDF — F is feedforward</h2>
+        <p>
+          FTC motor controllers add one more letter. P, I, and D all react to
+          <strong>error</strong> (target minus what you measured).
+          <strong>F</strong> uses the <strong>target itself</strong> and adds the power
+          that target usually needs, including when the error is already zero.
+        </p>
+      </div>
+      <div class="formula-strip" role="presentation">
+        <span>power = Kp·e + Ki·∫e + Kd·ė + Kf·target</span>
+      </div>
+      <div class="jobs">
+        <article class="job">
+          <h3>What F is doing</h3>
+          <p>
+            F is a guess of motor power for the speed you asked for, as if nothing were
+            fighting the motor. At 800 ticks/sec the speed error is about 0, so P adds
+            almost nothing — F still applies <code>Kf × 800</code>, which is what keeps
+            the motor at that speed. P cleans up the miss. REV’s starter sets D to 0
+            and a small I (about a tenth of P). F is why I does not have to hold the
+            speed by itself.
+          </p>
+        </article>
+        <article class="job">
+          <h3>Where it lives in FTC</h3>
+          <p>
+            It runs on the hub, in velocity mode.
+            <code>RUN_USING_ENCODER</code> plus <code>setVelocity(ticksPerSec)</code>
+            uses the formula above. The heading PD on this page is code you write.
+            The hub’s full-power number is 32767, so
+            <code>Kf = 32767 / maxTicksPerSec</code>.
+            REV’s starter then sets <code>Kp = 0.1×Kf</code>, <code>Ki = 0.1×Kp</code>, and <code>Kd = 0</code>.
+            Measure max ticks/sec at full power with a full battery, in
+            <code>RUN_WITHOUT_ENCODER</code>.
+          </p>
+        </article>
+      </div>
+      <pre class="code" tabindex="0"><code>// OnBot Java — each wheel motor is its own DcMotorEx. Same coefficients on all four.
+double maxTicksPerSec = 2800;                  // full power, RUN_WITHOUT_ENCODER
+double kF = 32767.0 / maxTicksPerSec;          // power guess for that speed
+double kP = 0.1 * kF;                          // REV starter
+double kI = 0.1 * kP;
+DcMotorEx[] drive = { frontLeft, backLeft, frontRight, backRight };
+for (DcMotorEx m : drive) {
+    m.setVelocityPIDFCoefficients(kP, kI, 0, kF);
+    m.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    m.setVelocity(800);   // ticks/sec — hub adds Kf*800, then P/I/D fix the miss
+}</code></pre>
+      <p class="fineprint">
+        If the motor type is set in the robot configuration, the hub already has a PIDF.
+        <code>setVelocityPIDFCoefficients</code> replaces those numbers for this OpMode after you measure the motor.
+        Apply them again at the start of every OpMode — the hub forgets them when the OpMode ends.
+      </p>
+
+      <h3 class="subhead">Distance is a second job</h3>
+      <p>
+        The heading examples above only answer “which way am I facing?”
+        They never read how far the wheels have turned.
+        Going 24 inches is a separate encoder check: calibrate ticks per inch once,
+        then keep driving until the count reaches the target.
+        That stop condition is ordinary comparison, not part of the heading PID.
+      </p>
+      <div class="jobs">
+        <article class="job">
+          <h3>Distance — usually just matching</h3>
+          <ul class="plain-list">
+            <li>Calibrate once: <code>ticksPerInch</code> from gear ratio and wheel size, or from a measured test drive.</li>
+            <li><code>targetTicks = inches × ticksPerInch</code></li>
+            <li>Each loop: average all four encoders, stop when that average reaches <code>targetTicks</code>.</li>
+          </ul>
+          <p>
+            You can turn leftover ticks into forward speed yourself
+            (<code>forward = KpDist × ticksLeft</code>).
+            <code>RUN_TO_POSITION</code> does that on the hub: position P picks a target
+            speed, then the velocity PIDF — including F — holds it.
+            Still a second controller beside heading: one number is forward, the other is steer.
+          </p>
+        </article>
+        <article class="job">
+          <h3>Heading — the PD (or PID) you write</h3>
+          <ul class="plain-list">
+            <li>Read the IMU yaw.</li>
+            <li><code>steer = Kp·headingError + Kd·Δerror</code></li>
+            <li>Both motors on the left get <code>forward − steer</code>. Both on the right get <code>forward + steer</code>.</li>
+          </ul>
+          <p>
+            Same 20&nbsp;ms loop. Distance picks <em>forward</em> and when to quit.
+            Heading picks <em>steer</em>. Four motors still means two numbers —
+            one per side. F, when you use <code>setVelocity</code>, runs on
+            each motor and holds the speed you gave that wheel.
+          </p>
+        </article>
+      </div>
+      <p>
+        Set each motor’s direction so positive power drives the robot forward.
+        Then every encoder counts up while you drive ahead, and the average of the
+        four readings is how far the center of the robot has gone. One wheel alone
+        is a bad ruler: steering slows that side, and a single wheel can slip.
+      </p>
+      <pre class="code" tabindex="0"><code>// Four motors, two side powers. Distance = average of all four encoders.
+// Optional: RUN_USING_ENCODER so each hub PIDF (with F) holds that wheel's speed.
+
+double ticksPerInch = 45;                 // calibrate on your robot
+int targetTicks = (int) (24 * ticksPerInch);
+double desiredHeading = 0;                // degrees
+double kP = 0.02, kD = 0.001;             // heading → power
+double prevError = 0;
+
+DcMotor[] wheels = { frontLeft, backLeft, frontRight, backRight };
+for (DcMotor m : wheels) {
+    m.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+    m.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);   // ticks still count
+}
+
+while (opModeIsActive()) {
+    int traveled = (frontLeft.getCurrentPosition() + backLeft.getCurrentPosition()
+                  + frontRight.getCurrentPosition() + backRight.getCurrentPosition()) / 4;
+    if (traveled &gt;= targetTicks) break;    // distance match — not the heading PID
+
+    double yaw = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.DEGREES);
+    double error = AngleUnit.normalizeDegrees(desiredHeading - yaw);
+    double steer = kP * error + kD * (error - prevError);
+    prevError = error;
+
+    double forward = 0.45;                 // constant until the average says stop
+    double leftPower = Range.clip(forward - steer, -1, 1);
+    double rightPower = Range.clip(forward + steer, -1, 1);
+    frontLeft.setPower(leftPower);
+    backLeft.setPower(leftPower);
+    frontRight.setPower(rightPower);
+    backRight.setPower(rightPower);
+}
+for (DcMotor m : wheels) m.setPower(0);
+
+// Velocity PIDF version — F runs separately inside each motor:
+//   double base = 900;                 // ticks/sec
+//   double steer = 12 * error;         // ticks/sec per degree
+//   frontLeft.setVelocity(base - steer);
+//   backLeft.setVelocity(base - steer);
+//   frontRight.setVelocity(base + steer);
+//   backRight.setVelocity(base + steer);</code></pre>
+      <p class="callout ok">
+        Four motors, two numbers. Both left wheels get <code>forward − steer</code>.
+        Both right wheels get <code>forward + steer</code>.
+        Distance is the average of the four encoders.
+        Feedforward is the hub’s extra term on each motor when those commands are target speeds.
+      </p>
+    </section>
+
     <section class="section practice">
       <h2>Class checklist</h2>
       <ol class="steps">
@@ -318,6 +476,7 @@ steer = Kp*error + Ki*integral + Kd*d_error</code></pre>
         <li>Read <em>heading error</em> graph: none stays wrong; P oscillates; PD settles.</li>
         <li>Mode <strong>PD vs PID</strong>, raise Ki — look for late overshoot (windup).</li>
         <li>Say the ladder out loud: <strong>none &lt; P &lt; PD</strong>; PID is optional with risks.</li>
+        <li>Read <a href="#pidf">PIDF</a>: F holds target speed; encoder distance is a separate stop check in the same loop as heading steer.</li>
       </ol>
     </section>
   </main>

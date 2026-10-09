@@ -112,7 +112,9 @@ function main() {
   const ir = result.ir || {};
   const issues = result.issues || [];
 
-  if (config) {
+  if (result.library) {
+    // Library files: info only — never fail the convert for BlocksOpModeCompanion
+  } else if (config) {
     const cfgIssues = ctx.Java2BlocksConfig.validateHardware(ir.hardware || [], config);
     cfgIssues.forEach((i) => issues.push(i));
   } else {
@@ -121,31 +123,37 @@ function main() {
       code: "",
       message: "No robot config XML loaded — pass --config test_config.xml (recommended).",
       tip: "The top-level test_config.xml lists the real device names Blocks will look up.",
+      level: "info",
     });
   }
 
   const unsupported = countUnsupported(ir);
   let blkXml = null;
-  try {
-    blkXml = ctx.Java2BlocksConvert.toBlkXml(ir, { config });
-  } catch (e) {
-    issues.push({
-      line: 0,
-      code: "",
-      message: "BLK generation failed: " + e.message,
-      tip: "Fix parse issues first.",
-    });
+  if (!result.library) {
+    try {
+      blkXml = ctx.Java2BlocksConvert.toBlkXml(ir, { config });
+    } catch (e) {
+      issues.push({
+        line: 0,
+        code: "",
+        message: "BLK generation failed: " + e.message,
+        tip: "Fix parse issues first.",
+      });
+    }
   }
 
   if (args.blk && blkXml) {
     fs.writeFileSync(args.blk, blkXml);
   }
 
-  const ok = issues.length === 0;
+  const hardIssues = issues.filter((i) => i.level !== "info");
+  const ok = hardIssues.length === 0;
   const report = {
     source: sourceLabel,
     ok,
-    issueCount: issues.length,
+    library: Boolean(result.library),
+    issueCount: hardIssues.length,
+    infoCount: issues.length - hardIssues.length,
     unsupportedNodes: unsupported,
     opModeName: ir.opModeName || null,
     flavor: ir.flavor || null,
@@ -154,6 +162,7 @@ function main() {
       : null,
     issues: issues.map((i) => ({
       line: i.line,
+      level: i.level || "error",
       message: i.message,
       code: i.code || "",
       tip: i.tip || "",
@@ -164,10 +173,16 @@ function main() {
   if (args.json) {
     process.stdout.write(JSON.stringify(report, null, 2) + "\n");
   } else {
-    const status = report.ok ? "OK" : "ISSUES";
-    console.log(
-      `[${status}] ${report.source}  (${report.issueCount} issue(s), ${unsupported} unsupported node(s))`
-    );
+    if (report.library) {
+      console.log(`[LIBRARY] ${report.source} — deploy as Java; do not convert to .blk`);
+    } else {
+      const status = report.ok ? "OK" : "ISSUES";
+      console.log(
+        `[${status}] ${report.source}  (${report.issueCount} issue(s), ${unsupported} unsupported node(s)` +
+          (report.infoCount ? `, ${report.infoCount} info` : "") +
+          `)`
+      );
+    }
     if (ir.opModeName) {
       console.log(`  OpMode: ${ir.opModeName} (${ir.flavor || "?"})`);
     }
@@ -179,14 +194,23 @@ function main() {
       console.log("  Config: (none)");
     }
     if (args.blk) {
-      console.log(`  .blk → ${args.blk}${report.blkWritten ? "" : " (not written)"}`);
+      if (report.library) {
+        console.log(`  .blk → skipped (library file)`);
+      } else {
+        console.log(`  .blk → ${args.blk}${report.blkWritten ? "" : " (not written)"}`);
+      }
     }
     issues.forEach((i, idx) => {
       console.log("");
-      console.log(`--- ${idx + 1}. line ${i.line} ---`);
+      const tag = i.level === "info" ? "info" : "issue";
+      console.log(`--- ${idx + 1}. ${tag} line ${i.line} ---`);
       console.log(i.message);
       if (i.code) console.log(i.code);
-      if (i.tip) console.log("To stay in Blocks: " + i.tip);
+      if (i.tip) {
+        console.log(
+          (i.level === "info" ? "Note: " : "To stay in Blocks: ") + i.tip
+        );
+      }
     });
     if (!report.ok) {
       console.log("");

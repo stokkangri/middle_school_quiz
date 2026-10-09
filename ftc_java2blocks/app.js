@@ -144,19 +144,42 @@ public class SimpleDrive extends LinearOpMode {
     );
   }
 
-  function renderReport(issues, ir) {
-    if (!issues.length) {
+  function renderReport(issues, ir, result) {
+    if (result && result.library) {
+      report.innerHTML = `
+        <div class="ok-box">
+          <strong>myBlocks library</strong> — deploy <code>${escapeHtml(
+            ir.opModeName || "this file"
+          )}</code> as Java on the RC (do not convert to <code>.blk</code>).
+          Convert Sample Auto / TeleOp OpModes that call it instead.
+        </div>`;
+      return;
+    }
+
+    const hard = (issues || []).filter((i) => i.level !== "info");
+    const infos = (issues || []).filter((i) => i.level === "info");
+
+    if (!hard.length) {
+      const infoHtml = infos.length
+        ? `<p class="meta">${infos
+            .map((i) => escapeHtml(i.message))
+            .join(" · ")}</p>`
+        : "";
       report.innerHTML = `
         <div class="ok-box">
           <strong>Looks round-trip friendly</strong> — your Java still matches the Blocks-shaped subset.
           Download <code>.blk</code>, open it in Blocks, and confirm device names match your robot config.
+          myBlock calls (<code>*MyBlocks.method</code>) map to Blocks procedure/myBlock calls — keep the library Java on the RC.
         </div>
-        <p class="meta">OpMode: <code>${ir.opModeName}</code> · ${ir.flavor} ·
-          hardware: ${(ir.hardware || []).map((h) => h.deviceName).join(", ") || "(none)"}</p>`;
+        <p class="meta">OpMode: <code>${escapeHtml(ir.opModeName || "")}</code> · ${escapeHtml(
+        ir.flavor || ""
+      )} ·
+          hardware: ${(ir.hardware || []).map((h) => h.deviceName).join(", ") || "(none)"}</p>
+        ${infoHtml}`;
       return;
     }
 
-    const items = issues
+    const items = hard
       .map(
         (iss) => `
       <article class="issue">
@@ -165,13 +188,13 @@ public class SimpleDrive extends LinearOpMode {
           <span class="msg">${escapeHtml(iss.message)}</span>
         </header>
         ${iss.code ? `<pre class="snip">${escapeHtml(iss.code)}</pre>` : ""}
-        <p class="tip"><strong>To stay in Blocks:</strong> ${escapeHtml(iss.tip)}</p>
+        <p class="tip"><strong>To stay in Blocks:</strong> ${escapeHtml(iss.tip || "")}</p>
       </article>`
       )
       .join("");
 
     report.innerHTML = `
-      <p class="meta">${issues.length} edit(s) may not round-trip — preview still shows what could be mapped.</p>
+      <p class="meta">${hard.length} edit(s) may not round-trip — preview still shows what could be mapped.</p>
       ${items}`;
   }
 
@@ -186,7 +209,7 @@ public class SimpleDrive extends LinearOpMode {
     const src = javaInput.value;
     const result = Java2BlocksParser.parse(src);
     const issues = (result.issues || []).slice();
-    if (robotConfig) {
+    if (!result.library && robotConfig) {
       const cfgIssues = Java2BlocksConfig.validateHardware(
         result.ir.hardware || [],
         robotConfig
@@ -195,12 +218,20 @@ public class SimpleDrive extends LinearOpMode {
     }
     const html = Java2BlocksConvert.toPreviewHTML(result.ir);
     preview.innerHTML = html;
-    lastXml = Java2BlocksConvert.toBlkXml(result.ir, { config: robotConfig });
+    lastXml = result.library
+      ? ""
+      : Java2BlocksConvert.toBlkXml(result.ir, { config: robotConfig });
     lastDownloadName = result.ir.opModeName || "ConvertedOpMode";
-    renderReport(issues, result.ir);
+    renderReport(issues, result.ir, result);
 
-    const hard = issues.length;
-    if (!result.ok && !result.ir.run.length) {
+    const hard = issues.filter((i) => i.level !== "info").length;
+    if (result.library) {
+      setStatus("ok", "Library — deploy as Java");
+      btnDl.disabled = true;
+      btnCopy.disabled = true;
+      return;
+    }
+    if (!result.ok && !(result.ir.run && result.ir.run.length)) {
       setStatus("err", "Failed");
     } else if (hard) {
       setStatus("warn", `${hard} non-block edit(s)`);

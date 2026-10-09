@@ -334,6 +334,58 @@ main,
 .tag.pd { background: var(--pd-amber); }
 .tag.pid { background: #e879f9; }
 
+.jobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.job {
+  background: rgba(7, 21, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem 1.15rem 0.4rem;
+}
+
+.job h3,
+.subhead {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+}
+
+.subhead {
+  margin-top: 2rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+}
+
+.job p,
+.job .plain-list {
+  color: var(--muted);
+}
+
+.job code,
+#pidf p code,
+#pidf .callout code {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  color: var(--pd-amber);
+}
+
+#pidf .formula-strip {
+  margin-bottom: 0.25rem;
+}
+
+#pidf .code {
+  margin-bottom: 0.85rem;
+}
+
+#pidf .callout {
+  margin-top: 1rem;
+}
+
 .ladder-sum {
   margin-top: 1.25rem;
   padding: 1rem 1.15rem;
@@ -636,7 +688,8 @@ main,
   .hero,
   .lab-layout,
   .split,
-  .graph-row {
+  .graph-row,
+  .jobs {
     grid-template-columns: 1fr;
   }
 
