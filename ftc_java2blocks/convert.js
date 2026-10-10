@@ -93,6 +93,96 @@ const Java2BlocksConvert = (() => {
       tooltip: "",
       labels: [],
       types: [],
+      returnType: "void",
+    },
+    // RobotVisionMyBlocks
+    initColorVision: {
+      heading: "Vision Color",
+      comment: "Start webcam color matching",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "void",
+    },
+    reportColor: {
+      heading: "Vision Color",
+      comment: "Write Best Match to telemetry",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "void",
+    },
+    isRed: {
+      heading: "Vision Color",
+      comment: "True if closest swatch is RED",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "boolean",
+    },
+    isBlue: {
+      heading: "Vision Color",
+      comment: "True if closest swatch is BLUE",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "boolean",
+    },
+    isGreen: {
+      heading: "Vision Color",
+      comment: "True if closest swatch is GREEN",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "boolean",
+    },
+    isYellow: {
+      heading: "Vision Color",
+      comment: "True if closest swatch is YELLOW",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "boolean",
+    },
+    initTagVision: {
+      heading: "Vision Tag",
+      comment: "Start webcam tag detection",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "void",
+    },
+    reportTag: {
+      heading: "Vision Tag",
+      comment: "Write tag info to telemetry",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "void",
+    },
+    hasTag: {
+      heading: "Vision Tag",
+      comment: "True if at least one tag is visible",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "boolean",
+    },
+    firstTagId: {
+      heading: "Vision Tag",
+      comment: "ID of first tag, or -1",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "double",
+    },
+    closeVision: {
+      heading: "Vision",
+      comment: "Stop camera / free VisionPortal",
+      tooltip: "",
+      labels: [],
+      types: [],
+      returnType: "void",
     },
   };
 
@@ -100,6 +190,79 @@ const Java2BlocksConvert = (() => {
     const pkg = "org.firstinspires.ftc.teamcode." + className;
     const params = (types || []).join(",");
     return `${pkg} ${method}(${params}) ${returnType || "void"}`;
+  }
+
+  function myBlockAccessMethod(returnType) {
+    if (returnType === "boolean" || returnType === "java.lang.Boolean") {
+      return "callJava_boolean";
+    }
+    if (
+      returnType === "java.lang.String" ||
+      returnType === "String" ||
+      returnType === "char" ||
+      returnType === "java.lang.Character"
+    ) {
+      return "callJava_String";
+    }
+    return "callJava";
+  }
+
+  /** Emit misc_callJava_noReturn or misc_callJava_return XML. */
+  function emitMyBlockXml(className, method, args, asExpression) {
+    const meta = MYBLOCK_META[method] || {
+      heading: "call Java method",
+      comment: "",
+      tooltip: "",
+      labels: (args || []).map((_, i) => `ARG${i}`),
+      types: (args || []).map(() => "double"),
+      returnType: asExpression ? "boolean" : "void",
+    };
+    const types = meta.types && meta.types.length ? meta.types : (args || []).map(() => "double");
+    const labels = meta.labels && meta.labels.length ? meta.labels : types.map((t) => t);
+    const returnType = meta.returnType || (asExpression ? "boolean" : "void");
+    const paramCount = types.length;
+    const lookup = myBlockLookupString(className, method, types, returnType);
+    const access = myBlockAccessMethod(returnType);
+    let argAttrs = "";
+    for (let i = 0; i < paramCount; i++) {
+      argAttrs +=
+        ` argLabel${i}="${esc(labels[i] || "")}"` +
+        ` argType${i}="${esc(types[i] || "double")}"` +
+        ` argAuto${i}=""`;
+    }
+    const values = (args || [])
+      .map(
+        (a, i) =>
+          `<value name="ARG${i}">${exprXml(a || { type: "literal", value: "0" })}</value>`
+      )
+      .join("");
+    let pad = "";
+    for (let i = (args || []).length; i < paramCount; i++) {
+      pad += `<value name="ARG${i}"><block type="math_number" id="${nid()}"><field name="NUM">0</field></block></value>`;
+    }
+    const blockType =
+      returnType === "void" ? "misc_callJava_noReturn" : "misc_callJava_return";
+    return (
+      `<block type="${blockType}" id="${nid()}">` +
+      `<mutation createDropdownFunctionName=""` +
+      ` methodLookupString="${esc(lookup)}"` +
+      ` fullClassName="org.firstinspires.ftc.teamcode.${esc(className)}"` +
+      ` simpleName="${esc(className)}"` +
+      ` parameterCount="${paramCount}"` +
+      ` returnType="${esc(returnType)}"` +
+      ` color="289"` +
+      ` heading="${esc(meta.heading || "call Java method")}"` +
+      ` comment="${esc(meta.comment || "")}"` +
+      ` tooltip="${esc(meta.tooltip || "")}"` +
+      ` accessMethod="${esc(access)}"` +
+      ` convertReturnValue=""` +
+      `${argAttrs}></mutation>` +
+      `<field name="HEADING">${esc(meta.heading || "call Java method")}</field>` +
+      `<field name="CLASS_NAME">${esc(className)}</field>` +
+      `<field name="METHOD_NAME">${esc(method)}</field>` +
+      `${values}${pad}` +
+      `</block>`
+    );
   }
 
   function esc(s) {
@@ -127,6 +290,8 @@ const Java2BlocksConvert = (() => {
         return `${e.pad}.${e.field}`;
       case "call":
         return `${e.object}.${e.method}(${(e.args || []).map(exprToText).join(", ")})`;
+      case "myBlockExpr":
+        return `${e.className}.${e.method}(${(e.args || []).map(exprToText).join(", ")})`;
       case "clip":
         return `clip(${exprToText(e.value)}, ${exprToText(e.min)}, ${exprToText(e.max)})`;
       case "abs":
@@ -385,6 +550,14 @@ const Java2BlocksConvert = (() => {
       return `<block type="gamepad_getProperty_Boolean" id="${nid()}"><field name="IDENTIFIER">${esc(
         e.pad
       )}</field><field name="PROP">${esc(prop)}</field>${dataIdent(e.pad)}</block>`;
+    }
+    if (e.type === "myBlockExpr") {
+      return emitMyBlockXml(
+        e.className || "RobotVisionMyBlocks",
+        e.method || "isRed",
+        e.args || [],
+        true
+      );
     }
     if (e.type === "unary" && e.op === "-") {
       return `<block type="math_single" id="${nid()}"><field name="OP">NEG</field><value name="NUM">${exprXml(
@@ -667,60 +840,11 @@ const Java2BlocksConvert = (() => {
       case "idle":
         return `<block type="linearOpMode_idle" id="${nid()}"></block>`;
       case "myBlockCall": {
-        // FTC myBlocks are misc_callJava_* — NOT Blockly procedures_callnoreturn.
-        // Runtime looks up Java via methodLookupString (see BlocksClassFilter.getLookupString).
-        const className = n.className || "RobotMyBlocks";
-        const method = n.method || "myBlock";
-        const args = n.args || [];
-        const meta = MYBLOCK_META[method] || {
-          heading: "call Java method",
-          comment: "",
-          tooltip: "",
-          labels: args.map((_, i) => `ARG${i}`),
-          types: args.map(() => "double"),
-        };
-        const types = meta.types.length ? meta.types : args.map(() => "double");
-        const labels = meta.labels.length ? meta.labels : types.map((t) => t);
-        const paramCount = types.length;
-        const lookup = myBlockLookupString(className, method, types, "void");
-        let argAttrs = "";
-        for (let i = 0; i < paramCount; i++) {
-          argAttrs +=
-            ` argLabel${i}="${esc(labels[i] || "")}"` +
-            ` argType${i}="${esc(types[i] || "double")}"` +
-            ` argAuto${i}=""`;
-        }
-        const values = args
-          .map(
-            (a, i) =>
-              `<value name="ARG${i}">${exprXml(a || { type: "literal", value: "0" })}</value>`
-          )
-          .join("");
-        // Pad missing args with 0 if signature longer than call (shouldn't happen)
-        let pad = "";
-        for (let i = args.length; i < paramCount; i++) {
-          pad += `<value name="ARG${i}"><block type="math_number" id="${nid()}"><field name="NUM">0</field></block></value>`;
-        }
-        return (
-          `<block type="misc_callJava_noReturn" id="${nid()}">` +
-          `<mutation createDropdownFunctionName=""` +
-          ` methodLookupString="${esc(lookup)}"` +
-          ` fullClassName="org.firstinspires.ftc.teamcode.${esc(className)}"` +
-          ` simpleName="${esc(className)}"` +
-          ` parameterCount="${paramCount}"` +
-          ` returnType="void"` +
-          ` color="289"` +
-          ` heading="${esc(meta.heading || "call Java method")}"` +
-          ` comment="${esc(meta.comment || "")}"` +
-          ` tooltip="${esc(meta.tooltip || "")}"` +
-          ` accessMethod="callJava"` +
-          ` convertReturnValue=""` +
-          `${argAttrs}></mutation>` +
-          `<field name="HEADING">${esc(meta.heading || "call Java method")}</field>` +
-          `<field name="CLASS_NAME">${esc(className)}</field>` +
-          `<field name="METHOD_NAME">${esc(method)}</field>` +
-          `${values}${pad}` +
-          `</block>`
+        return emitMyBlockXml(
+          n.className || "RobotMyBlocks",
+          n.method || "myBlock",
+          n.args || [],
+          false
         );
       }
       case "while":

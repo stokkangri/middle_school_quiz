@@ -200,10 +200,43 @@ const Java2BlocksParser = (() => {
       run: [],
     };
 
-    // Whole-file unsupported scans
-    const full = blanked.join("\n");
+    // Detect myBlocks library early — skip vision file-scans inside the library body
+    let libraryEarly = null;
+    blanked.forEach((ln) => {
+      const cls = ln.match(/class\s+(\w+)\s+extends\s+(\w+)/);
+      if (cls && cls[2] === "BlocksOpModeCompanion") {
+        libraryEarly = cls[1];
+      }
+    });
+    if (libraryEarly) {
+      ir.libraryClass = libraryEarly;
+      ir.library = true;
+      ir.opModeName = libraryEarly;
+      ir.flavor = "myBlocksLibrary";
+      issues.push(
+        makeInfo(
+          1,
+          libraryEarly,
+          `Skipping convert: ${libraryEarly} is a myBlocks library (extends BlocksOpModeCompanion).`,
+          "library"
+        )
+      );
+      ir.init = [];
+      ir.run = [
+        {
+          type: "comment",
+          text: `Deploy ${libraryEarly} as Java on the RC (@ExportToBlocks). Convert Sample*Kids OpModes instead.`,
+        },
+      ];
+      return { ir, issues, ok: true, library: true };
+    }
+
+    // Whole-file unsupported scans (real APIs only — not method names like hasAprilTag)
     const fileChecks = [
-      [/VisionPortal|AprilTag|Tfod|EasyOpenCV/i, "vision"],
+      [
+        /\bVisionPortal\b|\bAprilTagProcessor\b|\bAprilTagDetection\b|\bAprilTagSingleDetection\b|\bPredominantColorProcessor\b|\bColorBlobLocatorProcessor\b|\bTfod\b|\bEasyOpenCV\b|\borg\.firstinspires\.ftc\.vision\b/,
+        "vision",
+      ],
       [/\bThread\b|\bExecutorService\b|\.start\(\)/, "thread"],
       [/RoadRunner|TrajectorySequence|SampleMecanumDrive/, "roadrunner"],
       [/\bswitch\s*\(/, "switchCase"],
@@ -214,7 +247,9 @@ const Java2BlocksParser = (() => {
     ];
     fileChecks.forEach(([re, key]) => {
       blanked.forEach((ln, idx) => {
-        if (re.test(ln)) {
+        const codeOnly = ln.replace(/__j2b_comment__\s*\(\s*"(?:\\.|[^"\\])*"\s*\)\s*;?/g, " ");
+        if (!codeOnly.trim()) return;
+        if (re.test(codeOnly)) {
           issues.push(makeIssue(idx + 1, rawLines[idx] || ln, `Unsupported construct matched: ${key}`, key));
         }
       });
@@ -241,12 +276,7 @@ const Java2BlocksParser = (() => {
 
       const cls = ln.match(/class\s+(\w+)\s+extends\s+(\w+)/);
       if (cls) {
-        if (cls[2] === "BlocksOpModeCompanion") {
-          ir.libraryClass = cls[1];
-          ir.library = true;
-          ir.opModeName = cls[1];
-          ir.flavor = "myBlocksLibrary";
-        } else if (cls[2] !== "LinearOpMode") {
+        if (cls[2] !== "LinearOpMode") {
           issues.push(
             makeIssue(
               idx + 1,
@@ -271,26 +301,6 @@ const Java2BlocksParser = (() => {
         );
       }
     });
-
-    // myBlocks library: deploy as Java — do not convert to .blk
-    if (ir.library) {
-      issues.push(
-        makeInfo(
-          1,
-          ir.libraryClass || "",
-          `Skipping convert: ${ir.libraryClass || "this class"} is a myBlocks library (extends BlocksOpModeCompanion).`,
-          "library"
-        )
-      );
-      ir.init = [];
-      ir.run = [
-        {
-          type: "comment",
-          text: `Deploy ${ir.libraryClass || "library"} as Java on the RC (@ExportToBlocks). Convert Sample Auto/TeleOp instead.`,
-        },
-      ];
-      return { ir, issues, ok: true, library: true };
-    }
 
     // Extract runOpMode body
     const joined = blanked.join("\n");
@@ -787,23 +797,21 @@ const Java2BlocksParser = (() => {
     const gamepad = e.match(/^(gamepad[12])\.(\w+)$/);
     if (gamepad) return { type: "gamepad", pad: gamepad[1], field: gamepad[2] };
 
-    // method call on device (not myBlocks — those are statements)
+    // method call on device OR returning myBlock (isRed, firstTagId, …)
     const call = e.match(/^(\w+)\.(\w+)\s*\(\s*([^)]*)\s*\)$/);
     if (call) {
       if (isMyBlockClass(call[1])) {
-        // Unexpected myBlock in expression position (void helpers) — soft note only if used as value
-        issues.push(
-          makeIssue(
-            line,
-            e,
-            `myBlock ${call[1]}.${call[2]}() used in an expression — prefer a statement call.`,
-            "method",
-            "Call myBlocks as statements (e.g. RobotMyBlocks.driveForward(12, 0.4);), not inside assignments."
-          )
-        );
+        return {
+          type: "myBlockExpr",
+          className: call[1],
+          method: call[2],
+          args: call[3]
+            ? splitCallArgs(call[3]).map((a) => parseExpr(a.trim(), line, issues))
+            : [],
+        };
       }
       const known = ["getPower", "getCurrentPosition", "getPosition", "seconds", "milliseconds"];
-      if (!known.includes(call[2]) && !isMyBlockClass(call[1])) {
+      if (!known.includes(call[2])) {
         issues.push(
           makeIssue(
             line,

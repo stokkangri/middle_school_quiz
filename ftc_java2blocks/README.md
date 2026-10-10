@@ -72,10 +72,11 @@ Static hosting: **GitHub Pages** or **Netlify**.
 
 | Input | Converter behavior |
 |-------|-------------------|
-| `RobotMyBlocks.java` (`extends BlocksOpModeCompanion`) | **Library** — info only, no `.blk`, exit 0. Deploy as Java. |
-| `RobotMyBlocks.bindFromLinearOpMode(this);` | **Ignored** (no warning) — Blocks binds context itself. |
-| `RobotMyBlocks.driveForward(...)`, `initRobot()`, … | **myBlock call** → FTC `misc_callJava_noReturn` (not a Blockly procedure). Keep library Java on the RC. |
+| `RobotMyBlocks.java` / `RobotVisionMyBlocks.java` (`extends BlocksOpModeCompanion`) | **Library** — info only, no `.blk`, exit 0. Deploy as Java. |
+| `*.bindFromLinearOpMode(this);` | **Ignored** (no warning) — Blocks binds context itself. |
+| `RobotMyBlocks.driveForward(...)`, `RobotVisionMyBlocks.isRed()`, … | **myBlock call** → FTC `misc_callJava_*`. Keep library Java on the RC. |
 | Bare `return;` after `if (!opModeIsActive())` | **Ignored**. |
+| Direct `VisionPortal` / `AprilTagProcessor` in a kid OpMode | **Not convertible** — put vision in `RobotVisionMyBlocks`, call myBlocks from the OpMode. |
 
 ### How `.blk` reaches Java myBlocks
 
