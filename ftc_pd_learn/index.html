@@ -21,6 +21,7 @@
       <a href="#code">Code</a>
       <a href="#integral">Why not I?</a>
       <a href="#pidf">PIDF</a>
+      <a href="#mix">Strafe</a>
     </nav>
   </header>
 
@@ -465,7 +466,136 @@ for (DcMotor m : wheels) m.setPower(0);
         Both right wheels get <code>forward + steer</code>.
         Distance is the average of the four encoders.
         Feedforward is the hub’s extra term on each motor when those commands are target speeds.
+        Strafe is a third request — <a href="#mix">the next section</a> adds it on top of these two.
       </p>
+    </section>
+
+    <section class="section" id="mix">
+      <div class="section-head">
+        <h2>Move + strafe + turn</h2>
+        <p>
+          Setting one power on each wheel showed what the robot does.
+          Those demos are the recipe: each maneuver is a pattern of signs.
+          Driving with all three at once adds the three patterns on every wheel.
+          A “+” below means that wheel’s positive power — the direction you already
+          set so the robot drives forward.
+        </p>
+      </div>
+      <div class="table-wrap">
+        <table class="sign-table">
+          <caption>Sign of each wheel for one positive request</caption>
+          <thead>
+            <tr>
+              <th scope="col">Wheel</th>
+              <th scope="col">Move forward</th>
+              <th scope="col">Strafe right</th>
+              <th scope="col">Turn clockwise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Front left</th>
+              <td class="pos">+</td>
+              <td class="pos">+</td>
+              <td class="pos">+</td>
+            </tr>
+            <tr>
+              <th scope="row">Back left</th>
+              <td class="pos">+</td>
+              <td class="neg">−</td>
+              <td class="pos">+</td>
+            </tr>
+            <tr>
+              <th scope="row">Front right</th>
+              <td class="pos">+</td>
+              <td class="neg">−</td>
+              <td class="neg">−</td>
+            </tr>
+            <tr>
+              <th scope="row">Back right</th>
+              <td class="pos">+</td>
+              <td class="pos">+</td>
+              <td class="neg">−</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula-strip" role="presentation">
+        <span>frontLeft = move + strafe + turn</span>
+        <span>backLeft = move − strafe + turn</span>
+        <span>frontRight = move − strafe − turn</span>
+        <span>backRight = move + strafe − turn</span>
+      </div>
+      <div class="jobs">
+        <article class="job">
+          <h3>Why the strafe column looks like that</h3>
+          <p>
+            Mecanum rollers sit at 45°. A spinning wheel pushes the robot both
+            forward and sideways. All four wheels forward: the sideways pushes
+            cancel and the robot drives straight. Strafe right spins one diagonal
+            forward (front left and back right) and the other diagonal backward:
+            the forward pushes cancel and the sideways pushes add.
+          </p>
+        </article>
+        <article class="job">
+          <h3>One set of numbers</h3>
+          <p>
+            Move <code>0.50</code>, strafe <code>0.20</code>, turn <code>0.10</code> (clockwise):
+          </p>
+          <ul class="plain-list">
+            <li>Front left: <code>0.50 + 0.20 + 0.10 = 0.80</code></li>
+            <li>Back left: <code>0.50 − 0.20 + 0.10 = 0.40</code></li>
+            <li>Front right: <code>0.50 − 0.20 − 0.10 = 0.20</code></li>
+            <li>Back right: <code>0.50 + 0.20 − 0.10 = 0.60</code></li>
+          </ul>
+          <p>Sign is direction. Size is speed.</p>
+        </article>
+      </div>
+      <p>
+        A motor only accepts power from −1 to 1. If the three requests add past that,
+        divide every wheel by <code>max(|move| + |strafe| + |turn|, 1)</code>.
+        The mix stays the same; the robot shares the speed it has.
+        Requests of <code>0.8</code>, <code>0.8</code>, and <code>0.8</code> use a scale of <code>2.4</code>.
+      </p>
+      <pre class="code" tabindex="0"><code>// Three requests → four wheel powers. +turn is clockwise.
+double move = 0.50;
+double strafe = 0.20;
+double turn = 0.10;
+
+double frontLeftPower  = move + strafe + turn;
+double backLeftPower   = move - strafe + turn;
+double frontRightPower = move - strafe - turn;
+double backRightPower  = move + strafe - turn;
+
+double scale = Math.max(Math.abs(move) + Math.abs(strafe) + Math.abs(turn), 1.0);
+frontLeft.setPower(frontLeftPower / scale);
+backLeft.setPower(backLeftPower / scale);
+frontRight.setPower(frontRightPower / scale);
+backRight.setPower(backRightPower / scale);</code></pre>
+      <p class="callout ok">
+        The heading loop already produces <code>steer</code>: positive steer speeds the right side
+        and slows the left. Clockwise <code>turn</code> is the opposite sign, so
+        <code>turn = -steer</code>. With strafe at 0, both left wheels get
+        <code>move − steer</code> and both right wheels get <code>move + steer</code> —
+        the same side powers as the loop above. Strafe is the extra request
+        (the sideways stick, or 0 when an auto should drive straight).
+        Move still comes from the encoder distance. Turn still comes from the heading PD.
+      </p>
+      <pre class="code" tabindex="0"><code>// Same distance + heading loop, now with a strafe term.
+double move = 0.45;                         // encoder distance, or the forward stick
+double strafe = gamepad1.left_stick_x;      // 0 in an auto that should not slide
+double steer = kP * error + kD * (error - prevError);
+double turn = -steer;                       // page steer speeds the right side
+
+double fl = move + strafe + turn;
+double bl = move - strafe + turn;
+double fr = move - strafe - turn;
+double br = move + strafe - turn;
+double scale = Math.max(Math.abs(move) + Math.abs(strafe) + Math.abs(turn), 1.0);
+frontLeft.setPower(fl / scale);
+backLeft.setPower(bl / scale);
+frontRight.setPower(fr / scale);
+backRight.setPower(br / scale);</code></pre>
     </section>
 
     <section class="section practice">
@@ -477,6 +607,7 @@ for (DcMotor m : wheels) m.setPower(0);
         <li>Mode <strong>PD vs PID</strong>, raise Ki — look for late overshoot (windup).</li>
         <li>Say the ladder out loud: <strong>none &lt; P &lt; PD</strong>; PID is optional with risks.</li>
         <li>Read <a href="#pidf">PIDF</a>: F holds target speed; encoder distance is a separate stop check in the same loop as heading steer.</li>
+        <li>Read <a href="#mix">Strafe</a>: move, strafe, and turn are three sign patterns. Add them on each wheel. <code>turn = -steer</code>.</li>
       </ol>
     </section>
   </main>
